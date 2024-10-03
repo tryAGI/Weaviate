@@ -1,0 +1,110 @@
+
+#nullable enable
+
+#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
+
+namespace Weaviate
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[] 
+        { 
+            typeof(global::Weaviate.JsonConverters.StopwordConfigPresetJsonConverter),
+            typeof(global::Weaviate.JsonConverters.StopwordConfigPresetNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ReplicationConfigObjectDeletionConflictResolutionJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ReplicationConfigObjectDeletionConflictResolutionNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.PatchDocumentObjectOpJsonConverter),
+            typeof(global::Weaviate.JsonConverters.PatchDocumentObjectOpNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.PatchDocumentActionOpJsonConverter),
+            typeof(global::Weaviate.JsonConverters.PatchDocumentActionOpNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.VectorizerJsonConverter),
+            typeof(global::Weaviate.JsonConverters.VectorizerNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.VectorIndexTypeJsonConverter),
+            typeof(global::Weaviate.JsonConverters.VectorIndexTypeNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.DataTypeItemJsonConverter),
+            typeof(global::Weaviate.JsonConverters.DataTypeItemNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.TokenizationJsonConverter),
+            typeof(global::Weaviate.JsonConverters.TokenizationNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupCreateStatusResponseStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupCreateStatusResponseStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupRestoreStatusResponseStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupRestoreStatusResponseStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupConfigCompressionLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupConfigCompressionLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupCreateResponseStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupCreateResponseStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupListResponseItemStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupListResponseItemStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupRestoreResponseStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BackupRestoreResponseStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.NodeStatusStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.NodeStatusStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.StatisticsStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.StatisticsStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchReferenceResponseVariant2ResultStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchReferenceResponseVariant2ResultStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsGetResponseVariant3ResultStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsGetResponseVariant3ResultStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.WhereFilterOperatorJsonConverter),
+            typeof(global::Weaviate.JsonConverters.WhereFilterOperatorNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchDeleteOutputJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchDeleteOutputNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchDeleteResponseOutputJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchDeleteResponseOutputNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchDeleteResponseResultsObjectStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchDeleteResponseResultsObjectStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ClassificationStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ClassificationStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.TenantActivityStatusJsonConverter),
+            typeof(global::Weaviate.JsonConverters.TenantActivityStatusNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchObjectsCreateRequestFieldJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchObjectsCreateRequestFieldNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsListOrderJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsListOrderNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsCreateConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsCreateConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsUpdateConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsUpdateConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsDeleteConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsDeleteConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsPatchConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsPatchConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassGetConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassGetConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassPutConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassPutConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassDeleteConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassDeleteConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassHeadConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassHeadConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassPatchConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassPatchConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassReferencesPutConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassReferencesPutConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassReferencesCreateConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassReferencesCreateConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassReferencesDeleteConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsClassReferencesDeleteConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchObjectsCreateConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchObjectsCreateConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchObjectsDeleteConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchObjectsDeleteConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchReferencesCreateConsistencyLevelJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchReferencesCreateConsistencyLevelNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.NodesGetOutputJsonConverter),
+            typeof(global::Weaviate.JsonConverters.NodesGetOutputNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.NodesGetClassOutputJsonConverter),
+            typeof(global::Weaviate.JsonConverters.NodesGetClassOutputNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.BatchReferenceResponseJsonConverter),
+            typeof(global::Weaviate.JsonConverters.ObjectsGetResponseJsonConverter),
+        })]
+
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.JsonSerializerContextTypes))]
+    public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+}

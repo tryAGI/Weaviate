@@ -1,0 +1,29 @@
+
+#nullable enable
+
+namespace Weaviate
+{
+    /// <summary>
+    /// filter within a distance of a georange
+    /// </summary>
+    public sealed partial class WhereFilterGeoRange
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("geoCoordinates")]
+        public global::Weaviate.GeoCoordinates? GeoCoordinates { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("distance")]
+        public global::Weaviate.WhereFilterGeoRangeDistance? Distance { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}
