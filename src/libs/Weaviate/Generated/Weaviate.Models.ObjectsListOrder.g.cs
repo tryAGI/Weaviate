@@ -9,11 +9,11 @@ namespace Weaviate
     public enum ObjectsListOrder
     {
         /// <summary>
-        /// `sort=author_name,title&order=desc,asc`.
+        /// `sort=author_name,title&amp;order=desc,asc`.
         /// </summary>
         Asc,
         /// <summary>
-        /// `sort=author_name,title&order=desc,asc`.
+        /// `sort=author_name,title&amp;order=desc,asc`.
         /// </summary>
         Desc,
     }
