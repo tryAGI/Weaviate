@@ -24,7 +24,7 @@ namespace Weaviate
         /// Additional variables for the query.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variables")]
-        public global::Weaviate.GraphQLQueryVariables? Variables { get; set; }
+        public object? Variables { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

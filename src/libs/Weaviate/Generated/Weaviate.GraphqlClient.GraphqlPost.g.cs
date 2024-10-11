@@ -133,7 +133,7 @@ namespace Weaviate
         public async global::System.Threading.Tasks.Task<global::Weaviate.GraphQLResponse> GraphqlPostAsync(
             string? operationName = default,
             string? query = default,
-            global::Weaviate.GraphQLQueryVariables? variables = default,
+            object? variables = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Weaviate.GraphQLQuery

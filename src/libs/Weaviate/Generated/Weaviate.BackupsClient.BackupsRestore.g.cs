@@ -153,7 +153,7 @@ namespace Weaviate
             global::Weaviate.RestoreConfig? config = default,
             global::System.Collections.Generic.IList<string>? include = default,
             global::System.Collections.Generic.IList<string>? exclude = default,
-            global::Weaviate.BackupRestoreRequestNodeMapping? nodeMapping = default,
+            global::System.Collections.Generic.Dictionary<string, string>? nodeMapping = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Weaviate.BackupRestoreRequest

@@ -56,13 +56,13 @@ namespace Weaviate
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("leaderId")]
-        public global::Weaviate.StatisticsLeaderId? LeaderId { get; set; }
+        public object? LeaderId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("leaderAddress")]
-        public global::Weaviate.StatisticsLeaderAddress? LeaderAddress { get; set; }
+        public object? LeaderAddress { get; set; }
 
         /// <summary>
         /// 
@@ -80,7 +80,7 @@ namespace Weaviate
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("candidates")]
-        public global::Weaviate.StatisticsCandidates? Candidates { get; set; }
+        public object? Candidates { get; set; }
 
         /// <summary>
         /// The definition of Raft statistics.

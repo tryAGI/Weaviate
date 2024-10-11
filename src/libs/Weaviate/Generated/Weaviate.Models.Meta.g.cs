@@ -24,7 +24,7 @@ namespace Weaviate
         /// Module-specific meta information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modules")]
-        public global::Weaviate.MetaModules? Modules { get; set; }
+        public object? Modules { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -60,7 +60,7 @@ namespace Weaviate
         /// Weaviate Raft nodes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latestConfiguration")]
-        public global::Weaviate.RaftStatisticsLatestConfiguration? LatestConfiguration { get; set; }
+        public object? LatestConfiguration { get; set; }
 
         /// <summary>
         /// 
