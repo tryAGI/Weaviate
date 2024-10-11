@@ -62,7 +62,7 @@ namespace Weaviate
             global::Weaviate.ObjectsClassReferencesCreateConsistencyLevel? consistencyLevel = global::Weaviate.ObjectsClassReferencesCreateConsistencyLevel.QUORUM,
             string? tenant = default,
             string? @class = default,
-            global::Weaviate.PropertySchema? schema = default,
+            object? schema = default,
             string? beacon = default,
             string? href = default,
             global::Weaviate.ReferenceMetaClassification? classification = default,
