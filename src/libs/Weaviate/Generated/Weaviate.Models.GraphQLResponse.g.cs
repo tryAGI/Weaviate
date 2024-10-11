@@ -12,7 +12,7 @@ namespace Weaviate
         /// GraphQL data object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::Weaviate.GraphQLResponseData? Data { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, object>? Data { get; set; }
 
         /// <summary>
         /// Array with errors.

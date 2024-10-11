@@ -33,7 +33,7 @@ namespace Weaviate
         /// The value to be used within the operations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        public global::Weaviate.PatchDocumentActionValue? Value { get; set; }
+        public object? Value { get; set; }
 
         /// <summary>
         /// 

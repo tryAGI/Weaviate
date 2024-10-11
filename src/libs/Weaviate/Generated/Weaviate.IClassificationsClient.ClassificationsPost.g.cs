@@ -63,7 +63,7 @@ namespace Weaviate
             global::Weaviate.ClassificationStatus? status = default,
             global::Weaviate.ClassificationMeta? meta = default,
             string? type = default,
-            global::Weaviate.ClassificationSettings? settings = default,
+            object? settings = default,
             string? error = default,
             global::Weaviate.ClassificationFilters? filters = default,
             global::System.Threading.CancellationToken cancellationToken = default);
