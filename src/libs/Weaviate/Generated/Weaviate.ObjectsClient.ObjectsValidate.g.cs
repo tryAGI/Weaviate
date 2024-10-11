@@ -153,15 +153,15 @@ namespace Weaviate
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsValidateAsync(
             string? @class = default,
-            global::Weaviate.VectorWeights? vectorWeights = default,
-            global::Weaviate.PropertySchema? properties = default,
+            object? vectorWeights = default,
+            object? properties = default,
             global::System.Guid? id = default,
             long? creationTimeUnix = default,
             long? lastUpdateTimeUnix = default,
             global::System.Collections.Generic.IList<float>? vector = default,
-            global::Weaviate.Vectors? vectors = default,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<float>>? vectors = default,
             string? tenant = default,
-            global::Weaviate.AdditionalProperties? additional = default,
+            global::System.Collections.Generic.Dictionary<string, global::Weaviate.AdditionalProperties2>? additional = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Weaviate.Object

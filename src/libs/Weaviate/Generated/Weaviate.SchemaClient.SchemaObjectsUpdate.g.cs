@@ -170,7 +170,7 @@ namespace Weaviate
             string class1,
             global::Weaviate.ClassVectorConfig? vectorConfig = default,
             global::Weaviate.VectorIndexType? vectorIndexType = global::Weaviate.VectorIndexType.Hnsw,
-            global::Weaviate.VectorIndexConfig? vectorIndexConfig = default,
+            object? vectorIndexConfig = default,
             global::Weaviate.ShardingConfig? shardingConfig = default,
             global::Weaviate.ReplicationConfig? replicationConfig = default,
             global::Weaviate.InvertedIndexConfig? invertedIndexConfig = default,
