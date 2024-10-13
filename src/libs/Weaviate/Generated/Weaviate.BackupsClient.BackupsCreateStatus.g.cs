@@ -109,7 +109,7 @@ namespace Weaviate
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Weaviate.BackupCreateStatusResponse), JsonSerializerContext) as global::Weaviate.BackupCreateStatusResponse ??
+                global::Weaviate.BackupCreateStatusResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
