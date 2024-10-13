@@ -141,7 +141,7 @@ namespace Weaviate
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Weaviate.Object), JsonSerializerContext) as global::Weaviate.Object ??
+                global::Weaviate.Object.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
