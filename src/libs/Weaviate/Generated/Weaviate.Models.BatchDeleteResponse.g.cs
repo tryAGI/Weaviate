@@ -20,14 +20,14 @@ namespace Weaviate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.BatchDeleteResponseOutputJsonConverter))]
-        public global::Weaviate.BatchDeleteResponseOutput? Output { get; set; } = global::Weaviate.BatchDeleteResponseOutput.Minimal;
+        public global::Weaviate.BatchDeleteResponseOutput? Output { get; set; }
 
         /// <summary>
         /// If true, objects will not be deleted yet, but merely listed. Defaults to false.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dryRun")]
-        public bool? DryRun { get; set; } = false;
+        public bool? DryRun { get; set; }
 
         /// <summary>
         /// 

@@ -14,7 +14,7 @@ namespace Weaviate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preset")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.StopwordConfigPresetJsonConverter))]
-        public global::Weaviate.StopwordConfigPreset? Preset { get; set; } = global::Weaviate.StopwordConfigPreset.En;
+        public global::Weaviate.StopwordConfigPreset? Preset { get; set; }
 
         /// <summary>
         /// Stopwords to be considered additionally. Can be any array of custom strings.

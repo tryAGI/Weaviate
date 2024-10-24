@@ -50,7 +50,7 @@ namespace Weaviate
             global::System.Guid id,
             string propertyName,
             global::System.Collections.Generic.IList<global::Weaviate.SingleRef> request,
-            global::Weaviate.ObjectsClassReferencesPutConsistencyLevel? consistencyLevel = global::Weaviate.ObjectsClassReferencesPutConsistencyLevel.QUORUM,
+            global::Weaviate.ObjectsClassReferencesPutConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

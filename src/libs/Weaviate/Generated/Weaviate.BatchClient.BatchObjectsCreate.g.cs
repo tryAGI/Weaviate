@@ -35,7 +35,7 @@ namespace Weaviate
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.ObjectsGetResponse>> BatchObjectsCreateAsync(
             global::Weaviate.BatchObjectsCreateRequest request,
-            global::Weaviate.BatchObjectsCreateConsistencyLevel? consistencyLevel = global::Weaviate.BatchObjectsCreateConsistencyLevel.QUORUM,
+            global::Weaviate.BatchObjectsCreateConsistencyLevel? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -140,7 +140,7 @@ namespace Weaviate
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.ObjectsGetResponse>> BatchObjectsCreateAsync(
-            global::Weaviate.BatchObjectsCreateConsistencyLevel? consistencyLevel = global::Weaviate.BatchObjectsCreateConsistencyLevel.QUORUM,
+            global::Weaviate.BatchObjectsCreateConsistencyLevel? consistencyLevel = default,
             global::System.Collections.Generic.IList<global::Weaviate.BatchObjectsCreateRequestField>? fields = default,
             global::System.Collections.Generic.IList<global::Weaviate.Object>? objects = default,
             global::System.Threading.CancellationToken cancellationToken = default)

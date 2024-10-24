@@ -21,7 +21,7 @@ namespace Weaviate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorIndexType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.VectorIndexTypeJsonConverter))]
-        public global::Weaviate.VectorIndexType? VectorIndexType { get; set; } = global::Weaviate.VectorIndexType.Hnsw;
+        public global::Weaviate.VectorIndexType? VectorIndexType { get; set; }
 
         /// <summary>
         /// Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details

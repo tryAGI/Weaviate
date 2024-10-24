@@ -13,7 +13,7 @@ namespace Weaviate
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorizeClassName")]
-        public bool? VectorizeClassName { get; set; } = true;
+        public bool? VectorizeClassName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

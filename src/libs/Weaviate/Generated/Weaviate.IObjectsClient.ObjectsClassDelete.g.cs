@@ -19,7 +19,7 @@ namespace Weaviate
         global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassDeleteAsync(
             string className,
             global::System.Guid id,
-            global::Weaviate.ObjectsClassDeleteConsistencyLevel? consistencyLevel = global::Weaviate.ObjectsClassDeleteConsistencyLevel.QUORUM,
+            global::Weaviate.ObjectsClassDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

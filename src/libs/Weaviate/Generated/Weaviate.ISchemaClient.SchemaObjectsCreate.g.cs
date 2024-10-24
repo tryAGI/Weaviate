@@ -61,7 +61,7 @@ namespace Weaviate
         global::System.Threading.Tasks.Task<global::Weaviate.Class> SchemaObjectsCreateAsync(
             string class1,
             global::Weaviate.ClassVectorConfig? vectorConfig = default,
-            global::Weaviate.VectorIndexType? vectorIndexType = global::Weaviate.VectorIndexType.Hnsw,
+            global::Weaviate.VectorIndexType? vectorIndexType = default,
             object? vectorIndexConfig = default,
             global::Weaviate.ShardingConfig? shardingConfig = default,
             global::Weaviate.ReplicationConfig? replicationConfig = default,

@@ -16,7 +16,7 @@ namespace Weaviate
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>> BatchReferencesCreateAsync(
             global::System.Collections.Generic.IList<global::Weaviate.BatchReference> request,
-            global::Weaviate.BatchReferencesCreateConsistencyLevel? consistencyLevel = global::Weaviate.BatchReferencesCreateConsistencyLevel.QUORUM,
+            global::Weaviate.BatchReferencesCreateConsistencyLevel? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

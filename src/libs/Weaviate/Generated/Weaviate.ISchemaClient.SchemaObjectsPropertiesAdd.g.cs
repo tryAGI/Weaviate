@@ -64,11 +64,11 @@ namespace Weaviate
             string name,
             string? description = default,
             global::Weaviate.PropertyModuleConfig? moduleConfig = default,
-            bool? indexInverted = true,
-            bool? indexFilterable = true,
-            bool? indexSearchable = true,
+            bool? indexInverted = default,
+            bool? indexFilterable = default,
+            bool? indexSearchable = default,
             bool? indexRangeFilters = default,
-            global::Weaviate.Tokenization? tokenization = global::Weaviate.Tokenization.Word,
+            global::Weaviate.Tokenization? tokenization = default,
             global::System.Collections.Generic.IList<global::Weaviate.NestedProperty>? nestedProperties = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

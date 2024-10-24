@@ -55,8 +55,8 @@ namespace Weaviate
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.ObjectsListResponse> ObjectsListAsync(
             string? after = default,
-            long? offset = 0L,
-            long? limit = 25L,
+            long? offset = default,
+            long? limit = default,
             string? include = default,
             string? sort = default,
             global::Weaviate.ObjectsListOrder? order = default,

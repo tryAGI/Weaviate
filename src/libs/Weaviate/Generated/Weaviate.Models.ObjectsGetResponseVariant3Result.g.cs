@@ -13,7 +13,7 @@ namespace Weaviate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.ObjectsGetResponseVariant3ResultStatusJsonConverter))]
-        public global::Weaviate.ObjectsGetResponseVariant3ResultStatus? Status { get; set; } = global::Weaviate.ObjectsGetResponseVariant3ResultStatus.SUCCESS;
+        public global::Weaviate.ObjectsGetResponseVariant3ResultStatus? Status { get; set; }
 
         /// <summary>
         /// An error response given by Weaviate end-points.

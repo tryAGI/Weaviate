@@ -23,7 +23,7 @@ namespace Weaviate
             global::System.Guid id,
             string propertyName,
             global::Weaviate.SingleRef request,
-            global::Weaviate.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = global::Weaviate.ObjectsClassReferencesDeleteConsistencyLevel.QUORUM,
+            global::Weaviate.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -59,7 +59,7 @@ namespace Weaviate
             string className,
             global::System.Guid id,
             string propertyName,
-            global::Weaviate.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = global::Weaviate.ObjectsClassReferencesDeleteConsistencyLevel.QUORUM,
+            global::Weaviate.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             string? @class = default,
             object? schema = default,

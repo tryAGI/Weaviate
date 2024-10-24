@@ -20,7 +20,7 @@ namespace Weaviate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.StatisticsStatusJsonConverter))]
-        public global::Weaviate.StatisticsStatus? Status { get; set; } = global::Weaviate.StatisticsStatus.HEALTHY;
+        public global::Weaviate.StatisticsStatus? Status { get; set; }
 
         /// <summary>
         /// 
