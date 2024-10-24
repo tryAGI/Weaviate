@@ -13,7 +13,7 @@ namespace Weaviate
         /// Default Value: 50
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("CPUPercentage")]
-        public int? CPUPercentage { get; set; } = 50;
+        public int? CPUPercentage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

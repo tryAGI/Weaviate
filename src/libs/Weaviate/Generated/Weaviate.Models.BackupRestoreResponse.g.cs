@@ -44,7 +44,7 @@ namespace Weaviate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.BackupRestoreResponseStatusJsonConverter))]
-        public global::Weaviate.BackupRestoreResponseStatus? Status { get; set; } = global::Weaviate.BackupRestoreResponseStatus.STARTED;
+        public global::Weaviate.BackupRestoreResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

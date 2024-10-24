@@ -19,7 +19,7 @@ namespace Weaviate
         /// Default Value: 128
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("virtualPerPhysical")]
-        public int? VirtualPerPhysical { get; set; } = 128;
+        public int? VirtualPerPhysical { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

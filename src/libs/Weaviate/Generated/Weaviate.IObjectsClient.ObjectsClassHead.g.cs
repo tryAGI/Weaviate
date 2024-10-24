@@ -19,7 +19,7 @@ namespace Weaviate
         global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassHeadAsync(
             string className,
             global::System.Guid id,
-            global::Weaviate.ObjectsClassHeadConsistencyLevel? consistencyLevel = global::Weaviate.ObjectsClassHeadConsistencyLevel.QUORUM,
+            global::Weaviate.ObjectsClassHeadConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

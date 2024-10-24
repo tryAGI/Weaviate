@@ -20,7 +20,7 @@ namespace Weaviate
             string className,
             global::System.Guid id,
             global::Weaviate.Object request,
-            global::Weaviate.ObjectsClassPutConsistencyLevel? consistencyLevel = global::Weaviate.ObjectsClassPutConsistencyLevel.QUORUM,
+            global::Weaviate.ObjectsClassPutConsistencyLevel? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Weaviate
         global::System.Threading.Tasks.Task<global::Weaviate.Object> ObjectsClassPutAsync(
             string className,
             global::System.Guid id,
-            global::Weaviate.ObjectsClassPutConsistencyLevel? consistencyLevel = global::Weaviate.ObjectsClassPutConsistencyLevel.QUORUM,
+            global::Weaviate.ObjectsClassPutConsistencyLevel? consistencyLevel = default,
             string? @class = default,
             object? vectorWeights = default,
             object? properties = default,

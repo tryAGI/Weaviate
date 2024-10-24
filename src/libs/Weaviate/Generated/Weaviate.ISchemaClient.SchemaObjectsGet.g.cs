@@ -15,7 +15,7 @@ namespace Weaviate
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.Class> SchemaObjectsGetAsync(
             string className,
-            bool? consistency = true,
+            bool? consistency = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

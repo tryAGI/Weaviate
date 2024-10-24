@@ -65,7 +65,7 @@ namespace Weaviate
             string className,
             string class1,
             global::Weaviate.ClassVectorConfig? vectorConfig = default,
-            global::Weaviate.VectorIndexType? vectorIndexType = global::Weaviate.VectorIndexType.Hnsw,
+            global::Weaviate.VectorIndexType? vectorIndexType = default,
             object? vectorIndexConfig = default,
             global::Weaviate.ShardingConfig? shardingConfig = default,
             global::Weaviate.ReplicationConfig? replicationConfig = default,

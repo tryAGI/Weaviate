@@ -19,7 +19,7 @@ namespace Weaviate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.BatchDeleteResponseResultsObjectStatusJsonConverter))]
-        public global::Weaviate.BatchDeleteResponseResultsObjectStatus? Status { get; set; } = global::Weaviate.BatchDeleteResponseResultsObjectStatus.SUCCESS;
+        public global::Weaviate.BatchDeleteResponseResultsObjectStatus? Status { get; set; }
 
         /// <summary>
         /// An error response given by Weaviate end-points.

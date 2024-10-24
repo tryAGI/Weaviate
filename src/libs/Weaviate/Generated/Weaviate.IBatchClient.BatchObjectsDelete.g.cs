@@ -17,7 +17,7 @@ namespace Weaviate
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.BatchDeleteResponse> BatchObjectsDeleteAsync(
             global::Weaviate.BatchDelete request,
-            global::Weaviate.BatchObjectsDeleteConsistencyLevel? consistencyLevel = global::Weaviate.BatchObjectsDeleteConsistencyLevel.QUORUM,
+            global::Weaviate.BatchObjectsDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -43,11 +43,11 @@ namespace Weaviate
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.BatchDeleteResponse> BatchObjectsDeleteAsync(
-            global::Weaviate.BatchObjectsDeleteConsistencyLevel? consistencyLevel = global::Weaviate.BatchObjectsDeleteConsistencyLevel.QUORUM,
+            global::Weaviate.BatchObjectsDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::Weaviate.BatchDeleteMatch? match = default,
-            global::Weaviate.BatchDeleteOutput? output = global::Weaviate.BatchDeleteOutput.Minimal,
-            bool? dryRun = false,
+            global::Weaviate.BatchDeleteOutput? output = default,
+            bool? dryRun = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

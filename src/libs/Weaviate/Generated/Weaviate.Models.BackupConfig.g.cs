@@ -13,14 +13,14 @@ namespace Weaviate
         /// Default Value: 50
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("CPUPercentage")]
-        public int? CPUPercentage { get; set; } = 50;
+        public int? CPUPercentage { get; set; }
 
         /// <summary>
         /// Aimed chunk size, with a minimum of 2MB, default of 128MB, and a maximum of 512MB. The actual chunk size may vary.<br/>
         /// Default Value: 128
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ChunkSize")]
-        public int? ChunkSize { get; set; } = 128;
+        public int? ChunkSize { get; set; }
 
         /// <summary>
         /// Compression level used by compression algorithm<br/>
@@ -28,7 +28,7 @@ namespace Weaviate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("CompressionLevel")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.BackupConfigCompressionLevelJsonConverter))]
-        public global::Weaviate.BackupConfigCompressionLevel? CompressionLevel { get; set; } = global::Weaviate.BackupConfigCompressionLevel.DefaultCompression;
+        public global::Weaviate.BackupConfigCompressionLevel? CompressionLevel { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -35,7 +35,7 @@ namespace Weaviate
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.Tenant>> TenantsGetAsync(
             string className,
-            bool? consistency = true,
+            bool? consistency = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

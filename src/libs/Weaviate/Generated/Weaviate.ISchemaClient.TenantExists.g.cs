@@ -18,7 +18,7 @@ namespace Weaviate
         global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> TenantExistsAsync(
             string className,
             string tenantName,
-            bool? consistency = true,
+            bool? consistency = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

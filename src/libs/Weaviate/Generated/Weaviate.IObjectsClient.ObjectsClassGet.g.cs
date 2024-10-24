@@ -22,7 +22,7 @@ namespace Weaviate
             string className,
             global::System.Guid id,
             string? include = default,
-            global::Weaviate.ObjectsClassGetConsistencyLevel? consistencyLevel = global::Weaviate.ObjectsClassGetConsistencyLevel.QUORUM,
+            global::Weaviate.ObjectsClassGetConsistencyLevel? consistencyLevel = default,
             string? nodeName = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
