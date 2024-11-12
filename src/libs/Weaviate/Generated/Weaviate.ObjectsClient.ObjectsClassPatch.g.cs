@@ -22,11 +22,6 @@ namespace Weaviate
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessObjectsClassPatchResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Update an object using patch semantics.<br/>
         /// Update an individual data object based on its collection and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
@@ -38,8 +33,8 @@ namespace Weaviate
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassPatchAsync(
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task ObjectsClassPatchAsync(
             string className,
             global::System.Guid id,
             global::Weaviate.Object request,
@@ -112,30 +107,23 @@ namespace Weaviate
             ProcessObjectsClassPatchResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-            ProcessResponseContent(
-                client: HttpClient,
-                response: __response,
-                content: ref __content);
-            ProcessObjectsClassPatchResponseContent(
-                httpClient: HttpClient,
-                httpResponseMessage: __response,
-                content: ref __content);
-
             try
             {
                 __response.EnsureSuccessStatusCode();
             }
             catch (global::System.Net.Http.HttpRequestException __ex)
             {
-                throw new global::System.InvalidOperationException(__content, __ex);
+                throw new global::Weaviate.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
             }
-
-            return
-                global::Weaviate.ErrorResponse.FromJson(__content, JsonSerializerContext) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
@@ -179,7 +167,7 @@ namespace Weaviate
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassPatchAsync(
+        public async global::System.Threading.Tasks.Task ObjectsClassPatchAsync(
             string className,
             global::System.Guid id,
             global::Weaviate.ObjectsClassPatchConsistencyLevel? consistencyLevel = default,
@@ -209,7 +197,7 @@ namespace Weaviate
                 Additional = additional,
             };
 
-            return await ObjectsClassPatchAsync(
+            await ObjectsClassPatchAsync(
                 className: className,
                 id: id,
                 consistencyLevel: consistencyLevel,

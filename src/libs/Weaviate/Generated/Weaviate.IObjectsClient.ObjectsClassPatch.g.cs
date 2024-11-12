@@ -15,8 +15,8 @@ namespace Weaviate
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassPatchAsync(
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        global::System.Threading.Tasks.Task ObjectsClassPatchAsync(
             string className,
             global::System.Guid id,
             global::Weaviate.Object request,
@@ -64,7 +64,7 @@ namespace Weaviate
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassPatchAsync(
+        global::System.Threading.Tasks.Task ObjectsClassPatchAsync(
             string className,
             global::System.Guid id,
             global::Weaviate.ObjectsClassPatchConsistencyLevel? consistencyLevel = default,

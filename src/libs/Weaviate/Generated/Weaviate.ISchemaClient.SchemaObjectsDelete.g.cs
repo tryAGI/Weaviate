@@ -10,8 +10,8 @@ namespace Weaviate
         /// </summary>
         /// <param name="className"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> SchemaObjectsDeleteAsync(
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        global::System.Threading.Tasks.Task SchemaObjectsDeleteAsync(
             string className,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -15,8 +15,8 @@ namespace Weaviate
         /// </param>
         /// <param name="tenant"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassHeadAsync(
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        global::System.Threading.Tasks.Task ObjectsClassHeadAsync(
             string className,
             global::System.Guid id,
             global::Weaviate.ObjectsClassHeadConsistencyLevel? consistencyLevel = default,
