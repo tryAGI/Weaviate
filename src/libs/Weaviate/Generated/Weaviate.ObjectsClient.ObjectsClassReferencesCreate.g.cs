@@ -26,11 +26,6 @@ namespace Weaviate
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessObjectsClassReferencesCreateResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Add a cross-reference.<br/>
         /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
@@ -44,8 +39,8 @@ namespace Weaviate
         /// <param name="tenant"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassReferencesCreateAsync(
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task ObjectsClassReferencesCreateAsync(
             string className,
             global::System.Guid id,
             string propertyName,
@@ -125,30 +120,23 @@ namespace Weaviate
             ProcessObjectsClassReferencesCreateResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-            ProcessResponseContent(
-                client: HttpClient,
-                response: __response,
-                content: ref __content);
-            ProcessObjectsClassReferencesCreateResponseContent(
-                httpClient: HttpClient,
-                httpResponseMessage: __response,
-                content: ref __content);
-
             try
             {
                 __response.EnsureSuccessStatusCode();
             }
             catch (global::System.Net.Http.HttpRequestException __ex)
             {
-                throw new global::System.InvalidOperationException(__content, __ex);
+                throw new global::Weaviate.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
             }
-
-            return
-                global::Weaviate.ErrorResponse.FromJson(__content, JsonSerializerContext) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
@@ -179,7 +167,7 @@ namespace Weaviate
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassReferencesCreateAsync(
+        public async global::System.Threading.Tasks.Task ObjectsClassReferencesCreateAsync(
             string className,
             global::System.Guid id,
             string propertyName,
@@ -201,7 +189,7 @@ namespace Weaviate
                 Classification = classification,
             };
 
-            return await ObjectsClassReferencesCreateAsync(
+            await ObjectsClassReferencesCreateAsync(
                 className: className,
                 id: id,
                 propertyName: propertyName,

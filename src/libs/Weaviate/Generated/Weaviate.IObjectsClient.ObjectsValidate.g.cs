@@ -10,8 +10,8 @@ namespace Weaviate
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsValidateAsync(
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        global::System.Threading.Tasks.Task ObjectsValidateAsync(
             global::Weaviate.Object request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -51,7 +51,7 @@ namespace Weaviate
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsValidateAsync(
+        global::System.Threading.Tasks.Task ObjectsValidateAsync(
             string? @class = default,
             object? vectorWeights = default,
             object? properties = default,

@@ -9,7 +9,7 @@ namespace Weaviate
         /// Returns meta information about the server. Can be used to provide information to another Weaviate instance that wants to interact with the current instance.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.Meta> MetaGetAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }

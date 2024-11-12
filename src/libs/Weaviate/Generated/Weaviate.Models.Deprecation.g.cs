@@ -80,91 +80,74 @@ namespace Weaviate
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="Deprecation" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id">
+        /// The id that uniquely identifies this particular deprecations (mostly used internally)
+        /// </param>
+        /// <param name="status">
+        /// Whether the problematic API functionality is deprecated (planned to be removed) or already removed
+        /// </param>
+        /// <param name="apiType">
+        /// Describes which API is effected, usually one of: REST, GraphQL
+        /// </param>
+        /// <param name="msg">
+        /// What this deprecation is about
+        /// </param>
+        /// <param name="mitigation">
+        /// User-required object to not be affected by the (planned) removal
+        /// </param>
+        /// <param name="sinceVersion">
+        /// The deprecation was introduced in this version
+        /// </param>
+        /// <param name="plannedRemovalVersion">
+        /// A best-effort guess of which upcoming version will remove the feature entirely
+        /// </param>
+        /// <param name="removedIn">
+        /// If the feature has already been removed, it was removed in this version
+        /// </param>
+        /// <param name="removedTime">
+        /// If the feature has already been removed, it was removed at this timestamp
+        /// </param>
+        /// <param name="sinceTime">
+        /// The deprecation was introduced in this version
+        /// </param>
+        /// <param name="locations">
+        /// The locations within the specified API affected by this deprecation
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Deprecation(
+            string? id,
+            string? status,
+            string? apiType,
+            string? msg,
+            string? mitigation,
+            string? sinceVersion,
+            string? plannedRemovalVersion,
+            string? removedIn,
+            global::System.DateTime? removedTime,
+            global::System.DateTime? sinceTime,
+            global::System.Collections.Generic.IList<string>? locations)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Id = id;
+            this.Status = status;
+            this.ApiType = apiType;
+            this.Msg = msg;
+            this.Mitigation = mitigation;
+            this.SinceVersion = sinceVersion;
+            this.PlannedRemovalVersion = plannedRemovalVersion;
+            this.RemovedIn = removedIn;
+            this.RemovedTime = removedTime;
+            this.SinceTime = sinceTime;
+            this.Locations = locations;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="Deprecation" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public Deprecation()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Weaviate.Deprecation? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Weaviate.Deprecation),
-                jsonSerializerContext) as global::Weaviate.Deprecation;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Weaviate.Deprecation? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Weaviate.Deprecation>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Weaviate.Deprecation?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Weaviate.Deprecation),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Weaviate.Deprecation;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Weaviate.Deprecation?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Weaviate.Deprecation?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

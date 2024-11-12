@@ -22,11 +22,6 @@ namespace Weaviate
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessObjectsClassDeleteResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Delete an object.<br/>
         /// Delete an object based on its collection and UUID. &lt;br/&gt;&lt;br/&gt;Note: For backward compatibility, beacons also support an older, deprecated format without the collection name. As a result, when deleting a reference, the beacon specified has to match the beacon to be deleted exactly. In other words, if a beacon is present using the old format (without collection name) you also need to specify it the same way. &lt;br/&gt;&lt;br/&gt;In the beacon format, you need to always use `localhost` as the host, rather than the actual hostname. `localhost` here refers to the fact that the beacon's target is on the same Weaviate instance, as opposed to a foreign instance.
@@ -38,8 +33,8 @@ namespace Weaviate
         /// </param>
         /// <param name="tenant"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassDeleteAsync(
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task ObjectsClassDeleteAsync(
             string className,
             global::System.Guid id,
             global::Weaviate.ObjectsClassDeleteConsistencyLevel? consistencyLevel = default,
@@ -105,30 +100,23 @@ namespace Weaviate
             ProcessObjectsClassDeleteResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-            ProcessResponseContent(
-                client: HttpClient,
-                response: __response,
-                content: ref __content);
-            ProcessObjectsClassDeleteResponseContent(
-                httpClient: HttpClient,
-                httpResponseMessage: __response,
-                content: ref __content);
-
             try
             {
                 __response.EnsureSuccessStatusCode();
             }
             catch (global::System.Net.Http.HttpRequestException __ex)
             {
-                throw new global::System.InvalidOperationException(__content, __ex);
+                throw new global::Weaviate.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
             }
-
-            return
-                global::Weaviate.ErrorResponse.FromJson(__content, JsonSerializerContext) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

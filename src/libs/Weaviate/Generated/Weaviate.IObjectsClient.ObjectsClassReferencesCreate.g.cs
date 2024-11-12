@@ -17,8 +17,8 @@ namespace Weaviate
         /// <param name="tenant"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassReferencesCreateAsync(
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        global::System.Threading.Tasks.Task ObjectsClassReferencesCreateAsync(
             string className,
             global::System.Guid id,
             string propertyName,
@@ -55,7 +55,7 @@ namespace Weaviate
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> ObjectsClassReferencesCreateAsync(
+        global::System.Threading.Tasks.Task ObjectsClassReferencesCreateAsync(
             string className,
             global::System.Guid id,
             string propertyName,

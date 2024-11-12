@@ -14,8 +14,8 @@ namespace Weaviate
         /// Default Value: true
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Weaviate.ErrorResponse> TenantExistsAsync(
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        global::System.Threading.Tasks.Task TenantExistsAsync(
             string className,
             string tenantName,
             bool? consistency = default,

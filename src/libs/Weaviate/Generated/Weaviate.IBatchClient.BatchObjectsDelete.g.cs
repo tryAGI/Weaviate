@@ -14,7 +14,7 @@ namespace Weaviate
         /// <param name="tenant"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.BatchDeleteResponse> BatchObjectsDeleteAsync(
             global::Weaviate.BatchDelete request,
             global::Weaviate.BatchObjectsDeleteConsistencyLevel? consistencyLevel = default,
