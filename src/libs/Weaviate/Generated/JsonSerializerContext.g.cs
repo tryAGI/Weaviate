@@ -101,6 +101,7 @@ namespace Weaviate
             typeof(global::Weaviate.JsonConverters.NodesGetClassOutputNullableJsonConverter),
             typeof(global::Weaviate.JsonConverters.BatchReferenceResponseJsonConverter),
             typeof(global::Weaviate.JsonConverters.ObjectsGetResponseJsonConverter),
+            typeof(global::Weaviate.JsonConverters.UnixTimestampJsonConverter),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.JsonSerializerContextTypes))]
