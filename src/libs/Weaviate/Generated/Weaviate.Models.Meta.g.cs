@@ -27,6 +27,12 @@ namespace Weaviate
         public object? Modules { get; set; }
 
         /// <summary>
+        /// Max message size for GRPC connection in bytes.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("grpcMaxMessageSize")]
+        public int? GrpcMaxMessageSize { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -44,15 +50,20 @@ namespace Weaviate
         /// <param name="modules">
         /// Module-specific meta information.
         /// </param>
+        /// <param name="grpcMaxMessageSize">
+        /// Max message size for GRPC connection in bytes.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Meta(
             string? hostname,
             string? version,
-            object? modules)
+            object? modules,
+            int? grpcMaxMessageSize)
         {
             this.Hostname = hostname;
             this.Version = version;
             this.Modules = modules;
+            this.GrpcMaxMessageSize = grpcMaxMessageSize;
         }
 
         /// <summary>

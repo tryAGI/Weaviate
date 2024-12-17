@@ -24,7 +24,7 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get a single collection schema.
+        /// Get a single class from the schema
         /// </summary>
         /// <param name="className"></param>
         /// <param name="consistency">

@@ -9,11 +9,10 @@ namespace Weaviate
     public sealed partial class BackupCreateRequest
     {
         /// <summary>
-        /// The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
+        /// The ID of the backup (required). Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// Backup custom configuration
@@ -43,7 +42,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="BackupCreateRequest" /> class.
         /// </summary>
         /// <param name="id">
-        /// The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
+        /// The ID of the backup (required). Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
         /// </param>
         /// <param name="config">
         /// Backup custom configuration
@@ -56,12 +55,12 @@ namespace Weaviate
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public BackupCreateRequest(
-            string id,
+            string? id,
             global::Weaviate.BackupConfig? config,
             global::System.Collections.Generic.IList<string>? include,
             global::System.Collections.Generic.IList<string>? exclude)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Id = id;
             this.Config = config;
             this.Include = include;
             this.Exclude = exclude;

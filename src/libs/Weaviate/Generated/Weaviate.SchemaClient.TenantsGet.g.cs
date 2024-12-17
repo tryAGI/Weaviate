@@ -25,7 +25,7 @@ namespace Weaviate
 
         /// <summary>
         /// Get the list of tenants.<br/>
-        /// Get all tenants from a collection.
+        /// get all tenants from a specific class
         /// </summary>
         /// <param name="className"></param>
         /// <param name="consistency">

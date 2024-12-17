@@ -101,5 +101,10 @@ namespace Weaviate
         /// </summary>
         public ClassificationsClient Classifications { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public AuthzClient Authz { get; }
+
     }
 }

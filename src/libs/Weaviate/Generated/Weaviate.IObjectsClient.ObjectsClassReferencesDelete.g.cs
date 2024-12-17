@@ -5,15 +5,13 @@ namespace Weaviate
     public partial interface IObjectsClient
     {
         /// <summary>
-        /// Delete a cross-reference.<br/>
+        /// Delete the single reference that is given in the body from the list of references that this property has.<br/>
         /// Delete the single reference that is given in the body from the list of references that this property has.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
         /// <param name="propertyName"></param>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -23,20 +21,18 @@ namespace Weaviate
             global::System.Guid id,
             string propertyName,
             global::Weaviate.SingleRef request,
-            global::Weaviate.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a cross-reference.<br/>
+        /// Delete the single reference that is given in the body from the list of references that this property has.<br/>
         /// Delete the single reference that is given in the body from the list of references that this property has.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
         /// <param name="propertyName"></param>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
         /// <param name="class">
         /// If using a concept reference (rather than a direct reference), specify the desired class name here
@@ -59,7 +55,7 @@ namespace Weaviate
             string className,
             global::System.Guid id,
             string propertyName,
-            global::Weaviate.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             string? tenant = default,
             string? @class = default,
             object? schema = default,

@@ -23,7 +23,7 @@ namespace Weaviate
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id">
-        /// The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
+        /// The ID of the backup (required). Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
         /// </param>
         /// <param name="config">
         /// Backup custom configuration
@@ -38,7 +38,7 @@ namespace Weaviate
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.BackupCreateResponse> BackupsCreateAsync(
             string backend,
-            string id,
+            string? id = default,
             global::Weaviate.BackupConfig? config = default,
             global::System.Collections.Generic.IList<string>? include = default,
             global::System.Collections.Generic.IList<string>? exclude = default,

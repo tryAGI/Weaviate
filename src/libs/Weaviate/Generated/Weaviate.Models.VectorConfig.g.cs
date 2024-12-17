@@ -4,27 +4,24 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Configuration of each named vector.
+    /// 
     /// </summary>
     public sealed partial class VectorConfig
     {
         /// <summary>
-        /// Vectorizer for this collection (e.g. `text2vec-transformers`). This will override any cluster-wide default set by an environment variable. &lt;br/&gt;&lt;br/&gt;If `none`, you must import a vector with each object yourself.
+        /// Configuration of a specific vectorizer used by this vector
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorizer")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.VectorizerJsonConverter))]
-        public global::Weaviate.Vectorizer? Vectorizer { get; set; }
+        public object? Vectorizer { get; set; }
 
         /// <summary>
-        /// Name of the vector index to use, eg. (HNSW)<br/>
-        /// Default Value: hnsw
+        /// Name of the vector index to use, eg. (HNSW)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorIndexType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.VectorIndexTypeJsonConverter))]
-        public global::Weaviate.VectorIndexType? VectorIndexType { get; set; }
+        public string? VectorIndexType { get; set; }
 
         /// <summary>
-        /// Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details
+        /// Vector-index config, that is specific to the type of index selected in vectorIndexType
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorIndexConfig")]
         public object? VectorIndexConfig { get; set; }
@@ -39,19 +36,18 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="VectorConfig" /> class.
         /// </summary>
         /// <param name="vectorizer">
-        /// Vectorizer for this collection (e.g. `text2vec-transformers`). This will override any cluster-wide default set by an environment variable. &lt;br/&gt;&lt;br/&gt;If `none`, you must import a vector with each object yourself.
+        /// Configuration of a specific vectorizer used by this vector
         /// </param>
         /// <param name="vectorIndexType">
-        /// Name of the vector index to use, eg. (HNSW)<br/>
-        /// Default Value: hnsw
+        /// Name of the vector index to use, eg. (HNSW)
         /// </param>
         /// <param name="vectorIndexConfig">
-        /// Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details
+        /// Vector-index config, that is specific to the type of index selected in vectorIndexType
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public VectorConfig(
-            global::Weaviate.Vectorizer? vectorizer,
-            global::Weaviate.VectorIndexType? vectorIndexType,
+            object? vectorizer,
+            string? vectorIndexType,
             object? vectorIndexConfig)
         {
             this.Vectorizer = vectorizer;

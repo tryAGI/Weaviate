@@ -15,10 +15,6 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        PENDING,
-        /// <summary>
-        /// 
-        /// </summary>
         FAILED,
     }
 
@@ -35,7 +31,6 @@ namespace Weaviate
             return value switch
             {
                 BatchReferenceResponseVariant2ResultStatus.SUCCESS => "SUCCESS",
-                BatchReferenceResponseVariant2ResultStatus.PENDING => "PENDING",
                 BatchReferenceResponseVariant2ResultStatus.FAILED => "FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -48,7 +43,6 @@ namespace Weaviate
             return value switch
             {
                 "SUCCESS" => BatchReferenceResponseVariant2ResultStatus.SUCCESS,
-                "PENDING" => BatchReferenceResponseVariant2ResultStatus.PENDING,
                 "FAILED" => BatchReferenceResponseVariant2ResultStatus.FAILED,
                 _ => null,
             };

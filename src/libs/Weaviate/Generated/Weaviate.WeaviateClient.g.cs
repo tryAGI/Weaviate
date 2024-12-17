@@ -146,6 +146,15 @@ namespace Weaviate
         };
 
         /// <summary>
+        /// 
+        /// </summary>
+        public AuthzClient Authz => new AuthzClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Creates a new instance of the WeaviateClient.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.

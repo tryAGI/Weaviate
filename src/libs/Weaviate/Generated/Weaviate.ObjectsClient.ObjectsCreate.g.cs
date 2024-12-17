@@ -7,12 +7,12 @@ namespace Weaviate
     {
         partial void PrepareObjectsCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::Weaviate.ObjectsCreateConsistencyLevel? consistencyLevel,
+            ref string? consistencyLevel,
             global::Weaviate.Object request);
         partial void PrepareObjectsCreateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Weaviate.ObjectsCreateConsistencyLevel? consistencyLevel,
+            string? consistencyLevel,
             global::Weaviate.Object request);
         partial void ProcessObjectsCreateResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -27,15 +27,13 @@ namespace Weaviate
         /// Create a new object.<br/>
         /// Create a new object. &lt;br/&gt;&lt;br/&gt;Meta-data and schema values are validated. &lt;br/&gt;&lt;br/&gt;**Note: Use `/batch` for importing many objects**: &lt;br/&gt;If you plan on importing a large number of objects, it's much more efficient to use the `/batch` endpoint. Otherwise, sending multiple single requests sequentially would incur a large performance penalty. &lt;br/&gt;&lt;br/&gt;**Note: idempotence of `/objects`**: &lt;br/&gt;POST /objects will fail if an id is provided which already exists in the class. To update an existing object with the objects endpoint, use the PUT or PATCH method.
         /// </summary>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.Object> ObjectsCreateAsync(
             global::Weaviate.Object request,
-            global::Weaviate.ObjectsCreateConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -51,7 +49,7 @@ namespace Weaviate
                 path: "/objects",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
+                .AddOptionalParameter("consistency_level", consistencyLevel) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -309,20 +307,18 @@ namespace Weaviate
         /// Create a new object.<br/>
         /// Create a new object. &lt;br/&gt;&lt;br/&gt;Meta-data and schema values are validated. &lt;br/&gt;&lt;br/&gt;**Note: Use `/batch` for importing many objects**: &lt;br/&gt;If you plan on importing a large number of objects, it's much more efficient to use the `/batch` endpoint. Otherwise, sending multiple single requests sequentially would incur a large performance penalty. &lt;br/&gt;&lt;br/&gt;**Note: idempotence of `/objects`**: &lt;br/&gt;POST /objects will fail if an id is provided which already exists in the class. To update an existing object with the objects endpoint, use the PUT or PATCH method.
         /// </summary>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="class">
-        /// The object collection name.
+        /// Class of the Object, defined in the schema.
         /// </param>
         /// <param name="vectorWeights">
-        /// Allow custom overrides of vector weights as math expressions in word-based vectorization models. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word.
+        /// Allow custom overrides of vector weights as math expressions. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
         /// </param>
         /// <param name="properties">
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </param>
         /// <param name="id">
-        /// ID of the object.
+        /// ID of the Object.
         /// </param>
         /// <param name="creationTimeUnix">
         /// (Response only) Timestamp of creation of this object in milliseconds since epoch UTC.
@@ -331,13 +327,13 @@ namespace Weaviate
         /// (Response only) Timestamp of the last object update in milliseconds since epoch UTC.
         /// </param>
         /// <param name="vector">
-        /// A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.
+        /// A vector representation of the object in the Contextionary. If provided at object creation, this wil take precedence over any vectorizer setting.
         /// </param>
         /// <param name="vectors">
         /// A map of named vectors for multi-vector representations.
         /// </param>
         /// <param name="tenant">
-        /// Name of the tenant.
+        /// Name of the Objects tenant.
         /// </param>
         /// <param name="additional">
         /// (Response only) Additional meta information about a single object.
@@ -345,7 +341,7 @@ namespace Weaviate
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.Object> ObjectsCreateAsync(
-            global::Weaviate.ObjectsCreateConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             string? @class = default,
             object? vectorWeights = default,
             object? properties = default,

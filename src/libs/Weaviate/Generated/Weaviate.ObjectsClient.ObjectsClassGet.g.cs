@@ -10,7 +10,7 @@ namespace Weaviate
             ref string className,
             ref global::System.Guid id,
             ref string? include,
-            ref global::Weaviate.ObjectsClassGetConsistencyLevel? consistencyLevel,
+            ref string? consistencyLevel,
             ref string? nodeName,
             ref string? tenant);
         partial void PrepareObjectsClassGetRequest(
@@ -19,7 +19,7 @@ namespace Weaviate
             string className,
             global::System.Guid id,
             string? include,
-            global::Weaviate.ObjectsClassGetConsistencyLevel? consistencyLevel,
+            string? consistencyLevel,
             string? nodeName,
             string? tenant);
         partial void ProcessObjectsClassGetResponse(
@@ -32,15 +32,13 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get an object.<br/>
+        /// Get a specific Object based on its class and UUID. Also available as Websocket bus.<br/>
         /// Get a data object based on its collection and UUID. Also available as Websocket bus.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
         /// <param name="include"></param>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="nodeName"></param>
         /// <param name="tenant"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -49,7 +47,7 @@ namespace Weaviate
             string className,
             global::System.Guid id,
             string? include = default,
-            global::Weaviate.ObjectsClassGetConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             string? nodeName = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -70,7 +68,7 @@ namespace Weaviate
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("include", include) 
-                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
+                .AddOptionalParameter("consistency_level", consistencyLevel) 
                 .AddOptionalParameter("node_name", nodeName) 
                 .AddOptionalParameter("tenant", tenant) 
                 ; 

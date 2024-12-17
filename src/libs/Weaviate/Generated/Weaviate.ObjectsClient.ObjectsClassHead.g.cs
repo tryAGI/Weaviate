@@ -9,35 +9,33 @@ namespace Weaviate
             global::System.Net.Http.HttpClient httpClient,
             ref string className,
             ref global::System.Guid id,
-            ref global::Weaviate.ObjectsClassHeadConsistencyLevel? consistencyLevel,
+            ref string? consistencyLevel,
             ref string? tenant);
         partial void PrepareObjectsClassHeadRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string className,
             global::System.Guid id,
-            global::Weaviate.ObjectsClassHeadConsistencyLevel? consistencyLevel,
+            string? consistencyLevel,
             string? tenant);
         partial void ProcessObjectsClassHeadResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Check if an object exists.<br/>
+        /// Checks object's existence based on its class and uuid.<br/>
         /// Checks if a data object exists based on its collection and uuid without retrieving it. &lt;br/&gt;&lt;br/&gt;Internally it skips reading the object from disk other than checking if it is present. Thus it does not use resources on marshalling, parsing, etc., and is faster. Note the resulting HTTP request has no body; the existence of an object is indicated solely by the status code.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task ObjectsClassHeadAsync(
             string className,
             global::System.Guid id,
-            global::Weaviate.ObjectsClassHeadConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -54,7 +52,7 @@ namespace Weaviate
                 path: $"/objects/{className}/{id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
+                .AddOptionalParameter("consistency_level", consistencyLevel) 
                 .AddOptionalParameter("tenant", tenant) 
                 ; 
             var __path = __pathBuilder.ToString();

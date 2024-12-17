@@ -316,10 +316,10 @@ namespace Weaviate
         /// Backup custom configuration
         /// </param>
         /// <param name="include">
-        /// List of collections to include in the backup restoration process. If not set, all collections are included. Cannot be used together with `exclude`.
+        /// List of classes to include in the backup restoration process
         /// </param>
         /// <param name="exclude">
-        /// List of collections to exclude from the backup restoration process. If not set, all collections are included. Cannot be used together with `include`.
+        /// List of classes to exclude from the backup restoration process
         /// </param>
         /// <param name="nodeMapping">
         /// Allows overriding the node names stored in the backup with different ones. Useful when restoring backups to a different environment.

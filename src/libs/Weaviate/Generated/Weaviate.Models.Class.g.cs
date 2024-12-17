@@ -9,37 +9,34 @@ namespace Weaviate
     public sealed partial class Class
     {
         /// <summary>
-        /// Name of the collection (a.k.a. class). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
+        /// Name of the class (a.k.a. 'collection') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("class")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Class1 { get; set; }
+        public string? Class1 { get; set; }
 
         /// <summary>
-        /// Configure named vectors (https://weaviate.io/developers/weaviate/config-refs/schema/multi-vector). Either use this field or `vectorizer`, `vectorIndexType`, and `vectorIndexConfig` fields. Available from `v1.24.0`.
+        /// Configure named vectors. Either use this field or `vectorizer`, `vectorIndexType`, and `vectorIndexConfig` fields. Available from `v1.24.0`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorConfig")]
-        public global::Weaviate.ClassVectorConfig? VectorConfig { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Weaviate.VectorConfig>? VectorConfig { get; set; }
 
         /// <summary>
-        /// Name of the vector index to use, eg. (HNSW)<br/>
-        /// Default Value: hnsw
+        /// Name of the vector index to use, eg. (HNSW)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorIndexType")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.VectorIndexTypeJsonConverter))]
-        public global::Weaviate.VectorIndexType? VectorIndexType { get; set; }
+        public string? VectorIndexType { get; set; }
 
         /// <summary>
-        /// Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details
+        /// Vector-index config, that is specific to the type of index selected in vectorIndexType
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorIndexConfig")]
         public object? VectorIndexConfig { get; set; }
 
         /// <summary>
-        /// Specify how the index should be sharded and distributed in the cluster
+        /// Manage how the index should be sharded and distributed in the cluster
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shardingConfig")]
-        public global::Weaviate.ShardingConfig? ShardingConfig { get; set; }
+        public object? ShardingConfig { get; set; }
 
         /// <summary>
         /// Configure how replication is executed in a cluster
@@ -48,7 +45,7 @@ namespace Weaviate
         public global::Weaviate.ReplicationConfig? ReplicationConfig { get; set; }
 
         /// <summary>
-        /// Configure the inverted index built into Weaviate
+        /// Configure the inverted index built into Weaviate (default: 60).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invertedIndexConfig")]
         public global::Weaviate.InvertedIndexConfig? InvertedIndexConfig { get; set; }
@@ -60,20 +57,19 @@ namespace Weaviate
         public global::Weaviate.MultiTenancyConfig? MultiTenancyConfig { get; set; }
 
         /// <summary>
-        /// Vectorizer for this collection (e.g. `text2vec-transformers`). This will override any cluster-wide default set by an environment variable. &lt;br/&gt;&lt;br/&gt;If `none`, you must import a vector with each object yourself.
+        /// Specify how the vectors for this class should be determined. The options are either 'none' - this means you have to import a vector with each object yourself - or the name of a module that provides vectorization capabilities, such as 'text2vec-contextionary'. If left empty, it will use the globally configured default which can itself either be 'none' or a specific module.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorizer")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.VectorizerJsonConverter))]
-        public global::Weaviate.Vectorizer? Vectorizer { get; set; }
+        public string? Vectorizer { get; set; }
 
         /// <summary>
         /// Configuration specific to modules in a collection context.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("moduleConfig")]
-        public global::Weaviate.ClassModuleConfig? ModuleConfig { get; set; }
+        public object? ModuleConfig { get; set; }
 
         /// <summary>
-        /// Description of the collection for documentation purposes.
+        /// Description of the collection for metadata purposes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
@@ -94,58 +90,57 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="Class" /> class.
         /// </summary>
         /// <param name="class1">
-        /// Name of the collection (a.k.a. class). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
+        /// Name of the class (a.k.a. 'collection') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
         /// </param>
         /// <param name="vectorConfig">
-        /// Configure named vectors (https://weaviate.io/developers/weaviate/config-refs/schema/multi-vector). Either use this field or `vectorizer`, `vectorIndexType`, and `vectorIndexConfig` fields. Available from `v1.24.0`.
+        /// Configure named vectors. Either use this field or `vectorizer`, `vectorIndexType`, and `vectorIndexConfig` fields. Available from `v1.24.0`.
         /// </param>
         /// <param name="vectorIndexType">
-        /// Name of the vector index to use, eg. (HNSW)<br/>
-        /// Default Value: hnsw
+        /// Name of the vector index to use, eg. (HNSW)
         /// </param>
         /// <param name="vectorIndexConfig">
-        /// Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details
+        /// Vector-index config, that is specific to the type of index selected in vectorIndexType
         /// </param>
         /// <param name="shardingConfig">
-        /// Specify how the index should be sharded and distributed in the cluster
+        /// Manage how the index should be sharded and distributed in the cluster
         /// </param>
         /// <param name="replicationConfig">
         /// Configure how replication is executed in a cluster
         /// </param>
         /// <param name="invertedIndexConfig">
-        /// Configure the inverted index built into Weaviate
+        /// Configure the inverted index built into Weaviate (default: 60).
         /// </param>
         /// <param name="multiTenancyConfig">
         /// Configuration related to multi-tenancy within a class
         /// </param>
         /// <param name="vectorizer">
-        /// Vectorizer for this collection (e.g. `text2vec-transformers`). This will override any cluster-wide default set by an environment variable. &lt;br/&gt;&lt;br/&gt;If `none`, you must import a vector with each object yourself.
+        /// Specify how the vectors for this class should be determined. The options are either 'none' - this means you have to import a vector with each object yourself - or the name of a module that provides vectorization capabilities, such as 'text2vec-contextionary'. If left empty, it will use the globally configured default which can itself either be 'none' or a specific module.
         /// </param>
         /// <param name="moduleConfig">
         /// Configuration specific to modules in a collection context.
         /// </param>
         /// <param name="description">
-        /// Description of the collection for documentation purposes.
+        /// Description of the collection for metadata purposes.
         /// </param>
         /// <param name="properties">
         /// Define properties of the collection.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Class(
-            string class1,
-            global::Weaviate.ClassVectorConfig? vectorConfig,
-            global::Weaviate.VectorIndexType? vectorIndexType,
+            string? class1,
+            global::System.Collections.Generic.Dictionary<string, global::Weaviate.VectorConfig>? vectorConfig,
+            string? vectorIndexType,
             object? vectorIndexConfig,
-            global::Weaviate.ShardingConfig? shardingConfig,
+            object? shardingConfig,
             global::Weaviate.ReplicationConfig? replicationConfig,
             global::Weaviate.InvertedIndexConfig? invertedIndexConfig,
             global::Weaviate.MultiTenancyConfig? multiTenancyConfig,
-            global::Weaviate.Vectorizer? vectorizer,
-            global::Weaviate.ClassModuleConfig? moduleConfig,
+            string? vectorizer,
+            object? moduleConfig,
             string? description,
             global::System.Collections.Generic.IList<global::Weaviate.Property>? properties)
         {
-            this.Class1 = class1 ?? throw new global::System.ArgumentNullException(nameof(class1));
+            this.Class1 = class1;
             this.VectorConfig = vectorConfig;
             this.VectorIndexType = vectorIndexType;
             this.VectorIndexConfig = vectorIndexConfig;

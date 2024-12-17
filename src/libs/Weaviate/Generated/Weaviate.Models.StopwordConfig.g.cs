@@ -9,21 +9,19 @@ namespace Weaviate
     public sealed partial class StopwordConfig
     {
         /// <summary>
-        /// pre-existing list of common words by language<br/>
-        /// Default Value: en
+        /// Pre-existing list of common words by language (default: 'en'). Options: ['en', 'none'].
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preset")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.StopwordConfigPresetJsonConverter))]
-        public global::Weaviate.StopwordConfigPreset? Preset { get; set; }
+        public string? Preset { get; set; }
 
         /// <summary>
-        /// Stopwords to be considered additionally. Can be any array of custom strings.
+        /// Stopwords to be considered additionally (default: []). Can be any array of custom strings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("additions")]
         public global::System.Collections.Generic.IList<string>? Additions { get; set; }
 
         /// <summary>
-        /// stopwords to be removed from consideration. Can be any array of custom strings.
+        /// Stopwords to be removed from consideration (default: []). Can be any array of custom strings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("removals")]
         public global::System.Collections.Generic.IList<string>? Removals { get; set; }
@@ -38,18 +36,17 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="StopwordConfig" /> class.
         /// </summary>
         /// <param name="preset">
-        /// pre-existing list of common words by language<br/>
-        /// Default Value: en
+        /// Pre-existing list of common words by language (default: 'en'). Options: ['en', 'none'].
         /// </param>
         /// <param name="additions">
-        /// Stopwords to be considered additionally. Can be any array of custom strings.
+        /// Stopwords to be considered additionally (default: []). Can be any array of custom strings.
         /// </param>
         /// <param name="removals">
-        /// stopwords to be removed from consideration. Can be any array of custom strings.
+        /// Stopwords to be removed from consideration (default: []). Can be any array of custom strings.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public StopwordConfig(
-            global::Weaviate.StopwordConfigPreset? preset,
+            string? preset,
             global::System.Collections.Generic.IList<string>? additions,
             global::System.Collections.Generic.IList<string>? removals)
         {

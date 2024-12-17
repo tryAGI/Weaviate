@@ -20,7 +20,7 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// OIDC discovery information (if OIDC auth is enabled)<br/>
+        /// OIDC discovery information if OIDC auth is enabled<br/>
         /// OIDC Discovery page, redirects to the token issuer if one is configured
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

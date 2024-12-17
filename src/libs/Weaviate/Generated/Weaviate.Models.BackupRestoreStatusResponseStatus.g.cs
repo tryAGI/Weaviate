@@ -29,6 +29,10 @@ namespace Weaviate
         /// 
         /// </summary>
         FAILED,
+        /// <summary>
+        /// 
+        /// </summary>
+        CANCELED,
     }
 
     /// <summary>
@@ -48,6 +52,7 @@ namespace Weaviate
                 BackupRestoreStatusResponseStatus.TRANSFERRED => "TRANSFERRED",
                 BackupRestoreStatusResponseStatus.SUCCESS => "SUCCESS",
                 BackupRestoreStatusResponseStatus.FAILED => "FAILED",
+                BackupRestoreStatusResponseStatus.CANCELED => "CANCELED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,6 +68,7 @@ namespace Weaviate
                 "TRANSFERRED" => BackupRestoreStatusResponseStatus.TRANSFERRED,
                 "SUCCESS" => BackupRestoreStatusResponseStatus.SUCCESS,
                 "FAILED" => BackupRestoreStatusResponseStatus.FAILED,
+                "CANCELED" => BackupRestoreStatusResponseStatus.CANCELED,
                 _ => null,
             };
         }

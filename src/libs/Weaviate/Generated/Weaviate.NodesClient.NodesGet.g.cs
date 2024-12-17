@@ -7,11 +7,11 @@ namespace Weaviate
     {
         partial void PrepareNodesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::Weaviate.NodesGetOutput? output);
+            ref string? output);
         partial void PrepareNodesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Weaviate.NodesGetOutput? output);
+            string? output);
         partial void ProcessNodesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,7 +31,7 @@ namespace Weaviate
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.NodesStatusResponse> NodesGetAsync(
-            global::Weaviate.NodesGetOutput? output = default,
+            string? output = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -44,7 +44,7 @@ namespace Weaviate
                 path: "/nodes",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("output", output?.ToValueString()) 
+                .AddOptionalParameter("output", output) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

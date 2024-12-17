@@ -10,7 +10,7 @@ namespace Weaviate
             ref string className,
             ref global::System.Guid id,
             ref string propertyName,
-            ref global::Weaviate.ObjectsClassReferencesCreateConsistencyLevel? consistencyLevel,
+            ref string? consistencyLevel,
             ref string? tenant,
             global::Weaviate.SingleRef request);
         partial void PrepareObjectsClassReferencesCreateRequest(
@@ -19,7 +19,7 @@ namespace Weaviate
             string className,
             global::System.Guid id,
             string propertyName,
-            global::Weaviate.ObjectsClassReferencesCreateConsistencyLevel? consistencyLevel,
+            string? consistencyLevel,
             string? tenant,
             global::Weaviate.SingleRef request);
         partial void ProcessObjectsClassReferencesCreateResponse(
@@ -27,15 +27,13 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Add a cross-reference.<br/>
+        /// Add a single reference to a class-property.<br/>
         /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
         /// <param name="propertyName"></param>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -45,7 +43,7 @@ namespace Weaviate
             global::System.Guid id,
             string propertyName,
             global::Weaviate.SingleRef request,
-            global::Weaviate.ObjectsClassReferencesCreateConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -66,7 +64,7 @@ namespace Weaviate
                 path: $"/objects/{className}/{id}/references/{propertyName}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
+                .AddOptionalParameter("consistency_level", consistencyLevel) 
                 .AddOptionalParameter("tenant", tenant) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -144,15 +142,13 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// Add a cross-reference.<br/>
+        /// Add a single reference to a class-property.<br/>
         /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
         /// <param name="propertyName"></param>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
         /// <param name="class">
         /// If using a concept reference (rather than a direct reference), specify the desired class name here
@@ -175,7 +171,7 @@ namespace Weaviate
             string className,
             global::System.Guid id,
             string propertyName,
-            global::Weaviate.ObjectsClassReferencesCreateConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             string? tenant = default,
             string? @class = default,
             object? schema = default,

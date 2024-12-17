@@ -25,10 +25,6 @@ namespace Weaviate
         /// 
         /// </summary>
         TIMEOUT,
-        /// <summary>
-        /// 
-        /// </summary>
-        INDEXING,
     }
 
     /// <summary>
@@ -47,7 +43,6 @@ namespace Weaviate
                 NodeStatusStatus.UNHEALTHY => "UNHEALTHY",
                 NodeStatusStatus.UNAVAILABLE => "UNAVAILABLE",
                 NodeStatusStatus.TIMEOUT => "TIMEOUT",
-                NodeStatusStatus.INDEXING => "INDEXING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,7 +57,6 @@ namespace Weaviate
                 "UNHEALTHY" => NodeStatusStatus.UNHEALTHY,
                 "UNAVAILABLE" => NodeStatusStatus.UNAVAILABLE,
                 "TIMEOUT" => NodeStatusStatus.TIMEOUT,
-                "INDEXING" => NodeStatusStatus.INDEXING,
                 _ => null,
             };
         }

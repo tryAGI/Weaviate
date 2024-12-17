@@ -21,7 +21,7 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<string>? SingleWords { get; set; }
 
         /// <summary>
-        /// A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.
+        /// A vector representation of the object in the Contextionary. If provided at object creation, this wil take precedence over any vectorizer setting.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("concatenatedVector")]
         public global::System.Collections.Generic.IList<float>? ConcatenatedVector { get; set; }
@@ -44,7 +44,7 @@ namespace Weaviate
         /// <param name="concatenatedWord"></param>
         /// <param name="singleWords"></param>
         /// <param name="concatenatedVector">
-        /// A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.
+        /// A vector representation of the object in the Contextionary. If provided at object creation, this wil take precedence over any vectorizer setting.
         /// </param>
         /// <param name="concatenatedNearestNeighbors">
         /// C11y function to show the nearest neighbors to a word.

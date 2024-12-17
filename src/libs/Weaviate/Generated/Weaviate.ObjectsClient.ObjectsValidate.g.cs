@@ -17,7 +17,7 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Validate an object.<br/>
+        /// Validate an Object based on a schema.<br/>
         /// Validate an object's schema and meta-data without creating it. &lt;br/&gt;&lt;br/&gt;If the schema of the object is valid, the request should return nothing with a plain RESTful request. Otherwise, an error object will be returned.
         /// </summary>
         /// <param name="request"></param>
@@ -108,20 +108,20 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// Validate an object.<br/>
+        /// Validate an Object based on a schema.<br/>
         /// Validate an object's schema and meta-data without creating it. &lt;br/&gt;&lt;br/&gt;If the schema of the object is valid, the request should return nothing with a plain RESTful request. Otherwise, an error object will be returned.
         /// </summary>
         /// <param name="class">
-        /// The object collection name.
+        /// Class of the Object, defined in the schema.
         /// </param>
         /// <param name="vectorWeights">
-        /// Allow custom overrides of vector weights as math expressions in word-based vectorization models. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word.
+        /// Allow custom overrides of vector weights as math expressions. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
         /// </param>
         /// <param name="properties">
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </param>
         /// <param name="id">
-        /// ID of the object.
+        /// ID of the Object.
         /// </param>
         /// <param name="creationTimeUnix">
         /// (Response only) Timestamp of creation of this object in milliseconds since epoch UTC.
@@ -130,13 +130,13 @@ namespace Weaviate
         /// (Response only) Timestamp of the last object update in milliseconds since epoch UTC.
         /// </param>
         /// <param name="vector">
-        /// A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.
+        /// A vector representation of the object in the Contextionary. If provided at object creation, this wil take precedence over any vectorizer setting.
         /// </param>
         /// <param name="vectors">
         /// A map of named vectors for multi-vector representations.
         /// </param>
         /// <param name="tenant">
-        /// Name of the tenant.
+        /// Name of the Objects tenant.
         /// </param>
         /// <param name="additional">
         /// (Response only) Additional meta information about a single object.

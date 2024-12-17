@@ -15,12 +15,17 @@ namespace Weaviate
         public global::Weaviate.BatchDeleteMatch? Match { get; set; }
 
         /// <summary>
-        /// Controls the verbosity of the output.<br/>
+        /// Controls the verbosity of the output, possible values are: "minimal", "verbose". Defaults to "minimal".<br/>
         /// Default Value: minimal
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.BatchDeleteOutputJsonConverter))]
-        public global::Weaviate.BatchDeleteOutput? Output { get; set; }
+        public string? Output { get; set; }
+
+        /// <summary>
+        /// Timestamp of deletion in milliseconds since epoch UTC.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deletionTimeUnixMilli")]
+        public long? DeletionTimeUnixMilli { get; set; }
 
         /// <summary>
         /// If true, the call will show which objects would be matched using the specified filter without deleting any objects. &lt;br/&gt;&lt;br/&gt;Depending on the configured verbosity, you will either receive a count of affected objects, or a list of IDs.<br/>
@@ -42,8 +47,11 @@ namespace Weaviate
         /// Outlines how to find the objects to be deleted.
         /// </param>
         /// <param name="output">
-        /// Controls the verbosity of the output.<br/>
+        /// Controls the verbosity of the output, possible values are: "minimal", "verbose". Defaults to "minimal".<br/>
         /// Default Value: minimal
+        /// </param>
+        /// <param name="deletionTimeUnixMilli">
+        /// Timestamp of deletion in milliseconds since epoch UTC.
         /// </param>
         /// <param name="dryRun">
         /// If true, the call will show which objects would be matched using the specified filter without deleting any objects. &lt;br/&gt;&lt;br/&gt;Depending on the configured verbosity, you will either receive a count of affected objects, or a list of IDs.<br/>
@@ -52,11 +60,13 @@ namespace Weaviate
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public BatchDelete(
             global::Weaviate.BatchDeleteMatch? match,
-            global::Weaviate.BatchDeleteOutput? output,
+            string? output,
+            long? deletionTimeUnixMilli,
             bool? dryRun)
         {
             this.Match = match;
             this.Output = output;
+            this.DeletionTimeUnixMilli = deletionTimeUnixMilli;
             this.DryRun = dryRun;
         }
 

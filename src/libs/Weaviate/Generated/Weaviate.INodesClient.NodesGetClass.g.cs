@@ -16,7 +16,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.NodesStatusResponse> NodesGetClassAsync(
             string className,
-            global::Weaviate.NodesGetClassOutput? output = default,
+            string? output = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

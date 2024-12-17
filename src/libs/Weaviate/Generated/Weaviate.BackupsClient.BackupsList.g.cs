@@ -23,7 +23,7 @@ namespace Weaviate
 
         /// <summary>
         /// List backups in progress<br/>
-        /// List all backups in progress
+        /// [Coming soon] List all backups in progress not implemented yet.
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
