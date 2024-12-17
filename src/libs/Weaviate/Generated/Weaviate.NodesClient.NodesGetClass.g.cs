@@ -8,12 +8,12 @@ namespace Weaviate
         partial void PrepareNodesGetClassArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string className,
-            ref global::Weaviate.NodesGetClassOutput? output);
+            ref string? output);
         partial void PrepareNodesGetClassRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string className,
-            global::Weaviate.NodesGetClassOutput? output);
+            string? output);
         partial void ProcessNodesGetClassResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -35,7 +35,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.NodesStatusResponse> NodesGetClassAsync(
             string className,
-            global::Weaviate.NodesGetClassOutput? output = default,
+            string? output = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -49,7 +49,7 @@ namespace Weaviate
                 path: $"/nodes/{className}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("output", output?.ToValueString()) 
+                .AddOptionalParameter("output", output) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

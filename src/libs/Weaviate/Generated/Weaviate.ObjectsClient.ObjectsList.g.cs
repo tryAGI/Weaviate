@@ -12,7 +12,7 @@ namespace Weaviate
             ref long? limit,
             ref string? include,
             ref string? sort,
-            ref global::Weaviate.ObjectsListOrder? order,
+            ref string? order,
             ref string? @class,
             ref string? tenant);
         partial void PrepareObjectsListRequest(
@@ -23,7 +23,7 @@ namespace Weaviate
             long? limit,
             string? include,
             string? sort,
-            global::Weaviate.ObjectsListOrder? order,
+            string? order,
             string? @class,
             string? tenant);
         partial void ProcessObjectsListResponse(
@@ -36,16 +36,14 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get a list of objects.<br/>
-        /// Lists all objects in reverse order of creation. The data will be returned as an array of objects. &lt;br/&gt;&lt;br/&gt;Tip: If you are looking to list all objects in a collection, use the `after` parameter.
+        /// Get a list of Objects.<br/>
+        /// Lists all Objects in reverse order of creation, owned by the user that belongs to the used token.
         /// </summary>
         /// <param name="after"></param>
         /// <param name="offset">
         /// Default Value: 0L
         /// </param>
-        /// <param name="limit">
-        /// Default Value: 25L
-        /// </param>
+        /// <param name="limit"></param>
         /// <param name="include"></param>
         /// <param name="sort"></param>
         /// <param name="order"></param>
@@ -59,7 +57,7 @@ namespace Weaviate
             long? limit = default,
             string? include = default,
             string? sort = default,
-            global::Weaviate.ObjectsListOrder? order = default,
+            string? order = default,
             string? @class = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -86,7 +84,7 @@ namespace Weaviate
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("include", include) 
                 .AddOptionalParameter("sort", sort) 
-                .AddOptionalParameter("order", order?.ToValueString()) 
+                .AddOptionalParameter("order", order) 
                 .AddOptionalParameter("class", @class) 
                 .AddOptionalParameter("tenant", tenant) 
                 ; 

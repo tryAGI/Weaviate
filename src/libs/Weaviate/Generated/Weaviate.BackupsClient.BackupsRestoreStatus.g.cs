@@ -8,12 +8,16 @@ namespace Weaviate
         partial void PrepareBackupsRestoreStatusArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string backend,
-            ref string id);
+            ref string id,
+            ref string? bucket,
+            ref string? path);
         partial void PrepareBackupsRestoreStatusRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string backend,
-            string id);
+            string id,
+            string? bucket,
+            string? path);
         partial void ProcessBackupsRestoreStatusResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,11 +33,15 @@ namespace Weaviate
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>
+        /// <param name="bucket"></param>
+        /// <param name="path"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.BackupRestoreStatusResponse> BackupsRestoreStatusAsync(
             string backend,
             string id,
+            string? bucket = default,
+            string? path = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -41,11 +49,17 @@ namespace Weaviate
             PrepareBackupsRestoreStatusArguments(
                 httpClient: HttpClient,
                 backend: ref backend,
-                id: ref id);
+                id: ref id,
+                bucket: ref bucket,
+                path: ref path);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/backups/{backend}/{id}/restore",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("bucket", bucket) 
+                .AddOptionalParameter("path", path) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -78,7 +92,9 @@ namespace Weaviate
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 backend: backend,
-                id: id);
+                id: id,
+                bucket: bucket,
+                path: path);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

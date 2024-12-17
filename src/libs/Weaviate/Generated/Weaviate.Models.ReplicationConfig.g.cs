@@ -9,24 +9,23 @@ namespace Weaviate
     public sealed partial class ReplicationConfig
     {
         /// <summary>
-        /// Number of times a class is replicated<br/>
-        /// Default Value: 1
+        /// Number of times a class is replicated (default: 1).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("factor")]
         public int? Factor { get; set; }
 
         /// <summary>
-        /// Enable asynchronous replication
+        /// Enable asynchronous replication (default: false).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("asyncEnabled")]
         public bool? AsyncEnabled { get; set; }
 
         /// <summary>
-        /// Conflict resolution strategy for deleted objects
+        /// Conflict resolution strategy for deleted objects.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("objectDeletionConflictResolution")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.ReplicationConfigObjectDeletionConflictResolutionJsonConverter))]
-        public global::Weaviate.ReplicationConfigObjectDeletionConflictResolution? ObjectDeletionConflictResolution { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("deletionStrategy")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.ReplicationConfigDeletionStrategyJsonConverter))]
+        public global::Weaviate.ReplicationConfigDeletionStrategy? DeletionStrategy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,24 +37,23 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="ReplicationConfig" /> class.
         /// </summary>
         /// <param name="factor">
-        /// Number of times a class is replicated<br/>
-        /// Default Value: 1
+        /// Number of times a class is replicated (default: 1).
         /// </param>
         /// <param name="asyncEnabled">
-        /// Enable asynchronous replication
+        /// Enable asynchronous replication (default: false).
         /// </param>
-        /// <param name="objectDeletionConflictResolution">
-        /// Conflict resolution strategy for deleted objects
+        /// <param name="deletionStrategy">
+        /// Conflict resolution strategy for deleted objects.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ReplicationConfig(
             int? factor,
             bool? asyncEnabled,
-            global::Weaviate.ReplicationConfigObjectDeletionConflictResolution? objectDeletionConflictResolution)
+            global::Weaviate.ReplicationConfigDeletionStrategy? deletionStrategy)
         {
             this.Factor = factor;
             this.AsyncEnabled = asyncEnabled;
-            this.ObjectDeletionConflictResolution = objectDeletionConflictResolution;
+            this.DeletionStrategy = deletionStrategy;
         }
 
         /// <summary>

@@ -24,8 +24,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Update an existing collection.<br/>
-        /// Alter an existing collection definition. &lt;br/&gt;&lt;br/&gt;Note that not all settings are mutable ([see this list](https://weaviate.io/developers/weaviate/config-refs/schema#mutability)). To update any other (i.e. immutable) setting, you need to delete the collection, re-create it with the correct setting and then re-import the data. &lt;br/&gt;&lt;br/&gt;This endpoint cannot be used to modify properties. Instead use POST /v1/schema/{className}/properties. A typical use case for this endpoint is to update a index configuration, such as `vectorIndexConfig/dynamicEfFactor`. &lt;br/&gt;&lt;br/&gt;You should attach a body to this PUT request with the entire new configuration of the collection.
+        /// Update settings of an existing schema class<br/>
+        /// Add a property to an existing collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>
@@ -301,43 +301,42 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// Update an existing collection.<br/>
-        /// Alter an existing collection definition. &lt;br/&gt;&lt;br/&gt;Note that not all settings are mutable ([see this list](https://weaviate.io/developers/weaviate/config-refs/schema#mutability)). To update any other (i.e. immutable) setting, you need to delete the collection, re-create it with the correct setting and then re-import the data. &lt;br/&gt;&lt;br/&gt;This endpoint cannot be used to modify properties. Instead use POST /v1/schema/{className}/properties. A typical use case for this endpoint is to update a index configuration, such as `vectorIndexConfig/dynamicEfFactor`. &lt;br/&gt;&lt;br/&gt;You should attach a body to this PUT request with the entire new configuration of the collection.
+        /// Update settings of an existing schema class<br/>
+        /// Add a property to an existing collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="class1">
-        /// Name of the collection (a.k.a. class). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
+        /// Name of the class (a.k.a. 'collection') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
         /// </param>
         /// <param name="vectorConfig">
-        /// Configure named vectors (https://weaviate.io/developers/weaviate/config-refs/schema/multi-vector). Either use this field or `vectorizer`, `vectorIndexType`, and `vectorIndexConfig` fields. Available from `v1.24.0`.
+        /// Configure named vectors. Either use this field or `vectorizer`, `vectorIndexType`, and `vectorIndexConfig` fields. Available from `v1.24.0`.
         /// </param>
         /// <param name="vectorIndexType">
-        /// Name of the vector index to use, eg. (HNSW)<br/>
-        /// Default Value: hnsw
+        /// Name of the vector index to use, eg. (HNSW)
         /// </param>
         /// <param name="vectorIndexConfig">
-        /// Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details
+        /// Vector-index config, that is specific to the type of index selected in vectorIndexType
         /// </param>
         /// <param name="shardingConfig">
-        /// Specify how the index should be sharded and distributed in the cluster
+        /// Manage how the index should be sharded and distributed in the cluster
         /// </param>
         /// <param name="replicationConfig">
         /// Configure how replication is executed in a cluster
         /// </param>
         /// <param name="invertedIndexConfig">
-        /// Configure the inverted index built into Weaviate
+        /// Configure the inverted index built into Weaviate (default: 60).
         /// </param>
         /// <param name="multiTenancyConfig">
         /// Configuration related to multi-tenancy within a class
         /// </param>
         /// <param name="vectorizer">
-        /// Vectorizer for this collection (e.g. `text2vec-transformers`). This will override any cluster-wide default set by an environment variable. &lt;br/&gt;&lt;br/&gt;If `none`, you must import a vector with each object yourself.
+        /// Specify how the vectors for this class should be determined. The options are either 'none' - this means you have to import a vector with each object yourself - or the name of a module that provides vectorization capabilities, such as 'text2vec-contextionary'. If left empty, it will use the globally configured default which can itself either be 'none' or a specific module.
         /// </param>
         /// <param name="moduleConfig">
         /// Configuration specific to modules in a collection context.
         /// </param>
         /// <param name="description">
-        /// Description of the collection for documentation purposes.
+        /// Description of the collection for metadata purposes.
         /// </param>
         /// <param name="properties">
         /// Define properties of the collection.
@@ -346,16 +345,16 @@ namespace Weaviate
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.Class> SchemaObjectsUpdateAsync(
             string className,
-            string class1,
-            global::Weaviate.ClassVectorConfig? vectorConfig = default,
-            global::Weaviate.VectorIndexType? vectorIndexType = default,
+            string? class1 = default,
+            global::System.Collections.Generic.Dictionary<string, global::Weaviate.VectorConfig>? vectorConfig = default,
+            string? vectorIndexType = default,
             object? vectorIndexConfig = default,
-            global::Weaviate.ShardingConfig? shardingConfig = default,
+            object? shardingConfig = default,
             global::Weaviate.ReplicationConfig? replicationConfig = default,
             global::Weaviate.InvertedIndexConfig? invertedIndexConfig = default,
             global::Weaviate.MultiTenancyConfig? multiTenancyConfig = default,
-            global::Weaviate.Vectorizer? vectorizer = default,
-            global::Weaviate.ClassModuleConfig? moduleConfig = default,
+            string? vectorizer = default,
+            object? moduleConfig = default,
             string? description = default,
             global::System.Collections.Generic.IList<global::Weaviate.Property>? properties = default,
             global::System.Threading.CancellationToken cancellationToken = default)

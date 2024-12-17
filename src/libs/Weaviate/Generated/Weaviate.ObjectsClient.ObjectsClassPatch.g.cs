@@ -9,28 +9,26 @@ namespace Weaviate
             global::System.Net.Http.HttpClient httpClient,
             ref string className,
             ref global::System.Guid id,
-            ref global::Weaviate.ObjectsClassPatchConsistencyLevel? consistencyLevel,
+            ref string? consistencyLevel,
             global::Weaviate.Object request);
         partial void PrepareObjectsClassPatchRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string className,
             global::System.Guid id,
-            global::Weaviate.ObjectsClassPatchConsistencyLevel? consistencyLevel,
+            string? consistencyLevel,
             global::Weaviate.Object request);
         partial void ProcessObjectsClassPatchResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Update an object using patch semantics.<br/>
-        /// Update an individual data object based on its collection and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+        /// Update an Object based on its UUID (using patch semantics).<br/>
+        /// Update an individual data object based on its class and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
@@ -38,7 +36,7 @@ namespace Weaviate
             string className,
             global::System.Guid id,
             global::Weaviate.Object request,
-            global::Weaviate.ObjectsClassPatchConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -56,7 +54,7 @@ namespace Weaviate
                 path: $"/objects/{className}/{id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
+                .AddOptionalParameter("consistency_level", consistencyLevel) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -131,25 +129,23 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// Update an object using patch semantics.<br/>
-        /// Update an individual data object based on its collection and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+        /// Update an Object based on its UUID (using patch semantics).<br/>
+        /// Update an individual data object based on its class and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="class">
-        /// The object collection name.
+        /// Class of the Object, defined in the schema.
         /// </param>
         /// <param name="vectorWeights">
-        /// Allow custom overrides of vector weights as math expressions in word-based vectorization models. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word.
+        /// Allow custom overrides of vector weights as math expressions. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
         /// </param>
         /// <param name="properties">
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </param>
         /// <param name="requestId">
-        /// ID of the object.
+        /// ID of the Object.
         /// </param>
         /// <param name="creationTimeUnix">
         /// (Response only) Timestamp of creation of this object in milliseconds since epoch UTC.
@@ -158,13 +154,13 @@ namespace Weaviate
         /// (Response only) Timestamp of the last object update in milliseconds since epoch UTC.
         /// </param>
         /// <param name="vector">
-        /// A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.
+        /// A vector representation of the object in the Contextionary. If provided at object creation, this wil take precedence over any vectorizer setting.
         /// </param>
         /// <param name="vectors">
         /// A map of named vectors for multi-vector representations.
         /// </param>
         /// <param name="tenant">
-        /// Name of the tenant.
+        /// Name of the Objects tenant.
         /// </param>
         /// <param name="additional">
         /// (Response only) Additional meta information about a single object.
@@ -174,7 +170,7 @@ namespace Weaviate
         public async global::System.Threading.Tasks.Task ObjectsClassPatchAsync(
             string className,
             global::System.Guid id,
-            global::Weaviate.ObjectsClassPatchConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             string? @class = default,
             object? vectorWeights = default,
             object? properties = default,

@@ -22,7 +22,7 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Perform a GraphQL query.<br/>
+        /// Get a response based on GraphQL<br/>
         /// Get a response based on a GraphQL query
         /// </summary>
         /// <param name="request"></param>
@@ -267,7 +267,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// Perform a GraphQL query.<br/>
+        /// Get a response based on GraphQL<br/>
         /// Get a response based on a GraphQL query
         /// </summary>
         /// <param name="operationName">

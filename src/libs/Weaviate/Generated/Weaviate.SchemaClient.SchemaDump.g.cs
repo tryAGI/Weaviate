@@ -22,7 +22,7 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get the entire schema.<br/>
+        /// Dump the current the database schema.<br/>
         /// Fetch an array of all collection definitions from the schema.
         /// </summary>
         /// <param name="consistency">

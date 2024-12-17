@@ -21,7 +21,7 @@ namespace Weaviate
         public string? Backend { get; set; }
 
         /// <summary>
-        /// destination path of backup files proper to selected backup backend
+        /// destination path of backup files proper to selected backup backend, contains bucket and path
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         public string? Path { get; set; }
@@ -56,7 +56,7 @@ namespace Weaviate
         /// Backup backend name e.g. filesystem, gcs, s3.
         /// </param>
         /// <param name="path">
-        /// destination path of backup files proper to selected backup backend
+        /// destination path of backup files proper to selected backup backend, contains bucket and path
         /// </param>
         /// <param name="error">
         /// error message if restoration failed

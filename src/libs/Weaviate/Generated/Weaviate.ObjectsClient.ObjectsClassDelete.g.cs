@@ -9,35 +9,33 @@ namespace Weaviate
             global::System.Net.Http.HttpClient httpClient,
             ref string className,
             ref global::System.Guid id,
-            ref global::Weaviate.ObjectsClassDeleteConsistencyLevel? consistencyLevel,
+            ref string? consistencyLevel,
             ref string? tenant);
         partial void PrepareObjectsClassDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string className,
             global::System.Guid id,
-            global::Weaviate.ObjectsClassDeleteConsistencyLevel? consistencyLevel,
+            string? consistencyLevel,
             string? tenant);
         partial void ProcessObjectsClassDeleteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Delete an object.<br/>
+        /// Delete object based on its class and UUID.<br/>
         /// Delete an object based on its collection and UUID. &lt;br/&gt;&lt;br/&gt;Note: For backward compatibility, beacons also support an older, deprecated format without the collection name. As a result, when deleting a reference, the beacon specified has to match the beacon to be deleted exactly. In other words, if a beacon is present using the old format (without collection name) you also need to specify it the same way. &lt;br/&gt;&lt;br/&gt;In the beacon format, you need to always use `localhost` as the host, rather than the actual hostname. `localhost` here refers to the fact that the beacon's target is on the same Weaviate instance, as opposed to a foreign instance.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task ObjectsClassDeleteAsync(
             string className,
             global::System.Guid id,
-            global::Weaviate.ObjectsClassDeleteConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -54,7 +52,7 @@ namespace Weaviate
                 path: $"/objects/{className}/{id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
+                .AddOptionalParameter("consistency_level", consistencyLevel) 
                 .AddOptionalParameter("tenant", tenant) 
                 ; 
             var __path = __pathBuilder.ToString();

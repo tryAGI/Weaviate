@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class C11yWordsResponseIndividualWordInfo
     {
         /// <summary>
-        /// A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.
+        /// A vector representation of the object in the Contextionary. If provided at object creation, this wil take precedence over any vectorizer setting.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector")]
         public global::System.Collections.Generic.IList<float>? Vector { get; set; }
@@ -30,7 +30,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="C11yWordsResponseIndividualWordInfo" /> class.
         /// </summary>
         /// <param name="vector">
-        /// A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.
+        /// A vector representation of the object in the Contextionary. If provided at object creation, this wil take precedence over any vectorizer setting.
         /// </param>
         /// <param name="nearestNeighbors">
         /// C11y function to show the nearest neighbors to a word.

@@ -5,7 +5,7 @@ namespace Weaviate
     public partial interface IGraphqlClient
     {
         /// <summary>
-        /// Perform a GraphQL query.<br/>
+        /// Get a response based on GraphQL<br/>
         /// Get a response based on a GraphQL query
         /// </summary>
         /// <param name="request"></param>
@@ -16,7 +16,7 @@ namespace Weaviate
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Perform a GraphQL query.<br/>
+        /// Get a response based on GraphQL<br/>
         /// Get a response based on a GraphQL query
         /// </summary>
         /// <param name="operationName">

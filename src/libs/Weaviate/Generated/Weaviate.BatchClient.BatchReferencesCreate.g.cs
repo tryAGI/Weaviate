@@ -7,12 +7,12 @@ namespace Weaviate
     {
         partial void PrepareBatchReferencesCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::Weaviate.BatchReferencesCreateConsistencyLevel? consistencyLevel,
+            ref string? consistencyLevel,
             global::System.Collections.Generic.IList<global::Weaviate.BatchReference> request);
         partial void PrepareBatchReferencesCreateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Weaviate.BatchReferencesCreateConsistencyLevel? consistencyLevel,
+            string? consistencyLevel,
             global::System.Collections.Generic.IList<global::Weaviate.BatchReference> request);
         partial void ProcessBatchReferencesCreateResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -24,18 +24,16 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Batch create cross-references.<br/>
+        /// Creates new Cross-References between arbitrary classes in bulk.<br/>
         /// Batch create cross-references between collections items (objects or objects) in bulk.
         /// </summary>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>> BatchReferencesCreateAsync(
             global::System.Collections.Generic.IList<global::Weaviate.BatchReference> request,
-            global::Weaviate.BatchReferencesCreateConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -51,7 +49,7 @@ namespace Weaviate
                 path: "/batch/references",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
+                .AddOptionalParameter("consistency_level", consistencyLevel) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

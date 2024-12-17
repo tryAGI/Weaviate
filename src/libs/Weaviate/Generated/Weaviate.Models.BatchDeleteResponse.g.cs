@@ -15,12 +15,17 @@ namespace Weaviate
         public global::Weaviate.BatchDeleteResponseMatch? Match { get; set; }
 
         /// <summary>
-        /// Controls the verbosity of the output.<br/>
+        /// Controls the verbosity of the output, possible values are: "minimal", "verbose". Defaults to "minimal".<br/>
         /// Default Value: minimal
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.BatchDeleteResponseOutputJsonConverter))]
-        public global::Weaviate.BatchDeleteResponseOutput? Output { get; set; }
+        public string? Output { get; set; }
+
+        /// <summary>
+        /// Timestamp of deletion in milliseconds since epoch UTC.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deletionTimeUnixMilli")]
+        public long? DeletionTimeUnixMilli { get; set; }
 
         /// <summary>
         /// If true, objects will not be deleted yet, but merely listed. Defaults to false.<br/>
@@ -48,8 +53,11 @@ namespace Weaviate
         /// Outlines how to find the objects to be deleted.
         /// </param>
         /// <param name="output">
-        /// Controls the verbosity of the output.<br/>
+        /// Controls the verbosity of the output, possible values are: "minimal", "verbose". Defaults to "minimal".<br/>
         /// Default Value: minimal
+        /// </param>
+        /// <param name="deletionTimeUnixMilli">
+        /// Timestamp of deletion in milliseconds since epoch UTC.
         /// </param>
         /// <param name="dryRun">
         /// If true, objects will not be deleted yet, but merely listed. Defaults to false.<br/>
@@ -59,12 +67,14 @@ namespace Weaviate
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public BatchDeleteResponse(
             global::Weaviate.BatchDeleteResponseMatch? match,
-            global::Weaviate.BatchDeleteResponseOutput? output,
+            string? output,
+            long? deletionTimeUnixMilli,
             bool? dryRun,
             global::Weaviate.BatchDeleteResponseResults? results)
         {
             this.Match = match;
             this.Output = output;
+            this.DeletionTimeUnixMilli = deletionTimeUnixMilli;
             this.DryRun = dryRun;
             this.Results = results;
         }

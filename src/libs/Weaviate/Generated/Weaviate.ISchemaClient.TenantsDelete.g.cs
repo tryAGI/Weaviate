@@ -5,8 +5,7 @@ namespace Weaviate
     public partial interface ISchemaClient
     {
         /// <summary>
-        /// Delete tenant(s).<br/>
-        /// Delete tenants from a collection
+        /// delete tenants from a specific class
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>

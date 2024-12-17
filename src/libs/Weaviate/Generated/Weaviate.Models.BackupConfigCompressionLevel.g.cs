@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Compression level used by compression algorithm<br/>
+    /// compression level used by compression algorithm<br/>
     /// Default Value: DefaultCompression
     /// </summary>
     public enum BackupConfigCompressionLevel

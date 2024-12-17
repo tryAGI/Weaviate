@@ -25,7 +25,7 @@ namespace Weaviate
 
         /// <summary>
         /// Update a tenant.<br/>
-        /// Update a tenant for a collection
+        /// Update tenant of a specific class
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>

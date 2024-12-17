@@ -7,12 +7,12 @@ namespace Weaviate
     {
         partial void PrepareBatchObjectsCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::Weaviate.BatchObjectsCreateConsistencyLevel? consistencyLevel,
+            ref string? consistencyLevel,
             global::Weaviate.BatchObjectsCreateRequest request);
         partial void PrepareBatchObjectsCreateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Weaviate.BatchObjectsCreateConsistencyLevel? consistencyLevel,
+            string? consistencyLevel,
             global::Weaviate.BatchObjectsCreateRequest request);
         partial void ProcessBatchObjectsCreateResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -24,18 +24,16 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Batch create new objects.<br/>
+        /// Creates new Objects based on a Object template as a batch.<br/>
         /// Create new objects in bulk. &lt;br/&gt;&lt;br/&gt;Meta-data and schema values are validated. &lt;br/&gt;&lt;br/&gt;**Note: idempotence of `/batch/objects`**: &lt;br/&gt;`POST /batch/objects` is idempotent, and will overwrite any existing object given the same id.
         /// </summary>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.ObjectsGetResponse>> BatchObjectsCreateAsync(
             global::Weaviate.BatchObjectsCreateRequest request,
-            global::Weaviate.BatchObjectsCreateConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -51,7 +49,7 @@ namespace Weaviate
                 path: "/batch/objects",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString()) 
+                .AddOptionalParameter("consistency_level", consistencyLevel) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -306,12 +304,10 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// Batch create new objects.<br/>
+        /// Creates new Objects based on a Object template as a batch.<br/>
         /// Create new objects in bulk. &lt;br/&gt;&lt;br/&gt;Meta-data and schema values are validated. &lt;br/&gt;&lt;br/&gt;**Note: idempotence of `/batch/objects`**: &lt;br/&gt;`POST /batch/objects` is idempotent, and will overwrite any existing object given the same id.
         /// </summary>
-        /// <param name="consistencyLevel">
-        /// Default Value: QUORUM
-        /// </param>
+        /// <param name="consistencyLevel"></param>
         /// <param name="fields">
         /// Define which fields need to be returned. Default value is ALL
         /// </param>
@@ -319,7 +315,7 @@ namespace Weaviate
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.ObjectsGetResponse>> BatchObjectsCreateAsync(
-            global::Weaviate.BatchObjectsCreateConsistencyLevel? consistencyLevel = default,
+            string? consistencyLevel = default,
             global::System.Collections.Generic.IList<global::Weaviate.BatchObjectsCreateRequestField>? fields = default,
             global::System.Collections.Generic.IList<global::Weaviate.Object>? objects = default,
             global::System.Threading.CancellationToken cancellationToken = default)

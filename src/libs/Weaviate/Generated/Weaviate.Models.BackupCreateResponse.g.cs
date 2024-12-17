@@ -27,7 +27,13 @@ namespace Weaviate
         public string? Backend { get; set; }
 
         /// <summary>
-        /// destination path of backup files proper to selected backend
+        /// Name of the bucket, container, volume, etc
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bucket")]
+        public string? Bucket { get; set; }
+
+        /// <summary>
+        /// Path within bucket of backup
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         public string? Path { get; set; }
@@ -64,8 +70,11 @@ namespace Weaviate
         /// <param name="backend">
         /// Backup backend name e.g. filesystem, gcs, s3.
         /// </param>
+        /// <param name="bucket">
+        /// Name of the bucket, container, volume, etc
+        /// </param>
         /// <param name="path">
-        /// destination path of backup files proper to selected backend
+        /// Path within bucket of backup
         /// </param>
         /// <param name="error">
         /// error message if creation failed
@@ -79,6 +88,7 @@ namespace Weaviate
             string? id,
             global::System.Collections.Generic.IList<string>? classes,
             string? backend,
+            string? bucket,
             string? path,
             string? error,
             global::Weaviate.BackupCreateResponseStatus? status)
@@ -86,6 +96,7 @@ namespace Weaviate
             this.Id = id;
             this.Classes = classes;
             this.Backend = backend;
+            this.Bucket = bucket;
             this.Path = path;
             this.Error = error;
             this.Status = status;

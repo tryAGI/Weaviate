@@ -24,7 +24,7 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get the shard status<br/>
+        /// Get the shards status of an Object class<br/>
         /// Get the status of every shard in the cluster.
         /// </summary>
         /// <param name="className"></param>

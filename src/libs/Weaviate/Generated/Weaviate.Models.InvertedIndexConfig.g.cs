@@ -4,13 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Configure the inverted index built into Weaviate
+    /// Configure the inverted index built into Weaviate (default: 60).
     /// </summary>
     public sealed partial class InvertedIndexConfig
     {
         /// <summary>
-        /// Asynchronous index clean up happens every n seconds<br/>
-        /// Default Value: 60
+        /// Asynchronous index clean up happens every n seconds
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cleanupIntervalSeconds")]
         public double? CleanupIntervalSeconds { get; set; }
@@ -28,22 +27,19 @@ namespace Weaviate
         public global::Weaviate.StopwordConfig? Stopwords { get; set; }
 
         /// <summary>
-        /// Index each object by its internal timestamps<br/>
-        /// Default Value: false
+        /// Index each object by its internal timestamps (default: 'false').
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("indexTimestamps")]
         public bool? IndexTimestamps { get; set; }
 
         /// <summary>
-        /// Index each object with the null state<br/>
-        /// Default Value: false
+        /// Index each object with the null state (default: 'false').
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("indexNullState")]
         public bool? IndexNullState { get; set; }
 
         /// <summary>
-        /// Index length of properties<br/>
-        /// Default Value: false
+        /// Index length of properties (default: 'false').
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("indexPropertyLength")]
         public bool? IndexPropertyLength { get; set; }
@@ -58,8 +54,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="InvertedIndexConfig" /> class.
         /// </summary>
         /// <param name="cleanupIntervalSeconds">
-        /// Asynchronous index clean up happens every n seconds<br/>
-        /// Default Value: 60
+        /// Asynchronous index clean up happens every n seconds
         /// </param>
         /// <param name="bm25">
         /// tuning parameters for the BM25 algorithm
@@ -68,16 +63,13 @@ namespace Weaviate
         /// fine-grained control over stopword list usage
         /// </param>
         /// <param name="indexTimestamps">
-        /// Index each object by its internal timestamps<br/>
-        /// Default Value: false
+        /// Index each object by its internal timestamps (default: 'false').
         /// </param>
         /// <param name="indexNullState">
-        /// Index each object with the null state<br/>
-        /// Default Value: false
+        /// Index each object with the null state (default: 'false').
         /// </param>
         /// <param name="indexPropertyLength">
-        /// Index length of properties<br/>
-        /// Default Value: false
+        /// Index length of properties (default: 'false').
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public InvertedIndexConfig(
