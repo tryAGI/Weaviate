@@ -6,7 +6,7 @@ info:
     name: Weaviate
     url: https://github.com/weaviate
     email: hello@weaviate.io
-  version: '1.28.0'
+  version: '1.28.2'
 servers:
   - url: https:///v1
 paths:
@@ -5176,13 +5176,6 @@ components:
               items:
                 type: string
               description: The list of nodes that owns that tenant data.
-            dataVersion:
-              minimum: 0
-              type: integer
-              description: Experimental. The data version of the tenant is a monotonically increasing number starting from 0 which is incremented each time a tenant's data is offloaded to cloud storage.
-              default: 0
-              example: 3
-              x-nullable: true
       description: attributes representing a single tenant response within weaviate
   parameters:
     CommonAfterParameterQuery:
