@@ -80,7 +80,9 @@ namespace Weaviate
         /// <param name="loaded">
         /// The load status of the shard.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NodeShardStatus(
             string? name,
             string? @class,

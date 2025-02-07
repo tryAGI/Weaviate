@@ -44,7 +44,9 @@ namespace Weaviate
         /// <param name="targetWhere">
         /// Filter search results using a where filter
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ClassificationFilters(
             global::Weaviate.WhereFilter? sourceWhere,
             global::Weaviate.WhereFilter? trainingSetWhere,

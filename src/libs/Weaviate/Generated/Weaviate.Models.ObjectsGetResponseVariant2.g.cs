@@ -24,7 +24,9 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="ObjectsGetResponseVariant2" /> class.
         /// </summary>
         /// <param name="deprecations"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ObjectsGetResponseVariant2(
             global::System.Collections.Generic.IList<global::Weaviate.Deprecation>? deprecations)
         {

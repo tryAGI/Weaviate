@@ -44,7 +44,9 @@ namespace Weaviate
         /// <param name="scopes">
         /// OAuth Scopes
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Response(
             string? href,
             string? clientId,

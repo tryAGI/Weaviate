@@ -78,7 +78,9 @@ namespace Weaviate
         /// compression level used by compression algorithm<br/>
         /// Default Value: DefaultCompression
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BackupConfig(
             string? endpoint,
             string? bucket,

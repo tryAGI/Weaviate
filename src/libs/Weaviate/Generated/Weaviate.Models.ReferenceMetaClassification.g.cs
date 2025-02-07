@@ -107,7 +107,9 @@ namespace Weaviate
         /// <param name="meanLosingDistance">
         /// Mean distance of all neighbors from the losing group. Optional. If k equals the size of the winning group, there is no losing group.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReferenceMetaClassification(
             double? overallCount,
             double? winningCount,

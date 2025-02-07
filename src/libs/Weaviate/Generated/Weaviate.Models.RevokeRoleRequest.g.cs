@@ -26,7 +26,9 @@ namespace Weaviate
         /// <param name="roles">
         /// the roles that revoked from the key or user
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RevokeRoleRequest(
             global::System.Collections.Generic.IList<string>? roles)
         {

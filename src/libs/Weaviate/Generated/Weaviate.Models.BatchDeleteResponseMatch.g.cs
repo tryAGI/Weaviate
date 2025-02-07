@@ -38,7 +38,9 @@ namespace Weaviate
         /// <param name="where">
         /// Filter search results using a where filter
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchDeleteResponseMatch(
             string? @class,
             global::Weaviate.WhereFilter? where)

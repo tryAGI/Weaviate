@@ -125,7 +125,9 @@ namespace Weaviate
         /// <param name="properties">
         /// Define properties of the collection.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Class(
             string? class1,
             global::System.Collections.Generic.Dictionary<string, global::Weaviate.VectorConfig>? vectorConfig,

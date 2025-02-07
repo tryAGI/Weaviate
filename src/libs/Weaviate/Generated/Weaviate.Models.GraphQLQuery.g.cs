@@ -44,7 +44,9 @@ namespace Weaviate
         /// <param name="variables">
         /// Additional variables for the query.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GraphQLQuery(
             string? operationName,
             string? query,

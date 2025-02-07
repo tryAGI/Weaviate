@@ -50,7 +50,9 @@ namespace Weaviate
         /// string or regex. if a specific object ID, if left empty it will be ALL or *<br/>
         /// Default Value: *
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PermissionData(
             string? collection,
             string? tenant,

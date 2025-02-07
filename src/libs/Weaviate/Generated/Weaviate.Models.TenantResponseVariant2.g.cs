@@ -26,7 +26,9 @@ namespace Weaviate
         /// <param name="belongsToNodes">
         /// The list of nodes that owns that tenant data.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TenantResponseVariant2(
             global::System.Collections.Generic.IList<string>? belongsToNodes)
         {

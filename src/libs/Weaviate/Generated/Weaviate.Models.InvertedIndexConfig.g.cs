@@ -71,7 +71,9 @@ namespace Weaviate
         /// <param name="indexPropertyLength">
         /// Index length of properties (default: 'false').
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InvertedIndexConfig(
             double? cleanupIntervalSeconds,
             global::Weaviate.BM25Config? bm25,

@@ -33,7 +33,9 @@ namespace Weaviate
         /// Define which fields need to be returned. Default value is ALL
         /// </param>
         /// <param name="objects"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchObjectsCreateRequest(
             global::System.Collections.Generic.IList<global::Weaviate.BatchObjectsCreateRequestField>? fields,
             global::System.Collections.Generic.IList<global::Weaviate.Object>? objects)

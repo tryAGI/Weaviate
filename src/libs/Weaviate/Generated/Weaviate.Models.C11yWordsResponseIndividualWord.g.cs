@@ -38,7 +38,9 @@ namespace Weaviate
         /// <param name="word"></param>
         /// <param name="present"></param>
         /// <param name="info"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public C11yWordsResponseIndividualWord(
             string? word,
             bool? present,

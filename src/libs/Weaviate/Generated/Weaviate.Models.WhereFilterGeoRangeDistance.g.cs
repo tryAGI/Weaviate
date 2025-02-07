@@ -24,7 +24,9 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="WhereFilterGeoRangeDistance" /> class.
         /// </summary>
         /// <param name="max"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WhereFilterGeoRangeDistance(
             double? max)
         {

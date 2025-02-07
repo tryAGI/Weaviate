@@ -26,7 +26,9 @@ namespace Weaviate
         /// <param name="result">
         /// Results for this specific reference.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchReferenceResponseVariant2(
             global::Weaviate.BatchReferenceResponseVariant2Result? result)
         {

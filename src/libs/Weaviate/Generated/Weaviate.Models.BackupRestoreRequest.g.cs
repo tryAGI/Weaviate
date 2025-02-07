@@ -53,7 +53,9 @@ namespace Weaviate
         /// <param name="nodeMapping">
         /// Allows overriding the node names stored in the backup with different ones. Useful when restoring backups to a different environment.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BackupRestoreRequest(
             global::Weaviate.RestoreConfig? config,
             global::System.Collections.Generic.IList<string>? include,

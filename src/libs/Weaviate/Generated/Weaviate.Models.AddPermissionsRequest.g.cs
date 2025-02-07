@@ -27,7 +27,9 @@ namespace Weaviate
         /// <param name="permissions">
         /// permissions to be added to the role
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddPermissionsRequest(
             global::System.Collections.Generic.IList<global::Weaviate.Permission> permissions)
         {

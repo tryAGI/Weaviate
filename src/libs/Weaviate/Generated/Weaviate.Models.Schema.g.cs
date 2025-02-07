@@ -44,7 +44,9 @@ namespace Weaviate
         /// <param name="name">
         /// Name of the schema.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Schema(
             global::System.Collections.Generic.IList<global::Weaviate.Class>? classes,
             string? maintainer,

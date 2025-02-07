@@ -40,7 +40,9 @@ namespace Weaviate
         /// string or regex. if a specific collection name, if left empty it will be ALL or *<br/>
         /// Default Value: *
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PermissionNodes(
             global::Weaviate.PermissionNodesVerbosity? verbosity,
             string? collection)
