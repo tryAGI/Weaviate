@@ -39,7 +39,9 @@ namespace Weaviate
         /// string or regex. if a specific tenant name, if left empty it will be ALL or *<br/>
         /// Default Value: *
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PermissionCollections(
             string? collection,
             string? tenant)

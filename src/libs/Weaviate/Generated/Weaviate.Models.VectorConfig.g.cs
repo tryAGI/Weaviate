@@ -44,7 +44,9 @@ namespace Weaviate
         /// <param name="vectorIndexConfig">
         /// Vector-index config, that is specific to the type of index selected in vectorIndexType
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VectorConfig(
             object? vectorizer,
             string? vectorIndexType,

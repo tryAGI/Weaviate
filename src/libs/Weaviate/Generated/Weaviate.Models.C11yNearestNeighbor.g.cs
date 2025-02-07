@@ -31,7 +31,9 @@ namespace Weaviate
         /// </summary>
         /// <param name="word"></param>
         /// <param name="distance"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public C11yNearestNeighbor(
             string? word,
             float? distance)

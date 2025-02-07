@@ -35,7 +35,9 @@ namespace Weaviate
         /// <param name="individualWords">
         /// Weighted results for per individual word
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public C11yWordsResponse(
             global::Weaviate.C11yWordsResponseConcatenatedWord? concatenatedWord,
             global::System.Collections.Generic.IList<global::Weaviate.C11yWordsResponseIndividualWord>? individualWords)

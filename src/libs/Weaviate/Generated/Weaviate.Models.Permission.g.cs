@@ -73,7 +73,9 @@ namespace Weaviate
         /// <param name="action">
         /// allowed actions in weaviate.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Permission(
             global::Weaviate.PermissionAction action,
             global::Weaviate.PermissionBackups? backups,

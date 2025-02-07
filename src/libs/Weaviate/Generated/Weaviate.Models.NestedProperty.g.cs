@@ -76,7 +76,9 @@ namespace Weaviate
         /// <param name="nestedProperties">
         /// The properties of the nested object(s). Applies to object and object[] data types.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NestedProperty(
             global::System.Collections.Generic.IList<string>? dataType,
             string? description,

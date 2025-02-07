@@ -31,7 +31,9 @@ namespace Weaviate
         /// </summary>
         /// <param name="column"></param>
         /// <param name="line"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GraphQLErrorLocation(
             long? column,
             long? line)

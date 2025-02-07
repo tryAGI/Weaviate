@@ -24,7 +24,9 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="ErrorResponse" /> class.
         /// </summary>
         /// <param name="error"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ErrorResponse(
             global::System.Collections.Generic.IList<global::Weaviate.ErrorResponseErrorItem>? error)
         {

@@ -54,7 +54,9 @@ namespace Weaviate
         /// <param name="status">
         /// status of backup process
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BackupListResponseItem(
             string? id,
             string? path,

@@ -35,7 +35,9 @@ namespace Weaviate
         /// <param name="b">
         /// Calibrates term-weight scaling based on the document length (default: 0.75).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BM25Config(
             float? k1,
             float? b)

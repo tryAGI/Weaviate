@@ -64,7 +64,9 @@ namespace Weaviate
         /// Default Value: false
         /// </param>
         /// <param name="results"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchDeleteResponse(
             global::Weaviate.BatchDeleteResponseMatch? match,
             string? output,

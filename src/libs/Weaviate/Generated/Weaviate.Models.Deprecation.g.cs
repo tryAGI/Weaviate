@@ -116,7 +116,9 @@ namespace Weaviate
         /// <param name="locations">
         /// The locations within the specified API affected by this deprecation
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Deprecation(
             string? id,
             string? status,

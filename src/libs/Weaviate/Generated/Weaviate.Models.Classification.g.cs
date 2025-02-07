@@ -124,7 +124,9 @@ namespace Weaviate
         /// Example: classify xzy: something went wrong
         /// </param>
         /// <param name="filters"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Classification(
             global::System.Guid? id,
             string? @class,

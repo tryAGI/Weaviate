@@ -35,7 +35,9 @@ namespace Weaviate
         /// <param name="errors">
         /// Array with errors.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GraphQLResponse(
             global::System.Collections.Generic.Dictionary<string, object>? data,
             global::System.Collections.Generic.IList<global::Weaviate.GraphQLError>? errors)

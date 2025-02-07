@@ -44,7 +44,9 @@ namespace Weaviate
         /// <param name="removals">
         /// Stopwords to be removed from consideration (default: []). Can be any array of custom strings.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StopwordConfig(
             string? preset,
             global::System.Collections.Generic.IList<string>? additions,
