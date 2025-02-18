@@ -3,37 +3,37 @@
 
 namespace Weaviate
 {
-    public partial class AuthzClient
+    public partial class UsersClient
     {
-        partial void PrepareGetRolesForOwnUserArguments(
+        partial void PrepareGetOwnInfoArguments(
             global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareGetRolesForOwnUserRequest(
+        partial void PrepareGetOwnInfoRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessGetRolesForOwnUserResponse(
+        partial void ProcessGetOwnInfoResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetRolesForOwnUserResponseContent(
+        partial void ProcessGetOwnInfoResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// get roles assigned to own user
+        /// get info relevant to own user, e.g. username, roles
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.Role>> GetRolesForOwnUserAsync(
+        public async global::System.Threading.Tasks.Task<global::Weaviate.UserInfo> GetOwnInfoAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareGetRolesForOwnUserArguments(
+            PrepareGetOwnInfoArguments(
                 httpClient: HttpClient);
 
             var __pathBuilder = new PathBuilder(
-                path: "/authz/users/own-roles",
+                path: "/users/own-info",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -63,7 +63,7 @@ namespace Weaviate
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareGetRolesForOwnUserRequest(
+            PrepareGetOwnInfoRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest);
 
@@ -75,7 +75,7 @@ namespace Weaviate
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessGetRolesForOwnUserResponse(
+            ProcessGetOwnInfoResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Unauthorized or invalid credentials.
@@ -143,7 +143,7 @@ namespace Weaviate
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessGetRolesForOwnUserResponseContent(
+                ProcessGetOwnInfoResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -168,7 +168,7 @@ namespace Weaviate
                 }
 
                 return
-                    global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.Role>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::Weaviate.Role> ??
+                    global::Weaviate.UserInfo.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -198,7 +198,7 @@ namespace Weaviate
                 ).ConfigureAwait(false);
 
                 return
-                    await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.Role>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::Weaviate.Role> ??
+                    await global::Weaviate.UserInfo.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }

@@ -11,9 +11,9 @@ namespace Weaviate
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        global::System.Threading.Tasks.Task AssignRoleAsync(
+        global::System.Threading.Tasks.Task AssignRoleToUserAsync(
             string id,
-            global::Weaviate.AssignRoleRequest request,
+            global::Weaviate.AssignRoleToUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace Weaviate
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task AssignRoleAsync(
+        global::System.Threading.Tasks.Task AssignRoleToUserAsync(
             string id,
             global::System.Collections.Generic.IList<string>? roles = default,
             global::System.Threading.CancellationToken cancellationToken = default);

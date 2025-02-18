@@ -3,40 +3,44 @@
 
 namespace Weaviate
 {
-    public partial class ObjectsClient
+    public partial class AuthzClient
     {
-        partial void PrepareObjectsValidateArguments(
+        partial void PrepareRevokeRoleFromGroupArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Weaviate.Object request);
-        partial void PrepareObjectsValidateRequest(
+            ref string id,
+            global::Weaviate.RevokeRoleFromGroupRequest request);
+        partial void PrepareRevokeRoleFromGroupRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Weaviate.Object request);
-        partial void ProcessObjectsValidateResponse(
+            string id,
+            global::Weaviate.RevokeRoleFromGroupRequest request);
+        partial void ProcessRevokeRoleFromGroupResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Validate an Object based on a schema.<br/>
-        /// Validate an object's schema and meta-data without creating it. &lt;br/&gt;&lt;br/&gt;If the schema of the object is valid, the request should return nothing with a plain RESTful request. Otherwise, an error object will be returned.
+        /// Revoke a role from a group
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task ObjectsValidateAsync(
-            global::Weaviate.Object request,
+        public async global::System.Threading.Tasks.Task RevokeRoleFromGroupAsync(
+            string id,
+            global::Weaviate.RevokeRoleFromGroupRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareObjectsValidateArguments(
+            PrepareRevokeRoleFromGroupArguments(
                 httpClient: HttpClient,
+                id: ref id,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/objects/validate",
+                path: $"/authz/groups/{id}/revoke",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -72,9 +76,10 @@ namespace Weaviate
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareObjectsValidateRequest(
+            PrepareRevokeRoleFromGroupRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                id: id,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -85,7 +90,7 @@ namespace Weaviate
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessObjectsValidateResponse(
+            ProcessRevokeRoleFromGroupResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             try
@@ -108,69 +113,26 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// Validate an Object based on a schema.<br/>
-        /// Validate an object's schema and meta-data without creating it. &lt;br/&gt;&lt;br/&gt;If the schema of the object is valid, the request should return nothing with a plain RESTful request. Otherwise, an error object will be returned.
+        /// Revoke a role from a group
         /// </summary>
-        /// <param name="class">
-        /// Class of the Object, defined in the schema.
-        /// </param>
-        /// <param name="vectorWeights">
-        /// Allow custom overrides of vector weights as math expressions. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
-        /// </param>
-        /// <param name="properties">
-        /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
-        /// </param>
-        /// <param name="id">
-        /// ID of the Object.
-        /// </param>
-        /// <param name="creationTimeUnix">
-        /// (Response only) Timestamp of creation of this object in milliseconds since epoch UTC.
-        /// </param>
-        /// <param name="lastUpdateTimeUnix">
-        /// (Response only) Timestamp of the last object update in milliseconds since epoch UTC.
-        /// </param>
-        /// <param name="vector">
-        /// A vector representation of the object in the Contextionary. If provided at object creation, this wil take precedence over any vectorizer setting.
-        /// </param>
-        /// <param name="vectors">
-        /// A map of named vectors for multi-vector representations.
-        /// </param>
-        /// <param name="tenant">
-        /// Name of the Objects tenant.
-        /// </param>
-        /// <param name="additional">
-        /// (Response only) Additional meta information about a single object.
+        /// <param name="id"></param>
+        /// <param name="roles">
+        /// the roles that revoked from group
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task ObjectsValidateAsync(
-            string? @class = default,
-            object? vectorWeights = default,
-            object? properties = default,
-            global::System.Guid? id = default,
-            long? creationTimeUnix = default,
-            long? lastUpdateTimeUnix = default,
-            global::System.Collections.Generic.IList<float>? vector = default,
-            global::System.Collections.Generic.Dictionary<string, object>? vectors = default,
-            string? tenant = default,
-            global::System.Collections.Generic.Dictionary<string, object>? additional = default,
+        public async global::System.Threading.Tasks.Task RevokeRoleFromGroupAsync(
+            string id,
+            global::System.Collections.Generic.IList<string>? roles = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Weaviate.Object
+            var __request = new global::Weaviate.RevokeRoleFromGroupRequest
             {
-                Class = @class,
-                VectorWeights = vectorWeights,
-                Properties = properties,
-                Id = id,
-                CreationTimeUnix = creationTimeUnix,
-                LastUpdateTimeUnix = lastUpdateTimeUnix,
-                Vector = vector,
-                Vectors = vectors,
-                Tenant = tenant,
-                Additional = additional,
+                Roles = roles,
             };
 
-            await ObjectsValidateAsync(
+            await RevokeRoleFromGroupAsync(
+                id: id,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -5,16 +5,16 @@ namespace Weaviate
 {
     public partial class AuthzClient
     {
-        partial void PrepareAssignRoleArguments(
+        partial void PrepareAssignRoleToUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id,
-            global::Weaviate.AssignRoleRequest request);
-        partial void PrepareAssignRoleRequest(
+            global::Weaviate.AssignRoleToUserRequest request);
+        partial void PrepareAssignRoleToUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string id,
-            global::Weaviate.AssignRoleRequest request);
-        partial void ProcessAssignRoleResponse(
+            global::Weaviate.AssignRoleToUserRequest request);
+        partial void ProcessAssignRoleToUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
@@ -25,16 +25,16 @@ namespace Weaviate
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task AssignRoleAsync(
+        public async global::System.Threading.Tasks.Task AssignRoleToUserAsync(
             string id,
-            global::Weaviate.AssignRoleRequest request,
+            global::Weaviate.AssignRoleToUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareAssignRoleArguments(
+            PrepareAssignRoleToUserArguments(
                 httpClient: HttpClient,
                 id: ref id,
                 request: request);
@@ -76,7 +76,7 @@ namespace Weaviate
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareAssignRoleRequest(
+            PrepareAssignRoleToUserRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 id: id,
@@ -90,7 +90,7 @@ namespace Weaviate
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessAssignRoleResponse(
+            ProcessAssignRoleToUserResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             try
@@ -121,17 +121,17 @@ namespace Weaviate
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task AssignRoleAsync(
+        public async global::System.Threading.Tasks.Task AssignRoleToUserAsync(
             string id,
             global::System.Collections.Generic.IList<string>? roles = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Weaviate.AssignRoleRequest
+            var __request = new global::Weaviate.AssignRoleToUserRequest
             {
                 Roles = roles,
             };
 
-            await AssignRoleAsync(
+            await AssignRoleToUserAsync(
                 id: id,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

@@ -320,6 +320,12 @@ namespace Weaviate
         /// <param name="nodes">
         /// resources applicable for cluster actions
         /// </param>
+        /// <param name="users">
+        /// resources applicable for user actions
+        /// </param>
+        /// <param name="tenants">
+        /// resources applicable for tenant actions
+        /// </param>
         /// <param name="roles">
         /// resources applicable for role actions
         /// </param>
@@ -337,6 +343,8 @@ namespace Weaviate
             global::Weaviate.PermissionBackups? backups = default,
             global::Weaviate.PermissionData? data = default,
             global::Weaviate.PermissionNodes? nodes = default,
+            global::Weaviate.PermissionUsers? users = default,
+            global::Weaviate.PermissionTenants? tenants = default,
             global::Weaviate.PermissionRoles? roles = default,
             global::Weaviate.PermissionCollections? collections = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -346,6 +354,8 @@ namespace Weaviate
                 Backups = backups,
                 Data = data,
                 Nodes = nodes,
+                Users = users,
+                Tenants = tenants,
                 Roles = roles,
                 Collections = collections,
                 Action = action,

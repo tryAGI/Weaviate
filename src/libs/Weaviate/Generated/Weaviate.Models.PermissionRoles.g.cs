@@ -16,6 +16,14 @@ namespace Weaviate
         public string? Role { get; set; }
 
         /// <summary>
+        /// set the scope for the manage role permission<br/>
+        /// Default Value: match
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.PermissionRolesScopeJsonConverter))]
+        public global::Weaviate.PermissionRolesScope? Scope { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -28,13 +36,19 @@ namespace Weaviate
         /// string or regex. if a specific role name, if left empty it will be ALL or *<br/>
         /// Default Value: *
         /// </param>
+        /// <param name="scope">
+        /// set the scope for the manage role permission<br/>
+        /// Default Value: match
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PermissionRoles(
-            string? role)
+            string? role,
+            global::Weaviate.PermissionRolesScope? scope)
         {
             this.Role = role;
+            this.Scope = scope;
         }
 
         /// <summary>

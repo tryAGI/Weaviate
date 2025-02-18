@@ -4,16 +4,16 @@
 namespace Weaviate
 {
     /// <summary>
-    /// resources applicable for collection and/or tenant actions
+    /// resources applicable for user actions
     /// </summary>
-    public sealed partial class PermissionCollections
+    public sealed partial class PermissionUsers
     {
         /// <summary>
-        /// string or regex. if a specific collection name, if left empty it will be ALL or *<br/>
+        /// string or regex. if a specific name, if left empty it will be ALL or *<br/>
         /// Default Value: *
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("collection")]
-        public string? Collection { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("users")]
+        public string? Users { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -22,25 +22,25 @@ namespace Weaviate
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PermissionCollections" /> class.
+        /// Initializes a new instance of the <see cref="PermissionUsers" /> class.
         /// </summary>
-        /// <param name="collection">
-        /// string or regex. if a specific collection name, if left empty it will be ALL or *<br/>
+        /// <param name="users">
+        /// string or regex. if a specific name, if left empty it will be ALL or *<br/>
         /// Default Value: *
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public PermissionCollections(
-            string? collection)
+        public PermissionUsers(
+            string? users)
         {
-            this.Collection = collection;
+            this.Users = users;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PermissionCollections" /> class.
+        /// Initializes a new instance of the <see cref="PermissionUsers" /> class.
         /// </summary>
-        public PermissionCollections()
+        public PermissionUsers()
         {
         }
     }

@@ -15,6 +15,8 @@ namespace Weaviate
         { 
             typeof(global::Weaviate.JsonConverters.PermissionNodesVerbosityJsonConverter),
             typeof(global::Weaviate.JsonConverters.PermissionNodesVerbosityNullableJsonConverter),
+            typeof(global::Weaviate.JsonConverters.PermissionRolesScopeJsonConverter),
+            typeof(global::Weaviate.JsonConverters.PermissionRolesScopeNullableJsonConverter),
             typeof(global::Weaviate.JsonConverters.PermissionActionJsonConverter),
             typeof(global::Weaviate.JsonConverters.PermissionActionNullableJsonConverter),
             typeof(global::Weaviate.JsonConverters.ReplicationConfigDeletionStrategyJsonConverter),

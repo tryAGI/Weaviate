@@ -148,6 +148,15 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AuthzClient Authz => new AuthzClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,

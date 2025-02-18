@@ -27,6 +27,18 @@ namespace Weaviate
         public global::Weaviate.PermissionNodes? Nodes { get; set; }
 
         /// <summary>
+        /// resources applicable for user actions
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("users")]
+        public global::Weaviate.PermissionUsers? Users { get; set; }
+
+        /// <summary>
+        /// resources applicable for tenant actions
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tenants")]
+        public global::Weaviate.PermissionTenants? Tenants { get; set; }
+
+        /// <summary>
         /// resources applicable for role actions
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("roles")]
@@ -64,6 +76,12 @@ namespace Weaviate
         /// <param name="nodes">
         /// resources applicable for cluster actions
         /// </param>
+        /// <param name="users">
+        /// resources applicable for user actions
+        /// </param>
+        /// <param name="tenants">
+        /// resources applicable for tenant actions
+        /// </param>
         /// <param name="roles">
         /// resources applicable for role actions
         /// </param>
@@ -81,6 +99,8 @@ namespace Weaviate
             global::Weaviate.PermissionBackups? backups,
             global::Weaviate.PermissionData? data,
             global::Weaviate.PermissionNodes? nodes,
+            global::Weaviate.PermissionUsers? users,
+            global::Weaviate.PermissionTenants? tenants,
             global::Weaviate.PermissionRoles? roles,
             global::Weaviate.PermissionCollections? collections)
         {
@@ -88,6 +108,8 @@ namespace Weaviate
             this.Backups = backups;
             this.Data = data;
             this.Nodes = nodes;
+            this.Users = users;
+            this.Tenants = tenants;
             this.Roles = roles;
             this.Collections = collections;
         }

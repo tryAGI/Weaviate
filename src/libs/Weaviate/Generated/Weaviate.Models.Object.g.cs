@@ -54,7 +54,7 @@ namespace Weaviate
         /// A map of named vectors for multi-vector representations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectors")]
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<float>>? Vectors { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, object>? Vectors { get; set; }
 
         /// <summary>
         /// Name of the Objects tenant.
@@ -118,7 +118,7 @@ namespace Weaviate
             long? creationTimeUnix,
             long? lastUpdateTimeUnix,
             global::System.Collections.Generic.IList<float>? vector,
-            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<float>>? vectors,
+            global::System.Collections.Generic.Dictionary<string, object>? vectors,
             string? tenant,
             global::System.Collections.Generic.Dictionary<string, object>? additional)
         {
