@@ -104,6 +104,11 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public UsersClient Users { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AuthzClient Authz { get; }
 
     }

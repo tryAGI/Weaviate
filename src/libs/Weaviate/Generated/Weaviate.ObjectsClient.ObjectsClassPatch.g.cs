@@ -178,7 +178,7 @@ namespace Weaviate
             long? creationTimeUnix = default,
             long? lastUpdateTimeUnix = default,
             global::System.Collections.Generic.IList<float>? vector = default,
-            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<float>>? vectors = default,
+            global::System.Collections.Generic.Dictionary<string, object>? vectors = default,
             string? tenant = default,
             global::System.Collections.Generic.Dictionary<string, object>? additional = default,
             global::System.Threading.CancellationToken cancellationToken = default)

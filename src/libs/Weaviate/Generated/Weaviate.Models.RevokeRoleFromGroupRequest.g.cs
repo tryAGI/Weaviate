@@ -6,10 +6,10 @@ namespace Weaviate
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class RevokeRoleRequest
+    public sealed partial class RevokeRoleFromGroupRequest
     {
         /// <summary>
-        /// the roles that revoked from the key or user
+        /// the roles that revoked from group
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("roles")]
         public global::System.Collections.Generic.IList<string>? Roles { get; set; }
@@ -21,24 +21,24 @@ namespace Weaviate
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RevokeRoleRequest" /> class.
+        /// Initializes a new instance of the <see cref="RevokeRoleFromGroupRequest" /> class.
         /// </summary>
         /// <param name="roles">
-        /// the roles that revoked from the key or user
+        /// the roles that revoked from group
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public RevokeRoleRequest(
+        public RevokeRoleFromGroupRequest(
             global::System.Collections.Generic.IList<string>? roles)
         {
             this.Roles = roles;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RevokeRoleRequest" /> class.
+        /// Initializes a new instance of the <see cref="RevokeRoleFromGroupRequest" /> class.
         /// </summary>
-        public RevokeRoleRequest()
+        public RevokeRoleFromGroupRequest()
         {
         }
     }
