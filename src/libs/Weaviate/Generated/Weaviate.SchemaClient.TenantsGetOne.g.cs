@@ -119,7 +119,7 @@ namespace Weaviate
                 }
 
                 throw new global::Weaviate.ApiException(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_401,
@@ -146,7 +146,7 @@ namespace Weaviate
                 }
 
                 throw new global::Weaviate.ApiException<global::Weaviate.ErrorResponse>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
@@ -171,7 +171,7 @@ namespace Weaviate
                 }
 
                 throw new global::Weaviate.ApiException(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_404,
@@ -198,7 +198,7 @@ namespace Weaviate
                 }
 
                 throw new global::Weaviate.ApiException<global::Weaviate.ErrorResponse>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,
@@ -226,7 +226,7 @@ namespace Weaviate
                 }
 
                 throw new global::Weaviate.ApiException<global::Weaviate.ErrorResponse>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_500,
