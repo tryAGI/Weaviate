@@ -29,7 +29,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ObjectsGetResponse(global::Weaviate.Object value) => new ObjectsGetResponse(value);
+        public static implicit operator ObjectsGetResponse(global::Weaviate.Object value) => new ObjectsGetResponse((global::Weaviate.Object?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ObjectsGetResponse(global::Weaviate.ObjectsGetResponseVariant2 value) => new ObjectsGetResponse(value);
+        public static implicit operator ObjectsGetResponse(global::Weaviate.ObjectsGetResponseVariant2 value) => new ObjectsGetResponse((global::Weaviate.ObjectsGetResponseVariant2?)value);
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ObjectsGetResponse(global::Weaviate.ObjectsGetResponseVariant3 value) => new ObjectsGetResponse(value);
+        public static implicit operator ObjectsGetResponse(global::Weaviate.ObjectsGetResponseVariant3 value) => new ObjectsGetResponse((global::Weaviate.ObjectsGetResponseVariant3?)value);
 
         /// <summary>
         /// 

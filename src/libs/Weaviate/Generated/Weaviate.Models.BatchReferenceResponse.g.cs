@@ -29,7 +29,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BatchReferenceResponse(global::Weaviate.BatchReference value) => new BatchReferenceResponse(value);
+        public static implicit operator BatchReferenceResponse(global::Weaviate.BatchReference value) => new BatchReferenceResponse((global::Weaviate.BatchReference?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BatchReferenceResponse(global::Weaviate.BatchReferenceResponseVariant2 value) => new BatchReferenceResponse(value);
+        public static implicit operator BatchReferenceResponse(global::Weaviate.BatchReferenceResponseVariant2 value) => new BatchReferenceResponse((global::Weaviate.BatchReferenceResponseVariant2?)value);
 
         /// <summary>
         /// 
