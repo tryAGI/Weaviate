@@ -29,7 +29,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TenantResponse(global::Weaviate.Tenant value) => new TenantResponse(value);
+        public static implicit operator TenantResponse(global::Weaviate.Tenant value) => new TenantResponse((global::Weaviate.Tenant?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator TenantResponse(global::Weaviate.TenantResponseVariant2 value) => new TenantResponse(value);
+        public static implicit operator TenantResponse(global::Weaviate.TenantResponseVariant2 value) => new TenantResponse((global::Weaviate.TenantResponseVariant2?)value);
 
         /// <summary>
         /// 
