@@ -28,6 +28,10 @@ namespace Weaviate.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::Weaviate.PermissionRolesScope)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Weaviate.PermissionRolesScope);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }

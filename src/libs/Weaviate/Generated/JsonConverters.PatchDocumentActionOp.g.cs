@@ -28,6 +28,10 @@ namespace Weaviate.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::Weaviate.PatchDocumentActionOp)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Weaviate.PatchDocumentActionOp);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
