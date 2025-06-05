@@ -50,7 +50,7 @@ namespace Weaviate
                 consistencyLevel: ref consistencyLevel,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/objects/{className}/{id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

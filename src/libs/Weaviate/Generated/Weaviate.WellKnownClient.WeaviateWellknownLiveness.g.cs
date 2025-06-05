@@ -28,7 +28,7 @@ namespace Weaviate
             PrepareWeaviateWellknownLivenessArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: "/.well-known/live",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

@@ -53,7 +53,7 @@ namespace Weaviate
                 bucket: ref bucket,
                 path: ref path);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/backups/{backend}/{id}/restore",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
