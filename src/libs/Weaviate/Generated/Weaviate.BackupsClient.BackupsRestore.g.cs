@@ -50,7 +50,7 @@ namespace Weaviate
                 id: ref id,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/backups/{backend}/{id}/restore",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

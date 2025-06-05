@@ -40,7 +40,7 @@ namespace Weaviate
                 httpClient: HttpClient,
                 output: ref output);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: "/nodes",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

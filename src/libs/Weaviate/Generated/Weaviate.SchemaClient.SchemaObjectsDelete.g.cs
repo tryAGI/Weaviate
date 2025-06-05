@@ -33,7 +33,7 @@ namespace Weaviate
                 httpClient: HttpClient,
                 className: ref className);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/schema/{className}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

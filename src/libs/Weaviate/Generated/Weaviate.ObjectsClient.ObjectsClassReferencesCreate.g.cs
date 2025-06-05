@@ -60,7 +60,7 @@ namespace Weaviate
                 tenant: ref tenant,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/objects/{className}/{id}/references/{propertyName}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

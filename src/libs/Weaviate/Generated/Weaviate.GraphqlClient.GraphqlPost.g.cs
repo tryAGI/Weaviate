@@ -40,7 +40,7 @@ namespace Weaviate
                 httpClient: HttpClient,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: "/graphql",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
