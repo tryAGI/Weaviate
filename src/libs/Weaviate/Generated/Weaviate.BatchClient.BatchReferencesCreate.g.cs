@@ -106,20 +106,29 @@ namespace Weaviate
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
+                global::System.Exception? __exception_400 = null;
                 global::Weaviate.ErrorResponse? __value_400 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_400 = global::Weaviate.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_400 = global::Weaviate.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_400 = await global::Weaviate.ErrorResponse.FromJsonStreamAsync(__contentStream_400, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_400 = await global::Weaviate.ErrorResponse.FromJsonStreamAsync(__contentStream_400, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_400 = __ex;
                 }
 
                 throw new global::Weaviate.ApiException<global::Weaviate.ErrorResponse>(
                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_400,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,
@@ -134,17 +143,26 @@ namespace Weaviate
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
-                if (ReadResponseAsString)
+                global::System.Exception? __exception_401 = null;
+                try
                 {
-                    __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    if (ReadResponseAsString)
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __exception_401 = __ex;
                 }
 
                 throw new global::Weaviate.ApiException(
                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_401,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_401,
@@ -158,20 +176,29 @@ namespace Weaviate
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
+                global::System.Exception? __exception_403 = null;
                 global::Weaviate.ErrorResponse? __value_403 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_403 = global::Weaviate.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_403 = global::Weaviate.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_403 = await global::Weaviate.ErrorResponse.FromJsonStreamAsync(__contentStream_403, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_403 = await global::Weaviate.ErrorResponse.FromJsonStreamAsync(__contentStream_403, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_403 = __ex;
                 }
 
                 throw new global::Weaviate.ApiException<global::Weaviate.ErrorResponse>(
                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_403,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
@@ -186,20 +213,29 @@ namespace Weaviate
             if ((int)__response.StatusCode == 422)
             {
                 string? __content_422 = null;
+                global::System.Exception? __exception_422 = null;
                 global::Weaviate.ErrorResponse? __value_422 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_422 = await global::Weaviate.ErrorResponse.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_422 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_422 = await global::Weaviate.ErrorResponse.FromJsonStreamAsync(__contentStream_422, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_422 = __ex;
                 }
 
                 throw new global::Weaviate.ApiException<global::Weaviate.ErrorResponse>(
                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_422,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,
@@ -214,20 +250,29 @@ namespace Weaviate
             if ((int)__response.StatusCode == 500)
             {
                 string? __content_500 = null;
+                global::System.Exception? __exception_500 = null;
                 global::Weaviate.ErrorResponse? __value_500 = null;
-                if (ReadResponseAsString)
+                try
                 {
-                    __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_500 = global::Weaviate.ErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                    if (ReadResponseAsString)
+                    {
+                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_500 = global::Weaviate.ErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                    }
+                    else
+                    {
+                        var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                        __value_500 = await global::Weaviate.ErrorResponse.FromJsonStreamAsync(__contentStream_500, JsonSerializerContext).ConfigureAwait(false);
+                    }
                 }
-                else
+                catch (global::System.Exception __ex)
                 {
-                    var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_500 = await global::Weaviate.ErrorResponse.FromJsonStreamAsync(__contentStream_500, JsonSerializerContext).ConfigureAwait(false);
+                    __exception_500 = __ex;
                 }
 
                 throw new global::Weaviate.ApiException<global::Weaviate.ErrorResponse>(
                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_500,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_500,
@@ -259,8 +304,12 @@ namespace Weaviate
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse> ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::Weaviate.ApiException(
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
@@ -274,18 +323,24 @@ namespace Weaviate
                             h => h.Value),
                     };
                 }
-
-                return
-                    global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse> ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
             {
                 try
                 {
                     __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse> ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
-                catch (global::System.Net.Http.HttpRequestException __ex)
+                catch (global::System.Exception __ex)
                 {
                     throw new global::Weaviate.ApiException(
                         message: __response.ReasonPhrase ?? string.Empty,
@@ -298,16 +353,6 @@ namespace Weaviate
                             h => h.Value),
                     };
                 }
-
-                using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                return
-                    await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse> ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
     }
