@@ -43,7 +43,7 @@ namespace Weaviate
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: "/nodes",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("output", output) 
                 ; 
             var __path = __pathBuilder.ToString();

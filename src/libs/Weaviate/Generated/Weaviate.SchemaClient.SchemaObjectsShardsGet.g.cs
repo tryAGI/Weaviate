@@ -46,7 +46,7 @@ namespace Weaviate
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/schema/{className}/shards",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("tenant", tenant) 
                 ; 
             var __path = __pathBuilder.ToString();
