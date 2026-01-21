@@ -41,7 +41,7 @@ namespace Weaviate
         /// </summary>
         /// <param name="after"></param>
         /// <param name="offset">
-        /// Default Value: 0L
+        /// Default Value: 0
         /// </param>
         /// <param name="limit"></param>
         /// <param name="include"></param>
@@ -78,14 +78,14 @@ namespace Weaviate
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: "/objects",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("after", after) 
-                .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("include", include) 
-                .AddOptionalParameter("sort", sort) 
-                .AddOptionalParameter("order", order) 
-                .AddOptionalParameter("class", @class) 
+            __pathBuilder
+                .AddOptionalParameter("after", after)
+                .AddOptionalParameter("offset", offset?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("include", include)
+                .AddOptionalParameter("sort", sort)
+                .AddOptionalParameter("order", order)
+                .AddOptionalParameter("class", @class)
                 .AddOptionalParameter("tenant", tenant) 
                 ; 
             var __path = __pathBuilder.ToString();
