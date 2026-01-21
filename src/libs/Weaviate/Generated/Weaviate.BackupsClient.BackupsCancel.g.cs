@@ -51,8 +51,8 @@ namespace Weaviate
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/backups/{backend}/{id}",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("bucket", bucket) 
+            __pathBuilder
+                .AddOptionalParameter("bucket", bucket)
                 .AddOptionalParameter("path", path) 
                 ; 
             var __path = __pathBuilder.ToString();

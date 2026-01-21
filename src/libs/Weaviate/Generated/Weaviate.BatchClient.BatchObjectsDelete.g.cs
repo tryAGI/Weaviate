@@ -53,8 +53,8 @@ namespace Weaviate
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: "/batch/objects",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("consistency_level", consistencyLevel) 
+            __pathBuilder
+                .AddOptionalParameter("consistency_level", consistencyLevel)
                 .AddOptionalParameter("tenant", tenant) 
                 ; 
             var __path = __pathBuilder.ToString();

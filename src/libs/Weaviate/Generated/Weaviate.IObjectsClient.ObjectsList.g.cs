@@ -10,7 +10,7 @@ namespace Weaviate
         /// </summary>
         /// <param name="after"></param>
         /// <param name="offset">
-        /// Default Value: 0L
+        /// Default Value: 0
         /// </param>
         /// <param name="limit"></param>
         /// <param name="include"></param>
