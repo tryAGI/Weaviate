@@ -13,6 +13,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task<bool> HasPermissionAsync(
             string id,
+
             global::Weaviate.Permission request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

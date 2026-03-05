@@ -32,6 +32,7 @@ namespace Weaviate
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.ObjectsGetResponse>> BatchObjectsCreateAsync(
+
             global::Weaviate.BatchObjectsCreateRequest request,
             string? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)

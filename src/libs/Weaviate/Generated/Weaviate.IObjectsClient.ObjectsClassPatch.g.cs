@@ -17,6 +17,7 @@ namespace Weaviate
         global::System.Threading.Tasks.Task ObjectsClassPatchAsync(
             string className,
             global::System.Guid id,
+
             global::Weaviate.Object request,
             string? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default);

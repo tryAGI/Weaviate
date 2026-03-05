@@ -40,6 +40,7 @@ namespace Weaviate
         public async global::System.Threading.Tasks.Task<global::Weaviate.Object> ObjectsClassPutAsync(
             string className,
             global::System.Guid id,
+
             global::Weaviate.Object request,
             string? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)

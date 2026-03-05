@@ -12,19 +12,19 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        HEALTHY,
+        Healthy,
         /// <summary>
         /// 
         /// </summary>
-        UNHEALTHY,
+        Unhealthy,
         /// <summary>
         /// 
         /// </summary>
-        UNAVAILABLE,
+        Unavailable,
         /// <summary>
         /// 
         /// </summary>
-        TIMEOUT,
+        Timeout,
     }
 
     /// <summary>
@@ -39,10 +39,10 @@ namespace Weaviate
         {
             return value switch
             {
-                StatisticsStatus.HEALTHY => "HEALTHY",
-                StatisticsStatus.UNHEALTHY => "UNHEALTHY",
-                StatisticsStatus.UNAVAILABLE => "UNAVAILABLE",
-                StatisticsStatus.TIMEOUT => "TIMEOUT",
+                StatisticsStatus.Healthy => "HEALTHY",
+                StatisticsStatus.Unhealthy => "UNHEALTHY",
+                StatisticsStatus.Unavailable => "UNAVAILABLE",
+                StatisticsStatus.Timeout => "TIMEOUT",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,10 +53,10 @@ namespace Weaviate
         {
             return value switch
             {
-                "HEALTHY" => StatisticsStatus.HEALTHY,
-                "UNHEALTHY" => StatisticsStatus.UNHEALTHY,
-                "UNAVAILABLE" => StatisticsStatus.UNAVAILABLE,
-                "TIMEOUT" => StatisticsStatus.TIMEOUT,
+                "HEALTHY" => StatisticsStatus.Healthy,
+                "UNHEALTHY" => StatisticsStatus.Unhealthy,
+                "UNAVAILABLE" => StatisticsStatus.Unavailable,
+                "TIMEOUT" => StatisticsStatus.Timeout,
                 _ => null,
             };
         }

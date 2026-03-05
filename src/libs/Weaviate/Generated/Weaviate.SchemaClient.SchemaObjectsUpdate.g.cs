@@ -33,6 +33,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.Class> SchemaObjectsUpdateAsync(
             string className,
+
             global::Weaviate.Class request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
