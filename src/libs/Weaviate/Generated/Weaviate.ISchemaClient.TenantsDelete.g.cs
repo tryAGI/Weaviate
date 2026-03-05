@@ -13,6 +13,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task TenantsDeleteAsync(
             string className,
+
             global::System.Collections.Generic.IList<string> request,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

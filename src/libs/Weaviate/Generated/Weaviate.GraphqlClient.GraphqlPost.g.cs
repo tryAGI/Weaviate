@@ -29,6 +29,7 @@ namespace Weaviate
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.GraphQLResponse> GraphqlPostAsync(
+
             global::Weaviate.GraphQLQuery request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

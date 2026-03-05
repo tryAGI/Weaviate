@@ -37,6 +37,7 @@ namespace Weaviate
         public async global::System.Threading.Tasks.Task<global::Weaviate.ShardStatus> SchemaObjectsShardsUpdateAsync(
             string className,
             string shardName,
+
             global::Weaviate.ShardStatus request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

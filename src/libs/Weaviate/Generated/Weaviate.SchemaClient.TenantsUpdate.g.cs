@@ -33,6 +33,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.Tenant>> TenantsUpdateAsync(
             string className,
+
             global::System.Collections.Generic.IList<global::Weaviate.Tenant> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

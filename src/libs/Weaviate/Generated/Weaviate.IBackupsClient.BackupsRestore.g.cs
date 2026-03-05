@@ -16,6 +16,7 @@ namespace Weaviate
         global::System.Threading.Tasks.Task<global::Weaviate.BackupRestoreResponse> BackupsRestoreAsync(
             string backend,
             string id,
+
             global::Weaviate.BackupRestoreRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

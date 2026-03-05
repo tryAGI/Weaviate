@@ -27,6 +27,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task AssignRoleToGroupAsync(
             string id,
+
             global::Weaviate.AssignRoleToGroupRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

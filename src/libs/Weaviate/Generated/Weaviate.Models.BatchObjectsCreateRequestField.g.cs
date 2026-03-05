@@ -11,7 +11,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        ALL,
+        All,
         /// <summary>
         /// 
         /// </summary>
@@ -42,7 +42,7 @@ namespace Weaviate
         {
             return value switch
             {
-                BatchObjectsCreateRequestField.ALL => "ALL",
+                BatchObjectsCreateRequestField.All => "ALL",
                 BatchObjectsCreateRequestField.Class => "class",
                 BatchObjectsCreateRequestField.Schema => "schema",
                 BatchObjectsCreateRequestField.Id => "id",
@@ -57,7 +57,7 @@ namespace Weaviate
         {
             return value switch
             {
-                "ALL" => BatchObjectsCreateRequestField.ALL,
+                "ALL" => BatchObjectsCreateRequestField.All,
                 "class" => BatchObjectsCreateRequestField.Class,
                 "schema" => BatchObjectsCreateRequestField.Schema,
                 "id" => BatchObjectsCreateRequestField.Id,

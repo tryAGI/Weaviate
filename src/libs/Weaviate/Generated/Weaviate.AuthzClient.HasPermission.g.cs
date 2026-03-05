@@ -32,6 +32,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<bool> HasPermissionAsync(
             string id,
+
             global::Weaviate.Permission request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

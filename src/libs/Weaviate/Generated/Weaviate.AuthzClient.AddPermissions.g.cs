@@ -27,6 +27,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task AddPermissionsAsync(
             string id,
+
             global::Weaviate.AddPermissionsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

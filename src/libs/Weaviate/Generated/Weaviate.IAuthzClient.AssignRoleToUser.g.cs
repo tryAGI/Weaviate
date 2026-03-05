@@ -13,6 +13,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task AssignRoleToUserAsync(
             string id,
+
             global::Weaviate.AssignRoleToUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

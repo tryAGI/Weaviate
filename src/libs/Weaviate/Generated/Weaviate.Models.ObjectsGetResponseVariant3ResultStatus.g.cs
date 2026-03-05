@@ -11,11 +11,11 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        SUCCESS,
+        Success,
         /// <summary>
         /// 
         /// </summary>
-        FAILED,
+        Failed,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Weaviate
         {
             return value switch
             {
-                ObjectsGetResponseVariant3ResultStatus.SUCCESS => "SUCCESS",
-                ObjectsGetResponseVariant3ResultStatus.FAILED => "FAILED",
+                ObjectsGetResponseVariant3ResultStatus.Success => "SUCCESS",
+                ObjectsGetResponseVariant3ResultStatus.Failed => "FAILED",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Weaviate
         {
             return value switch
             {
-                "SUCCESS" => ObjectsGetResponseVariant3ResultStatus.SUCCESS,
-                "FAILED" => ObjectsGetResponseVariant3ResultStatus.FAILED,
+                "SUCCESS" => ObjectsGetResponseVariant3ResultStatus.Success,
+                "FAILED" => ObjectsGetResponseVariant3ResultStatus.Failed,
                 _ => null,
             };
         }

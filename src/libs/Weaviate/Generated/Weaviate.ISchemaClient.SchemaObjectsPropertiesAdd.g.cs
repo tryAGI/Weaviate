@@ -13,6 +13,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.Property> SchemaObjectsPropertiesAddAsync(
             string className,
+
             global::Weaviate.Property request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
