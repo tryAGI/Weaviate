@@ -10,10 +10,10 @@ C# SDK for the [Weaviate](https://weaviate.io/) vector database, auto-generated 
 
 ```bash
 # Build the solution
-dotnet build Weaviate.sln
+dotnet build Weaviate.slnx
 
 # Build for release (also produces NuGet package)
-dotnet build Weaviate.sln -c Release
+dotnet build Weaviate.slnx -c Release
 
 # Run integration tests (requires WEAVIATE_API_KEY and WEAVIATE_URL env vars)
 dotnet test src/tests/IntegrationTests/Weaviate.IntegrationTests.csproj
