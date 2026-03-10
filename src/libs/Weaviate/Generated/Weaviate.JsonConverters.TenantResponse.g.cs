@@ -40,8 +40,9 @@ namespace Weaviate.JsonConverters
             {
             }
 
-            var result = new global::Weaviate.TenantResponse(
+            var __value = new global::Weaviate.TenantResponse(
                 value1,
+
                 value2
                 );
 
@@ -58,7 +59,7 @@ namespace Weaviate.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

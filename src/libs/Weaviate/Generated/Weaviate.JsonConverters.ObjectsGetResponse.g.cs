@@ -52,9 +52,11 @@ namespace Weaviate.JsonConverters
             {
             }
 
-            var result = new global::Weaviate.ObjectsGetResponse(
+            var __value = new global::Weaviate.ObjectsGetResponse(
                 value1,
+
                 value2,
+
                 value3
                 );
 
@@ -77,7 +79,7 @@ namespace Weaviate.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />
