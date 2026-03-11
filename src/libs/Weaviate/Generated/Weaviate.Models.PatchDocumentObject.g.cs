@@ -20,14 +20,14 @@ namespace Weaviate
         [global::System.Text.Json.Serialization.JsonPropertyName("op")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.PatchDocumentObjectOpJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Weaviate.PatchDocumentObjectOp Op { get; set; } = default!;
+        public required global::Weaviate.PatchDocumentObjectOp Op { get; set; }
 
         /// <summary>
         /// A JSON-Pointer.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Path { get; set; } = default!;
+        public required string Path { get; set; }
 
         /// <summary>
         /// The value to be used within the operations.

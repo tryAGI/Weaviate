@@ -13,14 +13,14 @@ namespace Weaviate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Weaviate.Permission> Permissions { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Weaviate.Permission> Permissions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
