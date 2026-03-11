@@ -56,7 +56,7 @@ namespace Weaviate
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.PermissionActionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Weaviate.PermissionAction Action { get; set; }
+        public global::Weaviate.PermissionAction Action { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

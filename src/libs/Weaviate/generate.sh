@@ -9,7 +9,7 @@ fi
 autosdk generate openapi.yaml \
   --namespace Weaviate \
   --clientClassName WeaviateClient \
-  --targetFramework net8.0 \
+  --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations \
   --security-scheme Http:Header:Bearer

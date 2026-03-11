@@ -10,17 +10,17 @@ namespace Weaviate
     {
         /// <summary>
         /// time when this classification was started<br/>
-        /// Example: 2017-07-21T17:32:28.0000000+00:00
+        /// Example: 2017-07-21T17:32:28Z
         /// </summary>
-        /// <example>2017-07-21T17:32:28.0000000+00:00</example>
+        /// <example>2017-07-21T17:32:28Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("started")]
         public global::System.DateTime? Started { get; set; }
 
         /// <summary>
         /// time when this classification finished<br/>
-        /// Example: 2017-07-21T17:32:28.0000000+00:00
+        /// Example: 2017-07-21T17:32:28Z
         /// </summary>
-        /// <example>2017-07-21T17:32:28.0000000+00:00</example>
+        /// <example>2017-07-21T17:32:28Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed")]
         public global::System.DateTime? Completed { get; set; }
 
@@ -59,11 +59,11 @@ namespace Weaviate
         /// </summary>
         /// <param name="started">
         /// time when this classification was started<br/>
-        /// Example: 2017-07-21T17:32:28.0000000+00:00
+        /// Example: 2017-07-21T17:32:28Z
         /// </param>
         /// <param name="completed">
         /// time when this classification finished<br/>
-        /// Example: 2017-07-21T17:32:28.0000000+00:00
+        /// Example: 2017-07-21T17:32:28Z
         /// </param>
         /// <param name="count">
         /// number of objects which were taken into consideration for classification<br/>

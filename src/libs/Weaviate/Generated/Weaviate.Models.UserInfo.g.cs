@@ -25,7 +25,7 @@ namespace Weaviate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("username")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Username { get; set; }
+        public string Username { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
