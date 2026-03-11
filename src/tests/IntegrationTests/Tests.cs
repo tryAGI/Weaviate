@@ -12,7 +12,8 @@ public partial class Tests
             Environment.GetEnvironmentVariable("WEAVIATE_URL") ??
             throw new AssertInconclusiveException("WEAVIATE_URL environment variable is not found.");
 
-        var client = new WeaviateClient(apiKey, baseUri: new Uri(url));
+        var client = new WeaviateClient(baseUri: new Uri(url));
+        client.AuthorizeUsingBearer(apiKey);
         
         return client;
     }

@@ -5416,11 +5416,16 @@ components:
         type: string
         default: minimal
   securitySchemes:
-    Bearer:
-      type: http
-      scheme: bearer
+    oidc:
+      type: oauth2
+      description: OIDC (OpenConnect ID - based on OAuth2)
+      flows:
+        implicit:
+          authorizationUrl: http://to-be-configured-in-the-application-config/
+          scopes: { }
 security:
-  - Bearer: [ ]
+  - { }
+  - oidc: [ ]
 tags:
   - name: root
     description: The root of the API. Note the base url is `/v1`.
