@@ -41,9 +41,9 @@ namespace Weaviate
 
         /// <summary>
         /// value as number/float<br/>
-        /// Example: 3.14
+        /// Example: 3.14F
         /// </summary>
-        /// <example>3.14</example>
+        /// <example>3.14F</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("valueNumber")]
         public double? ValueNumber { get; set; }
 
@@ -89,9 +89,9 @@ namespace Weaviate
 
         /// <summary>
         /// value as number/float<br/>
-        /// Example: [3.14]
+        /// Example: [3.14F]
         /// </summary>
-        /// <example>[3.14]</example>
+        /// <example>[3.14F]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("valueNumberArray")]
         public global::System.Collections.Generic.IList<double>? ValueNumberArray { get; set; }
 
@@ -159,7 +159,7 @@ namespace Weaviate
         /// </param>
         /// <param name="valueNumber">
         /// value as number/float<br/>
-        /// Example: 3.14
+        /// Example: 3.14F
         /// </param>
         /// <param name="valueBoolean">
         /// value as boolean<br/>
@@ -183,7 +183,7 @@ namespace Weaviate
         /// </param>
         /// <param name="valueNumberArray">
         /// value as number/float<br/>
-        /// Example: [3.14]
+        /// Example: [3.14F]
         /// </param>
         /// <param name="valueBooleanArray">
         /// value as boolean<br/>
