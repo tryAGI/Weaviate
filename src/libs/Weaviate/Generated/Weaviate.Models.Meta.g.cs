@@ -30,7 +30,7 @@ namespace Weaviate
         /// Max message size for GRPC connection in bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grpcMaxMessageSize")]
-        public int? GrpcMaxMessageSize { get; set; }
+        public long? GrpcMaxMessageSize { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,7 +60,7 @@ namespace Weaviate
             string? hostname,
             string? version,
             object? modules,
-            int? grpcMaxMessageSize)
+            long? grpcMaxMessageSize)
         {
             this.Hostname = hostname;
             this.Version = version;
