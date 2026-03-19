@@ -1,3 +1,9 @@
+/*
+order: 10
+title: Test
+slug: test
+*/
+
 namespace Weaviate.IntegrationTests;
 
 public partial class Tests
