@@ -85,10 +85,6 @@ namespace Weaviate
 
             typeof(global::Weaviate.JsonConverters.ObjectsGetResponseVariant3ResultStatusNullableJsonConverter),
 
-            typeof(global::Weaviate.JsonConverters.WhereFilterOperatorJsonConverter),
-
-            typeof(global::Weaviate.JsonConverters.WhereFilterOperatorNullableJsonConverter),
-
             typeof(global::Weaviate.JsonConverters.BatchDeleteResponseResultsObjectStatusJsonConverter),
 
             typeof(global::Weaviate.JsonConverters.BatchDeleteResponseResultsObjectStatusNullableJsonConverter),
@@ -96,6 +92,10 @@ namespace Weaviate
             typeof(global::Weaviate.JsonConverters.ClassificationStatusJsonConverter),
 
             typeof(global::Weaviate.JsonConverters.ClassificationStatusNullableJsonConverter),
+
+            typeof(global::Weaviate.JsonConverters.WhereFilterOperatorJsonConverter),
+
+            typeof(global::Weaviate.JsonConverters.WhereFilterOperatorNullableJsonConverter),
 
             typeof(global::Weaviate.JsonConverters.TenantActivityStatusJsonConverter),
 
@@ -136,14 +136,14 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.C11yWordsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.C11yWordsResponseConcatenatedWord))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<float>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(float))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.C11yNearestNeighbor>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.C11yNearestNeighbor))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.C11yWordsResponseIndividualWord>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.C11yWordsResponseIndividualWord))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.C11yWordsResponseIndividualWordInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.C11yExtension))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(float))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.C11yNearestNeighbor))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.C11yVectorBasedQuestionItem>))]
@@ -175,18 +175,18 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Meta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.SingleRef>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SingleRef))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReferenceMetaClassification))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PatchDocumentObject))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PatchDocumentObjectOp))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PatchDocumentAction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PatchDocumentActionOp))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PeerUpdate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.PeerUpdate>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Schema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Class>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Class))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SchemaClusterStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Weaviate.VectorConfig>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.VectorConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Property>))]
@@ -195,7 +195,6 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.NestedProperty>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.NestedProperty))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.NestedPropertyTokenization))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SchemaClusterStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ShardStatusGetResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ShardStatusGetResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ShardStatus))]
@@ -229,6 +228,7 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.StatisticsStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ClusterStatisticsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Statistics>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReferenceMetaClassification))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchReference))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchReferenceResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchReferenceResponseVariant2))]
@@ -245,13 +245,6 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDelete))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDeleteMatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilter))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.WhereFilter>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilterOperator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<long>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<bool>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilterGeoRange))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilterGeoRangeDistance))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDeleteResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDeleteResponseMatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDeleteResponseResults))]
@@ -264,6 +257,13 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ClassificationStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ClassificationMeta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ClassificationFilters))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.WhereFilter>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilterOperator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<long>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<bool>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilterGeoRange))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilterGeoRangeDistance))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Tenant))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.TenantActivityStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.TenantResponse))]
@@ -308,12 +308,12 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.NodeStatus>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Statistics>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Deprecation>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.BatchDeleteResponseResultsObject>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.WhereFilter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<long>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<bool>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.BatchDeleteResponseResultsObject>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.BatchObjectsCreateRequestField>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.BatchReference>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Tenant>))]
