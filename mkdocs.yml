@@ -3,7 +3,10 @@ nav:
 - Overview: index.md
 # EXAMPLES:START
 - Examples:
-  - Test: samples/Test.md
+  - Test: examples/test.md
+  - Get Meta: examples/get-meta.md
+  - Get Schema: examples/get-schema.md
+  - Get Nodes: examples/get-nodes.md
 # EXAMPLES:END
         
 theme:
