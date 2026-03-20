@@ -4,6 +4,7 @@ namespace Weaviate
 {
     public partial interface IWellKnownClient
     {
+
         /// <summary>
         /// OIDC discovery information if OIDC auth is enabled<br/>
         /// OIDC Discovery page, redirects to the token issuer if one is configured

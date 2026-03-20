@@ -4,6 +4,7 @@ namespace Weaviate
 {
     public partial interface IAuthzClient
     {
+
         /// <summary>
         /// Delete role
         /// </summary>

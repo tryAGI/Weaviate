@@ -23,6 +23,7 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Get the list of tenants.<br/>
         /// get all tenants from a specific class

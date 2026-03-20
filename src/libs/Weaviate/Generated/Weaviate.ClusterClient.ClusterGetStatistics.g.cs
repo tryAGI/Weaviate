@@ -19,6 +19,7 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// See Raft cluster statistics<br/>
         /// Returns Raft cluster statistics of Weaviate DB.

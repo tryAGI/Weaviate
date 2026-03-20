@@ -23,6 +23,7 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Node information for a collection.<br/>
         /// Returns node information for the nodes relevant to the collection.

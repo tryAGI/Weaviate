@@ -4,6 +4,7 @@ namespace Weaviate
 {
     public partial interface IRootClient
     {
+
         /// <summary>
         /// List available endpoints<br/>
         /// Get links to other endpoints to help discover the REST API

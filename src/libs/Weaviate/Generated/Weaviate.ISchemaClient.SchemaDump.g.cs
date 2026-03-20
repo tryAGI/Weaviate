@@ -4,6 +4,7 @@ namespace Weaviate
 {
     public partial interface ISchemaClient
     {
+
         /// <summary>
         /// Dump the current the database schema.<br/>
         /// Fetch an array of all collection definitions from the schema.
