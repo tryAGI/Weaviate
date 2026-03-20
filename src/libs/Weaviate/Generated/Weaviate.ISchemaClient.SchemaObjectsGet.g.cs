@@ -4,7 +4,6 @@ namespace Weaviate
 {
     public partial interface ISchemaClient
     {
-
         /// <summary>
         /// Get a single class from the schema
         /// </summary>

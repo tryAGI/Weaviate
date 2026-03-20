@@ -21,7 +21,6 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Dump the current the database schema.<br/>
         /// Fetch an array of all collection definitions from the schema.

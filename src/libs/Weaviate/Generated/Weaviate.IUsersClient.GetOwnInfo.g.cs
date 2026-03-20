@@ -4,7 +4,6 @@ namespace Weaviate
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// get info relevant to own user, e.g. username, roles
         /// </summary>

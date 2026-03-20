@@ -4,12 +4,10 @@ namespace Weaviate
 {
     public partial interface ISchemaClient
     {
-
         /// <summary>
         /// Create a new Object class in the schema.<br/>
         /// Create a new data object collection. &lt;br/&gt;&lt;br/&gt;If AutoSchema is enabled, Weaviate will attempt to infer the schema from the data at import time. However, manual schema definition is recommended for production environments.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace Weaviate
 
             global::Weaviate.Class request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a new Object class in the schema.<br/>
         /// Create a new data object collection. &lt;br/&gt;&lt;br/&gt;If AutoSchema is enabled, Weaviate will attempt to infer the schema from the data at import time. However, manual schema definition is recommended for production environments.

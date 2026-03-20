@@ -4,7 +4,6 @@ namespace Weaviate
 {
     public partial interface ISchemaClient
     {
-
         /// <summary>
         /// Get the list of tenants.<br/>
         /// get all tenants from a specific class

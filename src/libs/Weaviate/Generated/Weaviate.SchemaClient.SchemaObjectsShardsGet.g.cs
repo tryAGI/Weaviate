@@ -23,7 +23,6 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get the shards status of an Object class<br/>
         /// Get the status of every shard in the cluster.

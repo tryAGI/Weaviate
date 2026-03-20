@@ -21,7 +21,6 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// List backups in progress<br/>
         /// [Coming soon] List all backups in progress not implemented yet.

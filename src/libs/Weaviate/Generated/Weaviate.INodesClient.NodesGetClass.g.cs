@@ -4,7 +4,6 @@ namespace Weaviate
 {
     public partial interface INodesClient
     {
-
         /// <summary>
         /// Node information for a collection.<br/>
         /// Returns node information for the nodes relevant to the collection.

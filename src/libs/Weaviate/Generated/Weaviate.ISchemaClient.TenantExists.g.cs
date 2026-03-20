@@ -4,7 +4,6 @@ namespace Weaviate
 {
     public partial interface ISchemaClient
     {
-
         /// <summary>
         /// Check whether a tenant exists<br/>
         /// Check if a tenant exists for a specific class

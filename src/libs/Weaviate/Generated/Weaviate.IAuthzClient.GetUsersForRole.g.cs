@@ -4,7 +4,6 @@ namespace Weaviate
 {
     public partial interface IAuthzClient
     {
-
         /// <summary>
         /// get users or a keys assigned to role
         /// </summary>

@@ -21,7 +21,6 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// get users or a keys assigned to role
         /// </summary>

@@ -4,12 +4,10 @@ namespace Weaviate
 {
     public partial interface IObjectsClient
     {
-
         /// <summary>
         /// Validate an Object based on a schema.<br/>
         /// Validate an object's schema and meta-data without creating it. &lt;br/&gt;&lt;br/&gt;If the schema of the object is valid, the request should return nothing with a plain RESTful request. Otherwise, an error object will be returned.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace Weaviate
 
             global::Weaviate.Object request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Validate an Object based on a schema.<br/>
         /// Validate an object's schema and meta-data without creating it. &lt;br/&gt;&lt;br/&gt;If the schema of the object is valid, the request should return nothing with a plain RESTful request. Otherwise, an error object will be returned.

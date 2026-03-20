@@ -4,7 +4,6 @@ namespace Weaviate
 {
     public partial interface IObjectsClient
     {
-
         /// <summary>
         /// Update a class object based on its uuid<br/>
         /// Update an object based on its uuid and collection. This (`put`) method replaces the object with the provided object.
@@ -12,7 +11,6 @@ namespace Weaviate
         /// <param name="className"></param>
         /// <param name="id"></param>
         /// <param name="consistencyLevel"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
@@ -23,7 +21,6 @@ namespace Weaviate
             global::Weaviate.Object request,
             string? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Update a class object based on its uuid<br/>
         /// Update an object based on its uuid and collection. This (`put`) method replaces the object with the provided object.

@@ -16,11 +16,9 @@ namespace Weaviate
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// create new role
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
@@ -389,7 +387,6 @@ namespace Weaviate
                 }
             }
         }
-
         /// <summary>
         /// create new role
         /// </summary>
