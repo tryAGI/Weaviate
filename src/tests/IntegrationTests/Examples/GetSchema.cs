@@ -16,7 +16,7 @@ public partial class Tests
     {
         using var client = GetAuthenticatedClient();
 
-        Schema schema = await client.Schema.SchemaObjectsGetAsync();
+        Schema schema = await client.Schema.SchemaDumpAsync();
 
         schema.Should().NotBeNull();
 
