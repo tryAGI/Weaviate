@@ -14,7 +14,7 @@ public partial class Tests
     [TestMethod]
     public async Task Example_GetSchema()
     {
-        using var client = GetAuthenticatedClient();
+        var client = Client;
 
         Schema schema = await client.Schema.SchemaDumpAsync();
 

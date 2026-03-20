@@ -14,7 +14,7 @@ public partial class Tests
     [TestMethod]
     public async Task Example_GetMeta()
     {
-        using var client = GetAuthenticatedClient();
+        var client = Client;
 
         Meta meta = await client.Meta.MetaGetAsync();
 

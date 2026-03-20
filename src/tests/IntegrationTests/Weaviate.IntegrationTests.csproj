@@ -13,6 +13,7 @@
     <PackageReference Include="MSTest.TestAdapter" Version="4.1.0" />
     <PackageReference Include="MSTest.TestFramework" Version="4.1.0" />
     <PackageReference Include="AwesomeAssertions" Version="9.4.0" />
+    <PackageReference Include="Testcontainers" Version="4.11.0" />
   </ItemGroup>
 
   <ItemGroup Label="GlobalUsings">

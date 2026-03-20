@@ -14,7 +14,7 @@ public partial class Tests
     [TestMethod]
     public async Task Example_GetNodes()
     {
-        using var client = GetAuthenticatedClient();
+        var client = Client;
 
         NodesStatusResponse nodesStatus = await client.Nodes.NodesGetAsync();
 
