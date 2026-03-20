@@ -22,6 +22,7 @@ namespace Weaviate
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+
         /// <summary>
         /// Update an Object based on its UUID (using patch semantics).<br/>
         /// Update an individual data object based on its class and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
@@ -29,6 +30,7 @@ namespace Weaviate
         /// <param name="className"></param>
         /// <param name="id"></param>
         /// <param name="consistencyLevel"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>

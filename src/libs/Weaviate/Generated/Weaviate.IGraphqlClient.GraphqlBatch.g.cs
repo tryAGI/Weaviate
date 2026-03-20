@@ -4,10 +4,12 @@ namespace Weaviate
 {
     public partial interface IGraphqlClient
     {
+
         /// <summary>
         /// Get a response based on GraphQL.<br/>
         /// Perform a batched GraphQL query
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>

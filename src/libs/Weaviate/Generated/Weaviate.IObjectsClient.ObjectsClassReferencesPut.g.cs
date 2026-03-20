@@ -4,6 +4,7 @@ namespace Weaviate
 {
     public partial interface IObjectsClient
     {
+
         /// <summary>
         /// Replace all references to a class-property.<br/>
         /// Replace **all** references in cross-reference property of an object.
@@ -13,6 +14,7 @@ namespace Weaviate
         /// <param name="propertyName"></param>
         /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>

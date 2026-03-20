@@ -19,6 +19,7 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// List available endpoints<br/>
         /// Get links to other endpoints to help discover the REST API

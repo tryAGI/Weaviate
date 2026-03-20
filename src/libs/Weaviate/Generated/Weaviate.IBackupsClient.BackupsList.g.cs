@@ -4,6 +4,7 @@ namespace Weaviate
 {
     public partial interface IBackupsClient
     {
+
         /// <summary>
         /// List backups in progress<br/>
         /// [Coming soon] List all backups in progress not implemented yet.

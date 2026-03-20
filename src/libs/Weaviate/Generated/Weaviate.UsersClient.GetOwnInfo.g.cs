@@ -19,6 +19,7 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// get info relevant to own user, e.g. username, roles
         /// </summary>

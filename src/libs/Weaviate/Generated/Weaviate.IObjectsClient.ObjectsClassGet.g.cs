@@ -4,6 +4,7 @@ namespace Weaviate
 {
     public partial interface IObjectsClient
     {
+
         /// <summary>
         /// Get a specific Object based on its class and UUID. Also available as Websocket bus.<br/>
         /// Get a data object based on its collection and UUID. Also available as Websocket bus.

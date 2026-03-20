@@ -4,6 +4,7 @@ namespace Weaviate
 {
     public partial interface ISchemaClient
     {
+
         /// <summary>
         /// Get the shards status of an Object class<br/>
         /// Get the status of every shard in the cluster.
