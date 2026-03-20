@@ -26,7 +26,6 @@ namespace Weaviate
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Add a single reference to a class-property.<br/>
         /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
@@ -36,7 +35,6 @@ namespace Weaviate
         /// <param name="propertyName"></param>
         /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
@@ -419,7 +417,6 @@ namespace Weaviate
                 }
             }
         }
-
         /// <summary>
         /// Add a single reference to a class-property.<br/>
         /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id

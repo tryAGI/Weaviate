@@ -23,12 +23,10 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Add a property to an Object class.
         /// </summary>
         /// <param name="className"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
@@ -334,7 +332,6 @@ namespace Weaviate
                 }
             }
         }
-
         /// <summary>
         /// Add a property to an Object class.
         /// </summary>

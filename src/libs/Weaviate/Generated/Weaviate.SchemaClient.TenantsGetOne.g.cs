@@ -25,7 +25,6 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get a specific tenant<br/>
         /// get a specific tenant for the given class

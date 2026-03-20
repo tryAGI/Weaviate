@@ -4,11 +4,9 @@ namespace Weaviate
 {
     public partial interface IAuthzClient
     {
-
         /// <summary>
         /// create new role
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
@@ -16,7 +14,6 @@ namespace Weaviate
 
             global::Weaviate.Role request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// create new role
         /// </summary>

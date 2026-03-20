@@ -4,12 +4,10 @@ namespace Weaviate
 {
     public partial interface IAuthzClient
     {
-
         /// <summary>
         /// Add permission to a given role.
         /// </summary>
         /// <param name="id"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace Weaviate
 
             global::Weaviate.AddPermissionsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Add permission to a given role.
         /// </summary>

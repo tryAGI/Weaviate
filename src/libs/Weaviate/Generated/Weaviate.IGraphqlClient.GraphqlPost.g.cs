@@ -4,12 +4,10 @@ namespace Weaviate
 {
     public partial interface IGraphqlClient
     {
-
         /// <summary>
         /// Get a response based on GraphQL<br/>
         /// Get a response based on a GraphQL query
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace Weaviate
 
             global::Weaviate.GraphQLQuery request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Get a response based on GraphQL<br/>
         /// Get a response based on a GraphQL query

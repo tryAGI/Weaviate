@@ -19,7 +19,6 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get all roles
         /// </summary>

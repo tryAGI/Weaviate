@@ -19,7 +19,6 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Returns meta information of the current Weaviate instance.<br/>
         /// Returns meta information about the server. Can be used to provide information to another Weaviate instance that wants to interact with the current instance.

@@ -4,7 +4,6 @@ namespace Weaviate
 {
     public partial interface ISchemaClient
     {
-
         /// <summary>
         /// Remove an Object class (and all data in the instances) from the schema.<br/>
         /// Remove a collection from the schema. This will also delete all the objects in the collection.

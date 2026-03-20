@@ -4,7 +4,6 @@ namespace Weaviate
 {
     public partial interface ISchemaClient
     {
-
         /// <summary>
         /// Get a specific tenant<br/>
         /// get a specific tenant for the given class
