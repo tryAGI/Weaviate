@@ -15,7 +15,9 @@ dotnet build Weaviate.slnx
 # Build for release (also produces NuGet package)
 dotnet build Weaviate.slnx -c Release
 
-# Run integration tests (requires WEAVIATE_API_KEY and WEAVIATE_URL env vars)
+# Run integration tests
+# - Release/CI: automatically spins up a Weaviate Docker container via Testcontainers
+# - Debug/local: connects to Weaviate Cloud (requires WEAVIATE_API_KEY and WEAVIATE_URL env vars)
 dotnet test src/tests/IntegrationTests/Weaviate.IntegrationTests.csproj
 
 # Regenerate SDK from OpenAPI spec
@@ -37,7 +39,7 @@ The SDK code is **entirely auto-generated** -- do not manually edit files in `sr
 | Project | Purpose |
 |---------|---------|
 | `src/libs/Weaviate/` | Main SDK library (`WeaviateClient`) |
-| `src/tests/IntegrationTests/` | Integration tests against real Weaviate API |
+| `src/tests/IntegrationTests/` | Integration tests (Testcontainers in CI, Weaviate Cloud locally) |
 
 ### Documentation Generation
 
