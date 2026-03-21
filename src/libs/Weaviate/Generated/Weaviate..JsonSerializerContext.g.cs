@@ -281,7 +281,7 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Tenant>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WeaviateRootResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Link>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Response))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GetWellKnownOpenidConfigurationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ObjectsGetResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]

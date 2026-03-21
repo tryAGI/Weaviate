@@ -25,7 +25,7 @@ namespace Weaviate
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Weaviate.Response> GetWellKnownOpenidConfigurationAsync(
+        public async global::System.Threading.Tasks.Task<global::Weaviate.GetWellKnownOpenidConfigurationResponse> GetWellKnownOpenidConfigurationAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -173,7 +173,7 @@ namespace Weaviate
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Weaviate.Response.FromJson(__content, JsonSerializerContext) ??
+                        global::Weaviate.GetWellKnownOpenidConfigurationResponse.FromJson(__content, JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -204,7 +204,7 @@ namespace Weaviate
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Weaviate.Response.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::Weaviate.GetWellKnownOpenidConfigurationResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

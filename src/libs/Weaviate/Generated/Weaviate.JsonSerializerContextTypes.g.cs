@@ -696,7 +696,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.Response? Type167 { get; set; }
+        public global::Weaviate.GetWellKnownOpenidConfigurationResponse? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
