@@ -6,7 +6,7 @@ namespace Weaviate
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class Response
+    public sealed partial class GetWellKnownOpenidConfigurationResponse
     {
         /// <summary>
         /// The Location to redirect to
@@ -33,7 +33,7 @@ namespace Weaviate
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Response" /> class.
+        /// Initializes a new instance of the <see cref="GetWellKnownOpenidConfigurationResponse" /> class.
         /// </summary>
         /// <param name="href">
         /// The Location to redirect to
@@ -47,7 +47,7 @@ namespace Weaviate
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public Response(
+        public GetWellKnownOpenidConfigurationResponse(
             string? href,
             string? clientId,
             global::System.Collections.Generic.IList<string>? scopes)
@@ -58,9 +58,9 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Response" /> class.
+        /// Initializes a new instance of the <see cref="GetWellKnownOpenidConfigurationResponse" /> class.
         /// </summary>
-        public Response()
+        public GetWellKnownOpenidConfigurationResponse()
         {
         }
     }
