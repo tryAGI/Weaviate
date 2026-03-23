@@ -12,11 +12,11 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        Verbose,
+        Minimal,
         /// <summary>
         /// 
         /// </summary>
-        Minimal,
+        Verbose,
     }
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace Weaviate
         {
             return value switch
             {
-                PermissionNodesVerbosity.Verbose => "verbose",
                 PermissionNodesVerbosity.Minimal => "minimal",
+                PermissionNodesVerbosity.Verbose => "verbose",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,8 +43,8 @@ namespace Weaviate
         {
             return value switch
             {
-                "verbose" => PermissionNodesVerbosity.Verbose,
                 "minimal" => PermissionNodesVerbosity.Minimal,
+                "verbose" => PermissionNodesVerbosity.Verbose,
                 _ => null,
             };
         }

@@ -16,19 +16,15 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        Or,
+        ContainsAll,
+        /// <summary>
+        /// 
+        /// </summary>
+        ContainsAny,
         /// <summary>
         /// 
         /// </summary>
         Equal,
-        /// <summary>
-        /// 
-        /// </summary>
-        Like,
-        /// <summary>
-        /// 
-        /// </summary>
-        NotEqual,
         /// <summary>
         /// 
         /// </summary>
@@ -40,6 +36,10 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        IsNull,
+        /// <summary>
+        /// 
+        /// </summary>
         LessThan,
         /// <summary>
         /// 
@@ -48,19 +48,19 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        Like,
+        /// <summary>
+        /// 
+        /// </summary>
+        NotEqual,
+        /// <summary>
+        /// 
+        /// </summary>
+        Or,
+        /// <summary>
+        /// 
+        /// </summary>
         WithinGeoRange,
-        /// <summary>
-        /// 
-        /// </summary>
-        IsNull,
-        /// <summary>
-        /// 
-        /// </summary>
-        ContainsAny,
-        /// <summary>
-        /// 
-        /// </summary>
-        ContainsAll,
     }
 
     /// <summary>
@@ -76,18 +76,18 @@ namespace Weaviate
             return value switch
             {
                 WhereFilterOperator.And => "And",
-                WhereFilterOperator.Or => "Or",
+                WhereFilterOperator.ContainsAll => "ContainsAll",
+                WhereFilterOperator.ContainsAny => "ContainsAny",
                 WhereFilterOperator.Equal => "Equal",
-                WhereFilterOperator.Like => "Like",
-                WhereFilterOperator.NotEqual => "NotEqual",
                 WhereFilterOperator.GreaterThan => "GreaterThan",
                 WhereFilterOperator.GreaterThanEqual => "GreaterThanEqual",
+                WhereFilterOperator.IsNull => "IsNull",
                 WhereFilterOperator.LessThan => "LessThan",
                 WhereFilterOperator.LessThanEqual => "LessThanEqual",
+                WhereFilterOperator.Like => "Like",
+                WhereFilterOperator.NotEqual => "NotEqual",
+                WhereFilterOperator.Or => "Or",
                 WhereFilterOperator.WithinGeoRange => "WithinGeoRange",
-                WhereFilterOperator.IsNull => "IsNull",
-                WhereFilterOperator.ContainsAny => "ContainsAny",
-                WhereFilterOperator.ContainsAll => "ContainsAll",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -99,18 +99,18 @@ namespace Weaviate
             return value switch
             {
                 "And" => WhereFilterOperator.And,
-                "Or" => WhereFilterOperator.Or,
+                "ContainsAll" => WhereFilterOperator.ContainsAll,
+                "ContainsAny" => WhereFilterOperator.ContainsAny,
                 "Equal" => WhereFilterOperator.Equal,
-                "Like" => WhereFilterOperator.Like,
-                "NotEqual" => WhereFilterOperator.NotEqual,
                 "GreaterThan" => WhereFilterOperator.GreaterThan,
                 "GreaterThanEqual" => WhereFilterOperator.GreaterThanEqual,
+                "IsNull" => WhereFilterOperator.IsNull,
                 "LessThan" => WhereFilterOperator.LessThan,
                 "LessThanEqual" => WhereFilterOperator.LessThanEqual,
+                "Like" => WhereFilterOperator.Like,
+                "NotEqual" => WhereFilterOperator.NotEqual,
+                "Or" => WhereFilterOperator.Or,
                 "WithinGeoRange" => WhereFilterOperator.WithinGeoRange,
-                "IsNull" => WhereFilterOperator.IsNull,
-                "ContainsAny" => WhereFilterOperator.ContainsAny,
-                "ContainsAll" => WhereFilterOperator.ContainsAll,
                 _ => null,
             };
         }

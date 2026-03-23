@@ -11,23 +11,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        Word,
-        /// <summary>
-        /// 
-        /// </summary>
-        Lowercase,
-        /// <summary>
-        /// 
-        /// </summary>
-        Whitespace,
-        /// <summary>
-        /// 
-        /// </summary>
         Field,
-        /// <summary>
-        /// 
-        /// </summary>
-        Trigram,
         /// <summary>
         /// 
         /// </summary>
@@ -35,11 +19,27 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        KagomeJa,
+        /// <summary>
+        /// 
+        /// </summary>
         KagomeKr,
         /// <summary>
         /// 
         /// </summary>
-        KagomeJa,
+        Lowercase,
+        /// <summary>
+        /// 
+        /// </summary>
+        Trigram,
+        /// <summary>
+        /// 
+        /// </summary>
+        Whitespace,
+        /// <summary>
+        /// 
+        /// </summary>
+        Word,
     }
 
     /// <summary>
@@ -54,14 +54,14 @@ namespace Weaviate
         {
             return value switch
             {
-                PropertyTokenization.Word => "word",
-                PropertyTokenization.Lowercase => "lowercase",
-                PropertyTokenization.Whitespace => "whitespace",
                 PropertyTokenization.Field => "field",
-                PropertyTokenization.Trigram => "trigram",
                 PropertyTokenization.Gse => "gse",
-                PropertyTokenization.KagomeKr => "kagome_kr",
                 PropertyTokenization.KagomeJa => "kagome_ja",
+                PropertyTokenization.KagomeKr => "kagome_kr",
+                PropertyTokenization.Lowercase => "lowercase",
+                PropertyTokenization.Trigram => "trigram",
+                PropertyTokenization.Whitespace => "whitespace",
+                PropertyTokenization.Word => "word",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -72,14 +72,14 @@ namespace Weaviate
         {
             return value switch
             {
-                "word" => PropertyTokenization.Word,
-                "lowercase" => PropertyTokenization.Lowercase,
-                "whitespace" => PropertyTokenization.Whitespace,
                 "field" => PropertyTokenization.Field,
-                "trigram" => PropertyTokenization.Trigram,
                 "gse" => PropertyTokenization.Gse,
-                "kagome_kr" => PropertyTokenization.KagomeKr,
                 "kagome_ja" => PropertyTokenization.KagomeJa,
+                "kagome_kr" => PropertyTokenization.KagomeKr,
+                "lowercase" => PropertyTokenization.Lowercase,
+                "trigram" => PropertyTokenization.Trigram,
+                "whitespace" => PropertyTokenization.Whitespace,
+                "word" => PropertyTokenization.Word,
                 _ => null,
             };
         }

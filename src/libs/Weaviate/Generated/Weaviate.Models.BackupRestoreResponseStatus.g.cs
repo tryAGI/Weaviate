@@ -12,19 +12,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        Started,
-        /// <summary>
-        /// 
-        /// </summary>
-        Transferring,
-        /// <summary>
-        /// 
-        /// </summary>
-        Transferred,
-        /// <summary>
-        /// 
-        /// </summary>
-        Success,
+        Canceled,
         /// <summary>
         /// 
         /// </summary>
@@ -32,7 +20,19 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        Canceled,
+        Started,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
+        /// <summary>
+        /// 
+        /// </summary>
+        Transferred,
+        /// <summary>
+        /// 
+        /// </summary>
+        Transferring,
     }
 
     /// <summary>
@@ -47,12 +47,12 @@ namespace Weaviate
         {
             return value switch
             {
-                BackupRestoreResponseStatus.Started => "STARTED",
-                BackupRestoreResponseStatus.Transferring => "TRANSFERRING",
-                BackupRestoreResponseStatus.Transferred => "TRANSFERRED",
-                BackupRestoreResponseStatus.Success => "SUCCESS",
-                BackupRestoreResponseStatus.Failed => "FAILED",
                 BackupRestoreResponseStatus.Canceled => "CANCELED",
+                BackupRestoreResponseStatus.Failed => "FAILED",
+                BackupRestoreResponseStatus.Started => "STARTED",
+                BackupRestoreResponseStatus.Success => "SUCCESS",
+                BackupRestoreResponseStatus.Transferred => "TRANSFERRED",
+                BackupRestoreResponseStatus.Transferring => "TRANSFERRING",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,12 +63,12 @@ namespace Weaviate
         {
             return value switch
             {
-                "STARTED" => BackupRestoreResponseStatus.Started,
-                "TRANSFERRING" => BackupRestoreResponseStatus.Transferring,
-                "TRANSFERRED" => BackupRestoreResponseStatus.Transferred,
-                "SUCCESS" => BackupRestoreResponseStatus.Success,
-                "FAILED" => BackupRestoreResponseStatus.Failed,
                 "CANCELED" => BackupRestoreResponseStatus.Canceled,
+                "FAILED" => BackupRestoreResponseStatus.Failed,
+                "STARTED" => BackupRestoreResponseStatus.Started,
+                "SUCCESS" => BackupRestoreResponseStatus.Success,
+                "TRANSFERRED" => BackupRestoreResponseStatus.Transferred,
+                "TRANSFERRING" => BackupRestoreResponseStatus.Transferring,
                 _ => null,
             };
         }

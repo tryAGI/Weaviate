@@ -27,8 +27,8 @@ namespace Weaviate.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("name")) __score0++;
             if (__jsonProps.Contains("activityStatus")) __score0++;
+            if (__jsonProps.Contains("name")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("belongsToNodes")) __score1++;
             var __bestScore = 0;

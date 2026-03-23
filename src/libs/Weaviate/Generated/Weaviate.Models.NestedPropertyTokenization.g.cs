@@ -11,23 +11,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        Word,
-        /// <summary>
-        /// 
-        /// </summary>
-        Lowercase,
-        /// <summary>
-        /// 
-        /// </summary>
-        Whitespace,
-        /// <summary>
-        /// 
-        /// </summary>
         Field,
-        /// <summary>
-        /// 
-        /// </summary>
-        Trigram,
         /// <summary>
         /// 
         /// </summary>
@@ -35,11 +19,27 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        KagomeJa,
+        /// <summary>
+        /// 
+        /// </summary>
         KagomeKr,
         /// <summary>
         /// 
         /// </summary>
-        KagomeJa,
+        Lowercase,
+        /// <summary>
+        /// 
+        /// </summary>
+        Trigram,
+        /// <summary>
+        /// 
+        /// </summary>
+        Whitespace,
+        /// <summary>
+        /// 
+        /// </summary>
+        Word,
     }
 
     /// <summary>
@@ -54,14 +54,14 @@ namespace Weaviate
         {
             return value switch
             {
-                NestedPropertyTokenization.Word => "word",
-                NestedPropertyTokenization.Lowercase => "lowercase",
-                NestedPropertyTokenization.Whitespace => "whitespace",
                 NestedPropertyTokenization.Field => "field",
-                NestedPropertyTokenization.Trigram => "trigram",
                 NestedPropertyTokenization.Gse => "gse",
-                NestedPropertyTokenization.KagomeKr => "kagome_kr",
                 NestedPropertyTokenization.KagomeJa => "kagome_ja",
+                NestedPropertyTokenization.KagomeKr => "kagome_kr",
+                NestedPropertyTokenization.Lowercase => "lowercase",
+                NestedPropertyTokenization.Trigram => "trigram",
+                NestedPropertyTokenization.Whitespace => "whitespace",
+                NestedPropertyTokenization.Word => "word",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -72,14 +72,14 @@ namespace Weaviate
         {
             return value switch
             {
-                "word" => NestedPropertyTokenization.Word,
-                "lowercase" => NestedPropertyTokenization.Lowercase,
-                "whitespace" => NestedPropertyTokenization.Whitespace,
                 "field" => NestedPropertyTokenization.Field,
-                "trigram" => NestedPropertyTokenization.Trigram,
                 "gse" => NestedPropertyTokenization.Gse,
-                "kagome_kr" => NestedPropertyTokenization.KagomeKr,
                 "kagome_ja" => NestedPropertyTokenization.KagomeJa,
+                "kagome_kr" => NestedPropertyTokenization.KagomeKr,
+                "lowercase" => NestedPropertyTokenization.Lowercase,
+                "trigram" => NestedPropertyTokenization.Trigram,
+                "whitespace" => NestedPropertyTokenization.Whitespace,
+                "word" => NestedPropertyTokenization.Word,
                 _ => null,
             };
         }

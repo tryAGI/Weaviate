@@ -19,7 +19,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        Schema,
+        CreationTimeUnix,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +27,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        CreationTimeUnix,
+        Schema,
     }
 
     /// <summary>
@@ -44,9 +44,9 @@ namespace Weaviate
             {
                 BatchObjectsCreateRequestField.All => "ALL",
                 BatchObjectsCreateRequestField.Class => "class",
-                BatchObjectsCreateRequestField.Schema => "schema",
-                BatchObjectsCreateRequestField.Id => "id",
                 BatchObjectsCreateRequestField.CreationTimeUnix => "creationTimeUnix",
+                BatchObjectsCreateRequestField.Id => "id",
+                BatchObjectsCreateRequestField.Schema => "schema",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +59,9 @@ namespace Weaviate
             {
                 "ALL" => BatchObjectsCreateRequestField.All,
                 "class" => BatchObjectsCreateRequestField.Class,
-                "schema" => BatchObjectsCreateRequestField.Schema,
-                "id" => BatchObjectsCreateRequestField.Id,
                 "creationTimeUnix" => BatchObjectsCreateRequestField.CreationTimeUnix,
+                "id" => BatchObjectsCreateRequestField.Id,
+                "schema" => BatchObjectsCreateRequestField.Schema,
                 _ => null,
             };
         }

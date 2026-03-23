@@ -11,11 +11,11 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        Failed,
         /// <summary>
         /// 
         /// </summary>
-        Failed,
+        Success,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Weaviate
         {
             return value switch
             {
-                BatchReferenceResponseVariant2ResultStatus.Success => "SUCCESS",
                 BatchReferenceResponseVariant2ResultStatus.Failed => "FAILED",
+                BatchReferenceResponseVariant2ResultStatus.Success => "SUCCESS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Weaviate
         {
             return value switch
             {
-                "SUCCESS" => BatchReferenceResponseVariant2ResultStatus.Success,
                 "FAILED" => BatchReferenceResponseVariant2ResultStatus.Failed,
+                "SUCCESS" => BatchReferenceResponseVariant2ResultStatus.Success,
                 _ => null,
             };
         }

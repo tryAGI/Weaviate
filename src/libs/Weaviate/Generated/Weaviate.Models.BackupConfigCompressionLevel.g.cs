@@ -12,7 +12,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        DefaultCompression,
+        BestCompression,
         /// <summary>
         /// 
         /// </summary>
@@ -20,7 +20,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        BestCompression,
+        DefaultCompression,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace Weaviate
         {
             return value switch
             {
-                BackupConfigCompressionLevel.DefaultCompression => "DefaultCompression",
-                BackupConfigCompressionLevel.BestSpeed => "BestSpeed",
                 BackupConfigCompressionLevel.BestCompression => "BestCompression",
+                BackupConfigCompressionLevel.BestSpeed => "BestSpeed",
+                BackupConfigCompressionLevel.DefaultCompression => "DefaultCompression",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace Weaviate
         {
             return value switch
             {
-                "DefaultCompression" => BackupConfigCompressionLevel.DefaultCompression,
-                "BestSpeed" => BackupConfigCompressionLevel.BestSpeed,
                 "BestCompression" => BackupConfigCompressionLevel.BestCompression,
+                "BestSpeed" => BackupConfigCompressionLevel.BestSpeed,
+                "DefaultCompression" => BackupConfigCompressionLevel.DefaultCompression,
                 _ => null,
             };
         }
