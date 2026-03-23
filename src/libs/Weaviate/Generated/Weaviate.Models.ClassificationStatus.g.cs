@@ -12,15 +12,15 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        Running,
-        /// <summary>
-        /// 
-        /// </summary>
         Completed,
         /// <summary>
         /// 
         /// </summary>
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Running,
     }
 
     /// <summary>
@@ -35,9 +35,9 @@ namespace Weaviate
         {
             return value switch
             {
-                ClassificationStatus.Running => "running",
                 ClassificationStatus.Completed => "completed",
                 ClassificationStatus.Failed => "failed",
+                ClassificationStatus.Running => "running",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,9 +48,9 @@ namespace Weaviate
         {
             return value switch
             {
-                "running" => ClassificationStatus.Running,
                 "completed" => ClassificationStatus.Completed,
                 "failed" => ClassificationStatus.Failed,
+                "running" => ClassificationStatus.Running,
                 _ => null,
             };
         }

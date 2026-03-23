@@ -11,11 +11,11 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        NoAutomatedResolution,
+        DeleteOnConflict,
         /// <summary>
         /// 
         /// </summary>
-        DeleteOnConflict,
+        NoAutomatedResolution,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +34,8 @@ namespace Weaviate
         {
             return value switch
             {
-                ReplicationConfigDeletionStrategy.NoAutomatedResolution => "NoAutomatedResolution",
                 ReplicationConfigDeletionStrategy.DeleteOnConflict => "DeleteOnConflict",
+                ReplicationConfigDeletionStrategy.NoAutomatedResolution => "NoAutomatedResolution",
                 ReplicationConfigDeletionStrategy.TimeBasedResolution => "TimeBasedResolution",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -47,8 +47,8 @@ namespace Weaviate
         {
             return value switch
             {
-                "NoAutomatedResolution" => ReplicationConfigDeletionStrategy.NoAutomatedResolution,
                 "DeleteOnConflict" => ReplicationConfigDeletionStrategy.DeleteOnConflict,
+                "NoAutomatedResolution" => ReplicationConfigDeletionStrategy.NoAutomatedResolution,
                 "TimeBasedResolution" => ReplicationConfigDeletionStrategy.TimeBasedResolution,
                 _ => null,
             };

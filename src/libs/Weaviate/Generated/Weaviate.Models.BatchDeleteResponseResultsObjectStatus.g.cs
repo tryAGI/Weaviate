@@ -11,15 +11,15 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        Success,
-        /// <summary>
-        /// 
-        /// </summary>
         Dryrun,
         /// <summary>
         /// 
         /// </summary>
         Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        Success,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Weaviate
         {
             return value switch
             {
-                BatchDeleteResponseResultsObjectStatus.Success => "SUCCESS",
                 BatchDeleteResponseResultsObjectStatus.Dryrun => "DRYRUN",
                 BatchDeleteResponseResultsObjectStatus.Failed => "FAILED",
+                BatchDeleteResponseResultsObjectStatus.Success => "SUCCESS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Weaviate
         {
             return value switch
             {
-                "SUCCESS" => BatchDeleteResponseResultsObjectStatus.Success,
                 "DRYRUN" => BatchDeleteResponseResultsObjectStatus.Dryrun,
                 "FAILED" => BatchDeleteResponseResultsObjectStatus.Failed,
+                "SUCCESS" => BatchDeleteResponseResultsObjectStatus.Success,
                 _ => null,
             };
         }
