@@ -177,7 +177,7 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SingleRef))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PatchDocumentObject))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PatchDocumentObjectOp))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Object))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Object), TypeInfoPropertyName = "Object_Weaviate_Object")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PatchDocumentAction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PatchDocumentActionOp))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PeerUpdate))]
