@@ -58,7 +58,7 @@ namespace Weaviate
             string? consistencyLevel = default,
             string? tenant = default,
             string? @class = default,
-            object? schema = default,
+            global::Weaviate.PropertySchema? schema = default,
             string? beacon = default,
             string? href = default,
             global::Weaviate.ReferenceMetaClassification? classification = default,

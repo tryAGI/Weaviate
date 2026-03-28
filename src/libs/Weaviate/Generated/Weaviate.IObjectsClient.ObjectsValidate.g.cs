@@ -53,13 +53,13 @@ namespace Weaviate
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task ObjectsValidateAsync(
             string? @class = default,
-            object? vectorWeights = default,
-            object? properties = default,
+            global::Weaviate.VectorWeights? vectorWeights = default,
+            global::Weaviate.PropertySchema? properties = default,
             global::System.Guid? id = default,
             long? creationTimeUnix = default,
             long? lastUpdateTimeUnix = default,
             global::System.Collections.Generic.IList<float>? vector = default,
-            global::System.Collections.Generic.Dictionary<string, object>? vectors = default,
+            global::System.Collections.Generic.Dictionary<string, global::Weaviate.Vector>? vectors = default,
             string? tenant = default,
             global::System.Collections.Generic.Dictionary<string, object>? additional = default,
             global::System.Threading.CancellationToken cancellationToken = default);

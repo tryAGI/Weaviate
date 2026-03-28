@@ -18,7 +18,7 @@ namespace Weaviate
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
-        public object? Schema { get; set; }
+        public global::Weaviate.PropertySchema? Schema { get; set; }
 
         /// <summary>
         /// If using a direct reference, specify the URI to point to the cross-ref here. Should be in the form of weaviate://localhost/&lt;uuid&gt; for the example of a local cross-ref to an object
@@ -67,7 +67,7 @@ namespace Weaviate
 #endif
         public SingleRef(
             string? @class,
-            object? schema,
+            global::Weaviate.PropertySchema? schema,
             string? beacon,
             string? href,
             global::Weaviate.ReferenceMetaClassification? classification)
