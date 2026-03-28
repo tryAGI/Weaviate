@@ -18,13 +18,13 @@ namespace Weaviate
         /// Allow custom overrides of vector weights as math expressions. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorWeights")]
-        public object? VectorWeights { get; set; }
+        public global::Weaviate.VectorWeights? VectorWeights { get; set; }
 
         /// <summary>
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("properties")]
-        public object? Properties { get; set; }
+        public global::Weaviate.PropertySchema? Properties { get; set; }
 
         /// <summary>
         /// ID of the Object.
@@ -54,7 +54,7 @@ namespace Weaviate
         /// A map of named vectors for multi-vector representations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectors")]
-        public global::System.Collections.Generic.Dictionary<string, object>? Vectors { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Weaviate.Vector>? Vectors { get; set; }
 
         /// <summary>
         /// Name of the Objects tenant.
@@ -112,13 +112,13 @@ namespace Weaviate
 #endif
         public Object(
             string? @class,
-            object? vectorWeights,
-            object? properties,
+            global::Weaviate.VectorWeights? vectorWeights,
+            global::Weaviate.PropertySchema? properties,
             global::System.Guid? id,
             long? creationTimeUnix,
             long? lastUpdateTimeUnix,
             global::System.Collections.Generic.IList<float>? vector,
-            global::System.Collections.Generic.Dictionary<string, object>? vectors,
+            global::System.Collections.Generic.Dictionary<string, global::Weaviate.Vector>? vectors,
             string? tenant,
             global::System.Collections.Generic.Dictionary<string, object>? additional)
         {

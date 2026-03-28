@@ -148,11 +148,11 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public object? Type30 { get; set; }
+        public global::Weaviate.Vector? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, object>? Type31 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Weaviate.Vector>? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -212,499 +212,527 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.GraphQLQuery>? Type46 { get; set; }
+        public object? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.GraphQLResponse? Type47 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.GraphQLQuery>? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.GraphQLError>? Type48 { get; set; }
+        public global::Weaviate.GraphQLResponse? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.GraphQLResponse>? Type49 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Weaviate.JsonObject>? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.InvertedIndexConfig? Type50 { get; set; }
+        public global::Weaviate.JsonObject? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type51 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.GraphQLError>? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BM25Config? Type52 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.GraphQLResponse>? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.StopwordConfig? Type53 { get; set; }
+        public global::Weaviate.InvertedIndexConfig? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ReplicationConfig? Type54 { get; set; }
+        public double? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type55 { get; set; }
+        public global::Weaviate.BM25Config? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ReplicationConfigDeletionStrategy? Type56 { get; set; }
+        public global::Weaviate.StopwordConfig? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.MultiTenancyConfig? Type57 { get; set; }
+        public global::Weaviate.ReplicationConfig? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.Meta? Type58 { get; set; }
+        public int? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.SingleRef>? Type59 { get; set; }
+        public global::Weaviate.ReplicationConfigDeletionStrategy? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.SingleRef? Type60 { get; set; }
+        public global::Weaviate.MultiTenancyConfig? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.PatchDocumentObject? Type61 { get; set; }
+        public global::Weaviate.Meta? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.PatchDocumentObjectOp? Type62 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.SingleRef>? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.Object? Type63 { get; set; }
+        public global::Weaviate.SingleRef? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.PatchDocumentAction? Type64 { get; set; }
+        public global::Weaviate.PatchDocumentObject? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.PatchDocumentActionOp? Type65 { get; set; }
+        public global::Weaviate.PatchDocumentObjectOp? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.PeerUpdate? Type66 { get; set; }
+        public global::Weaviate.Object? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type67 { get; set; }
+        public global::Weaviate.PatchDocumentAction? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.PeerUpdate>? Type68 { get; set; }
+        public global::Weaviate.PatchDocumentActionOp? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.Schema? Type69 { get; set; }
+        public global::Weaviate.PeerUpdate? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.Class>? Type70 { get; set; }
+        public global::System.Guid? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.Class? Type71 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.PeerUpdate>? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.SchemaClusterStatus? Type72 { get; set; }
+        public global::Weaviate.VectorWeights? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Weaviate.VectorConfig>? Type73 { get; set; }
+        public global::Weaviate.PropertySchema? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.VectorConfig? Type74 { get; set; }
+        public global::Weaviate.SchemaHistory? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.Property>? Type75 { get; set; }
+        public global::Weaviate.Schema? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.Property? Type76 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.Class>? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.PropertyTokenization? Type77 { get; set; }
+        public global::Weaviate.Class? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.NestedProperty>? Type78 { get; set; }
+        public global::Weaviate.SchemaClusterStatus? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.NestedProperty? Type79 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Weaviate.VectorConfig>? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.NestedPropertyTokenization? Type80 { get; set; }
+        public global::Weaviate.VectorConfig? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.ShardStatusGetResponse>? Type81 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.Property>? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ShardStatusGetResponse? Type82 { get; set; }
+        public global::Weaviate.Property? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ShardStatus? Type83 { get; set; }
+        public global::Weaviate.PropertyTokenization? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupCreateStatusResponse? Type84 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.NestedProperty>? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupCreateStatusResponseStatus? Type85 { get; set; }
+        public global::Weaviate.NestedProperty? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupRestoreStatusResponse? Type86 { get; set; }
+        public global::Weaviate.NestedPropertyTokenization? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupRestoreStatusResponseStatus? Type87 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.ShardStatusGetResponse>? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupConfig? Type88 { get; set; }
+        public global::Weaviate.ShardStatusGetResponse? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupConfigCompressionLevel? Type89 { get; set; }
+        public global::Weaviate.ShardStatus? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.RestoreConfig? Type90 { get; set; }
+        public global::Weaviate.BackupCreateStatusResponse? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupCreateRequest? Type91 { get; set; }
+        public global::Weaviate.BackupCreateStatusResponseStatus? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupCreateResponse? Type92 { get; set; }
+        public global::Weaviate.BackupRestoreStatusResponse? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupCreateResponseStatus? Type93 { get; set; }
+        public global::Weaviate.BackupRestoreStatusResponseStatus? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.BackupListResponseItem>? Type94 { get; set; }
+        public global::Weaviate.BackupConfig? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupListResponseItem? Type95 { get; set; }
+        public global::Weaviate.BackupConfigCompressionLevel? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupListResponseItemStatus? Type96 { get; set; }
+        public global::Weaviate.RestoreConfig? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupRestoreRequest? Type97 { get; set; }
+        public global::Weaviate.BackupCreateRequest? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, string>? Type98 { get; set; }
+        public global::Weaviate.BackupCreateResponse? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupRestoreResponse? Type99 { get; set; }
+        public global::Weaviate.BackupCreateResponseStatus? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BackupRestoreResponseStatus? Type100 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.BackupListResponseItem>? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.NodeStats? Type101 { get; set; }
+        public global::Weaviate.BackupListResponseItem? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchStats? Type102 { get; set; }
+        public global::Weaviate.BackupListResponseItemStatus? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.NodeShardStatus? Type103 { get; set; }
+        public global::Weaviate.BackupRestoreRequest? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.NodeStatus? Type104 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.NodeStatusStatus? Type105 { get; set; }
+        public global::Weaviate.BackupRestoreResponse? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.NodeShardStatus>? Type106 { get; set; }
+        public global::Weaviate.BackupRestoreResponseStatus? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.NodesStatusResponse? Type107 { get; set; }
+        public global::Weaviate.NodeStats? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.NodeStatus>? Type108 { get; set; }
+        public global::Weaviate.BatchStats? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.RaftStatistics? Type109 { get; set; }
+        public global::Weaviate.NodeShardStatus? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.Statistics? Type110 { get; set; }
+        public global::Weaviate.NodeStatus? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.StatisticsStatus? Type111 { get; set; }
+        public global::Weaviate.NodeStatusStatus? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ClusterStatisticsResponse? Type112 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.NodeShardStatus>? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.Statistics>? Type113 { get; set; }
+        public global::Weaviate.NodesStatusResponse? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ReferenceMetaClassification? Type114 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.NodeStatus>? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchReference? Type115 { get; set; }
+        public global::Weaviate.RaftStatistics? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchReferenceResponse? Type116 { get; set; }
+        public global::Weaviate.Statistics? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchReferenceResponseVariant2? Type117 { get; set; }
+        public global::Weaviate.StatisticsStatus? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchReferenceResponseVariant2Result? Type118 { get; set; }
+        public global::Weaviate.ClusterStatisticsResponse? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchReferenceResponseVariant2ResultStatus? Type119 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.Statistics>? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.GeoCoordinates? Type120 { get; set; }
+        public global::Weaviate.ReferenceMetaClassification? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.PhoneNumber? Type121 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, object>? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ObjectsGetResponse? Type122 { get; set; }
+        public global::Weaviate.BatchReference? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ObjectsGetResponseVariant2? Type123 { get; set; }
+        public global::Weaviate.BatchReferenceResponse? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.Deprecation>? Type124 { get; set; }
+        public global::Weaviate.BatchReferenceResponseVariant2? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ObjectsGetResponseVariant3? Type125 { get; set; }
+        public global::Weaviate.BatchReferenceResponseVariant2Result? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ObjectsGetResponseVariant3Result? Type126 { get; set; }
+        public global::Weaviate.BatchReferenceResponseVariant2ResultStatus? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ObjectsGetResponseVariant3ResultStatus? Type127 { get; set; }
+        public global::Weaviate.GeoCoordinates? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchDelete? Type128 { get; set; }
+        public global::Weaviate.PhoneNumber? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchDeleteMatch? Type129 { get; set; }
+        public global::Weaviate.ObjectsGetResponse? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.WhereFilter? Type130 { get; set; }
+        public global::Weaviate.ObjectsGetResponseVariant2? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchDeleteResponse? Type131 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.Deprecation>? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchDeleteResponseMatch? Type132 { get; set; }
+        public global::Weaviate.ObjectsGetResponseVariant3? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchDeleteResponseResults? Type133 { get; set; }
+        public global::Weaviate.ObjectsGetResponseVariant3Result? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.BatchDeleteResponseResultsObject>? Type134 { get; set; }
+        public global::Weaviate.ObjectsGetResponseVariant3ResultStatus? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchDeleteResponseResultsObject? Type135 { get; set; }
+        public global::Weaviate.BatchDelete? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchDeleteResponseResultsObjectStatus? Type136 { get; set; }
+        public global::Weaviate.BatchDeleteMatch? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ObjectsListResponse? Type137 { get; set; }
+        public global::Weaviate.WhereFilter? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.Object>? Type138 { get; set; }
+        public global::Weaviate.BatchDeleteResponse? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.Classification? Type139 { get; set; }
+        public global::Weaviate.BatchDeleteResponseMatch? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ClassificationStatus? Type140 { get; set; }
+        public global::Weaviate.BatchDeleteResponseResults? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ClassificationMeta? Type141 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.BatchDeleteResponseResultsObject>? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.ClassificationFilters? Type142 { get; set; }
+        public global::Weaviate.BatchDeleteResponseResultsObject? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.WhereFilter>? Type143 { get; set; }
+        public global::Weaviate.BatchDeleteResponseResultsObjectStatus? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.WhereFilterOperator? Type144 { get; set; }
+        public global::Weaviate.ObjectsListResponse? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<long>? Type145 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.Object>? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type146 { get; set; }
+        public global::Weaviate.Classification? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<bool>? Type147 { get; set; }
+        public global::Weaviate.ClassificationStatus? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.WhereFilterGeoRange? Type148 { get; set; }
+        public global::Weaviate.ClassificationMeta? Type148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.WhereFilterGeoRangeDistance? Type149 { get; set; }
+        public global::Weaviate.ClassificationFilters? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.Tenant? Type150 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.WhereFilter>? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.TenantActivityStatus? Type151 { get; set; }
+        public global::Weaviate.WhereFilterOperator? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.TenantResponse? Type152 { get; set; }
+        public global::System.Collections.Generic.IList<long>? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.TenantResponseVariant2? Type153 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.AddPermissionsRequest? Type154 { get; set; }
+        public global::System.Collections.Generic.IList<bool>? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.RemovePermissionsRequest? Type155 { get; set; }
+        public global::Weaviate.WhereFilterGeoRange? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.AssignRoleToUserRequest? Type156 { get; set; }
+        public global::Weaviate.WhereFilterGeoRangeDistance? Type156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.RevokeRoleFromUserRequest? Type157 { get; set; }
+        public global::Weaviate.Tenant? Type157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.AssignRoleToGroupRequest? Type158 { get; set; }
+        public global::Weaviate.TenantActivityStatus? Type158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.RevokeRoleFromGroupRequest? Type159 { get; set; }
+        public global::Weaviate.TenantResponse? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchObjectsCreateRequest? Type160 { get; set; }
+        public global::Weaviate.TenantResponseVariant2? Type160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.BatchObjectsCreateRequestField>? Type161 { get; set; }
+        public global::Weaviate.AddPermissionsRequest? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.BatchObjectsCreateRequestField? Type162 { get; set; }
+        public global::Weaviate.RemovePermissionsRequest? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.BatchReference>? Type163 { get; set; }
+        public global::Weaviate.AssignRoleToUserRequest? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.Tenant>? Type164 { get; set; }
+        public global::Weaviate.RevokeRoleFromUserRequest? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.WeaviateRootResponse? Type165 { get; set; }
+        public global::Weaviate.AssignRoleToGroupRequest? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.Link>? Type166 { get; set; }
+        public global::Weaviate.RevokeRoleFromGroupRequest? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Weaviate.GetWellKnownOpenidConfigurationResponse? Type167 { get; set; }
+        public global::Weaviate.BatchObjectsCreateRequest? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.ObjectsGetResponse>? Type168 { get; set; }
+        public global::System.Collections.Generic.IList<global::Weaviate.BatchObjectsCreateRequestField>? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>? Type169 { get; set; }
+        public global::Weaviate.BatchObjectsCreateRequestField? Type169 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Weaviate.BatchReference>? Type170 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Weaviate.Tenant>? Type171 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Weaviate.WeaviateRootResponse? Type172 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Weaviate.Link>? Type173 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Weaviate.GetWellKnownOpenidConfigurationResponse? Type174 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Weaviate.ObjectsGetResponse>? Type175 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>? Type176 { get; set; }
 
         /// <summary>
         /// 
