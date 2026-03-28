@@ -311,7 +311,7 @@ namespace Weaviate
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse> ??
+                        (global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>), JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -342,7 +342,7 @@ namespace Weaviate
                     ).ConfigureAwait(false);
 
                     return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>), JsonSerializerContext).ConfigureAwait(false) as global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse> ??
+                        (global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>), JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
