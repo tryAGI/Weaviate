@@ -36,13 +36,13 @@ namespace Weaviate
         /// <summary>
         /// Initializes a new instance of the <see cref="UserInfo" /> class.
         /// </summary>
+        /// <param name="username">
+        /// The username associated with the provided key
+        /// </param>
         /// <param name="groups">
         /// The groups associated to the user
         /// </param>
         /// <param name="roles"></param>
-        /// <param name="username">
-        /// The username associated with the provided key
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -51,9 +51,9 @@ namespace Weaviate
             global::System.Collections.Generic.IList<string>? groups,
             global::System.Collections.Generic.IList<global::Weaviate.Role>? roles)
         {
-            this.Username = username ?? throw new global::System.ArgumentNullException(nameof(username));
             this.Groups = groups;
             this.Roles = roles;
+            this.Username = username ?? throw new global::System.ArgumentNullException(nameof(username));
         }
 
         /// <summary>
