@@ -67,6 +67,9 @@ namespace Weaviate
         /// <summary>
         /// Initializes a new instance of the <see cref="Permission" /> class.
         /// </summary>
+        /// <param name="action">
+        /// allowed actions in weaviate.
+        /// </param>
         /// <param name="backups">
         /// resources applicable for backup actions
         /// </param>
@@ -88,9 +91,6 @@ namespace Weaviate
         /// <param name="collections">
         /// resources applicable for collection and/or tenant actions
         /// </param>
-        /// <param name="action">
-        /// allowed actions in weaviate.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -104,7 +104,6 @@ namespace Weaviate
             global::Weaviate.PermissionRoles? roles,
             global::Weaviate.PermissionCollections? collections)
         {
-            this.Action = action;
             this.Backups = backups;
             this.Data = data;
             this.Nodes = nodes;
@@ -112,6 +111,7 @@ namespace Weaviate
             this.Tenants = tenants;
             this.Roles = roles;
             this.Collections = collections;
+            this.Action = action;
         }
 
         /// <summary>
