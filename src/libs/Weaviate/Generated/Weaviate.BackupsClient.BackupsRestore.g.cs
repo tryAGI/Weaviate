@@ -406,7 +406,6 @@ namespace Weaviate
             global::System.Collections.Generic.Dictionary<string, string>? nodeMapping = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Weaviate.BackupRestoreRequest
             {
                 Config = config,

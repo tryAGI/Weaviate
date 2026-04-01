@@ -382,7 +382,6 @@ namespace Weaviate
             global::System.Collections.Generic.IList<global::Weaviate.NestedProperty>? nestedProperties = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Weaviate.Property
             {
                 DataType = dataType,

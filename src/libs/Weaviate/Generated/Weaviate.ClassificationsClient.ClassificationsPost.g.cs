@@ -380,7 +380,6 @@ namespace Weaviate
             global::Weaviate.ClassificationFilters? filters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Weaviate.Classification
             {
                 Id = id,

@@ -402,7 +402,6 @@ namespace Weaviate
             global::System.Collections.Generic.IList<global::Weaviate.Permission> permissions,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Weaviate.AddPermissionsRequest
             {
                 Permissions = permissions,
