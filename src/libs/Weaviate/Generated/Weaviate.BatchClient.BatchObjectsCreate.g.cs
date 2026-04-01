@@ -391,7 +391,6 @@ namespace Weaviate
             global::System.Collections.Generic.IList<global::Weaviate.Object>? objects = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Weaviate.BatchObjectsCreateRequest
             {
                 Fields = fields,

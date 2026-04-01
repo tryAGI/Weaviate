@@ -430,7 +430,6 @@ namespace Weaviate
             global::System.Collections.Generic.IList<global::Weaviate.Property>? properties = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Weaviate.Class
             {
                 Class1 = class1,
