@@ -124,13 +124,13 @@ namespace Weaviate.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.BatchReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.BatchReference?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.BatchReference).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
             }
             else if (value.IsValue2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.BatchReferenceResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.BatchReferenceResponseVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.BatchReferenceResponseVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
             }
         }
     }

@@ -394,6 +394,7 @@ namespace Weaviate
             string? status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Weaviate.ShardStatus
             {
                 Status = status,
