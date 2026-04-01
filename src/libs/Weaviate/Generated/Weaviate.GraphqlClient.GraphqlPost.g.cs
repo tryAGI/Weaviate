@@ -348,6 +348,7 @@ namespace Weaviate
             object? variables = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Weaviate.GraphQLQuery
             {
                 OperationName = operationName,

@@ -456,6 +456,7 @@ namespace Weaviate
             global::Weaviate.ReferenceMetaClassification? classification = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Weaviate.SingleRef
             {
                 Class = @class,
