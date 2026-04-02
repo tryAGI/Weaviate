@@ -13,35 +13,35 @@ namespace Weaviate
         /// attributes representing a single tenant within weaviate
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Weaviate.Tenant? Value1 { get; init; }
+        public global::Weaviate.Tenant? Tenant { get; init; }
 #else
-        public global::Weaviate.Tenant? Value1 { get; }
+        public global::Weaviate.Tenant? Tenant { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tenant))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsTenant => Tenant != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Weaviate.TenantResponseVariant2? Value2 { get; init; }
+        public global::Weaviate.TenantResponseVariant2? TenantResponseVariant2 { get; init; }
 #else
-        public global::Weaviate.TenantResponseVariant2? Value2 { get; }
+        public global::Weaviate.TenantResponseVariant2? TenantResponseVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TenantResponseVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsTenantResponseVariant2 => TenantResponseVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Weaviate.Tenant?(TenantResponse @this) => @this.Value1;
+        public static implicit operator global::Weaviate.Tenant?(TenantResponse @this) => @this.Tenant;
 
         /// <summary>
         /// 
         /// </summary>
         public TenantResponse(global::Weaviate.Tenant? value)
         {
-            Value1 = value;
+            Tenant = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Weaviate.TenantResponseVariant2?(TenantResponse @this) => @this.Value2;
+        public static implicit operator global::Weaviate.TenantResponseVariant2?(TenantResponse @this) => @this.TenantResponseVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public TenantResponse(global::Weaviate.TenantResponseVariant2? value)
         {
-            Value2 = value;
+            TenantResponseVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TenantResponse(
-            global::Weaviate.Tenant? value1,
-            global::Weaviate.TenantResponseVariant2? value2
+            global::Weaviate.Tenant? tenant,
+            global::Weaviate.TenantResponseVariant2? tenantResponseVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Tenant = tenant;
+            TenantResponseVariant2 = tenantResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            TenantResponseVariant2 as object ??
+            Tenant as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Tenant?.ToString() ??
+            TenantResponseVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Weaviate
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsTenant && IsTenantResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Weaviate.Tenant?, TResult>? value1 = null,
-            global::System.Func<global::Weaviate.TenantResponseVariant2?, TResult>? value2 = null,
+            global::System.Func<global::Weaviate.Tenant?, TResult>? tenant = null,
+            global::System.Func<global::Weaviate.TenantResponseVariant2?, TResult>? tenantResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Weaviate
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsTenant && tenant != null)
             {
-                return value1(Value1!);
+                return tenant(Tenant!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsTenantResponseVariant2 && tenantResponseVariant2 != null)
             {
-                return value2(Value2!);
+                return tenantResponseVariant2(TenantResponseVariant2!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Weaviate
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Weaviate.Tenant?>? value1 = null,
-            global::System.Action<global::Weaviate.TenantResponseVariant2?>? value2 = null,
+            global::System.Action<global::Weaviate.Tenant?>? tenant = null,
+            global::System.Action<global::Weaviate.TenantResponseVariant2?>? tenantResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Weaviate
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsTenant)
             {
-                value1?.Invoke(Value1!);
+                tenant?.Invoke(Tenant!);
             }
-            else if (IsValue2)
+            else if (IsTenantResponseVariant2)
             {
-                value2?.Invoke(Value2!);
+                tenantResponseVariant2?.Invoke(TenantResponseVariant2!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Weaviate
         {
             var fields = new object?[]
             {
-                Value1,
+                Tenant,
                 typeof(global::Weaviate.Tenant),
-                Value2,
+                TenantResponseVariant2,
                 typeof(global::Weaviate.TenantResponseVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Weaviate
         public bool Equals(TenantResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Weaviate.Tenant?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Weaviate.TenantResponseVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Weaviate.Tenant?>.Default.Equals(Tenant, other.Tenant) &&
+                global::System.Collections.Generic.EqualityComparer<global::Weaviate.TenantResponseVariant2?>.Default.Equals(TenantResponseVariant2, other.TenantResponseVariant2) 
                 ;
         }
 

@@ -47,9 +47,9 @@ namespace Weaviate.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::Weaviate.Object? value1 = default;
-            global::Weaviate.ObjectsGetResponseVariant2? value2 = default;
-            global::Weaviate.ObjectsGetResponseVariant3? value3 = default;
+            global::Weaviate.Object? objectValue = default;
+            global::Weaviate.ObjectsGetResponseVariant2? objectsGetResponseVariant2 = default;
+            global::Weaviate.ObjectsGetResponseVariant3? objectsGetResponseVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -58,7 +58,7 @@ namespace Weaviate.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.Object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.Object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.Object).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        objectValue = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -73,7 +73,7 @@ namespace Weaviate.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.ObjectsGetResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.ObjectsGetResponseVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.ObjectsGetResponseVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        objectsGetResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -88,7 +88,7 @@ namespace Weaviate.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.ObjectsGetResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.ObjectsGetResponseVariant3> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.ObjectsGetResponseVariant3).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        objectsGetResponseVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -99,13 +99,13 @@ namespace Weaviate.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (objectValue == null && objectsGetResponseVariant2 == null && objectsGetResponseVariant3 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.Object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.Object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.Object).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    objectValue = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -118,7 +118,7 @@ namespace Weaviate.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.ObjectsGetResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.ObjectsGetResponseVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.ObjectsGetResponseVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    objectsGetResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -131,7 +131,7 @@ namespace Weaviate.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.ObjectsGetResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.ObjectsGetResponseVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.ObjectsGetResponseVariant3).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    objectsGetResponseVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -142,11 +142,11 @@ namespace Weaviate.JsonConverters
             }
 
             var __value = new global::Weaviate.ObjectsGetResponse(
-                value1,
+                objectValue,
 
-                value2,
+                objectsGetResponseVariant2,
 
-                value3
+                objectsGetResponseVariant3
                 );
 
             return __value;
@@ -161,23 +161,23 @@ namespace Weaviate.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsObjectValue)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.Object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.Object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.Object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ObjectValue!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsObjectsGetResponseVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.ObjectsGetResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.ObjectsGetResponseVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.ObjectsGetResponseVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ObjectsGetResponseVariant2!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsObjectsGetResponseVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.ObjectsGetResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.ObjectsGetResponseVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.ObjectsGetResponseVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ObjectsGetResponseVariant3!, typeInfo);
             }
         }
     }
