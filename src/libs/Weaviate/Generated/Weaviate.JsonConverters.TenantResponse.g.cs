@@ -36,8 +36,8 @@ namespace Weaviate.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::Weaviate.Tenant? value1 = default;
-            global::Weaviate.TenantResponseVariant2? value2 = default;
+            global::Weaviate.Tenant? tenant = default;
+            global::Weaviate.TenantResponseVariant2? tenantResponseVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -46,7 +46,7 @@ namespace Weaviate.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.Tenant), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.Tenant> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.Tenant).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        tenant = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,7 +61,7 @@ namespace Weaviate.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.TenantResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.TenantResponseVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.TenantResponseVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        tenantResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -72,13 +72,13 @@ namespace Weaviate.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (tenant == null && tenantResponseVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.Tenant), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.Tenant> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.Tenant).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    tenant = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -91,7 +91,7 @@ namespace Weaviate.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.TenantResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.TenantResponseVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.TenantResponseVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    tenantResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -102,9 +102,9 @@ namespace Weaviate.JsonConverters
             }
 
             var __value = new global::Weaviate.TenantResponse(
-                value1,
+                tenant,
 
-                value2
+                tenantResponseVariant2
                 );
 
             return __value;
@@ -119,17 +119,17 @@ namespace Weaviate.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsTenant)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.Tenant), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.Tenant?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.Tenant).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tenant!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsTenantResponseVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.TenantResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.TenantResponseVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.TenantResponseVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TenantResponseVariant2!, typeInfo);
             }
         }
     }

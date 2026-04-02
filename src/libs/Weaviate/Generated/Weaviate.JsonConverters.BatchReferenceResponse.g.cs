@@ -37,8 +37,8 @@ namespace Weaviate.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::Weaviate.BatchReference? value1 = default;
-            global::Weaviate.BatchReferenceResponseVariant2? value2 = default;
+            global::Weaviate.BatchReference? batchReference = default;
+            global::Weaviate.BatchReferenceResponseVariant2? batchReferenceResponseVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -47,7 +47,7 @@ namespace Weaviate.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.BatchReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.BatchReference> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.BatchReference).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        batchReference = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -62,7 +62,7 @@ namespace Weaviate.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.BatchReferenceResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.BatchReferenceResponseVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.BatchReferenceResponseVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        batchReferenceResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -73,13 +73,13 @@ namespace Weaviate.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (batchReference == null && batchReferenceResponseVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.BatchReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.BatchReference> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.BatchReference).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    batchReference = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -92,7 +92,7 @@ namespace Weaviate.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.BatchReferenceResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.BatchReferenceResponseVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.BatchReferenceResponseVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    batchReferenceResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -103,9 +103,9 @@ namespace Weaviate.JsonConverters
             }
 
             var __value = new global::Weaviate.BatchReferenceResponse(
-                value1,
+                batchReference,
 
-                value2
+                batchReferenceResponseVariant2
                 );
 
             return __value;
@@ -120,17 +120,17 @@ namespace Weaviate.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsBatchReference)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.BatchReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.BatchReference?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.BatchReference).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BatchReference!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsBatchReferenceResponseVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.BatchReferenceResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.BatchReferenceResponseVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.BatchReferenceResponseVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BatchReferenceResponseVariant2!, typeInfo);
             }
         }
     }
