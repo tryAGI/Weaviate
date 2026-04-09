@@ -5,6 +5,25 @@ namespace Weaviate
 {
     public partial class MetaClient
     {
+
+
+        private static readonly global::Weaviate.EndPointSecurityRequirement s_MetaGetSecurityRequirement0 =
+            new global::Weaviate.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Weaviate.EndPointAuthorizationRequirement[]
+                {                    new global::Weaviate.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Weaviate.EndPointSecurityRequirement[] s_MetaGetSecurityRequirements =
+            new global::Weaviate.EndPointSecurityRequirement[]
+            {                s_MetaGetSecurityRequirement0,
+            };
         partial void PrepareMetaGetArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareMetaGetRequest(
@@ -33,9 +52,15 @@ namespace Weaviate
             PrepareMetaGetArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Weaviate.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_MetaGetSecurityRequirements,
+                operationName: "MetaGetAsync");
+
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: "/meta",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -45,7 +70,7 @@ namespace Weaviate
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

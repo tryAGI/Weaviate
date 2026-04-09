@@ -5,6 +5,25 @@ namespace Weaviate
 {
     public partial class SchemaClient
     {
+
+
+        private static readonly global::Weaviate.EndPointSecurityRequirement s_SchemaObjectsGetSecurityRequirement0 =
+            new global::Weaviate.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Weaviate.EndPointAuthorizationRequirement[]
+                {                    new global::Weaviate.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Weaviate.EndPointSecurityRequirement[] s_SchemaObjectsGetSecurityRequirements =
+            new global::Weaviate.EndPointSecurityRequirement[]
+            {                s_SchemaObjectsGetSecurityRequirement0,
+            };
         partial void PrepareSchemaObjectsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string className,
@@ -44,9 +63,15 @@ namespace Weaviate
                 className: ref className,
                 consistency: ref consistency);
 
+
+            var __authorizations = global::Weaviate.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SchemaObjectsGetSecurityRequirements,
+                operationName: "SchemaObjectsGetAsync");
+
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/schema/{className}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -56,7 +81,7 @@ namespace Weaviate
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -74,7 +74,7 @@ namespace Weaviate
         };
 
         /// <summary>
-        /// Perform classification operations
+        /// Perform classification operations.
         /// </summary>
         public ClassificationsClient Classifications => new ClassificationsClient(HttpClient, authorizations: Authorizations)
         {

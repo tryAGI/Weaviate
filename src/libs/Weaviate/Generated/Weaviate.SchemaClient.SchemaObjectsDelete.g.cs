@@ -5,6 +5,25 @@ namespace Weaviate
 {
     public partial class SchemaClient
     {
+
+
+        private static readonly global::Weaviate.EndPointSecurityRequirement s_SchemaObjectsDeleteSecurityRequirement0 =
+            new global::Weaviate.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Weaviate.EndPointAuthorizationRequirement[]
+                {                    new global::Weaviate.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Weaviate.EndPointSecurityRequirement[] s_SchemaObjectsDeleteSecurityRequirements =
+            new global::Weaviate.EndPointSecurityRequirement[]
+            {                s_SchemaObjectsDeleteSecurityRequirement0,
+            };
         partial void PrepareSchemaObjectsDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string className);
@@ -33,9 +52,15 @@ namespace Weaviate
                 httpClient: HttpClient,
                 className: ref className);
 
+
+            var __authorizations = global::Weaviate.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SchemaObjectsDeleteSecurityRequirements,
+                operationName: "SchemaObjectsDeleteAsync");
+
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/schema/{className}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -45,7 +70,7 @@ namespace Weaviate
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
