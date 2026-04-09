@@ -5,6 +5,25 @@ namespace Weaviate
 {
     public partial class AuthzClient
     {
+
+
+        private static readonly global::Weaviate.EndPointSecurityRequirement s_HasPermissionSecurityRequirement0 =
+            new global::Weaviate.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Weaviate.EndPointAuthorizationRequirement[]
+                {                    new global::Weaviate.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Weaviate.EndPointSecurityRequirement[] s_HasPermissionSecurityRequirements =
+            new global::Weaviate.EndPointSecurityRequirement[]
+            {                s_HasPermissionSecurityRequirement0,
+            };
         partial void PrepareHasPermissionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id,
@@ -45,9 +64,15 @@ namespace Weaviate
                 id: ref id,
                 request: request);
 
+
+            var __authorizations = global::Weaviate.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_HasPermissionSecurityRequirements,
+                operationName: "HasPermissionAsync");
+
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/authz/roles/{id}/has-permission",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -57,7 +82,7 @@ namespace Weaviate
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

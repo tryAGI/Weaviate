@@ -5,6 +5,25 @@ namespace Weaviate
 {
     public partial class UsersClient
     {
+
+
+        private static readonly global::Weaviate.EndPointSecurityRequirement s_GetOwnInfoSecurityRequirement0 =
+            new global::Weaviate.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Weaviate.EndPointAuthorizationRequirement[]
+                {                    new global::Weaviate.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Weaviate.EndPointSecurityRequirement[] s_GetOwnInfoSecurityRequirements =
+            new global::Weaviate.EndPointSecurityRequirement[]
+            {                s_GetOwnInfoSecurityRequirement0,
+            };
         partial void PrepareGetOwnInfoArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetOwnInfoRequest(
@@ -32,9 +51,15 @@ namespace Weaviate
             PrepareGetOwnInfoArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Weaviate.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetOwnInfoSecurityRequirements,
+                operationName: "GetOwnInfoAsync");
+
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: "/users/own-info",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -44,7 +69,7 @@ namespace Weaviate
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

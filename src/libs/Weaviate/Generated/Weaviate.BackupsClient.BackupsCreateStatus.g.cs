@@ -5,6 +5,25 @@ namespace Weaviate
 {
     public partial class BackupsClient
     {
+
+
+        private static readonly global::Weaviate.EndPointSecurityRequirement s_BackupsCreateStatusSecurityRequirement0 =
+            new global::Weaviate.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Weaviate.EndPointAuthorizationRequirement[]
+                {                    new global::Weaviate.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Weaviate.EndPointSecurityRequirement[] s_BackupsCreateStatusSecurityRequirements =
+            new global::Weaviate.EndPointSecurityRequirement[]
+            {                s_BackupsCreateStatusSecurityRequirement0,
+            };
         partial void PrepareBackupsCreateStatusArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string backend,
@@ -53,13 +72,19 @@ namespace Weaviate
                 bucket: ref bucket,
                 path: ref path);
 
+
+            var __authorizations = global::Weaviate.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_BackupsCreateStatusSecurityRequirements,
+                operationName: "BackupsCreateStatusAsync");
+
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/backups/{backend}/{id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("bucket", bucket)
                 .AddOptionalParameter("path", path) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -69,7 +94,7 @@ namespace Weaviate
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

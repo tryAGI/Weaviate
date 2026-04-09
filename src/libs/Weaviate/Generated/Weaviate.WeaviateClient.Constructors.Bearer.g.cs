@@ -6,6 +6,7 @@ namespace Weaviate
     public sealed partial class WeaviateClient
     {
         /// <inheritdoc cref="WeaviateClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Weaviate.EndPointAuthorization}?, bool)"/>
+
         public WeaviateClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

@@ -5,6 +5,25 @@ namespace Weaviate
 {
     public partial class ObjectsClient
     {
+
+
+        private static readonly global::Weaviate.EndPointSecurityRequirement s_ObjectsClassPatchSecurityRequirement0 =
+            new global::Weaviate.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Weaviate.EndPointAuthorizationRequirement[]
+                {                    new global::Weaviate.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Weaviate.EndPointSecurityRequirement[] s_ObjectsClassPatchSecurityRequirements =
+            new global::Weaviate.EndPointSecurityRequirement[]
+            {                s_ObjectsClassPatchSecurityRequirement0,
+            };
         partial void PrepareObjectsClassPatchArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string className,
@@ -51,12 +70,18 @@ namespace Weaviate
                 consistencyLevel: ref consistencyLevel,
                 request: request);
 
+
+            var __authorizations = global::Weaviate.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ObjectsClassPatchSecurityRequirements,
+                operationName: "ObjectsClassPatchAsync");
+
             var __pathBuilder = new global::Weaviate.PathBuilder(
                 path: $"/objects/{className}/{id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("consistency_level", consistencyLevel) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
@@ -66,7 +91,7 @@ namespace Weaviate
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
