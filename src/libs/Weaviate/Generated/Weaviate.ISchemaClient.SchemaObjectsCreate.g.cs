@@ -9,11 +9,13 @@ namespace Weaviate
         /// Create a new data object collection. &lt;br/&gt;&lt;br/&gt;If AutoSchema is enabled, Weaviate will attempt to infer the schema from the data at import time. However, manual schema definition is recommended for production environments.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.Class> SchemaObjectsCreateAsync(
 
             global::Weaviate.Class request,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new Object class in the schema.<br/>
@@ -55,6 +57,7 @@ namespace Weaviate
         /// <param name="properties">
         /// Define properties of the collection.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.Class> SchemaObjectsCreateAsync(
@@ -70,6 +73,7 @@ namespace Weaviate
             object? moduleConfig = default,
             string? description = default,
             global::System.Collections.Generic.IList<global::Weaviate.Property>? properties = default,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

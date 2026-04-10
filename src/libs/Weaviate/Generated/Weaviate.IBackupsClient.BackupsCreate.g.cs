@@ -10,12 +10,14 @@ namespace Weaviate
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.BackupCreateResponse> BackupsCreateAsync(
             string backend,
 
             global::Weaviate.BackupCreateRequest request,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Start a backup process<br/>
@@ -34,6 +36,7 @@ namespace Weaviate
         /// <param name="exclude">
         /// List of collections to exclude from the backup creation process. If not set, all collections are included. Cannot be used together with `include`.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.BackupCreateResponse> BackupsCreateAsync(
@@ -42,6 +45,7 @@ namespace Weaviate
             global::Weaviate.BackupConfig? config = default,
             global::System.Collections.Generic.IList<string>? include = default,
             global::System.Collections.Generic.IList<string>? exclude = default,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

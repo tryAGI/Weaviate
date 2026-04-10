@@ -9,12 +9,14 @@ namespace Weaviate
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.Property> SchemaObjectsPropertiesAddAsync(
             string className,
 
             global::Weaviate.Property request,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add a property to an Object class.
@@ -50,6 +52,7 @@ namespace Weaviate
         /// <param name="nestedProperties">
         /// The properties of the nested object(s). Applies to object and object[] data types.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.Property> SchemaObjectsPropertiesAddAsync(
@@ -64,6 +67,7 @@ namespace Weaviate
             bool? indexRangeFilters = default,
             global::Weaviate.PropertyTokenization? tokenization = default,
             global::System.Collections.Generic.IList<global::Weaviate.NestedProperty>? nestedProperties = default,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

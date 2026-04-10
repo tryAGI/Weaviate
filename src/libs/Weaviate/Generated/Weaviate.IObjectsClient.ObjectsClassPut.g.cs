@@ -12,6 +12,7 @@ namespace Weaviate
         /// <param name="id"></param>
         /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.Object> ObjectsClassPutAsync(
@@ -20,6 +21,7 @@ namespace Weaviate
 
             global::Weaviate.Object request,
             string? consistencyLevel = default,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a class object based on its uuid<br/>
@@ -58,6 +60,7 @@ namespace Weaviate
         /// <param name="additional">
         /// (Response only) Additional meta information about a single object.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.Object> ObjectsClassPutAsync(
@@ -74,6 +77,7 @@ namespace Weaviate
             global::System.Collections.Generic.Dictionary<string, global::Weaviate.Vector>? vectors = default,
             string? tenant = default,
             global::System.Collections.Generic.Dictionary<string, object>? additional = default,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

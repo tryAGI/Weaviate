@@ -11,6 +11,7 @@ namespace Weaviate
         /// <param name="className"></param>
         /// <param name="shardName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.ShardStatus> SchemaObjectsShardsUpdateAsync(
@@ -18,6 +19,7 @@ namespace Weaviate
             string shardName,
 
             global::Weaviate.ShardStatus request,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a shard status.<br/>
@@ -28,12 +30,14 @@ namespace Weaviate
         /// <param name="status">
         /// Status of the shard
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.ShardStatus> SchemaObjectsShardsUpdateAsync(
             string className,
             string shardName,
             string? status = default,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
