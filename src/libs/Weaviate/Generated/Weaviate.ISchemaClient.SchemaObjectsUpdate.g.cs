@@ -10,12 +10,14 @@ namespace Weaviate
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.Class> SchemaObjectsUpdateAsync(
             string className,
 
             global::Weaviate.Class request,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update settings of an existing schema class<br/>
@@ -58,6 +60,7 @@ namespace Weaviate
         /// <param name="properties">
         /// Define properties of the collection.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Weaviate.Class> SchemaObjectsUpdateAsync(
@@ -74,6 +77,7 @@ namespace Weaviate
             object? moduleConfig = default,
             string? description = default,
             global::System.Collections.Generic.IList<global::Weaviate.Property>? properties = default,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

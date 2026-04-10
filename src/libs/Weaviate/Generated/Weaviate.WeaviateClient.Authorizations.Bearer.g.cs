@@ -25,6 +25,7 @@ namespace Weaviate
             Authorizations.Add(new global::Weaviate.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HttpBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,
