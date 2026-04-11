@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Perform classification operations.<br/>
+    /// Perform classification operations<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -33,11 +33,11 @@ namespace Weaviate
         /// ensuring <see cref="ApiException.ResponseBody"/> is populated.
         /// </summary>
         public bool ReadResponseAsString { get; set; }
-
         /// <summary>
         /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
         /// </summary>
         public global::Weaviate.AutoSDKClientOptions Options { get; }
+
 
         /// <summary>
         /// 

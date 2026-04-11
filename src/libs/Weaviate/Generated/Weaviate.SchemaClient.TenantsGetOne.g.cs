@@ -127,10 +127,10 @@ namespace Weaviate
                 } 
             }
 
-                if (consistency != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("consistency", consistency.ToString());
-                }
+            if (consistency != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("consistency", consistency.ToString());
+            }
 
                 global::Weaviate.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
