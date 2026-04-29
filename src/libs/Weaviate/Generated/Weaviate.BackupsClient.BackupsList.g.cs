@@ -125,7 +125,7 @@ namespace Weaviate
                 PrepareBackupsListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    backend: backend);
+                    backend: backend!);
 
                 return __httpRequest;
             }

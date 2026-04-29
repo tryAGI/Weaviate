@@ -135,7 +135,7 @@ namespace Weaviate
                 PrepareNodesGetClassRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
+                    className: className!,
                     output: output);
 
                 return __httpRequest;

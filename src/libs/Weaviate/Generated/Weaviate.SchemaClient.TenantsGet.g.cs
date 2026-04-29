@@ -138,7 +138,7 @@ namespace Weaviate
                 PrepareTenantsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
+                    className: className!,
                     consistency: consistency);
 
                 return __httpRequest;

@@ -156,8 +156,8 @@ namespace Weaviate
                 PrepareObjectsClassGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
-                    id: id,
+                    className: className!,
+                    id: id!,
                     include: include,
                     consistencyLevel: consistencyLevel,
                     nodeName: nodeName,

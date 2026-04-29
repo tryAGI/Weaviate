@@ -144,8 +144,8 @@ namespace Weaviate
                 PrepareBackupsRestoreRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    backend: backend,
-                    id: id,
+                    backend: backend!,
+                    id: id!,
                     request: request);
 
                 return __httpRequest;

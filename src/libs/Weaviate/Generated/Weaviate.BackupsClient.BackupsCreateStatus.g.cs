@@ -144,8 +144,8 @@ namespace Weaviate
                 PrepareBackupsCreateStatusRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    backend: backend,
-                    id: id,
+                    backend: backend!,
+                    id: id!,
                     bucket: bucket,
                     path: path);
 

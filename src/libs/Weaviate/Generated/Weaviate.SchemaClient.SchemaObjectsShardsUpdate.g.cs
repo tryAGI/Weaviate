@@ -144,8 +144,8 @@ namespace Weaviate
                 PrepareSchemaObjectsShardsUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
-                    shardName: shardName,
+                    className: className!,
+                    shardName: shardName!,
                     request: request);
 
                 return __httpRequest;
