@@ -139,7 +139,7 @@ namespace Weaviate
                 PrepareBackupsCreateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    backend: backend,
+                    backend: backend!,
                     request: request);
 
                 return __httpRequest;

@@ -147,8 +147,8 @@ namespace Weaviate
                 PrepareObjectsClassPatchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
-                    id: id,
+                    className: className!,
+                    id: id!,
                     consistencyLevel: consistencyLevel,
                     request: request);
 

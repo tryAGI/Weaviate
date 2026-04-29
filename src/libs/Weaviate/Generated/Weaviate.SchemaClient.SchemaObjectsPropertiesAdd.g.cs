@@ -138,7 +138,7 @@ namespace Weaviate
                 PrepareSchemaObjectsPropertiesAddRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
+                    className: className!,
                     request: request);
 
                 return __httpRequest;

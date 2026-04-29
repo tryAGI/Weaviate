@@ -120,7 +120,7 @@ namespace Weaviate
                 PrepareSchemaObjectsDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className);
+                    className: className!);
 
                 return __httpRequest;
             }

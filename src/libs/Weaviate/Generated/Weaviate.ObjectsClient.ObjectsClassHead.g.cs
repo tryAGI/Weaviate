@@ -139,8 +139,8 @@ namespace Weaviate
                 PrepareObjectsClassHeadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
-                    id: id,
+                    className: className!,
+                    id: id!,
                     consistencyLevel: consistencyLevel,
                     tenant: tenant);
 

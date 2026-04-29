@@ -138,8 +138,8 @@ namespace Weaviate
                 PrepareTenantExistsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
-                    tenantName: tenantName,
+                    className: className!,
+                    tenantName: tenantName!,
                     consistency: consistency);
 
                 return __httpRequest;

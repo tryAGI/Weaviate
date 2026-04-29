@@ -139,7 +139,7 @@ namespace Weaviate
                 PrepareSchemaObjectsUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
+                    className: className!,
                     request: request);
 
                 return __httpRequest;

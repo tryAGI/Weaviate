@@ -133,7 +133,7 @@ namespace Weaviate
                 PrepareSchemaObjectsShardsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
+                    className: className!,
                     tenant: tenant);
 
                 return __httpRequest;

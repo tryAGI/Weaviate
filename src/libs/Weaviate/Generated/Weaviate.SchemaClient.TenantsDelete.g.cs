@@ -133,7 +133,7 @@ namespace Weaviate
                 PrepareTenantsDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
+                    className: className!,
                     request: request);
 
                 return __httpRequest;

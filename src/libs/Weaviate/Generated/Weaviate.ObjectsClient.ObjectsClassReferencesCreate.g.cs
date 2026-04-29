@@ -158,9 +158,9 @@ namespace Weaviate
                 PrepareObjectsClassReferencesCreateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className,
-                    id: id,
-                    propertyName: propertyName,
+                    className: className!,
+                    id: id!,
+                    propertyName: propertyName!,
                     consistencyLevel: consistencyLevel,
                     tenant: tenant,
                     request: request);
