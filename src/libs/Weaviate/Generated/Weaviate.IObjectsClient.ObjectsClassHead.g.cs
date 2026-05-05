@@ -22,5 +22,23 @@ namespace Weaviate
             string? tenant = default,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Checks object's existence based on its class and uuid.<br/>
+        /// Checks if a data object exists based on its collection and uuid without retrieving it. &lt;br/&gt;&lt;br/&gt;Internally it skips reading the object from disk other than checking if it is present. Thus it does not use resources on marshalling, parsing, etc., and is faster. Note the resulting HTTP request has no body; the existence of an object is indicated solely by the status code.
+        /// </summary>
+        /// <param name="className"></param>
+        /// <param name="id"></param>
+        /// <param name="consistencyLevel"></param>
+        /// <param name="tenant"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse> ObjectsClassHeadAsResponseAsync(
+            string className,
+            global::System.Guid id,
+            string? consistencyLevel = default,
+            string? tenant = default,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -21,6 +21,19 @@ namespace Weaviate
         /// Create a new Object class in the schema.<br/>
         /// Create a new data object collection. &lt;br/&gt;&lt;br/&gt;If AutoSchema is enabled, Weaviate will attempt to infer the schema from the data at import time. However, manual schema definition is recommended for production environments.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::Weaviate.Class>> SchemaObjectsCreateAsResponseAsync(
+
+            global::Weaviate.Class request,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a new Object class in the schema.<br/>
+        /// Create a new data object collection. &lt;br/&gt;&lt;br/&gt;If AutoSchema is enabled, Weaviate will attempt to infer the schema from the data at import time. However, manual schema definition is recommended for production environments.
+        /// </summary>
         /// <param name="class1">
         /// Name of the class (a.k.a. 'collection') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
         /// </param>

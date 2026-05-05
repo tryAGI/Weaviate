@@ -21,6 +21,19 @@ namespace Weaviate
         /// Get a response based on GraphQL<br/>
         /// Get a response based on a GraphQL query
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::Weaviate.GraphQLResponse>> GraphqlPostAsResponseAsync(
+
+            global::Weaviate.GraphQLQuery request,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get a response based on GraphQL<br/>
+        /// Get a response based on a GraphQL query
+        /// </summary>
         /// <param name="operationName">
         /// The name of the operation if multiple exist in the query.
         /// </param>

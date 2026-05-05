@@ -19,5 +19,20 @@ namespace Weaviate
             string? consistencyLevel = default,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Creates new Cross-References between arbitrary classes in bulk.<br/>
+        /// Batch create cross-references between collections items (objects or objects) in bulk.
+        /// </summary>
+        /// <param name="consistencyLevel"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Weaviate.BatchReferenceResponse>>> BatchReferencesCreateAsResponseAsync(
+
+            global::System.Collections.Generic.IList<global::Weaviate.BatchReference> request,
+            string? consistencyLevel = default,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -63,6 +63,35 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await BackupsRestoreAsResponseAsync(
+                backend: backend,
+                id: id,
+
+                request: request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Start a restoration process<br/>
+        /// Starts a process of restoring a backup for a set of collections. &lt;br/&gt;&lt;br/&gt;Any backup can be restored to any machine, as long as the number of nodes between source and target are identical.&lt;br/&gt;&lt;br/&gt;Requrements:&lt;br/&gt;&lt;br/&gt;- None of the collections to be restored already exist on the target restoration node(s).&lt;br/&gt;- The node names of the backed-up collections' must match those of the target restoration node(s).
+        /// </summary>
+        /// <param name="backend"></param>
+        /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::Weaviate.BackupRestoreResponse>> BackupsRestoreAsResponseAsync(
+            string backend,
+            string id,
+
+            global::Weaviate.BackupRestoreRequest request,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -95,6 +124,7 @@ namespace Weaviate
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Weaviate.PathBuilder(
                                 path: $"/backups/{backend}/{id}/restore",
                                 baseUri: HttpClient.BaseAddress);
@@ -176,6 +206,8 @@ namespace Weaviate
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -186,6 +218,11 @@ namespace Weaviate
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Weaviate.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Weaviate.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -203,6 +240,8 @@ namespace Weaviate
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -212,8 +251,7 @@ namespace Weaviate
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Weaviate.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -222,6 +260,11 @@ namespace Weaviate
                         __attempt < __maxAttempts &&
                         global::Weaviate.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Weaviate.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Weaviate.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -238,14 +281,15 @@ namespace Weaviate
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Weaviate.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -285,6 +329,8 @@ namespace Weaviate
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -305,6 +351,8 @@ namespace Weaviate
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Unauthorized or invalid credentials.
@@ -514,9 +562,13 @@ namespace Weaviate
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Weaviate.BackupRestoreResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Weaviate.BackupRestoreResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Weaviate.AutoSDKHttpResponse<global::Weaviate.BackupRestoreResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Weaviate.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -544,9 +596,13 @@ namespace Weaviate
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Weaviate.BackupRestoreResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Weaviate.BackupRestoreResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Weaviate.AutoSDKHttpResponse<global::Weaviate.BackupRestoreResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Weaviate.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

@@ -52,7 +52,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public AuthzClient Authz => new AuthzClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AuthzClient Authz => new AuthzClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -61,7 +61,7 @@ namespace Weaviate
         /// <summary>
         /// Create, restore and check the status of backups. &lt;br/&gt;&lt;br/&gt;See the [backups page](https://weaviate.io/developers/weaviate/configuration/backups) for a general introduction, configuration, and tech background of backups.
         /// </summary>
-        public BackupsClient Backups => new BackupsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BackupsClient Backups => new BackupsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -70,7 +70,7 @@ namespace Weaviate
         /// <summary>
         /// Create, update and delete multiple objects and references at once. &lt;br/&gt;&lt;br/&gt;Note that object-level errors may be reported even in a successful batch request. Accordingly, we recommend you check the response body for errors.
         /// </summary>
-        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BatchClient Batch => new BatchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -79,7 +79,7 @@ namespace Weaviate
         /// <summary>
         /// Perform classification operations.
         /// </summary>
-        public ClassificationsClient Classifications => new ClassificationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ClassificationsClient Classifications => new ClassificationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -88,7 +88,7 @@ namespace Weaviate
         /// <summary>
         /// Retrieve information about the cluster.
         /// </summary>
-        public ClusterClient Cluster => new ClusterClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ClusterClient Cluster => new ClusterClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -97,7 +97,7 @@ namespace Weaviate
         /// <summary>
         /// Query data using the GraphQL query language. See the [Weaviate GraphQL documentation](https://weaviate.io/developers/weaviate/api/graphql) for query syntax details.
         /// </summary>
-        public GraphqlClient Graphql => new GraphqlClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GraphqlClient Graphql => new GraphqlClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -106,7 +106,7 @@ namespace Weaviate
         /// <summary>
         /// Retrieve information about the server such as the hostname, location, versions and modules.
         /// </summary>
-        public MetaClient Meta => new MetaClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MetaClient Meta => new MetaClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -115,7 +115,7 @@ namespace Weaviate
         /// <summary>
         /// Retrieve information about relevant nodes in the cluster. The query can be for the entire cluster, or for a particular collection.
         /// </summary>
-        public NodesClient Nodes => new NodesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public NodesClient Nodes => new NodesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -124,7 +124,7 @@ namespace Weaviate
         /// <summary>
         /// Create, update and delete objects and cross-references.
         /// </summary>
-        public ObjectsClient Objects => new ObjectsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ObjectsClient Objects => new ObjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -133,7 +133,7 @@ namespace Weaviate
         /// <summary>
         /// The root of the API. Note the base url is `/v1`.
         /// </summary>
-        public RootClient Root => new RootClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RootClient Root => new RootClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -142,7 +142,7 @@ namespace Weaviate
         /// <summary>
         /// Operate on the database schema. &lt;br/&gt;&lt;br/&gt;Note an 'Object class' in Weaviate is being renamed to a 'collection'. &lt;br/&gt;&lt;br/&gt;See &lt;a href='https://weaviate.io/developers/weaviate/manage-data/collections'&gt;this page&lt;/a&gt; for client code examples.
         /// </summary>
-        public SchemaClient Schema => new SchemaClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SchemaClient Schema => new SchemaClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -151,7 +151,7 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
-        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UsersClient Users => new UsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -160,7 +160,7 @@ namespace Weaviate
         /// <summary>
         /// `.well-known` endpoints. If OpenID Connect (OIDC) authentication is enabled, this endpoint includes OIDC configuration details.
         /// </summary>
-        public WellKnownClient WellKnown => new WellKnownClient(HttpClient, authorizations: Authorizations, options: Options)
+        public WellKnownClient WellKnown => new WellKnownClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -199,10 +199,10 @@ namespace Weaviate
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public WeaviateClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::Weaviate.EndPointAuthorization>? authorizations = null,
-            global::Weaviate.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::Weaviate.EndPointAuthorization>? authorizations,
+            global::Weaviate.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
