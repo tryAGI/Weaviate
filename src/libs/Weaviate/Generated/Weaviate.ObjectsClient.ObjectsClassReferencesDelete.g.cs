@@ -70,6 +70,42 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            await ObjectsClassReferencesDeleteAsResponseAsync(
+                className: className,
+                id: id,
+                propertyName: propertyName,
+
+                request: request,
+                consistencyLevel: consistencyLevel,
+                tenant: tenant,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Delete the single reference that is given in the body from the list of references that this property has.<br/>
+        /// Delete the single reference that is given in the body from the list of references that this property has.
+        /// </summary>
+        /// <param name="className"></param>
+        /// <param name="id"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="consistencyLevel"></param>
+        /// <param name="tenant"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse> ObjectsClassReferencesDeleteAsResponseAsync(
+            string className,
+            global::System.Guid id,
+            string propertyName,
+
+            global::Weaviate.SingleRef request,
+            string? consistencyLevel = default,
+            string? tenant = default,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -105,12 +141,13 @@ namespace Weaviate
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Weaviate.PathBuilder(
                                 path: $"/objects/{className}/{id}/references/{propertyName}",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("consistency_level", consistencyLevel)
-                                .AddOptionalParameter("tenant", tenant) 
+                                .AddOptionalParameter("tenant", tenant)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Weaviate.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -193,6 +230,8 @@ namespace Weaviate
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -203,6 +242,11 @@ namespace Weaviate
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Weaviate.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Weaviate.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -220,6 +264,8 @@ namespace Weaviate
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -229,8 +275,7 @@ namespace Weaviate
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Weaviate.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -239,6 +284,11 @@ namespace Weaviate
                         __attempt < __maxAttempts &&
                         global::Weaviate.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Weaviate.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Weaviate.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -255,14 +305,15 @@ namespace Weaviate
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Weaviate.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -302,6 +353,8 @@ namespace Weaviate
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -322,6 +375,8 @@ namespace Weaviate
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Malformed request.
@@ -565,6 +620,10 @@ namespace Weaviate
                                 {
                                     __response.EnsureSuccessStatusCode();
 
+                return new global::Weaviate.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Weaviate.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -586,6 +645,10 @@ namespace Weaviate
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
+                                    return new global::Weaviate.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Weaviate.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

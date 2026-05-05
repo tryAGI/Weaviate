@@ -36,6 +36,29 @@ namespace Weaviate
         /// <param name="propertyName"></param>
         /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Weaviate.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse> ObjectsClassReferencesDeleteAsResponseAsync(
+            string className,
+            global::System.Guid id,
+            string propertyName,
+
+            global::Weaviate.SingleRef request,
+            string? consistencyLevel = default,
+            string? tenant = default,
+            global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete the single reference that is given in the body from the list of references that this property has.<br/>
+        /// Delete the single reference that is given in the body from the list of references that this property has.
+        /// </summary>
+        /// <param name="className"></param>
+        /// <param name="id"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="consistencyLevel"></param>
+        /// <param name="tenant"></param>
         /// <param name="class">
         /// If using a concept reference (rather than a direct reference), specify the desired class name here
         /// </param>
