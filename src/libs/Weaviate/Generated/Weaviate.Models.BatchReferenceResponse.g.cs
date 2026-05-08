@@ -29,6 +29,19 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBatchReference(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Weaviate.BatchReference? value)
+        {
+            value = BatchReference;
+            return IsBatchReference;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.BatchReferenceResponseVariant2? BatchReferenceResponseVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Weaviate
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchReferenceResponseVariant2))]
 #endif
         public bool IsBatchReferenceResponseVariant2 => BatchReferenceResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBatchReferenceResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Weaviate.BatchReferenceResponseVariant2? value)
+        {
+            value = BatchReferenceResponseVariant2;
+            return IsBatchReferenceResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Weaviate
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Weaviate.BatchReference?, TResult>? batchReference = null,
-            global::System.Func<global::Weaviate.BatchReferenceResponseVariant2?, TResult>? batchReferenceResponseVariant2 = null,
+            global::System.Func<global::Weaviate.BatchReference, TResult>? batchReference = null,
+            global::System.Func<global::Weaviate.BatchReferenceResponseVariant2, TResult>? batchReferenceResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Weaviate
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Weaviate.BatchReference?>? batchReference = null,
-            global::System.Action<global::Weaviate.BatchReferenceResponseVariant2?>? batchReferenceResponseVariant2 = null,
+            global::System.Action<global::Weaviate.BatchReference>? batchReference = null,
+
+            global::System.Action<global::Weaviate.BatchReferenceResponseVariant2>? batchReferenceResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBatchReference)
+            {
+                batchReference?.Invoke(BatchReference!);
+            }
+            else if (IsBatchReferenceResponseVariant2)
+            {
+                batchReferenceResponseVariant2?.Invoke(BatchReferenceResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Weaviate.BatchReference>? batchReference = null,
+            global::System.Action<global::Weaviate.BatchReferenceResponseVariant2>? batchReferenceResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
