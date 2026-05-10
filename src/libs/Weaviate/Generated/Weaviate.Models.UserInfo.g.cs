@@ -62,5 +62,6 @@ namespace Weaviate
         public UserInfo()
         {
         }
+
     }
 }

@@ -42,5 +42,6 @@ namespace Weaviate
         public RemovePermissionsRequest()
         {
         }
+
     }
 }

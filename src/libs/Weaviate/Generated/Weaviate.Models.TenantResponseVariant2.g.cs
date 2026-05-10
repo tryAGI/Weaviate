@@ -41,5 +41,6 @@ namespace Weaviate
         public TenantResponseVariant2()
         {
         }
+
     }
 }

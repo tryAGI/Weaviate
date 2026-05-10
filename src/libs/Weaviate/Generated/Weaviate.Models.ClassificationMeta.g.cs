@@ -100,5 +100,6 @@ namespace Weaviate
         public ClassificationMeta()
         {
         }
+
     }
 }

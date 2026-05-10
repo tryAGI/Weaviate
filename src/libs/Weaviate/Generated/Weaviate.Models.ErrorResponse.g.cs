@@ -39,5 +39,6 @@ namespace Weaviate
         public ErrorResponse()
         {
         }
+
     }
 }

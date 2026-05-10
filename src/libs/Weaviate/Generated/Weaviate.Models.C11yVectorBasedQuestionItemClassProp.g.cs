@@ -50,5 +50,6 @@ namespace Weaviate
         public C11yVectorBasedQuestionItemClassProp()
         {
         }
+
     }
 }

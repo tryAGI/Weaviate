@@ -69,5 +69,6 @@ namespace Weaviate
         public PermissionData()
         {
         }
+
     }
 }

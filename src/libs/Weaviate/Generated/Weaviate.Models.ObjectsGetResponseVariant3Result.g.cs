@@ -53,5 +53,6 @@ namespace Weaviate
         public ObjectsGetResponseVariant3Result()
         {
         }
+
     }
 }

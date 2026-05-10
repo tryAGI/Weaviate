@@ -61,5 +61,6 @@ namespace Weaviate
         public ObjectsListResponse()
         {
         }
+
     }
 }

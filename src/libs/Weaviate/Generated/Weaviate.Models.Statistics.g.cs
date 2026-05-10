@@ -156,5 +156,6 @@ namespace Weaviate
         public Statistics()
         {
         }
+
     }
 }

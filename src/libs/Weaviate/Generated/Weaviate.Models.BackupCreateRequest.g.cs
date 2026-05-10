@@ -74,5 +74,6 @@ namespace Weaviate
         public BackupCreateRequest()
         {
         }
+
     }
 }

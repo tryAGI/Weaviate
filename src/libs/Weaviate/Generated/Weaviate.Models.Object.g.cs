@@ -140,5 +140,6 @@ namespace Weaviate
         public Object()
         {
         }
+
     }
 }
