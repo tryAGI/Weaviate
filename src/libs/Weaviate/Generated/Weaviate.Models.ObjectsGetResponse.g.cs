@@ -42,6 +42,13 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public global::Weaviate.Object PickObjectValue() => IsObjectValue
+            ? ObjectValue!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectValue' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.ObjectsGetResponseVariant2? ObjectsGetResponseVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public global::Weaviate.ObjectsGetResponseVariant2 PickObjectsGetResponseVariant2() => IsObjectsGetResponseVariant2
+            ? ObjectsGetResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectsGetResponseVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.ObjectsGetResponseVariant3? ObjectsGetResponseVariant3 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace Weaviate
             value = ObjectsGetResponseVariant3;
             return IsObjectsGetResponseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Weaviate.ObjectsGetResponseVariant3 PickObjectsGetResponseVariant3() => IsObjectsGetResponseVariant3
+            ? ObjectsGetResponseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectsGetResponseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +136,11 @@ namespace Weaviate
         {
             ObjectValue = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ObjectsGetResponse FromObjectValue(global::Weaviate.Object? value) => new ObjectsGetResponse(value);
 
         /// <summary>
         /// 
@@ -137,6 +163,11 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public static ObjectsGetResponse FromObjectsGetResponseVariant2(global::Weaviate.ObjectsGetResponseVariant2? value) => new ObjectsGetResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ObjectsGetResponse(global::Weaviate.ObjectsGetResponseVariant3 value) => new ObjectsGetResponse((global::Weaviate.ObjectsGetResponseVariant3?)value);
 
         /// <summary>
@@ -151,6 +182,11 @@ namespace Weaviate
         {
             ObjectsGetResponseVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ObjectsGetResponse FromObjectsGetResponseVariant3(global::Weaviate.ObjectsGetResponseVariant3? value) => new ObjectsGetResponse(value);
 
         /// <summary>
         /// 

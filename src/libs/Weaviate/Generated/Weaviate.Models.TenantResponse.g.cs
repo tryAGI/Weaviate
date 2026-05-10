@@ -42,6 +42,13 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public global::Weaviate.Tenant PickTenant() => IsTenant
+            ? Tenant!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tenant' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.TenantResponseVariant2? TenantResponseVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Weaviate
             value = TenantResponseVariant2;
             return IsTenantResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Weaviate.TenantResponseVariant2 PickTenantResponseVariant2() => IsTenantResponseVariant2
+            ? TenantResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TenantResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public static TenantResponse FromTenant(global::Weaviate.Tenant? value) => new TenantResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TenantResponse(global::Weaviate.TenantResponseVariant2 value) => new TenantResponse((global::Weaviate.TenantResponseVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Weaviate
         {
             TenantResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TenantResponse FromTenantResponseVariant2(global::Weaviate.TenantResponseVariant2? value) => new TenantResponse(value);
 
         /// <summary>
         /// 
