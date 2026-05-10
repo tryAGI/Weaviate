@@ -42,6 +42,13 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public global::Weaviate.BatchReference PickBatchReference() => IsBatchReference
+            ? BatchReference!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchReference' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.BatchReferenceResponseVariant2? BatchReferenceResponseVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Weaviate
             value = BatchReferenceResponseVariant2;
             return IsBatchReferenceResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Weaviate.BatchReferenceResponseVariant2 PickBatchReferenceResponseVariant2() => IsBatchReferenceResponseVariant2
+            ? BatchReferenceResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchReferenceResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public static BatchReferenceResponse FromBatchReference(global::Weaviate.BatchReference? value) => new BatchReferenceResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BatchReferenceResponse(global::Weaviate.BatchReferenceResponseVariant2 value) => new BatchReferenceResponse((global::Weaviate.BatchReferenceResponseVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Weaviate
         {
             BatchReferenceResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BatchReferenceResponse FromBatchReferenceResponseVariant2(global::Weaviate.BatchReferenceResponseVariant2? value) => new BatchReferenceResponse(value);
 
         /// <summary>
         /// 
