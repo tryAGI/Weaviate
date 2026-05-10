@@ -103,5 +103,6 @@ namespace Weaviate
         public BackupConfig()
         {
         }
+
     }
 }

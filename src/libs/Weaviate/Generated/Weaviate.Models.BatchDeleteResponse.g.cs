@@ -87,5 +87,6 @@ namespace Weaviate
         public BatchDeleteResponse()
         {
         }
+
     }
 }

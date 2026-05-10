@@ -63,5 +63,6 @@ namespace Weaviate
         public MultiTenancyConfig()
         {
         }
+
     }
 }

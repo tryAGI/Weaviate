@@ -48,5 +48,6 @@ namespace Weaviate
         public GraphQLErrorLocation()
         {
         }
+
     }
 }

@@ -66,5 +66,6 @@ namespace Weaviate
         public C11yExtension()
         {
         }
+
     }
 }

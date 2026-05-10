@@ -105,5 +105,6 @@ namespace Weaviate
         public NestedProperty()
         {
         }
+
     }
 }

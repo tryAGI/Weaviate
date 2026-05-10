@@ -52,5 +52,6 @@ namespace Weaviate
         public Role()
         {
         }
+
     }
 }

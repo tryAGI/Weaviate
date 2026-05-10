@@ -249,5 +249,6 @@ namespace Weaviate
         public WhereFilter()
         {
         }
+
     }
 }

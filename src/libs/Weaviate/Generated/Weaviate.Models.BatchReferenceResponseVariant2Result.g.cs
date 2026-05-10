@@ -53,5 +53,6 @@ namespace Weaviate
         public BatchReferenceResponseVariant2Result()
         {
         }
+
     }
 }

@@ -57,5 +57,6 @@ namespace Weaviate
         public GraphQLError()
         {
         }
+
     }
 }

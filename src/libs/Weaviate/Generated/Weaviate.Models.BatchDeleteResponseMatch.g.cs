@@ -55,5 +55,6 @@ namespace Weaviate
         public BatchDeleteResponseMatch()
         {
         }
+
     }
 }

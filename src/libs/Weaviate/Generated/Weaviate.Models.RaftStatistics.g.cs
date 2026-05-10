@@ -194,5 +194,6 @@ namespace Weaviate
         public RaftStatistics()
         {
         }
+
     }
 }
