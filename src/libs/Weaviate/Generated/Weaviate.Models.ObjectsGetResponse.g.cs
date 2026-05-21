@@ -29,6 +29,26 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickObjectValue(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Weaviate.Object? value)
+        {
+            value = ObjectValue;
+            return IsObjectValue;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Weaviate.Object PickObjectValue() => IsObjectValue
+            ? ObjectValue!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectValue' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.ObjectsGetResponseVariant2? ObjectsGetResponseVariant2 { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickObjectsGetResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Weaviate.ObjectsGetResponseVariant2? value)
+        {
+            value = ObjectsGetResponseVariant2;
+            return IsObjectsGetResponseVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Weaviate.ObjectsGetResponseVariant2 PickObjectsGetResponseVariant2() => IsObjectsGetResponseVariant2
+            ? ObjectsGetResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectsGetResponseVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.ObjectsGetResponseVariant3? ObjectsGetResponseVariant3 { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace Weaviate
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ObjectsGetResponseVariant3))]
 #endif
         public bool IsObjectsGetResponseVariant3 => ObjectsGetResponseVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickObjectsGetResponseVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Weaviate.ObjectsGetResponseVariant3? value)
+        {
+            value = ObjectsGetResponseVariant3;
+            return IsObjectsGetResponseVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Weaviate.ObjectsGetResponseVariant3 PickObjectsGetResponseVariant3() => IsObjectsGetResponseVariant3
+            ? ObjectsGetResponseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectsGetResponseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace Weaviate
         {
             ObjectValue = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ObjectsGetResponse FromObjectValue(global::Weaviate.Object? value) => new ObjectsGetResponse(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public static ObjectsGetResponse FromObjectsGetResponseVariant2(global::Weaviate.ObjectsGetResponseVariant2? value) => new ObjectsGetResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ObjectsGetResponse(global::Weaviate.ObjectsGetResponseVariant3 value) => new ObjectsGetResponse((global::Weaviate.ObjectsGetResponseVariant3?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace Weaviate
         {
             ObjectsGetResponseVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ObjectsGetResponse FromObjectsGetResponseVariant3(global::Weaviate.ObjectsGetResponseVariant3? value) => new ObjectsGetResponse(value);
 
         /// <summary>
         /// 
@@ -157,9 +232,9 @@ namespace Weaviate
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Weaviate.Object?, TResult>? objectValue = null,
-            global::System.Func<global::Weaviate.ObjectsGetResponseVariant2?, TResult>? objectsGetResponseVariant2 = null,
-            global::System.Func<global::Weaviate.ObjectsGetResponseVariant3?, TResult>? objectsGetResponseVariant3 = null,
+            global::System.Func<global::Weaviate.Object, TResult>? objectValue = null,
+            global::System.Func<global::Weaviate.ObjectsGetResponseVariant2, TResult>? objectsGetResponseVariant2 = null,
+            global::System.Func<global::Weaviate.ObjectsGetResponseVariant3, TResult>? objectsGetResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +262,39 @@ namespace Weaviate
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Weaviate.Object?>? objectValue = null,
-            global::System.Action<global::Weaviate.ObjectsGetResponseVariant2?>? objectsGetResponseVariant2 = null,
-            global::System.Action<global::Weaviate.ObjectsGetResponseVariant3?>? objectsGetResponseVariant3 = null,
+            global::System.Action<global::Weaviate.Object>? objectValue = null,
+
+            global::System.Action<global::Weaviate.ObjectsGetResponseVariant2>? objectsGetResponseVariant2 = null,
+
+            global::System.Action<global::Weaviate.ObjectsGetResponseVariant3>? objectsGetResponseVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsObjectValue)
+            {
+                objectValue?.Invoke(ObjectValue!);
+            }
+            else if (IsObjectsGetResponseVariant2)
+            {
+                objectsGetResponseVariant2?.Invoke(ObjectsGetResponseVariant2!);
+            }
+            else if (IsObjectsGetResponseVariant3)
+            {
+                objectsGetResponseVariant3?.Invoke(ObjectsGetResponseVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Weaviate.Object>? objectValue = null,
+            global::System.Action<global::Weaviate.ObjectsGetResponseVariant2>? objectsGetResponseVariant2 = null,
+            global::System.Action<global::Weaviate.ObjectsGetResponseVariant3>? objectsGetResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)

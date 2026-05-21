@@ -64,5 +64,6 @@ namespace Weaviate
         public ReplicationConfig()
         {
         }
+
     }
 }

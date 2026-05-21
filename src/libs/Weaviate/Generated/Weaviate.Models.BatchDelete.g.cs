@@ -78,5 +78,6 @@ namespace Weaviate
         public BatchDelete()
         {
         }
+
     }
 }

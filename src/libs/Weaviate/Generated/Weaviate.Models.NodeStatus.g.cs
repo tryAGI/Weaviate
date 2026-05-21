@@ -110,5 +110,6 @@ namespace Weaviate
         public NodeStatus()
         {
         }
+
     }
 }

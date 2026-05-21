@@ -141,5 +141,6 @@ namespace Weaviate
         public Property()
         {
         }
+
     }
 }

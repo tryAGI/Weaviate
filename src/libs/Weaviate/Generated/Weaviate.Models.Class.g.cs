@@ -162,5 +162,6 @@ namespace Weaviate
         public Class()
         {
         }
+
     }
 }

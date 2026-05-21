@@ -85,5 +85,6 @@ namespace Weaviate
         public SingleRef()
         {
         }
+
     }
 }

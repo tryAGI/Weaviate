@@ -29,6 +29,26 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTenant(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Weaviate.Tenant? value)
+        {
+            value = Tenant;
+            return IsTenant;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Weaviate.Tenant PickTenant() => IsTenant
+            ? Tenant!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tenant' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.TenantResponseVariant2? TenantResponseVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Weaviate
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TenantResponseVariant2))]
 #endif
         public bool IsTenantResponseVariant2 => TenantResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTenantResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Weaviate.TenantResponseVariant2? value)
+        {
+            value = TenantResponseVariant2;
+            return IsTenantResponseVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Weaviate.TenantResponseVariant2 PickTenantResponseVariant2() => IsTenantResponseVariant2
+            ? TenantResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TenantResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Weaviate
         /// <summary>
         /// 
         /// </summary>
+        public static TenantResponse FromTenant(global::Weaviate.Tenant? value) => new TenantResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TenantResponse(global::Weaviate.TenantResponseVariant2 value) => new TenantResponse((global::Weaviate.TenantResponseVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Weaviate
         {
             TenantResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TenantResponse FromTenantResponseVariant2(global::Weaviate.TenantResponseVariant2? value) => new TenantResponse(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Weaviate
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Weaviate.Tenant?, TResult>? tenant = null,
-            global::System.Func<global::Weaviate.TenantResponseVariant2?, TResult>? tenantResponseVariant2 = null,
+            global::System.Func<global::Weaviate.Tenant, TResult>? tenant = null,
+            global::System.Func<global::Weaviate.TenantResponseVariant2, TResult>? tenantResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Weaviate
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Weaviate.Tenant?>? tenant = null,
-            global::System.Action<global::Weaviate.TenantResponseVariant2?>? tenantResponseVariant2 = null,
+            global::System.Action<global::Weaviate.Tenant>? tenant = null,
+
+            global::System.Action<global::Weaviate.TenantResponseVariant2>? tenantResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTenant)
+            {
+                tenant?.Invoke(Tenant!);
+            }
+            else if (IsTenantResponseVariant2)
+            {
+                tenantResponseVariant2?.Invoke(TenantResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Weaviate.Tenant>? tenant = null,
+            global::System.Action<global::Weaviate.TenantResponseVariant2>? tenantResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)

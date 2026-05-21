@@ -157,5 +157,6 @@ namespace Weaviate
         public Classification()
         {
         }
+
     }
 }

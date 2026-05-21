@@ -96,5 +96,6 @@ namespace Weaviate
         public InvertedIndexConfig()
         {
         }
+
     }
 }

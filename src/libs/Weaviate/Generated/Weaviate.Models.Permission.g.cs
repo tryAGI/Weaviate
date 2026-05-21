@@ -120,5 +120,6 @@ namespace Weaviate
         public Permission()
         {
         }
+
     }
 }

@@ -76,5 +76,6 @@ namespace Weaviate
         public RestoreConfig()
         {
         }
+
     }
 }

@@ -88,5 +88,6 @@ namespace Weaviate
         public BackupRestoreStatusResponse()
         {
         }
+
     }
 }

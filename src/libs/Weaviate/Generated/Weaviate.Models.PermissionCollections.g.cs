@@ -43,5 +43,6 @@ namespace Weaviate
         public PermissionCollections()
         {
         }
+
     }
 }

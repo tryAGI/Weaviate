@@ -56,5 +56,6 @@ namespace Weaviate
         public PermissionTenants()
         {
         }
+
     }
 }
