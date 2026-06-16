@@ -7,6 +7,8 @@ public sealed class Environment : IAsyncDisposable
 {
     private const string WeaviateImage = "semitechnologies/weaviate:latest";
     private const ushort WeaviatePort = 8080;
+    private const string ContainerApiKey = "test-api-key";
+    private const string ContainerUser = "test-user";
     private static readonly TimeSpan StartupTimeout = TimeSpan.FromMinutes(2);
 
     public IContainer? Container { get; init; }
@@ -50,7 +52,10 @@ public sealed class Environment : IAsyncDisposable
             case EnvironmentType.Container:
             {
                 var container = new ContainerBuilder(WeaviateImage)
-                    .WithEnvironment("AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED", "true")
+                    .WithEnvironment("AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED", "false")
+                    .WithEnvironment("AUTHENTICATION_APIKEY_ENABLED", "true")
+                    .WithEnvironment("AUTHENTICATION_APIKEY_ALLOWED_KEYS", ContainerApiKey)
+                    .WithEnvironment("AUTHENTICATION_APIKEY_USERS", ContainerUser)
                     .WithEnvironment("PERSISTENCE_DATA_PATH", "/var/lib/weaviate")
                     .WithPortBinding(WeaviatePort, assignRandomHostPort: true)
                     .WithWaitStrategy(
@@ -70,7 +75,7 @@ public sealed class Environment : IAsyncDisposable
                     "/v1").Uri;
 
                 var client = new WeaviateClient(baseUri: baseUri);
-                client.AuthorizeUsingBearer("test");
+                client.AuthorizeUsingBearer(ContainerApiKey);
 
                 return new Environment
                 {
