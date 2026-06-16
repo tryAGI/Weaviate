@@ -70,6 +70,7 @@ public sealed class Environment : IAsyncDisposable
                     "/v1").Uri;
 
                 var client = new WeaviateClient(baseUri: baseUri);
+                client.AuthorizeUsingBearer("test");
 
                 return new Environment
                 {
