@@ -9,11 +9,11 @@ namespace Weaviate
     public enum BatchReferenceResponseVariant2ResultStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

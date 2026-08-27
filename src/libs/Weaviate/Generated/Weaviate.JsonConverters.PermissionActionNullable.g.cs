@@ -20,7 +20,7 @@ namespace Weaviate.JsonConverters
                     {
                         return global::Weaviate.PermissionActionExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

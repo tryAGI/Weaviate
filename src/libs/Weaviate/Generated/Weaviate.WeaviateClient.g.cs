@@ -20,7 +20,7 @@ namespace Weaviate
     public sealed partial class WeaviateClient : global::Weaviate.IWeaviateClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https:///v1";
 
@@ -47,7 +47,7 @@ namespace Weaviate
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Weaviate.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -57,7 +57,7 @@ namespace Weaviate
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AuthzClient Authz => new AuthzClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -156,7 +156,7 @@ namespace Weaviate
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UsersClient Users => new UsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

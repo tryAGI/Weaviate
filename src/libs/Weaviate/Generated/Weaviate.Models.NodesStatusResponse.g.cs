@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class NodesStatusResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nodes")]
         public global::System.Collections.Generic.IList<global::Weaviate.NodeStatus>? Nodes { get; set; }

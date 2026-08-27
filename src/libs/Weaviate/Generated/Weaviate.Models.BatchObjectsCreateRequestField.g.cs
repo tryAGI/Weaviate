@@ -9,23 +9,23 @@ namespace Weaviate
     public enum BatchObjectsCreateRequestField
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Class,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreationTimeUnix,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Id,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Schema,
     }

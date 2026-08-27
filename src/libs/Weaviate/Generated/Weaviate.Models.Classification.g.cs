@@ -76,7 +76,7 @@ namespace Weaviate
         public string? Error { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         public global::Weaviate.ClassificationFilters? Filters { get; set; }

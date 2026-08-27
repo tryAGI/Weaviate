@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Role
     {
@@ -16,7 +16,7 @@ namespace Weaviate
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,12 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WeaviateRootResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("links")]
         public global::System.Collections.Generic.IList<global::Weaviate.Link>? Links { get; set; }

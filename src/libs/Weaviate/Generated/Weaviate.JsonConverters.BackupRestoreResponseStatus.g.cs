@@ -20,7 +20,7 @@ namespace Weaviate.JsonConverters
                     {
                         return global::Weaviate.BackupRestoreResponseStatusExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

@@ -10,11 +10,11 @@ namespace Weaviate
     public enum PermissionNodesVerbosity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minimal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Verbose,
     }

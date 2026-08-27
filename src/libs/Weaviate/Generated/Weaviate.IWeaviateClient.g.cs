@@ -49,13 +49,13 @@ namespace Weaviate
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AuthzClient Authz { get; }
 
@@ -110,7 +110,7 @@ namespace Weaviate
         public SchemaClient Schema { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UsersClient Users { get; }
 

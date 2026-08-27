@@ -15,7 +15,7 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<global::Weaviate.Object>? Objects { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deprecations")]
         public global::System.Collections.Generic.IList<global::Weaviate.Deprecation>? Deprecations { get; set; }

@@ -9,15 +9,15 @@ namespace Weaviate
     public enum ReplicationConfigDeletionStrategy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteOnConflict,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoAutomatedResolution,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TimeBasedResolution,
     }

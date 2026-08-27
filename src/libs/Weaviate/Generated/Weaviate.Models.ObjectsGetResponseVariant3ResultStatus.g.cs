@@ -9,11 +9,11 @@ namespace Weaviate
     public enum ObjectsGetResponseVariant3ResultStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

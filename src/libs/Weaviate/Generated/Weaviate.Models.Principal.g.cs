@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Principal
     {
@@ -15,7 +15,7 @@ namespace Weaviate
         public string? Username { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("groups")]
         public global::System.Collections.Generic.IList<string>? Groups { get; set; }

@@ -5,12 +5,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ObjectsGetResponse : global::System.IEquatable<ObjectsGetResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.Object? ObjectValue { get; init; }
@@ -19,7 +19,7 @@ namespace Weaviate
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ObjectValue))]
@@ -27,7 +27,7 @@ namespace Weaviate
         public bool IsObjectValue => ObjectValue != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickObjectValue(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Weaviate.Object PickObjectValue() => IsObjectValue
             ? ObjectValue!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectValue' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.ObjectsGetResponseVariant2? ObjectsGetResponseVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Weaviate
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ObjectsGetResponseVariant2))]
@@ -64,7 +64,7 @@ namespace Weaviate
         public bool IsObjectsGetResponseVariant2 => ObjectsGetResponseVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickObjectsGetResponseVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Weaviate.ObjectsGetResponseVariant2 PickObjectsGetResponseVariant2() => IsObjectsGetResponseVariant2
             ? ObjectsGetResponseVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectsGetResponseVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.ObjectsGetResponseVariant3? ObjectsGetResponseVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace Weaviate
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ObjectsGetResponseVariant3))]
@@ -101,7 +101,7 @@ namespace Weaviate
         public bool IsObjectsGetResponseVariant3 => ObjectsGetResponseVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickObjectsGetResponseVariant3(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Weaviate.ObjectsGetResponseVariant3 PickObjectsGetResponseVariant3() => IsObjectsGetResponseVariant3
             ? ObjectsGetResponseVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectsGetResponseVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ObjectsGetResponse(global::Weaviate.Object value) => new ObjectsGetResponse((global::Weaviate.Object?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Weaviate.Object?(ObjectsGetResponse @this) => @this.ObjectValue;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ObjectsGetResponse(global::Weaviate.Object? value)
         {
@@ -138,22 +138,22 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ObjectsGetResponse FromObjectValue(global::Weaviate.Object? value) => new ObjectsGetResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ObjectsGetResponse(global::Weaviate.ObjectsGetResponseVariant2 value) => new ObjectsGetResponse((global::Weaviate.ObjectsGetResponseVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Weaviate.ObjectsGetResponseVariant2?(ObjectsGetResponse @this) => @this.ObjectsGetResponseVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ObjectsGetResponse(global::Weaviate.ObjectsGetResponseVariant2? value)
         {
@@ -161,22 +161,22 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ObjectsGetResponse FromObjectsGetResponseVariant2(global::Weaviate.ObjectsGetResponseVariant2? value) => new ObjectsGetResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ObjectsGetResponse(global::Weaviate.ObjectsGetResponseVariant3 value) => new ObjectsGetResponse((global::Weaviate.ObjectsGetResponseVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Weaviate.ObjectsGetResponseVariant3?(ObjectsGetResponse @this) => @this.ObjectsGetResponseVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ObjectsGetResponse(global::Weaviate.ObjectsGetResponseVariant3? value)
         {
@@ -184,12 +184,12 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ObjectsGetResponse FromObjectsGetResponseVariant3(global::Weaviate.ObjectsGetResponseVariant3? value) => new ObjectsGetResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ObjectsGetResponse(
             global::Weaviate.Object? objectValue,
@@ -203,25 +203,25 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ObjectsGetResponseVariant3 as object ??
             ObjectsGetResponseVariant2 as object ??
-            ObjectValue as object 
+            ObjectValue as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ObjectValue?.ToString() ??
             ObjectsGetResponseVariant2?.ToString() ??
-            ObjectsGetResponseVariant3?.ToString() 
+            ObjectsGetResponseVariant3?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Weaviate.Object, TResult>? objectValue = null,
@@ -259,7 +259,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Weaviate.Object>? objectValue = null,
@@ -289,7 +289,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Weaviate.Object>? objectValue = null,
@@ -317,7 +317,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ObjectsGetResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Weaviate.Object?>.Default.Equals(ObjectValue, other.ObjectValue) &&
                 global::System.Collections.Generic.EqualityComparer<global::Weaviate.ObjectsGetResponseVariant2?>.Default.Equals(ObjectsGetResponseVariant2, other.ObjectsGetResponseVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<global::Weaviate.ObjectsGetResponseVariant3?>.Default.Equals(ObjectsGetResponseVariant3, other.ObjectsGetResponseVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::Weaviate.ObjectsGetResponseVariant3?>.Default.Equals(ObjectsGetResponseVariant3, other.ObjectsGetResponseVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ObjectsGetResponse obj1, ObjectsGetResponse obj2)
         {
@@ -360,7 +360,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ObjectsGetResponse obj1, ObjectsGetResponse obj2)
         {
@@ -368,7 +368,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

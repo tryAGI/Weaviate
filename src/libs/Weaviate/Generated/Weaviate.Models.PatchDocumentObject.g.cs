@@ -36,7 +36,7 @@ namespace Weaviate
         public object? Value { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge")]
         public global::Weaviate.Object? Merge { get; set; }

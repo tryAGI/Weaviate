@@ -9,19 +9,19 @@ namespace Weaviate
     public sealed partial class GraphQLError
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("locations")]
         public global::System.Collections.Generic.IList<global::Weaviate.GraphQLErrorLocation>? Locations { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         public string? Message { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         public global::System.Collections.Generic.IList<string>? Path { get; set; }

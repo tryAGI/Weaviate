@@ -10,19 +10,19 @@ namespace Weaviate
     public enum NodeStatusStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Healthy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Timeout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unavailable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unhealthy,
     }
