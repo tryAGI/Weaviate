@@ -9,87 +9,87 @@ namespace Weaviate
     public enum PermissionAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AssignAndRevokeUsers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateCollections,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateData,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateRoles,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateTenants,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteCollections,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteData,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteRoles,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteTenants,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ManageBackups,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadCluster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadCollections,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadData,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadNodes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadRoles,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadTenants,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadUsers,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateCollections,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateData,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateRoles,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateTenants,
     }

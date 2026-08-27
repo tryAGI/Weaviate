@@ -4,12 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class C11yVectorBasedQuestionItemClassProp
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("propsVectors")]
         public global::System.Collections.Generic.IList<float>? PropsVectors { get; set; }

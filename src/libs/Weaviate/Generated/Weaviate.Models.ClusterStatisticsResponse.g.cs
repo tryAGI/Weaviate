@@ -9,13 +9,13 @@ namespace Weaviate
     public sealed partial class ClusterStatisticsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("statistics")]
         public global::System.Collections.Generic.IList<global::Weaviate.Statistics>? Statistics { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("synchronized")]
         public bool? Synchronized { get; set; }

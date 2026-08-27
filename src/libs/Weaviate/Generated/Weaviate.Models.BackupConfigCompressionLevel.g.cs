@@ -10,15 +10,15 @@ namespace Weaviate
     public enum BackupConfigCompressionLevel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BestCompression,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BestSpeed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DefaultCompression,
     }

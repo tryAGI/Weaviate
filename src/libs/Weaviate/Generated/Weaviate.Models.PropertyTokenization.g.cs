@@ -9,35 +9,35 @@ namespace Weaviate
     public enum PropertyTokenization
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Field,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KagomeJa,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KagomeKr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lowercase,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trigram,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Whitespace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Word,
     }

@@ -19,7 +19,7 @@ namespace Weaviate
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tenant))]
@@ -27,7 +27,7 @@ namespace Weaviate
         public bool IsTenant => Tenant != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTenant(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Weaviate.Tenant PickTenant() => IsTenant
             ? Tenant!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tenant' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.TenantResponseVariant2? TenantResponseVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Weaviate
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TenantResponseVariant2))]
@@ -64,7 +64,7 @@ namespace Weaviate
         public bool IsTenantResponseVariant2 => TenantResponseVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTenantResponseVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Weaviate.TenantResponseVariant2 PickTenantResponseVariant2() => IsTenantResponseVariant2
             ? TenantResponseVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TenantResponseVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator TenantResponse(global::Weaviate.Tenant value) => new TenantResponse((global::Weaviate.Tenant?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Weaviate.Tenant?(TenantResponse @this) => @this.Tenant;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TenantResponse(global::Weaviate.Tenant? value)
         {
@@ -101,22 +101,22 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static TenantResponse FromTenant(global::Weaviate.Tenant? value) => new TenantResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator TenantResponse(global::Weaviate.TenantResponseVariant2 value) => new TenantResponse((global::Weaviate.TenantResponseVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Weaviate.TenantResponseVariant2?(TenantResponse @this) => @this.TenantResponseVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TenantResponse(global::Weaviate.TenantResponseVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static TenantResponse FromTenantResponseVariant2(global::Weaviate.TenantResponseVariant2? value) => new TenantResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TenantResponse(
             global::Weaviate.Tenant? tenant,
@@ -141,23 +141,23 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             TenantResponseVariant2 as object ??
-            Tenant as object 
+            Tenant as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Tenant?.ToString() ??
-            TenantResponseVariant2?.ToString() 
+            TenantResponseVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Weaviate.Tenant, TResult>? tenant = null,
@@ -190,7 +190,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Weaviate.Tenant>? tenant = null,
@@ -214,7 +214,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Weaviate.Tenant>? tenant = null,
@@ -237,7 +237,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(TenantResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Weaviate.Tenant?>.Default.Equals(Tenant, other.Tenant) &&
-                global::System.Collections.Generic.EqualityComparer<global::Weaviate.TenantResponseVariant2?>.Default.Equals(TenantResponseVariant2, other.TenantResponseVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Weaviate.TenantResponseVariant2?>.Default.Equals(TenantResponseVariant2, other.TenantResponseVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(TenantResponse obj1, TenantResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(TenantResponse obj1, TenantResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

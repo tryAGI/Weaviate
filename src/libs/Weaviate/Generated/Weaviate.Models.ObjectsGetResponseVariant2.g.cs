@@ -4,12 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ObjectsGetResponseVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deprecations")]
         public global::System.Collections.Generic.IList<global::Weaviate.Deprecation>? Deprecations { get; set; }

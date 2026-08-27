@@ -9,27 +9,27 @@ namespace Weaviate
     public enum PatchDocumentActionOp
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Add,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Copy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Move,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Remove,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Replace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Test,
     }

@@ -9,15 +9,15 @@ namespace Weaviate
     public enum BatchDeleteResponseResultsObjectStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dryrun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

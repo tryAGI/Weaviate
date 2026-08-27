@@ -9,13 +9,13 @@ namespace Weaviate
     public sealed partial class C11yWordsResponseConcatenatedWord
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("concatenatedWord")]
         public string? ConcatenatedWord { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("singleWords")]
         public global::System.Collections.Generic.IList<string>? SingleWords { get; set; }

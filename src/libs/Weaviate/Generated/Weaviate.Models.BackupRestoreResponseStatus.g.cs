@@ -10,27 +10,27 @@ namespace Weaviate
     public enum BackupRestoreResponseStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Canceled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Started,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transferred,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transferring,
     }

@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ObjectsGetResponseVariant3
     {

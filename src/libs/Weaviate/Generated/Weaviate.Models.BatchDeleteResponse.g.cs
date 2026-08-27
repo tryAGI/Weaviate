@@ -35,7 +35,7 @@ namespace Weaviate
         public bool? DryRun { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         public global::Weaviate.BatchDeleteResponseResults? Results { get; set; }

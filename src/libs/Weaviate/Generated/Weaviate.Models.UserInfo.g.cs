@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UserInfo
     {
@@ -15,7 +15,7 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<string>? Groups { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("roles")]
         public global::System.Collections.Generic.IList<global::Weaviate.Role>? Roles { get; set; }

@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BatchObjectsCreateRequest
     {
@@ -15,7 +15,7 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<global::Weaviate.BatchObjectsCreateRequestField>? Fields { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("objects")]
         public global::System.Collections.Generic.IList<global::Weaviate.Object>? Objects { get; set; }

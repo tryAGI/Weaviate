@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class ErrorResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public global::System.Collections.Generic.IList<global::Weaviate.ErrorResponseErrorItem>? Error { get; set; }

@@ -10,11 +10,11 @@ namespace Weaviate
     public enum PermissionRolesScope
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Match,
     }

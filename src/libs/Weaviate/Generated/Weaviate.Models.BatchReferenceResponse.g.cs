@@ -5,12 +5,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BatchReferenceResponse : global::System.IEquatable<BatchReferenceResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.BatchReference? BatchReference { get; init; }
@@ -19,7 +19,7 @@ namespace Weaviate
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchReference))]
@@ -27,7 +27,7 @@ namespace Weaviate
         public bool IsBatchReference => BatchReference != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBatchReference(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Weaviate.BatchReference PickBatchReference() => IsBatchReference
             ? BatchReference!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchReference' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Weaviate.BatchReferenceResponseVariant2? BatchReferenceResponseVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Weaviate
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchReferenceResponseVariant2))]
@@ -64,7 +64,7 @@ namespace Weaviate
         public bool IsBatchReferenceResponseVariant2 => BatchReferenceResponseVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBatchReferenceResponseVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Weaviate.BatchReferenceResponseVariant2 PickBatchReferenceResponseVariant2() => IsBatchReferenceResponseVariant2
             ? BatchReferenceResponseVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchReferenceResponseVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BatchReferenceResponse(global::Weaviate.BatchReference value) => new BatchReferenceResponse((global::Weaviate.BatchReference?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Weaviate.BatchReference?(BatchReferenceResponse @this) => @this.BatchReference;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BatchReferenceResponse(global::Weaviate.BatchReference? value)
         {
@@ -101,22 +101,22 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BatchReferenceResponse FromBatchReference(global::Weaviate.BatchReference? value) => new BatchReferenceResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BatchReferenceResponse(global::Weaviate.BatchReferenceResponseVariant2 value) => new BatchReferenceResponse((global::Weaviate.BatchReferenceResponseVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Weaviate.BatchReferenceResponseVariant2?(BatchReferenceResponse @this) => @this.BatchReferenceResponseVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BatchReferenceResponse(global::Weaviate.BatchReferenceResponseVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BatchReferenceResponse FromBatchReferenceResponseVariant2(global::Weaviate.BatchReferenceResponseVariant2? value) => new BatchReferenceResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BatchReferenceResponse(
             global::Weaviate.BatchReference? batchReference,
@@ -141,23 +141,23 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BatchReferenceResponseVariant2 as object ??
-            BatchReference as object 
+            BatchReference as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BatchReference?.ToString() ??
-            BatchReferenceResponseVariant2?.ToString() 
+            BatchReferenceResponseVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Weaviate.BatchReference, TResult>? batchReference = null,
@@ -190,7 +190,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Weaviate.BatchReference>? batchReference = null,
@@ -214,7 +214,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Weaviate.BatchReference>? batchReference = null,
@@ -237,7 +237,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BatchReferenceResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Weaviate.BatchReference?>.Default.Equals(BatchReference, other.BatchReference) &&
-                global::System.Collections.Generic.EqualityComparer<global::Weaviate.BatchReferenceResponseVariant2?>.Default.Equals(BatchReferenceResponseVariant2, other.BatchReferenceResponseVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Weaviate.BatchReferenceResponseVariant2?>.Default.Equals(BatchReferenceResponseVariant2, other.BatchReferenceResponseVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BatchReferenceResponse obj1, BatchReferenceResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BatchReferenceResponse obj1, BatchReferenceResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Weaviate
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

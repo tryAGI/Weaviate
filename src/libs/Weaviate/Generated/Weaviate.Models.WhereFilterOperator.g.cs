@@ -10,55 +10,55 @@ namespace Weaviate
     public enum WhereFilterOperator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         And,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainsAll,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainsAny,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Equal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GreaterThan,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GreaterThanEqual,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IsNull,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LessThan,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LessThanEqual,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Like,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotEqual,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Or,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WithinGeoRange,
     }
