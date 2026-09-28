@@ -1,14 +1,12 @@
 
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
-
 namespace Weaviate
 {
     /// <summary>
     ///
     /// </summary>
+    #pragma warning disable CS3016 // Converter type array in this attribute is not CLS-compliant.
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
@@ -113,6 +111,7 @@ namespace Weaviate
 
             typeof(global::Weaviate.JsonConverters.UnixTimestampJsonConverter),
         })]
+    #pragma warning restore CS3016
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "ListObject_System_Collections_Generic_List_object")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UserInfo))]
