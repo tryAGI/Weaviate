@@ -42,8 +42,8 @@ namespace Weaviate
         /// <summary>
         ///
         /// </summary>
-        public global::Weaviate.BatchReference PickBatchReference() => IsBatchReference
-            ? BatchReference!
+        public global::Weaviate.BatchReference PickBatchReference() => BatchReference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchReference' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Weaviate
         /// <summary>
         ///
         /// </summary>
-        public global::Weaviate.BatchReferenceResponseVariant2 PickBatchReferenceResponseVariant2() => IsBatchReferenceResponseVariant2
-            ? BatchReferenceResponseVariant2!
+        public global::Weaviate.BatchReferenceResponseVariant2 PickBatchReferenceResponseVariant2() => BatchReferenceResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchReferenceResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Weaviate
                 Validate();
             }
 
-            if (IsBatchReference && batchReference != null)
+            if (BatchReference is { } __value0 && batchReference != null)
             {
-                return batchReference(BatchReference!);
+                return batchReference(__value0);
             }
-            else if (IsBatchReferenceResponseVariant2 && batchReferenceResponseVariant2 != null)
+            else if (BatchReferenceResponseVariant2 is { } __value1 && batchReferenceResponseVariant2 != null)
             {
-                return batchReferenceResponseVariant2(BatchReferenceResponseVariant2!);
+                return batchReferenceResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Weaviate
                 Validate();
             }
 
-            if (IsBatchReference)
+            if (BatchReference is { } __value0)
             {
-                batchReference?.Invoke(BatchReference!);
+                batchReference?.Invoke(__value0);
             }
-            else if (IsBatchReferenceResponseVariant2)
+            else if (BatchReferenceResponseVariant2 is { } __value1)
             {
-                batchReferenceResponseVariant2?.Invoke(BatchReferenceResponseVariant2!);
+                batchReferenceResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Weaviate
                 Validate();
             }
 
-            if (IsBatchReference)
+            if (BatchReference is { } __value0)
             {
-                batchReference?.Invoke(BatchReference!);
+                batchReference?.Invoke(__value0);
             }
-            else if (IsBatchReferenceResponseVariant2)
+            else if (BatchReferenceResponseVariant2 is { } __value1)
             {
-                batchReferenceResponseVariant2?.Invoke(BatchReferenceResponseVariant2!);
+                batchReferenceResponseVariant2?.Invoke(__value1);
             }
         }
 

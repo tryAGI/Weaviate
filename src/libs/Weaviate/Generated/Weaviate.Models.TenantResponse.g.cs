@@ -42,8 +42,8 @@ namespace Weaviate
         /// <summary>
         ///
         /// </summary>
-        public global::Weaviate.Tenant PickTenant() => IsTenant
-            ? Tenant!
+        public global::Weaviate.Tenant PickTenant() => Tenant is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tenant' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Weaviate
         /// <summary>
         ///
         /// </summary>
-        public global::Weaviate.TenantResponseVariant2 PickTenantResponseVariant2() => IsTenantResponseVariant2
-            ? TenantResponseVariant2!
+        public global::Weaviate.TenantResponseVariant2 PickTenantResponseVariant2() => TenantResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TenantResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Weaviate
                 Validate();
             }
 
-            if (IsTenant && tenant != null)
+            if (Tenant is { } __value0 && tenant != null)
             {
-                return tenant(Tenant!);
+                return tenant(__value0);
             }
-            else if (IsTenantResponseVariant2 && tenantResponseVariant2 != null)
+            else if (TenantResponseVariant2 is { } __value1 && tenantResponseVariant2 != null)
             {
-                return tenantResponseVariant2(TenantResponseVariant2!);
+                return tenantResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Weaviate
                 Validate();
             }
 
-            if (IsTenant)
+            if (Tenant is { } __value0)
             {
-                tenant?.Invoke(Tenant!);
+                tenant?.Invoke(__value0);
             }
-            else if (IsTenantResponseVariant2)
+            else if (TenantResponseVariant2 is { } __value1)
             {
-                tenantResponseVariant2?.Invoke(TenantResponseVariant2!);
+                tenantResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Weaviate
                 Validate();
             }
 
-            if (IsTenant)
+            if (Tenant is { } __value0)
             {
-                tenant?.Invoke(Tenant!);
+                tenant?.Invoke(__value0);
             }
-            else if (IsTenantResponseVariant2)
+            else if (TenantResponseVariant2 is { } __value1)
             {
-                tenantResponseVariant2?.Invoke(TenantResponseVariant2!);
+                tenantResponseVariant2?.Invoke(__value1);
             }
         }
 

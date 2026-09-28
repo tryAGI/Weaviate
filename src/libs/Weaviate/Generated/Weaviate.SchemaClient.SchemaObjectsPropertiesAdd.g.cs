@@ -164,7 +164,7 @@ namespace Weaviate
                 PrepareSchemaObjectsPropertiesAddRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className!,
+                    className: className,
                     request: request);
 
                 return __httpRequest;
@@ -187,7 +187,7 @@ namespace Weaviate
                                 pathTemplate: "$\"/schema/{className}/properties\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -221,7 +221,7 @@ namespace Weaviate
                                 pathTemplate: "$\"/schema/{className}/properties\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -262,7 +262,7 @@ namespace Weaviate
                                 pathTemplate: "$\"/schema/{className}/properties\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -310,7 +310,7 @@ namespace Weaviate
                                 pathTemplate: "$\"/schema/{className}/properties\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace Weaviate
                                 pathTemplate: "$\"/schema/{className}/properties\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
