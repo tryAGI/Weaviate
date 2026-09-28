@@ -70,7 +70,7 @@ namespace Weaviate.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.BatchReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.BatchReference?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.BatchReference).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.BatchReference!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickBatchReference(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -88,7 +88,7 @@ namespace Weaviate.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Weaviate.BatchReferenceResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Weaviate.BatchReferenceResponseVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Weaviate.BatchReferenceResponseVariant2).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.BatchReferenceResponseVariant2!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickBatchReferenceResponseVariant2(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
