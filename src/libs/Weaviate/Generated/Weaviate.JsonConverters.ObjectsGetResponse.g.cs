@@ -31,6 +31,10 @@ namespace Weaviate.JsonConverters
             catch (global::System.InvalidOperationException)
             {
             }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
+            }
 
             global::Weaviate.ObjectsGetResponseVariant2? objectsGetResponseVariant2 = default;
             try
@@ -45,6 +49,10 @@ namespace Weaviate.JsonConverters
             catch (global::System.InvalidOperationException)
             {
             }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
+            }
 
             global::Weaviate.ObjectsGetResponseVariant3? objectsGetResponseVariant3 = default;
             try
@@ -58,6 +66,10 @@ namespace Weaviate.JsonConverters
             }
             catch (global::System.InvalidOperationException)
             {
+            }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
             }
             var __value = new global::Weaviate.ObjectsGetResponse(
                 objectValue,
