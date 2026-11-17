@@ -43,8 +43,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Delete object based on its class and UUID.<br/>
-        /// Delete an object based on its collection and UUID. &lt;br/&gt;&lt;br/&gt;Note: For backward compatibility, beacons also support an older, deprecated format without the collection name. As a result, when deleting a reference, the beacon specified has to match the beacon to be deleted exactly. In other words, if a beacon is present using the old format (without collection name) you also need to specify it the same way. &lt;br/&gt;&lt;br/&gt;In the beacon format, you need to always use `localhost` as the host, rather than the actual hostname. `localhost` here refers to the fact that the beacon's target is on the same Weaviate instance, as opposed to a foreign instance.
+        /// Delete an object<br/>
+        /// Removes a data object from a specific collection, identified by its collection name (`className`) and UUID (`id`).&lt;br/&gt;&lt;br/&gt;**Note on deleting references (legacy format):**&lt;br/&gt;For backward compatibility with older beacon formats (lacking a collection name), deleting a reference requires the beacon in the request to exactly match the stored format. Beacons always use `localhost` as the host, indicating the target is within the same Weaviate instance.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -71,8 +71,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete object based on its class and UUID.<br/>
-        /// Delete an object based on its collection and UUID. &lt;br/&gt;&lt;br/&gt;Note: For backward compatibility, beacons also support an older, deprecated format without the collection name. As a result, when deleting a reference, the beacon specified has to match the beacon to be deleted exactly. In other words, if a beacon is present using the old format (without collection name) you also need to specify it the same way. &lt;br/&gt;&lt;br/&gt;In the beacon format, you need to always use `localhost` as the host, rather than the actual hostname. `localhost` here refers to the fact that the beacon's target is on the same Weaviate instance, as opposed to a foreign instance.
+        /// Delete an object<br/>
+        /// Removes a data object from a specific collection, identified by its collection name (`className`) and UUID (`id`).&lt;br/&gt;&lt;br/&gt;**Note on deleting references (legacy format):**&lt;br/&gt;For backward compatibility with older beacon formats (lacking a collection name), deleting a reference requires the beacon in the request to exactly match the stored format. Beacons always use `localhost` as the host, indicating the target is within the same Weaviate instance.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -456,7 +456,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Successful query result but no resource was found.
+                            // Object not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -488,7 +488,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Request is well-formed (i.e., syntactically correct), but erroneous.
+                            // The request syntax is correct, but the server couldn't process it due to semantic issues. Please check the values in your request.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -525,7 +525,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred while trying to fulfill the request. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

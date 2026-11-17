@@ -53,6 +53,13 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<global::Weaviate.NodeShardStatus>? Shards { get; set; }
 
         /// <summary>
+        /// Which mode of operation the node is running in.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("operationalMode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.NodeStatusOperationalModeJsonConverter))]
+        public global::Weaviate.NodeStatusOperationalMode? OperationalMode { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -83,6 +90,9 @@ namespace Weaviate
         /// <param name="shards">
         /// The list of the shards with it's statistics.
         /// </param>
+        /// <param name="operationalMode">
+        /// Which mode of operation the node is running in.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -93,7 +103,8 @@ namespace Weaviate
             string? gitHash,
             global::Weaviate.NodeStats? stats,
             global::Weaviate.BatchStats? batchStats,
-            global::System.Collections.Generic.IList<global::Weaviate.NodeShardStatus>? shards)
+            global::System.Collections.Generic.IList<global::Weaviate.NodeShardStatus>? shards,
+            global::Weaviate.NodeStatusOperationalMode? operationalMode)
         {
             this.Name = name;
             this.Status = status;
@@ -102,6 +113,7 @@ namespace Weaviate
             this.Stats = stats;
             this.BatchStats = batchStats;
             this.Shards = shards;
+            this.OperationalMode = operationalMode;
         }
 
         /// <summary>

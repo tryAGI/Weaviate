@@ -44,8 +44,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Update a tenant.<br/>
-        /// Update tenant of a specific class
+        /// Update a tenant<br/>
+        /// Updates the activity status (e.g., `ACTIVE`, `INACTIVE`, etc.) of one or more specified tenants within a collection (`className`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>
@@ -70,8 +70,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Update a tenant.<br/>
-        /// Update tenant of a specific class
+        /// Update a tenant<br/>
+        /// Updates the activity status (e.g., `ACTIVE`, `INACTIVE`, etc.) of one or more specified tenants within a collection (`className`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>
@@ -415,7 +415,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Invalid Tenant class
+                            // Invalid update request.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -452,7 +452,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred while updating tenants. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

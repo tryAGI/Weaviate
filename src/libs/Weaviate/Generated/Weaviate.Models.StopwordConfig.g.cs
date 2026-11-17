@@ -4,12 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// fine-grained control over stopword list usage
+    /// Fine-grained control over stopword list usage.
     /// </summary>
     public sealed partial class StopwordConfig
     {
         /// <summary>
-        /// Pre-existing list of common words by language (default: 'en'). Options: ['en', 'none'].
+        /// Pre-existing list of common words by language (default: `en`). Options: [`en`, `none`].
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preset")]
         public string? Preset { get; set; }
@@ -36,7 +36,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="StopwordConfig" /> class.
         /// </summary>
         /// <param name="preset">
-        /// Pre-existing list of common words by language (default: 'en'). Options: ['en', 'none'].
+        /// Pre-existing list of common words by language (default: `en`). Options: [`en`, `none`].
         /// </param>
         /// <param name="additions">
         /// Stopwords to be considered additionally (default: []). Can be any array of custom strings.

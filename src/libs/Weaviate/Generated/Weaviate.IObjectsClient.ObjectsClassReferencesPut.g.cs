@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IObjectsClient
     {
         /// <summary>
-        /// Replace all references to a class-property.<br/>
-        /// Replace **all** references in cross-reference property of an object.
+        /// Replace object references<br/>
+        /// Replaces all existing references for a specific reference property (`propertyName`) on a source data object. The source object is identified by its collection name (`className`) and UUID (`id`). The new set of references is provided in the request body.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -28,8 +28,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Replace all references to a class-property.<br/>
-        /// Replace **all** references in cross-reference property of an object.
+        /// Replace object references<br/>
+        /// Replaces all existing references for a specific reference property (`propertyName`) on a source data object. The source object is identified by its collection name (`className`) and UUID (`id`). The new set of references is provided in the request body.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>

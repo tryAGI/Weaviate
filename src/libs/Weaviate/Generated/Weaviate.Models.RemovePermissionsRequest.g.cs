@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class RemovePermissionsRequest
     {
         /// <summary>
-        /// permissions to remove from the role
+        /// Permissions to remove from the role.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,7 +25,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="RemovePermissionsRequest" /> class.
         /// </summary>
         /// <param name="permissions">
-        /// permissions to remove from the role
+        /// Permissions to remove from the role.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

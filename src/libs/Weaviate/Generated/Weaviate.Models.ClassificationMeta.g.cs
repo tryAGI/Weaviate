@@ -4,12 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Additional information to a specific classification
+    /// Additional information to a specific classification.
     /// </summary>
     public sealed partial class ClassificationMeta
     {
         /// <summary>
-        /// time when this classification was started<br/>
+        /// Time when this classification was started.<br/>
         /// Example: 2017-07-21T17:32:28Z
         /// </summary>
         /// <example>2017-07-21T17:32:28Z</example>
@@ -17,7 +17,7 @@ namespace Weaviate
         public global::System.DateTime? Started { get; set; }
 
         /// <summary>
-        /// time when this classification finished<br/>
+        /// Time when this classification finished.<br/>
         /// Example: 2017-07-21T17:32:28Z
         /// </summary>
         /// <example>2017-07-21T17:32:28Z</example>
@@ -25,7 +25,7 @@ namespace Weaviate
         public global::System.DateTime? Completed { get; set; }
 
         /// <summary>
-        /// number of objects which were taken into consideration for classification<br/>
+        /// Number of objects which were taken into consideration for classification.<br/>
         /// Example: 147
         /// </summary>
         /// <example>147</example>
@@ -33,7 +33,7 @@ namespace Weaviate
         public int? Count { get; set; }
 
         /// <summary>
-        /// number of objects successfully classified<br/>
+        /// Number of objects successfully classified.<br/>
         /// Example: 140
         /// </summary>
         /// <example>140</example>
@@ -41,7 +41,7 @@ namespace Weaviate
         public int? CountSucceeded { get; set; }
 
         /// <summary>
-        /// number of objects which could not be classified - see error message for details<br/>
+        /// Number of objects which could not be classified - see error message for details.<br/>
         /// Example: 7
         /// </summary>
         /// <example>7</example>
@@ -58,23 +58,23 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="ClassificationMeta" /> class.
         /// </summary>
         /// <param name="started">
-        /// time when this classification was started<br/>
+        /// Time when this classification was started.<br/>
         /// Example: 2017-07-21T17:32:28Z
         /// </param>
         /// <param name="completed">
-        /// time when this classification finished<br/>
+        /// Time when this classification finished.<br/>
         /// Example: 2017-07-21T17:32:28Z
         /// </param>
         /// <param name="count">
-        /// number of objects which were taken into consideration for classification<br/>
+        /// Number of objects which were taken into consideration for classification.<br/>
         /// Example: 147
         /// </param>
         /// <param name="countSucceeded">
-        /// number of objects successfully classified<br/>
+        /// Number of objects successfully classified.<br/>
         /// Example: 140
         /// </param>
         /// <param name="countFailed">
-        /// number of objects which could not be classified - see error message for details<br/>
+        /// Number of objects which could not be classified - see error message for details.<br/>
         /// Example: 7
         /// </param>
 #if NET7_0_OR_GREATER

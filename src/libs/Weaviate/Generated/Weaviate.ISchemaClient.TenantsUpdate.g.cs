@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface ISchemaClient
     {
         /// <summary>
-        /// Update a tenant.<br/>
-        /// Update tenant of a specific class
+        /// Update a tenant<br/>
+        /// Updates the activity status (e.g., `ACTIVE`, `INACTIVE`, etc.) of one or more specified tenants within a collection (`className`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>
@@ -20,8 +20,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a tenant.<br/>
-        /// Update tenant of a specific class
+        /// Update a tenant<br/>
+        /// Updates the activity status (e.g., `ACTIVE`, `INACTIVE`, etc.) of one or more specified tenants within a collection (`className`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>

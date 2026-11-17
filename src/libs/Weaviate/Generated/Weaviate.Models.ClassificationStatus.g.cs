@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// status of this classification<br/>
+    /// Status of this classification.<br/>
     /// Example: running
     /// </summary>
     public enum ClassificationStatus

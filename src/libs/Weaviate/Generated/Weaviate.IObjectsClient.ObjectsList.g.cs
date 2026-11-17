@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IObjectsClient
     {
         /// <summary>
-        /// Get a list of Objects.<br/>
-        /// Lists all Objects in reverse order of creation, owned by the user that belongs to the used token.
+        /// List objects<br/>
+        /// Retrieves a list of data objects. By default, objects are returned in reverse order of creation. Requires a collection name (`class`) parameter to specify which collection's objects to list, otherwise, returns an empty list.
         /// </summary>
         /// <param name="after"></param>
         /// <param name="offset">
@@ -33,8 +33,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a list of Objects.<br/>
-        /// Lists all Objects in reverse order of creation, owned by the user that belongs to the used token.
+        /// List objects<br/>
+        /// Retrieves a list of data objects. By default, objects are returned in reverse order of creation. Requires a collection name (`class`) parameter to specify which collection's objects to list, otherwise, returns an empty list.
         /// </summary>
         /// <param name="after"></param>
         /// <param name="offset">

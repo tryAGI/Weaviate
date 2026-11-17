@@ -37,7 +37,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// create new role
+        /// Create new role<br/>
+        /// Create a new role with the specified permissions.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -57,7 +58,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// create new role
+        /// Create new role<br/>
+        /// Create a new role with the specified permissions.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -434,7 +436,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Role already exists
+                            // Role already exists.
                             if ((int)__response.StatusCode == 409)
                             {
                                 string? __content_409 = null;
@@ -471,7 +473,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?
+                            // The request syntax is correct, but the server couldn't process it due to semantic issues. Please check the values in your request.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -626,10 +628,11 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// create new role
+        /// Create new role<br/>
+        /// Create a new role with the specified permissions.
         /// </summary>
         /// <param name="name">
-        /// role name
+        /// The name (ID) of the role.
         /// </param>
         /// <param name="permissions"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

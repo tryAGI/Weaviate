@@ -4,12 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Either set beacon (direct reference) or set class and schema (concept reference)
+    /// Either set beacon (direct reference) or set collection (class) and schema (concept reference)
     /// </summary>
     public sealed partial class SingleRef
     {
         /// <summary>
-        /// If using a concept reference (rather than a direct reference), specify the desired class name here
+        /// If using a concept reference (rather than a direct reference), specify the desired collection (class) name here.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("class")]
         public string? Class { get; set; }
@@ -21,7 +21,7 @@ namespace Weaviate
         public global::Weaviate.PropertySchema? Schema { get; set; }
 
         /// <summary>
-        /// If using a direct reference, specify the URI to point to the cross-ref here. Should be in the form of weaviate://localhost/&lt;uuid&gt; for the example of a local cross-ref to an object
+        /// If using a direct reference, specify the URI to point to the cross-reference here. Should be in the form of weaviate://localhost/&lt;uuid&gt; for the example of a local cross-reference to an object
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("beacon")]
         public string? Beacon { get; set; }
@@ -48,13 +48,13 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="SingleRef" /> class.
         /// </summary>
         /// <param name="class">
-        /// If using a concept reference (rather than a direct reference), specify the desired class name here
+        /// If using a concept reference (rather than a direct reference), specify the desired collection (class) name here.
         /// </param>
         /// <param name="schema">
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </param>
         /// <param name="beacon">
-        /// If using a direct reference, specify the URI to point to the cross-ref here. Should be in the form of weaviate://localhost/&lt;uuid&gt; for the example of a local cross-ref to an object
+        /// If using a direct reference, specify the URI to point to the cross-reference here. Should be in the form of weaviate://localhost/&lt;uuid&gt; for the example of a local cross-reference to an object
         /// </param>
         /// <param name="href">
         /// If using a direct reference, this read-only fields provides a link to the referenced resource. If 'origin' is globally configured, an absolute URI is shown - a relative URI otherwise.

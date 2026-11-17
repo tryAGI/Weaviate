@@ -5,7 +5,8 @@ namespace Weaviate
     public partial interface IAuthzClient
     {
         /// <summary>
-        /// Remove permissions from a role. If this results in an empty role, the role will be deleted.
+        /// Remove permissions from a role<br/>
+        /// Permissions can be revoked from a specified role. Removing all permissions from a role will delete the role itself.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -19,7 +20,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Remove permissions from a role. If this results in an empty role, the role will be deleted.
+        /// Remove permissions from a role<br/>
+        /// Permissions can be revoked from a specified role. Removing all permissions from a role will delete the role itself.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -33,11 +35,12 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Remove permissions from a role. If this results in an empty role, the role will be deleted.
+        /// Remove permissions from a role<br/>
+        /// Permissions can be revoked from a specified role. Removing all permissions from a role will delete the role itself.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="permissions">
-        /// permissions to remove from the role
+        /// Permissions to remove from the role.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

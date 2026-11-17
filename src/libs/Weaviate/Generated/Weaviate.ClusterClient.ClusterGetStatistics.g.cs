@@ -40,8 +40,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// See Raft cluster statistics<br/>
-        /// Returns Raft cluster statistics of Weaviate DB.
+        /// Get cluster statistics<br/>
+        /// Provides statistics about the internal Raft consensus protocol state for the Weaviate cluster.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -58,8 +58,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// See Raft cluster statistics<br/>
-        /// Returns Raft cluster statistics of Weaviate DB.
+        /// Get cluster statistics<br/>
+        /// Provides statistics about the internal Raft consensus protocol state for the Weaviate cluster.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -386,7 +386,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Invalid backup restoration status attempt.
+                            // Invalid request for cluster statistics.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -423,7 +423,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An internal server error occurred while retrieving cluster statistics. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

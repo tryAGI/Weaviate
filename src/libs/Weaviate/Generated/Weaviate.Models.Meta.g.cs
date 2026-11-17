@@ -33,6 +33,12 @@ namespace Weaviate
         public long? GrpcMaxMessageSize { get; set; }
 
         /// <summary>
+        /// License state of the current Weaviate instance.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("license")]
+        public global::Weaviate.MetaLicense? License { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -53,6 +59,9 @@ namespace Weaviate
         /// <param name="grpcMaxMessageSize">
         /// Max message size for GRPC connection in bytes.
         /// </param>
+        /// <param name="license">
+        /// License state of the current Weaviate instance.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,12 +69,14 @@ namespace Weaviate
             string? hostname,
             string? version,
             object? modules,
-            long? grpcMaxMessageSize)
+            long? grpcMaxMessageSize,
+            global::Weaviate.MetaLicense? license)
         {
             this.Hostname = hostname;
             this.Version = version;
             this.Modules = modules;
             this.GrpcMaxMessageSize = grpcMaxMessageSize;
+            this.License = license;
         }
 
         /// <summary>

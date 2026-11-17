@@ -16,7 +16,15 @@ namespace Weaviate
         /// <summary>
         ///
         /// </summary>
+        Cancelling,
+        /// <summary>
+        ///
+        /// </summary>
         Failed,
+        /// <summary>
+        ///
+        /// </summary>
+        Finalizing,
         /// <summary>
         ///
         /// </summary>
@@ -48,7 +56,9 @@ namespace Weaviate
             return value switch
             {
                 BackupCreateResponseStatus.Canceled => "CANCELED",
+                BackupCreateResponseStatus.Cancelling => "CANCELLING",
                 BackupCreateResponseStatus.Failed => "FAILED",
+                BackupCreateResponseStatus.Finalizing => "FINALIZING",
                 BackupCreateResponseStatus.Started => "STARTED",
                 BackupCreateResponseStatus.Success => "SUCCESS",
                 BackupCreateResponseStatus.Transferred => "TRANSFERRED",
@@ -64,7 +74,9 @@ namespace Weaviate
             return value switch
             {
                 "CANCELED" => BackupCreateResponseStatus.Canceled,
+                "CANCELLING" => BackupCreateResponseStatus.Cancelling,
                 "FAILED" => BackupCreateResponseStatus.Failed,
+                "FINALIZING" => BackupCreateResponseStatus.Finalizing,
                 "STARTED" => BackupCreateResponseStatus.Started,
                 "SUCCESS" => BackupCreateResponseStatus.Success,
                 "TRANSFERRED" => BackupCreateResponseStatus.Transferred,

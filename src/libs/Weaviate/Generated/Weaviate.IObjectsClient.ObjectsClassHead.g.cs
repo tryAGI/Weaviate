@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IObjectsClient
     {
         /// <summary>
-        /// Checks object's existence based on its class and uuid.<br/>
-        /// Checks if a data object exists based on its collection and uuid without retrieving it. &lt;br/&gt;&lt;br/&gt;Internally it skips reading the object from disk other than checking if it is present. Thus it does not use resources on marshalling, parsing, etc., and is faster. Note the resulting HTTP request has no body; the existence of an object is indicated solely by the status code.
+        /// Check if an object exists<br/>
+        /// Verifies the existence of a specific data object within a collection (class), identified by its collection name (`className`) and UUID (`id`), without returning the object itself.&lt;br/&gt;&lt;br/&gt;This is faster than a GET request as it avoids retrieving and processing object data. Existence is confirmed by a 204 No Content status code, while non-existence results in a 404 Not Found.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -23,8 +23,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Checks object's existence based on its class and uuid.<br/>
-        /// Checks if a data object exists based on its collection and uuid without retrieving it. &lt;br/&gt;&lt;br/&gt;Internally it skips reading the object from disk other than checking if it is present. Thus it does not use resources on marshalling, parsing, etc., and is faster. Note the resulting HTTP request has no body; the existence of an object is indicated solely by the status code.
+        /// Check if an object exists<br/>
+        /// Verifies the existence of a specific data object within a collection (class), identified by its collection name (`className`) and UUID (`id`), without returning the object itself.&lt;br/&gt;&lt;br/&gt;This is faster than a GET request as it avoids retrieving and processing object data. Existence is confirmed by a 204 No Content status code, while non-existence results in a 404 Not Found.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>

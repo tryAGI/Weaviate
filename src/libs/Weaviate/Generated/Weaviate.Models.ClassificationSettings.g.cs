@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// classification-type specific settings
+    /// Classification-type specific settings.
     /// </summary>
     public sealed partial class ClassificationSettings
     {

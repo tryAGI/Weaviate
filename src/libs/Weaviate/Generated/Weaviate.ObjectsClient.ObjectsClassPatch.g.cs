@@ -43,8 +43,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Update an Object based on its UUID (using patch semantics).<br/>
-        /// Update an individual data object based on its class and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+        /// Patch an object<br/>
+        /// Updates specific properties of an existing data object using JSON merge patch semantics (RFC 7396). The object is identified by its collection name (`className`) and UUID (`id`). Only the fields provided in the request body are modified. Metadata and schema values are validated, and the object's `lastUpdateTimeUnix` is updated.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -73,8 +73,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an Object based on its UUID (using patch semantics).<br/>
-        /// Update an individual data object based on its class and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+        /// Patch an object<br/>
+        /// Updates specific properties of an existing data object using JSON merge patch semantics (RFC 7396). The object is identified by its collection name (`className`) and UUID (`id`). Only the fields provided in the request body are modified. Metadata and schema values are validated, and the object's `lastUpdateTimeUnix` is updated.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -360,7 +360,7 @@ namespace Weaviate
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // The patch-JSON is malformed.
+                            // Malformed patch request body.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -466,7 +466,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Successful query result but no resource was found.
+                            // Object not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -498,7 +498,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The patch-JSON is valid but unprocessable.
+                            // The patch object is valid JSON but is unprocessable for other reasons (e.g., invalid schema).
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -535,7 +535,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred while trying to fulfill the request. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -653,23 +653,23 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Update an Object based on its UUID (using patch semantics).<br/>
-        /// Update an individual data object based on its class and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+        /// Patch an object<br/>
+        /// Updates specific properties of an existing data object using JSON merge patch semantics (RFC 7396). The object is identified by its collection name (`className`) and UUID (`id`). Only the fields provided in the request body are modified. Metadata and schema values are validated, and the object's `lastUpdateTimeUnix` is updated.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
         /// <param name="consistencyLevel"></param>
         /// <param name="class">
-        /// Class of the Object, defined in the schema.
+        /// Name of the collection (class) the object belongs to.
         /// </param>
         /// <param name="vectorWeights">
-        /// Allow custom overrides of vector weights as math expressions. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
+        /// Allow custom overrides of vector weights as math expressions. E.g. `pancake`: `7` will set the weight for the word pancake to 7 in the vectorization, whereas `w * 3` would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
         /// </param>
         /// <param name="properties">
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </param>
         /// <param name="requestId">
-        /// ID of the Object.
+        /// The UUID of the object.
         /// </param>
         /// <param name="creationTimeUnix">
         /// (Response only) Timestamp of creation of this object in milliseconds since epoch UTC.
@@ -684,7 +684,7 @@ namespace Weaviate
         /// A map of named vectors for multi-vector representations.
         /// </param>
         /// <param name="tenant">
-        /// Name of the Objects tenant.
+        /// The name of the tenant the object belongs to.
         /// </param>
         /// <param name="additional">
         /// (Response only) Additional meta information about a single object.

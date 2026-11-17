@@ -14,10 +14,14 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UserTypeInput), TypeInfoPropertyName = "UserTypeInput2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GroupType), TypeInfoPropertyName = "GroupType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UserTypeOutput), TypeInfoPropertyName = "UserTypeOutput2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Role>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Role))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Permission>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Permission))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionBackups))]
@@ -25,12 +29,15 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionNodes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionNodesVerbosity), TypeInfoPropertyName = "PermissionNodesVerbosity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionUsers))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionGroups))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionTenants))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionRoles))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionRolesScope), TypeInfoPropertyName = "PermissionRolesScope2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionCollections))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionReplicate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionAliases))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionNamespaces))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionAction), TypeInfoPropertyName = "PermissionAction2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ErrorResponseErrorItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ErrorResponseErrorItem))]
@@ -40,14 +47,29 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RevokeRoleFromUserRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.AssignRoleToGroupRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RevokeRoleFromGroupRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GetRolesForUserUserType), TypeInfoPropertyName = "GetRolesForUserUserType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GetRolesForGroupGroupType), TypeInfoPropertyName = "GetRolesForGroupGroupType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GetGroupsGroupType), TypeInfoPropertyName = "GetGroupsGroupType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.GetUsersForRoleResponseItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GetUsersForRoleResponseItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.GetGroupsForRoleResponseItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GetGroupsForRoleResponseItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UserTypeInput?), TypeInfoPropertyName = "NullableUserTypeInput2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GroupType?), TypeInfoPropertyName = "NullableGroupType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UserTypeOutput?), TypeInfoPropertyName = "NullableUserTypeOutput2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionNodesVerbosity?), TypeInfoPropertyName = "NullablePermissionNodesVerbosity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionRolesScope?), TypeInfoPropertyName = "NullablePermissionRolesScope2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PermissionAction?), TypeInfoPropertyName = "NullablePermissionAction2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GetRolesForUserUserType?), TypeInfoPropertyName = "NullableGetRolesForUserUserType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GetRolesForGroupGroupType?), TypeInfoPropertyName = "NullableGetRolesForGroupGroupType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GetGroupsGroupType?), TypeInfoPropertyName = "NullableGetGroupsGroupType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Role>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Permission>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ErrorResponseErrorItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.GetUsersForRoleResponseItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.GetGroupsForRoleResponseItem>))]
     internal sealed partial class AuthzSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -117,7 +139,19 @@ namespace Weaviate
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::Weaviate.PermissionNodesVerbosity)
+                    typeToConvert == typeof(global::Weaviate.UserTypeInput)
+
+                    || typeToConvert == typeof(global::Weaviate.UserTypeInput?)
+
+                    || typeToConvert == typeof(global::Weaviate.GroupType)
+
+                    || typeToConvert == typeof(global::Weaviate.GroupType?)
+
+                    || typeToConvert == typeof(global::Weaviate.UserTypeOutput)
+
+                    || typeToConvert == typeof(global::Weaviate.UserTypeOutput?)
+
+                    || typeToConvert == typeof(global::Weaviate.PermissionNodesVerbosity)
 
                     || typeToConvert == typeof(global::Weaviate.PermissionNodesVerbosity?)
 
@@ -127,13 +161,55 @@ namespace Weaviate
 
                     || typeToConvert == typeof(global::Weaviate.PermissionAction)
 
-                    || typeToConvert == typeof(global::Weaviate.PermissionAction?);
+                    || typeToConvert == typeof(global::Weaviate.PermissionAction?)
+
+                    || typeToConvert == typeof(global::Weaviate.GetRolesForUserUserType)
+
+                    || typeToConvert == typeof(global::Weaviate.GetRolesForUserUserType?)
+
+                    || typeToConvert == typeof(global::Weaviate.GetRolesForGroupGroupType)
+
+                    || typeToConvert == typeof(global::Weaviate.GetRolesForGroupGroupType?)
+
+                    || typeToConvert == typeof(global::Weaviate.GetGroupsGroupType)
+
+                    || typeToConvert == typeof(global::Weaviate.GetGroupsGroupType?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
+                if (typeToConvert == typeof(global::Weaviate.UserTypeInput))
+                {
+                    return new global::Weaviate.JsonConverters.UserTypeInputJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.UserTypeInput?))
+                {
+                    return new global::Weaviate.JsonConverters.UserTypeInputNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.GroupType))
+                {
+                    return new global::Weaviate.JsonConverters.GroupTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.GroupType?))
+                {
+                    return new global::Weaviate.JsonConverters.GroupTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.UserTypeOutput))
+                {
+                    return new global::Weaviate.JsonConverters.UserTypeOutputJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.UserTypeOutput?))
+                {
+                    return new global::Weaviate.JsonConverters.UserTypeOutputNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::Weaviate.PermissionNodesVerbosity))
                 {
                     return new global::Weaviate.JsonConverters.PermissionNodesVerbosityJsonConverter();
@@ -162,6 +238,36 @@ namespace Weaviate
                 if (typeToConvert == typeof(global::Weaviate.PermissionAction?))
                 {
                     return new global::Weaviate.JsonConverters.PermissionActionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.GetRolesForUserUserType))
+                {
+                    return new global::Weaviate.JsonConverters.GetRolesForUserUserTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.GetRolesForUserUserType?))
+                {
+                    return new global::Weaviate.JsonConverters.GetRolesForUserUserTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.GetRolesForGroupGroupType))
+                {
+                    return new global::Weaviate.JsonConverters.GetRolesForGroupGroupTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.GetRolesForGroupGroupType?))
+                {
+                    return new global::Weaviate.JsonConverters.GetRolesForGroupGroupTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.GetGroupsGroupType))
+                {
+                    return new global::Weaviate.JsonConverters.GetGroupsGroupTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.GetGroupsGroupType?))
+                {
+                    return new global::Weaviate.JsonConverters.GetGroupsGroupTypeNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

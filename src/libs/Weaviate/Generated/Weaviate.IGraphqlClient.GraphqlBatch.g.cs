@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IGraphqlClient
     {
         /// <summary>
-        /// Get a response based on GraphQL.<br/>
-        /// Perform a batched GraphQL query
+        /// Perform batched GraphQL queries<br/>
+        /// Executes multiple GraphQL queries provided in the request body as an array. Allows performing several queries in a single network request for efficiency.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +18,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a response based on GraphQL.<br/>
-        /// Perform a batched GraphQL query
+        /// Perform batched GraphQL queries<br/>
+        /// Executes multiple GraphQL queries provided in the request body as an array. Allows performing several queries in a single network request for efficiency.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

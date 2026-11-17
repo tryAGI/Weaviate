@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IObjectsClient
     {
         /// <summary>
-        /// Delete object based on its class and UUID.<br/>
-        /// Delete an object based on its collection and UUID. &lt;br/&gt;&lt;br/&gt;Note: For backward compatibility, beacons also support an older, deprecated format without the collection name. As a result, when deleting a reference, the beacon specified has to match the beacon to be deleted exactly. In other words, if a beacon is present using the old format (without collection name) you also need to specify it the same way. &lt;br/&gt;&lt;br/&gt;In the beacon format, you need to always use `localhost` as the host, rather than the actual hostname. `localhost` here refers to the fact that the beacon's target is on the same Weaviate instance, as opposed to a foreign instance.
+        /// Delete an object<br/>
+        /// Removes a data object from a specific collection, identified by its collection name (`className`) and UUID (`id`).&lt;br/&gt;&lt;br/&gt;**Note on deleting references (legacy format):**&lt;br/&gt;For backward compatibility with older beacon formats (lacking a collection name), deleting a reference requires the beacon in the request to exactly match the stored format. Beacons always use `localhost` as the host, indicating the target is within the same Weaviate instance.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -23,8 +23,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete object based on its class and UUID.<br/>
-        /// Delete an object based on its collection and UUID. &lt;br/&gt;&lt;br/&gt;Note: For backward compatibility, beacons also support an older, deprecated format without the collection name. As a result, when deleting a reference, the beacon specified has to match the beacon to be deleted exactly. In other words, if a beacon is present using the old format (without collection name) you also need to specify it the same way. &lt;br/&gt;&lt;br/&gt;In the beacon format, you need to always use `localhost` as the host, rather than the actual hostname. `localhost` here refers to the fact that the beacon's target is on the same Weaviate instance, as opposed to a foreign instance.
+        /// Delete an object<br/>
+        /// Removes a data object from a specific collection, identified by its collection name (`className`) and UUID (`id`).&lt;br/&gt;&lt;br/&gt;**Note on deleting references (legacy format):**&lt;br/&gt;For backward compatibility with older beacon formats (lacking a collection name), deleting a reference requires the beacon in the request to exactly match the stored format. Beacons always use `localhost` as the host, indicating the target is within the same Weaviate instance.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>

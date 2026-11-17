@@ -15,7 +15,7 @@ namespace Weaviate
         public string? Name { get; set; }
 
         /// <summary>
-        /// The name of shard's class.
+        /// The name of shard's collection (class).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("class")]
         public string? Class { get; set; }
@@ -51,6 +51,24 @@ namespace Weaviate
         public bool? Loaded { get; set; }
 
         /// <summary>
+        /// The status of the async replication.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("asyncReplicationStatus")]
+        public global::System.Collections.Generic.IList<global::Weaviate.AsyncReplicationStatus>? AsyncReplicationStatus { get; set; }
+
+        /// <summary>
+        /// Number of replicas for the shard.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("numberOfReplicas")]
+        public long? NumberOfReplicas { get; set; }
+
+        /// <summary>
+        /// Minimum number of replicas for the shard.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("replicationFactor")]
+        public long? ReplicationFactor { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -63,7 +81,7 @@ namespace Weaviate
         /// The name of the shard.
         /// </param>
         /// <param name="class">
-        /// The name of shard's class.
+        /// The name of shard's collection (class).
         /// </param>
         /// <param name="objectCount">
         /// The number of objects in shard.
@@ -80,6 +98,15 @@ namespace Weaviate
         /// <param name="loaded">
         /// The load status of the shard.
         /// </param>
+        /// <param name="asyncReplicationStatus">
+        /// The status of the async replication.
+        /// </param>
+        /// <param name="numberOfReplicas">
+        /// Number of replicas for the shard.
+        /// </param>
+        /// <param name="replicationFactor">
+        /// Minimum number of replicas for the shard.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,7 +117,10 @@ namespace Weaviate
             string? vectorIndexingStatus,
             bool? compressed,
             double? vectorQueueLength,
-            bool? loaded)
+            bool? loaded,
+            global::System.Collections.Generic.IList<global::Weaviate.AsyncReplicationStatus>? asyncReplicationStatus,
+            long? numberOfReplicas,
+            long? replicationFactor)
         {
             this.Name = name;
             this.Class = @class;
@@ -99,6 +129,9 @@ namespace Weaviate
             this.Compressed = compressed;
             this.VectorQueueLength = vectorQueueLength;
             this.Loaded = loaded;
+            this.AsyncReplicationStatus = asyncReplicationStatus;
+            this.NumberOfReplicas = numberOfReplicas;
+            this.ReplicationFactor = replicationFactor;
         }
 
         /// <summary>

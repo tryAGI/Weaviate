@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Create, restore and check the status of backups. &lt;br/&gt;&lt;br/&gt;See the [backups page](https://weaviate.io/developers/weaviate/configuration/backups) for a general introduction, configuration, and tech background of backups.<br/>
+    /// Operations related to creating and managing backups of Weaviate data. This feature allows you to create snapshots of your collections and store them on external storage backends such as cloud object storage (S3, GCS, Azure) or a shared filesystem. These endpoints enable you to initiate backup and restore processes, monitor their status, list available backups on a backend, and delete unwanted backups. Backups are essential for disaster recovery, data migration, and maintaining point-in-time copies of your vector database.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

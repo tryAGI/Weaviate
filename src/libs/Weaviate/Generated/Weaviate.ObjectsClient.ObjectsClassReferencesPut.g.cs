@@ -47,8 +47,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Replace all references to a class-property.<br/>
-        /// Replace **all** references in cross-reference property of an object.
+        /// Replace object references<br/>
+        /// Replaces all existing references for a specific reference property (`propertyName`) on a source data object. The source object is identified by its collection name (`className`) and UUID (`id`). The new set of references is provided in the request body.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -83,8 +83,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replace all references to a class-property.<br/>
-        /// Replace **all** references in cross-reference property of an object.
+        /// Replace object references<br/>
+        /// Replaces all existing references for a specific reference property (`propertyName`) on a source data object. The source object is identified by its collection name (`className`) and UUID (`id`). The new set of references is provided in the request body.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -485,7 +485,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Source object doesn't exist.
+                            // Source object not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -517,7 +517,44 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the property exists or that it is a class?
+                            // Endpoint not available in the current cluster configuration.
+                            if ((int)__response.StatusCode == 410)
+                            {
+                                string? __content_410 = null;
+                                global::System.Exception? __exception_410 = null;
+                                global::Weaviate.ErrorResponse? __value_410 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_410 = global::Weaviate.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_410 = global::Weaviate.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_410 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_410,
+                                    responseBody: __content_410,
+                                    responseObject: __value_410,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The request syntax is correct, but the server couldn't process it due to semantic issues. Please check the values in your request. Ensure the property exists and is a reference type.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -554,7 +591,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred while trying to fulfill the request. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

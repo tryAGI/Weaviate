@@ -44,8 +44,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get the shards status of an Object class<br/>
-        /// Get the status of every shard in the cluster.
+        /// Get the shards status of a collection<br/>
+        /// Retrieves the status of all shards associated with the specified collection (`className`). For multi-tenant collections, use the `tenant` query parameter to retrieve status for a specific tenant's shards.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="tenant"></param>
@@ -68,8 +68,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Get the shards status of an Object class<br/>
-        /// Get the status of every shard in the cluster.
+        /// Get the shards status of a collection<br/>
+        /// Retrieves the status of all shards associated with the specified collection (`className`). For multi-tenant collections, use the `tenant` query parameter to retrieve status for a specific tenant's shards.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="tenant"></param>
@@ -407,7 +407,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // This class does not exist
+                            // Collection not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -444,7 +444,44 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // Invalid collection name provided (e.g. malformed namespace prefix). Check the ErrorResponse for details.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::Weaviate.ErrorResponse? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // An error occurred while retrieving shard statuses. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

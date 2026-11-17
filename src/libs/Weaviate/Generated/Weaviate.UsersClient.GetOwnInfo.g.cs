@@ -40,12 +40,13 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// get info relevant to own user, e.g. username, roles
+        /// Get current user info<br/>
+        /// Get information about the currently authenticated user, including username and assigned roles.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Weaviate.UserInfo> GetOwnInfoAsync(
+        public async global::System.Threading.Tasks.Task<global::Weaviate.UserOwnInfo> GetOwnInfoAsync(
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -57,12 +58,13 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// get info relevant to own user, e.g. username, roles
+        /// Get current user info<br/>
+        /// Get information about the currently authenticated user, including username and assigned roles.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::Weaviate.UserInfo>> GetOwnInfoAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::Weaviate.UserOwnInfo>> GetOwnInfoAsResponseAsync(
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -384,6 +386,43 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Replica movement operations are disabled.
+                            if ((int)__response.StatusCode == 501)
+                            {
+                                string? __content_501 = null;
+                                global::System.Exception? __exception_501 = null;
+                                global::Weaviate.ErrorResponse? __value_501 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_501 = global::Weaviate.ErrorResponse.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_501 = global::Weaviate.ErrorResponse.FromJson(__content_501, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_501 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_501,
+                                    responseBody: __content_501,
+                                    responseObject: __value_501,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -406,9 +445,9 @@ namespace Weaviate
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Weaviate.UserInfo.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Weaviate.UserOwnInfo.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Weaviate.AutoSDKHttpResponse<global::Weaviate.UserInfo>(
+                                    return new global::Weaviate.AutoSDKHttpResponse<global::Weaviate.UserOwnInfo>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Weaviate.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -438,9 +477,9 @@ namespace Weaviate
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Weaviate.UserInfo.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Weaviate.UserOwnInfo.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Weaviate.AutoSDKHttpResponse<global::Weaviate.UserInfo>(
+                                    return new global::Weaviate.AutoSDKHttpResponse<global::Weaviate.UserOwnInfo>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Weaviate.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

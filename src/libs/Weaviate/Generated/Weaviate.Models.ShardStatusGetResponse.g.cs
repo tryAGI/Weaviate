@@ -15,13 +15,19 @@ namespace Weaviate
         public string? Name { get; set; }
 
         /// <summary>
-        /// Status of the shard
+        /// Deprecated: value is not consistent in replicated clusters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public string? Status { get; set; }
 
         /// <summary>
-        /// Size of the vector queue of the shard
+        /// Status of the shard on each of its replicas
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("per_node_status")]
+        public global::System.Collections.Generic.Dictionary<string, string>? PerNodeStatus { get; set; }
+
+        /// <summary>
+        /// Deprecated: value is not consistent in replicated clusters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorQueueSize")]
         public int? VectorQueueSize { get; set; }
@@ -39,10 +45,13 @@ namespace Weaviate
         /// Name of the shard
         /// </param>
         /// <param name="status">
-        /// Status of the shard
+        /// Deprecated: value is not consistent in replicated clusters.
+        /// </param>
+        /// <param name="perNodeStatus">
+        /// Status of the shard on each of its replicas
         /// </param>
         /// <param name="vectorQueueSize">
-        /// Size of the vector queue of the shard
+        /// Deprecated: value is not consistent in replicated clusters.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,10 +59,12 @@ namespace Weaviate
         public ShardStatusGetResponse(
             string? name,
             string? status,
+            global::System.Collections.Generic.Dictionary<string, string>? perNodeStatus,
             int? vectorQueueSize)
         {
             this.Name = name;
             this.Status = status;
+            this.PerNodeStatus = perNodeStatus;
             this.VectorQueueSize = vectorQueueSize;
         }
 

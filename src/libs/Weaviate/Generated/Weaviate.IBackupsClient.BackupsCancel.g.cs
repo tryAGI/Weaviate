@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IBackupsClient
     {
         /// <summary>
-        /// Cancel backup<br/>
-        /// Cancel created backup with specified ID
+        /// Cancel a backup<br/>
+        /// Cancels an ongoing backup operation identified by its ID.
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>
@@ -23,8 +23,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Cancel backup<br/>
-        /// Cancel created backup with specified ID
+        /// Cancel a backup<br/>
+        /// Cancels an ongoing backup operation identified by its ID.
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>

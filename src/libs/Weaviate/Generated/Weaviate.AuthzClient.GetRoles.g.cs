@@ -40,7 +40,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get all roles
+        /// Get all roles<br/>
+        /// Get all roles and their assigned permissions.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -57,7 +58,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Get all roles
+        /// Get all roles<br/>
+        /// Get all roles and their assigned permissions.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

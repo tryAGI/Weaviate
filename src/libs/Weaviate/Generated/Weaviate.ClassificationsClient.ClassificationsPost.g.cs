@@ -42,8 +42,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Starts a classification.<br/>
-        /// Trigger a classification based on the specified params. Classifications will run in the background, use GET /classifications/&lt;id&gt; to retrieve the status of your classification.
+        /// Start a classification<br/>
+        /// Initiates a background classification task based on the provided parameters. Use the GET /classifications/{id} endpoint to monitor the status and retrieve results.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -65,8 +65,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Starts a classification.<br/>
-        /// Trigger a classification based on the specified params. Classifications will run in the background, use GET /classifications/&lt;id&gt; to retrieve the status of your classification.
+        /// Start a classification<br/>
+        /// Initiates a background classification task based on the provided parameters. Use the GET /classifications/{id} endpoint to monitor the status and retrieve results.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -337,7 +337,7 @@ namespace Weaviate
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Incorrect request
+                            // Invalid request body or parameters.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -443,7 +443,44 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // Endpoint not available in the current cluster configuration.
+                            if ((int)__response.StatusCode == 410)
+                            {
+                                string? __content_410 = null;
+                                global::System.Exception? __exception_410 = null;
+                                global::Weaviate.ErrorResponse? __value_410 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_410 = global::Weaviate.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_410 = global::Weaviate.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_410 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_410,
+                                    responseBody: __content_410,
+                                    responseObject: __value_410,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // An internal server error occurred while starting the classification task. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -577,40 +614,40 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Starts a classification.<br/>
-        /// Trigger a classification based on the specified params. Classifications will run in the background, use GET /classifications/&lt;id&gt; to retrieve the status of your classification.
+        /// Start a classification<br/>
+        /// Initiates a background classification task based on the provided parameters. Use the GET /classifications/{id} endpoint to monitor the status and retrieve results.
         /// </summary>
         /// <param name="id">
-        /// ID to uniquely identify this classification run<br/>
+        /// ID to uniquely identify this classification run.<br/>
         /// Example: ee722219-b8ec-4db1-8f8d-5150bb1a9e0c
         /// </param>
         /// <param name="class">
-        /// class (name) which is used in this classification<br/>
+        /// The name of the collection (class) which is used in this classification.<br/>
         /// Example: City
         /// </param>
         /// <param name="classifyProperties">
-        /// which ref-property to set as part of the classification<br/>
+        /// Which ref-property to set as part of the classification.<br/>
         /// Example: [inCountry]
         /// </param>
         /// <param name="basedOnProperties">
-        /// base the text-based classification on these fields (of type text)<br/>
+        /// Base the text-based classification on these fields (of type text).<br/>
         /// Example: [description]
         /// </param>
         /// <param name="status">
-        /// status of this classification<br/>
+        /// Status of this classification.<br/>
         /// Example: running
         /// </param>
         /// <param name="meta">
-        /// Additional information to a specific classification
+        /// Additional information to a specific classification.
         /// </param>
         /// <param name="type">
-        /// which algorithm to use for classifications
+        /// Which algorithm to use for classifications.
         /// </param>
         /// <param name="settings">
-        /// classification-type specific settings
+        /// Classification-type specific settings.
         /// </param>
         /// <param name="error">
-        /// error message if status == failed<br/>
+        /// Error message if status == failed.<br/>
         /// Example: classify xzy: something went wrong
         /// </param>
         /// <param name="filters"></param>

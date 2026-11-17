@@ -5,7 +5,8 @@ namespace Weaviate
     public partial interface IAuthzClient
     {
         /// <summary>
-        /// Check whether role possesses this permission.
+        /// Check whether a role possesses a permission<br/>
+        /// Check whether a role has the specified permissions.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -19,7 +20,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Check whether role possesses this permission.
+        /// Check whether a role possesses a permission<br/>
+        /// Check whether a role has the specified permissions.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -33,32 +35,45 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Check whether role possesses this permission.
+        /// Check whether a role possesses a permission<br/>
+        /// Check whether a role has the specified permissions.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="backups">
-        /// resources applicable for backup actions
+        /// Resources applicable for backup actions.
         /// </param>
         /// <param name="data">
-        /// resources applicable for data actions
+        /// Resources applicable for data actions.
         /// </param>
         /// <param name="nodes">
-        /// resources applicable for cluster actions
+        /// Resources applicable for cluster actions.
         /// </param>
         /// <param name="users">
-        /// resources applicable for user actions
+        /// Resources applicable for user actions.
+        /// </param>
+        /// <param name="groups">
+        /// Resources applicable for group actions.
         /// </param>
         /// <param name="tenants">
-        /// resources applicable for tenant actions
+        /// Resources applicable for tenant actions.
         /// </param>
         /// <param name="roles">
-        /// resources applicable for role actions
+        /// Resources applicable for role actions.
         /// </param>
         /// <param name="collections">
-        /// resources applicable for collection and/or tenant actions
+        /// Resources applicable for collection and/or tenant actions.
+        /// </param>
+        /// <param name="replicate">
+        /// resources applicable for replicate actions
+        /// </param>
+        /// <param name="aliases">
+        /// Resource definition for alias-related actions and permissions. Used to specify which aliases and collections can be accessed or modified.
+        /// </param>
+        /// <param name="namespaces">
+        /// Resources applicable for namespace actions.
         /// </param>
         /// <param name="action">
-        /// allowed actions in weaviate.
+        /// Allowed actions in weaviate.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -70,9 +85,13 @@ namespace Weaviate
             global::Weaviate.PermissionData? data = default,
             global::Weaviate.PermissionNodes? nodes = default,
             global::Weaviate.PermissionUsers? users = default,
+            global::Weaviate.PermissionGroups? groups = default,
             global::Weaviate.PermissionTenants? tenants = default,
             global::Weaviate.PermissionRoles? roles = default,
             global::Weaviate.PermissionCollections? collections = default,
+            global::Weaviate.PermissionReplicate? replicate = default,
+            global::Weaviate.PermissionAliases? aliases = default,
+            global::Weaviate.PermissionNamespaces? namespaces = default,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -4,12 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// resources applicable for user actions
+    /// Resources applicable for user actions.
     /// </summary>
     public sealed partial class PermissionUsers
     {
         /// <summary>
-        /// string or regex. if a specific name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which users this permission applies to. Can be an exact user name or a regex pattern. The default value `*` applies the permission to all users. Must be at most 256 bytes, must not contain '/', and must be a valid regex pattern. Creating a role or adding permissions also refuses ',', '"' and control characters.<br/>
         /// Default Value: *
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("users")]
@@ -25,7 +25,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="PermissionUsers" /> class.
         /// </summary>
         /// <param name="users">
-        /// string or regex. if a specific name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which users this permission applies to. Can be an exact user name or a regex pattern. The default value `*` applies the permission to all users. Must be at most 256 bytes, must not contain '/', and must be a valid regex pattern. Creating a role or adding permissions also refuses ',', '"' and control characters.<br/>
         /// Default Value: *
         /// </param>
 #if NET7_0_OR_GREATER

@@ -6,7 +6,7 @@ namespace Weaviate
     {
         /// <summary>
         /// Create a new tenant<br/>
-        /// Create a new tenant for a collection. Multi-tenancy must be enabled in the collection definition.
+        /// Creates one or more new tenants for a specified collection (`className`). Multi-tenancy must be enabled for the collection via its definition.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>
@@ -21,7 +21,7 @@ namespace Weaviate
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new tenant<br/>
-        /// Create a new tenant for a collection. Multi-tenancy must be enabled in the collection definition.
+        /// Creates one or more new tenants for a specified collection (`className`). Multi-tenancy must be enabled for the collection via its definition.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>

@@ -47,7 +47,7 @@ namespace Weaviate
 
         /// <summary>
         /// Get a specific tenant<br/>
-        /// get a specific tenant for the given class
+        /// Retrieves details about a specific tenant within the given collection (`className`), such as its current activity status.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="tenantName"></param>
@@ -57,7 +57,7 @@ namespace Weaviate
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Weaviate.TenantResponse> TenantsGetOneAsync(
+        public async global::System.Threading.Tasks.Task<global::Weaviate.Tenant> TenantsGetOneAsync(
             string className,
             string tenantName,
             bool? consistency = default,
@@ -76,7 +76,7 @@ namespace Weaviate
         }
         /// <summary>
         /// Get a specific tenant<br/>
-        /// get a specific tenant for the given class
+        /// Retrieves details about a specific tenant within the given collection (`className`), such as its current activity status.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="tenantName"></param>
@@ -86,7 +86,7 @@ namespace Weaviate
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::Weaviate.TenantResponse>> TenantsGetOneAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::Weaviate.Tenant>> TenantsGetOneAsResponseAsync(
             string className,
             string tenantName,
             bool? consistency = default,
@@ -423,7 +423,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Tenant not found
+                            // Tenant or collection not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -455,7 +455,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Invalid tenant or class
+                            // Invalid request.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -492,7 +492,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred while retrieving the tenant. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -551,9 +551,9 @@ namespace Weaviate
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Weaviate.TenantResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Weaviate.Tenant.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Weaviate.AutoSDKHttpResponse<global::Weaviate.TenantResponse>(
+                                    return new global::Weaviate.AutoSDKHttpResponse<global::Weaviate.Tenant>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Weaviate.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -583,9 +583,9 @@ namespace Weaviate
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Weaviate.TenantResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Weaviate.Tenant.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Weaviate.AutoSDKHttpResponse<global::Weaviate.TenantResponse>(
+                                    return new global::Weaviate.AutoSDKHttpResponse<global::Weaviate.Tenant>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Weaviate.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

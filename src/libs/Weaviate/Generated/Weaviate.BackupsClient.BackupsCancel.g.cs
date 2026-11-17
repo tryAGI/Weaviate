@@ -43,8 +43,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Cancel backup<br/>
-        /// Cancel created backup with specified ID
+        /// Cancel a backup<br/>
+        /// Cancels an ongoing backup operation identified by its ID.
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>
@@ -71,8 +71,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cancel backup<br/>
-        /// Cancel created backup with specified ID
+        /// Cancel a backup<br/>
+        /// Cancels an ongoing backup operation identified by its ID.
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>
@@ -419,7 +419,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Invalid backup cancellation attempt.
+                            // Invalid backup cancellation request.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -456,7 +456,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An internal server error occurred during backup cancellation. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

@@ -27,11 +27,13 @@ namespace Weaviate
             };
         partial void PrepareBackupsListArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string backend);
+            ref string backend,
+            ref global::Weaviate.BackupsListOrder? order);
         partial void PrepareBackupsListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string backend);
+            string backend,
+            global::Weaviate.BackupsListOrder? order);
         partial void ProcessBackupsListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,20 +44,25 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// List backups in progress<br/>
-        /// [Coming soon] List all backups in progress not implemented yet.
+        /// List all created backups<br/>
+        /// List all created backups IDs, Status
         /// </summary>
         /// <param name="backend"></param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.BackupListResponseItem>> BackupsListAsync(
             string backend,
+            global::Weaviate.BackupsListOrder? order = default,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BackupsListAsResponseAsync(
                 backend: backend,
+                order: order,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -63,15 +70,19 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// List backups in progress<br/>
-        /// [Coming soon] List all backups in progress not implemented yet.
+        /// List all created backups<br/>
+        /// List all created backups IDs, Status
         /// </summary>
         /// <param name="backend"></param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Weaviate.BackupListResponseItem>>> BackupsListAsResponseAsync(
             string backend,
+            global::Weaviate.BackupsListOrder? order = default,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -79,7 +90,8 @@ namespace Weaviate
                 client: HttpClient);
             PrepareBackupsListArguments(
                 httpClient: HttpClient,
-                backend: ref backend);
+                backend: ref backend,
+                order: ref order);
 
 
             var __authorizations = global::Weaviate.EndPointSecurityResolver.ResolveAuthorizations(
@@ -107,6 +119,9 @@ namespace Weaviate
                             var __pathBuilder = new global::Weaviate.PathBuilder(
                                 path: $"/backups/{backend}",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("order", order?.ToValueString())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Weaviate.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -147,7 +162,8 @@ namespace Weaviate
                 PrepareBackupsListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    backend: backend);
+                    backend: backend,
+                    order: order);
 
                 return __httpRequest;
             }
@@ -395,7 +411,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Invalid backup list.
+                            // Invalid request to list backups.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -432,7 +448,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An internal server error occurred while listing backups. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

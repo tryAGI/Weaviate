@@ -9,13 +9,13 @@ namespace Weaviate
     public sealed partial class BatchObjectsCreateRequest
     {
         /// <summary>
-        /// Define which fields need to be returned. Default value is ALL
+        /// Controls which fields are returned in the response for each object. Default is `ALL`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fields")]
         public global::System.Collections.Generic.IList<global::Weaviate.BatchObjectsCreateRequestField>? Fields { get; set; }
 
         /// <summary>
-        ///
+        /// Array of objects to be created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("objects")]
         public global::System.Collections.Generic.IList<global::Weaviate.Object>? Objects { get; set; }
@@ -30,9 +30,11 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="BatchObjectsCreateRequest" /> class.
         /// </summary>
         /// <param name="fields">
-        /// Define which fields need to be returned. Default value is ALL
+        /// Controls which fields are returned in the response for each object. Default is `ALL`.
         /// </param>
-        /// <param name="objects"></param>
+        /// <param name="objects">
+        /// Array of objects to be created.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

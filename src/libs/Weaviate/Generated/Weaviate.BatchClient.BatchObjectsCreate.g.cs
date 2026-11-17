@@ -44,8 +44,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Creates new Objects based on a Object template as a batch.<br/>
-        /// Create new objects in bulk. &lt;br/&gt;&lt;br/&gt;Meta-data and schema values are validated. &lt;br/&gt;&lt;br/&gt;**Note: idempotence of `/batch/objects`**: &lt;br/&gt;`POST /batch/objects` is idempotent, and will overwrite any existing object given the same id.
+        /// Create objects in batch<br/>
+        /// Registers multiple data objects in a single request for efficiency. Metadata and schema values for each object are validated.&lt;br/&gt;&lt;br/&gt;**Note (idempotence)**:&lt;br/&gt;This operation is idempotent based on the object UUIDs provided. If an object with a given UUID already exists, it will be overwritten (similar to a PUT operation for that specific object within the batch).
         /// </summary>
         /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
@@ -70,8 +70,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Creates new Objects based on a Object template as a batch.<br/>
-        /// Create new objects in bulk. &lt;br/&gt;&lt;br/&gt;Meta-data and schema values are validated. &lt;br/&gt;&lt;br/&gt;**Note: idempotence of `/batch/objects`**: &lt;br/&gt;`POST /batch/objects` is idempotent, and will overwrite any existing object given the same id.
+        /// Create objects in batch<br/>
+        /// Registers multiple data objects in a single request for efficiency. Metadata and schema values for each object are validated.&lt;br/&gt;&lt;br/&gt;**Note (idempotence)**:&lt;br/&gt;This operation is idempotent based on the object UUIDs provided. If an object with a given UUID already exists, it will be overwritten (similar to a PUT operation for that specific object within the batch).
         /// </summary>
         /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
@@ -455,7 +455,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?
+                            // The request syntax is correct, but the server couldn't process it due to semantic issues. Please check the values in your request. Ensure the collection exists and the object properties are valid.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -492,7 +492,44 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // The configured object-count usage limit was exceeded. The whole batch is rejected (no partial fill); the client decides what to retry. See `UsageLimitExceededResponse` for the limit value.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::Weaviate.UsageLimitExceededResponse? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::Weaviate.UsageLimitExceededResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::Weaviate.UsageLimitExceededResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.UsageLimitExceededResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // An error occurred while trying to fulfill the request. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -626,14 +663,16 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Creates new Objects based on a Object template as a batch.<br/>
-        /// Create new objects in bulk. &lt;br/&gt;&lt;br/&gt;Meta-data and schema values are validated. &lt;br/&gt;&lt;br/&gt;**Note: idempotence of `/batch/objects`**: &lt;br/&gt;`POST /batch/objects` is idempotent, and will overwrite any existing object given the same id.
+        /// Create objects in batch<br/>
+        /// Registers multiple data objects in a single request for efficiency. Metadata and schema values for each object are validated.&lt;br/&gt;&lt;br/&gt;**Note (idempotence)**:&lt;br/&gt;This operation is idempotent based on the object UUIDs provided. If an object with a given UUID already exists, it will be overwritten (similar to a PUT operation for that specific object within the batch).
         /// </summary>
         /// <param name="consistencyLevel"></param>
         /// <param name="fields">
-        /// Define which fields need to be returned. Default value is ALL
+        /// Controls which fields are returned in the response for each object. Default is `ALL`.
         /// </param>
-        /// <param name="objects"></param>
+        /// <param name="objects">
+        /// Array of objects to be created.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

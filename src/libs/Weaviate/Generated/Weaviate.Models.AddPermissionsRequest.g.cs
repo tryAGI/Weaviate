@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class AddPermissionsRequest
     {
         /// <summary>
-        /// permissions to be added to the role
+        /// Permissions to be added to the role.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,7 +25,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="AddPermissionsRequest" /> class.
         /// </summary>
         /// <param name="permissions">
-        /// permissions to be added to the role
+        /// Permissions to be added to the role.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

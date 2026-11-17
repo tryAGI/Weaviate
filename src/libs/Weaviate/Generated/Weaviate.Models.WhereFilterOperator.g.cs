@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// operator to use<br/>
+    /// Operator to use.<br/>
     /// Example: GreaterThanEqual
     /// </summary>
     public enum WhereFilterOperator
@@ -21,6 +21,10 @@ namespace Weaviate
         ///
         /// </summary>
         ContainsAny,
+        /// <summary>
+        ///
+        /// </summary>
+        ContainsNone,
         /// <summary>
         ///
         /// </summary>
@@ -52,6 +56,10 @@ namespace Weaviate
         /// <summary>
         ///
         /// </summary>
+        Not,
+        /// <summary>
+        ///
+        /// </summary>
         NotEqual,
         /// <summary>
         ///
@@ -78,6 +86,7 @@ namespace Weaviate
                 WhereFilterOperator.And => "And",
                 WhereFilterOperator.ContainsAll => "ContainsAll",
                 WhereFilterOperator.ContainsAny => "ContainsAny",
+                WhereFilterOperator.ContainsNone => "ContainsNone",
                 WhereFilterOperator.Equal => "Equal",
                 WhereFilterOperator.GreaterThan => "GreaterThan",
                 WhereFilterOperator.GreaterThanEqual => "GreaterThanEqual",
@@ -85,6 +94,7 @@ namespace Weaviate
                 WhereFilterOperator.LessThan => "LessThan",
                 WhereFilterOperator.LessThanEqual => "LessThanEqual",
                 WhereFilterOperator.Like => "Like",
+                WhereFilterOperator.Not => "Not",
                 WhereFilterOperator.NotEqual => "NotEqual",
                 WhereFilterOperator.Or => "Or",
                 WhereFilterOperator.WithinGeoRange => "WithinGeoRange",
@@ -101,6 +111,7 @@ namespace Weaviate
                 "And" => WhereFilterOperator.And,
                 "ContainsAll" => WhereFilterOperator.ContainsAll,
                 "ContainsAny" => WhereFilterOperator.ContainsAny,
+                "ContainsNone" => WhereFilterOperator.ContainsNone,
                 "Equal" => WhereFilterOperator.Equal,
                 "GreaterThan" => WhereFilterOperator.GreaterThan,
                 "GreaterThanEqual" => WhereFilterOperator.GreaterThanEqual,
@@ -108,6 +119,7 @@ namespace Weaviate
                 "LessThan" => WhereFilterOperator.LessThan,
                 "LessThanEqual" => WhereFilterOperator.LessThanEqual,
                 "Like" => WhereFilterOperator.Like,
+                "Not" => WhereFilterOperator.Not,
                 "NotEqual" => WhereFilterOperator.NotEqual,
                 "Or" => WhereFilterOperator.Or,
                 "WithinGeoRange" => WhereFilterOperator.WithinGeoRange,

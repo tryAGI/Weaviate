@@ -18,7 +18,7 @@ public partial class Tests
     [TestMethod]
     public async Task Root_Deserializes()
     {
-        var root = await Client.Root.WeaviateRootAsync();
+        var root = await Client.WeaviateRootAsync();
 
         root.Should().NotBeNull();
     }
@@ -59,7 +59,7 @@ public partial class Tests
     [TestMethod]
     public async Task LivenessAndReadiness_Respond()
     {
-        await Client.WellKnown.WeaviateWellknownLivenessAsync();
-        await Client.WellKnown.WeaviateWellknownReadinessAsync();
+        await Client.WeaviateWellknownLivenessAsync();
+        await Client.WeaviateWellknownReadinessAsync();
     }
 }

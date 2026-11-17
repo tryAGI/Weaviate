@@ -4,12 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// resources applicable for collection and/or tenant actions
+    /// Resources applicable for collection and/or tenant actions.
     /// </summary>
     public sealed partial class PermissionCollections
     {
         /// <summary>
-        /// string or regex. if a specific collection name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which collections this permission applies to. Can be an exact collection name or a regex pattern. The default value `*` applies the permission to all collections.<br/>
         /// Default Value: *
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collection")]
@@ -25,7 +25,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="PermissionCollections" /> class.
         /// </summary>
         /// <param name="collection">
-        /// string or regex. if a specific collection name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which collections this permission applies to. Can be an exact collection name or a regex pattern. The default value `*` applies the permission to all collections.<br/>
         /// Default Value: *
         /// </param>
 #if NET7_0_OR_GREATER

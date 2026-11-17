@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface ISchemaClient
     {
         /// <summary>
-        /// Dump the current the database schema.<br/>
-        /// Fetch an array of all collection definitions from the schema.
+        /// Get all collection definitions<br/>
+        /// Retrieves the definitions of all collections (classes) currently in the database schema.
         /// </summary>
         /// <param name="consistency">
         /// Default Value: true
@@ -19,8 +19,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Dump the current the database schema.<br/>
-        /// Fetch an array of all collection definitions from the schema.
+        /// Get all collection definitions<br/>
+        /// Retrieves the definitions of all collections (classes) currently in the database schema.
         /// </summary>
         /// <param name="consistency">
         /// Default Value: true

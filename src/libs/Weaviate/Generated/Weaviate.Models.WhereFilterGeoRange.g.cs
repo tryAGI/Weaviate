@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// filter within a distance of a georange
+    /// Filter within a distance of a georange.
     /// </summary>
     public sealed partial class WhereFilterGeoRange
     {

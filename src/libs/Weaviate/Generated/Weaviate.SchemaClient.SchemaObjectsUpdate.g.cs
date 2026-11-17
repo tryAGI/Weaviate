@@ -44,8 +44,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Update settings of an existing schema class<br/>
-        /// Add a property to an existing collection.
+        /// Update collection definition<br/>
+        /// Updates the configuration settings of an existing collection (`className`) based on the provided definition. Note: This operation modifies mutable settings specified in the request body. It does not add properties (use `POST /schema/{className}/properties` for that) or change the collection name.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>
@@ -70,8 +70,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Update settings of an existing schema class<br/>
-        /// Add a property to an existing collection.
+        /// Update collection definition<br/>
+        /// Updates the configuration settings of an existing collection (`className`) based on the provided definition. Note: This operation modifies mutable settings specified in the request body. It does not add properties (use `POST /schema/{className}/properties` for that) or change the collection name.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>
@@ -346,43 +346,6 @@ namespace Weaviate
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Invalid update attempt
-                            if ((int)__response.StatusCode == 422)
-                            {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                global::Weaviate.ErrorResponse? __value_422 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_422 = __ex;
-                                }
-
-
-                                throw global::Weaviate.ApiException<global::Weaviate.ErrorResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
-                                    responseBody: __content_422,
-                                    responseObject: __value_422,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
                             // Unauthorized or invalid credentials.
                             if ((int)__response.StatusCode == 401)
                             {
@@ -452,7 +415,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Class to be updated does not exist
+                            // Collection not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -489,7 +452,44 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // Invalid update attempt.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::Weaviate.RestrictionViolationResponse? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::Weaviate.RestrictionViolationResponse.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::Weaviate.RestrictionViolationResponse.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.RestrictionViolationResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // An error occurred while updating the collection. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -623,18 +623,18 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Update settings of an existing schema class<br/>
-        /// Add a property to an existing collection.
+        /// Update collection definition<br/>
+        /// Updates the configuration settings of an existing collection (`className`) based on the provided definition. Note: This operation modifies mutable settings specified in the request body. It does not add properties (use `POST /schema/{className}/properties` for that) or change the collection name.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="class1">
-        /// Name of the class (a.k.a. 'collection') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
+        /// Name of the collection (formerly 'class') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
         /// </param>
         /// <param name="vectorConfig">
         /// Configure named vectors. Either use this field or `vectorizer`, `vectorIndexType`, and `vectorIndexConfig` fields. Available from `v1.24.0`.
         /// </param>
         /// <param name="vectorIndexType">
-        /// Name of the vector index to use, eg. (HNSW)
+        /// Name of the vector index type to use for the collection (e.g. `hnsw` or `flat`).
         /// </param>
         /// <param name="vectorIndexConfig">
         /// Vector-index config, that is specific to the type of index selected in vectorIndexType
@@ -646,13 +646,16 @@ namespace Weaviate
         /// Configure how replication is executed in a cluster
         /// </param>
         /// <param name="invertedIndexConfig">
-        /// Configure the inverted index built into Weaviate (default: 60).
+        /// Configure the inverted index built into Weaviate. See [Reference: Inverted index](https://docs.weaviate.io/weaviate/config-refs/indexing/inverted-index#inverted-index-parameters) for details.
         /// </param>
         /// <param name="multiTenancyConfig">
-        /// Configuration related to multi-tenancy within a class
+        /// Configuration related to multi-tenancy within a collection (class)
+        /// </param>
+        /// <param name="objectTtlConfig">
+        /// Configuration of objects' time-to-live
         /// </param>
         /// <param name="vectorizer">
-        /// Specify how the vectors for this class should be determined. The options are either 'none' - this means you have to import a vector with each object yourself - or the name of a module that provides vectorization capabilities, such as 'text2vec-contextionary'. If left empty, it will use the globally configured default which can itself either be 'none' or a specific module.
+        /// Specify how the vectors for this collection should be determined. The options are either `none` - this means you have to import a vector with each object yourself - or the name of a module that provides vectorization capabilities, such as `text2vec-weaviate`. If left empty, it defaults to `none`.
         /// </param>
         /// <param name="moduleConfig">
         /// Configuration specific to modules in a collection context.
@@ -676,6 +679,7 @@ namespace Weaviate
             global::Weaviate.ReplicationConfig? replicationConfig = default,
             global::Weaviate.InvertedIndexConfig? invertedIndexConfig = default,
             global::Weaviate.MultiTenancyConfig? multiTenancyConfig = default,
+            global::Weaviate.ObjectTtlConfig? objectTtlConfig = default,
             string? vectorizer = default,
             object? moduleConfig = default,
             string? description = default,
@@ -693,6 +697,7 @@ namespace Weaviate
                 ReplicationConfig = replicationConfig,
                 InvertedIndexConfig = invertedIndexConfig,
                 MultiTenancyConfig = multiTenancyConfig,
+                ObjectTtlConfig = objectTtlConfig,
                 Vectorizer = vectorizer,
                 ModuleConfig = moduleConfig,
                 Description = description,

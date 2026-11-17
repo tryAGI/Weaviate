@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// set the scope for the manage role permission<br/>
+    /// Set the scope for the manage role permission.<br/>
     /// Default Value: match
     /// </summary>
     public enum PermissionRolesScope

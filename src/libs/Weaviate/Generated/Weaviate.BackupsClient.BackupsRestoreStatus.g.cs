@@ -48,8 +48,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get restore process status<br/>
-        /// Returns status of a backup restoration attempt for a set of classes. &lt;br/&gt;&lt;br/&gt;All client implementations have a `wait for completion` option which will poll the backup status in the background and only return once the backup has completed (successfully or unsuccessfully). If you set the `wait for completion` option to false, you can also check the status yourself using the this endpoint.
+        /// Get backup restoration status<br/>
+        /// Checks the status of a specific backup restoration process identified by the backup ID on the specified backend.&lt;br/&gt;&lt;br/&gt;Client libraries often provide a 'wait for completion' feature that polls this endpoint automatically. Use this endpoint for manual status checks or if 'wait for completion' is disabled.
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>
@@ -78,8 +78,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Get restore process status<br/>
-        /// Returns status of a backup restoration attempt for a set of classes. &lt;br/&gt;&lt;br/&gt;All client implementations have a `wait for completion` option which will poll the backup status in the background and only return once the backup has completed (successfully or unsuccessfully). If you set the `wait for completion` option to false, you can also check the status yourself using the this endpoint.
+        /// Get backup restoration status<br/>
+        /// Checks the status of a specific backup restoration process identified by the backup ID on the specified backend.&lt;br/&gt;&lt;br/&gt;Client libraries often provide a 'wait for completion' feature that polls this endpoint automatically. Use this endpoint for manual status checks or if 'wait for completion' is disabled.
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>
@@ -389,7 +389,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Forbidden
+                            // The caller lacks read_backups on a collection in the backup. Callers without read_backups on all collections also get 403 when no backup with this ID exists at this location, so a 403 does not confirm the backup exists.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -426,7 +426,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Not Found - Backup does not exist
+                            // No restore of this backup was started at this backend, bucket and path.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -463,7 +463,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An internal server error occurred while checking restore status. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

@@ -15,7 +15,7 @@ namespace Weaviate
         public global::Weaviate.BatchDeleteResponseMatch? Match { get; set; }
 
         /// <summary>
-        /// Controls the verbosity of the output, possible values are: "minimal", "verbose". Defaults to "minimal".<br/>
+        /// Controls the verbosity of the output, possible values are: `minimal`, `verbose`. Defaults to `minimal`.<br/>
         /// Default Value: minimal
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
@@ -28,7 +28,7 @@ namespace Weaviate
         public long? DeletionTimeUnixMilli { get; set; }
 
         /// <summary>
-        /// If true, objects will not be deleted yet, but merely listed. Defaults to false.<br/>
+        /// If true, the call reported what the filter matched and deleted nothing. The list holds at most [`QUERY_MAXIMUM_RESULTS`](https://docs.weaviate.io/deploy/configuration/env-vars#QUERY_MAXIMUM_RESULTS) IDs. Defaults to false.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dryRun")]
@@ -53,14 +53,14 @@ namespace Weaviate
         /// Outlines how to find the objects to be deleted.
         /// </param>
         /// <param name="output">
-        /// Controls the verbosity of the output, possible values are: "minimal", "verbose". Defaults to "minimal".<br/>
+        /// Controls the verbosity of the output, possible values are: `minimal`, `verbose`. Defaults to `minimal`.<br/>
         /// Default Value: minimal
         /// </param>
         /// <param name="deletionTimeUnixMilli">
         /// Timestamp of deletion in milliseconds since epoch UTC.
         /// </param>
         /// <param name="dryRun">
-        /// If true, objects will not be deleted yet, but merely listed. Defaults to false.<br/>
+        /// If true, the call reported what the filter matched and deleted nothing. The list holds at most [`QUERY_MAXIMUM_RESULTS`](https://docs.weaviate.io/deploy/configuration/env-vars#QUERY_MAXIMUM_RESULTS) IDs. Defaults to false.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="results"></param>

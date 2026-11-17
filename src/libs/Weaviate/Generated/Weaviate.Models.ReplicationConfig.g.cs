@@ -9,16 +9,16 @@ namespace Weaviate
     public sealed partial class ReplicationConfig
     {
         /// <summary>
-        /// Number of times a class is replicated (default: 1).
+        /// Number of times a collection (class) is replicated (default: 1).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("factor")]
         public int? Factor { get; set; }
 
         /// <summary>
-        /// Enable asynchronous replication (default: false).
+        /// Configuration for asynchronous replication.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("asyncEnabled")]
-        public bool? AsyncEnabled { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("asyncConfig")]
+        public global::Weaviate.ReplicationAsyncConfig? AsyncConfig { get; set; }
 
         /// <summary>
         /// Conflict resolution strategy for deleted objects.
@@ -37,10 +37,10 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="ReplicationConfig" /> class.
         /// </summary>
         /// <param name="factor">
-        /// Number of times a class is replicated (default: 1).
+        /// Number of times a collection (class) is replicated (default: 1).
         /// </param>
-        /// <param name="asyncEnabled">
-        /// Enable asynchronous replication (default: false).
+        /// <param name="asyncConfig">
+        /// Configuration for asynchronous replication.
         /// </param>
         /// <param name="deletionStrategy">
         /// Conflict resolution strategy for deleted objects.
@@ -50,11 +50,11 @@ namespace Weaviate
 #endif
         public ReplicationConfig(
             int? factor,
-            bool? asyncEnabled,
+            global::Weaviate.ReplicationAsyncConfig? asyncConfig,
             global::Weaviate.ReplicationConfigDeletionStrategy? deletionStrategy)
         {
             this.Factor = factor;
-            this.AsyncEnabled = asyncEnabled;
+            this.AsyncConfig = asyncConfig;
             this.DeletionStrategy = deletionStrategy;
         }
 

@@ -27,11 +27,15 @@ namespace Weaviate
             };
         partial void PrepareGetRolesForUserArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string id);
+            ref string id,
+            ref global::Weaviate.GetRolesForUserUserType userType,
+            ref bool? includeFullRoles);
         partial void PrepareGetRolesForUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string id);
+            string id,
+            global::Weaviate.GetRolesForUserUserType userType,
+            bool? includeFullRoles);
         partial void ProcessGetRolesForUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,19 +46,28 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// get roles assigned to user
+        /// Get roles assigned to a user<br/>
+        /// Get all the roles for a specific user (`db` or `oidc`).
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="userType"></param>
+        /// <param name="includeFullRoles">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.Role>> GetRolesForUserAsync(
             string id,
+            global::Weaviate.GetRolesForUserUserType userType,
+            bool? includeFullRoles = default,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetRolesForUserAsResponseAsync(
                 id: id,
+                userType: userType,
+                includeFullRoles: includeFullRoles,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -62,14 +75,21 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// get roles assigned to user
+        /// Get roles assigned to a user<br/>
+        /// Get all the roles for a specific user (`db` or `oidc`).
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="userType"></param>
+        /// <param name="includeFullRoles">
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Weaviate.Role>>> GetRolesForUserAsResponseAsync(
             string id,
+            global::Weaviate.GetRolesForUserUserType userType,
+            bool? includeFullRoles = default,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -77,7 +97,9 @@ namespace Weaviate
                 client: HttpClient);
             PrepareGetRolesForUserArguments(
                 httpClient: HttpClient,
-                id: ref id);
+                id: ref id,
+                userType: ref userType,
+                includeFullRoles: ref includeFullRoles);
 
 
             var __authorizations = global::Weaviate.EndPointSecurityResolver.ResolveAuthorizations(
@@ -103,8 +125,11 @@ namespace Weaviate
             {
 
                             var __pathBuilder = new global::Weaviate.PathBuilder(
-                                path: $"/authz/users/{id}/roles",
+                                path: $"/authz/users/{id}/roles/{(global::System.Uri.EscapeDataString(userType.ToValueString()))}",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("includeFullRoles", includeFullRoles?.ToString().ToLowerInvariant())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Weaviate.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -145,7 +170,9 @@ namespace Weaviate
                 PrepareGetRolesForUserRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id);
+                    id: id,
+                    userType: userType,
+                    includeFullRoles: includeFullRoles);
 
                 return __httpRequest;
             }
@@ -164,7 +191,7 @@ namespace Weaviate
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetRolesForUser",
                                 methodName: "GetRolesForUserAsync",
-                                pathTemplate: "$\"/authz/users/{id}/roles\"",
+                                pathTemplate: "$\"/authz/users/{id}/roles/{(global::System.Uri.EscapeDataString(userType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -198,7 +225,7 @@ namespace Weaviate
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetRolesForUser",
                                 methodName: "GetRolesForUserAsync",
-                                pathTemplate: "$\"/authz/users/{id}/roles\"",
+                                pathTemplate: "$\"/authz/users/{id}/roles/{(global::System.Uri.EscapeDataString(userType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -239,7 +266,7 @@ namespace Weaviate
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetRolesForUser",
                                 methodName: "GetRolesForUserAsync",
-                                pathTemplate: "$\"/authz/users/{id}/roles\"",
+                                pathTemplate: "$\"/authz/users/{id}/roles/{(global::System.Uri.EscapeDataString(userType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -287,7 +314,7 @@ namespace Weaviate
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetRolesForUser",
                                 methodName: "GetRolesForUserAsync",
-                                pathTemplate: "$\"/authz/users/{id}/roles\"",
+                                pathTemplate: "$\"/authz/users/{id}/roles/{(global::System.Uri.EscapeDataString(userType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -309,7 +336,7 @@ namespace Weaviate
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetRolesForUser",
                                 methodName: "GetRolesForUserAsync",
-                                pathTemplate: "$\"/authz/users/{id}/roles\"",
+                                pathTemplate: "$\"/authz/users/{id}/roles/{(global::System.Uri.EscapeDataString(userType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -324,7 +351,7 @@ namespace Weaviate
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad request
+                            // Malformed request.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -430,7 +457,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // no role found for user
+                            // No roles found for specified user.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -457,6 +484,43 @@ namespace Weaviate
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     responseBody: __content_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The request syntax is correct, but the server couldn't process it due to semantic issues. Please check the values in your request.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::Weaviate.ErrorResponse? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,

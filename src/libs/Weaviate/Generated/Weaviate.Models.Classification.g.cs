@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class Classification
     {
         /// <summary>
-        /// ID to uniquely identify this classification run<br/>
+        /// ID to uniquely identify this classification run.<br/>
         /// Example: ee722219-b8ec-4db1-8f8d-5150bb1a9e0c
         /// </summary>
         /// <example>ee722219-b8ec-4db1-8f8d-5150bb1a9e0c</example>
@@ -17,7 +17,7 @@ namespace Weaviate
         public global::System.Guid? Id { get; set; }
 
         /// <summary>
-        /// class (name) which is used in this classification<br/>
+        /// The name of the collection (class) which is used in this classification.<br/>
         /// Example: City
         /// </summary>
         /// <example>City</example>
@@ -25,7 +25,7 @@ namespace Weaviate
         public string? Class { get; set; }
 
         /// <summary>
-        /// which ref-property to set as part of the classification<br/>
+        /// Which ref-property to set as part of the classification.<br/>
         /// Example: [inCountry]
         /// </summary>
         /// <example>[inCountry]</example>
@@ -33,7 +33,7 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<string>? ClassifyProperties { get; set; }
 
         /// <summary>
-        /// base the text-based classification on these fields (of type text)<br/>
+        /// Base the text-based classification on these fields (of type text).<br/>
         /// Example: [description]
         /// </summary>
         /// <example>[description]</example>
@@ -41,7 +41,7 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<string>? BasedOnProperties { get; set; }
 
         /// <summary>
-        /// status of this classification<br/>
+        /// Status of this classification.<br/>
         /// Example: running
         /// </summary>
         /// <example>running</example>
@@ -50,25 +50,25 @@ namespace Weaviate
         public global::Weaviate.ClassificationStatus? Status { get; set; }
 
         /// <summary>
-        /// Additional information to a specific classification
+        /// Additional information to a specific classification.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meta")]
         public global::Weaviate.ClassificationMeta? Meta { get; set; }
 
         /// <summary>
-        /// which algorithm to use for classifications
+        /// Which algorithm to use for classifications.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string? Type { get; set; }
 
         /// <summary>
-        /// classification-type specific settings
+        /// Classification-type specific settings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
         public object? Settings { get; set; }
 
         /// <summary>
-        /// error message if status == failed<br/>
+        /// Error message if status == failed.<br/>
         /// Example: classify xzy: something went wrong
         /// </summary>
         /// <example>classify xzy: something went wrong</example>
@@ -91,36 +91,36 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="Classification" /> class.
         /// </summary>
         /// <param name="id">
-        /// ID to uniquely identify this classification run<br/>
+        /// ID to uniquely identify this classification run.<br/>
         /// Example: ee722219-b8ec-4db1-8f8d-5150bb1a9e0c
         /// </param>
         /// <param name="class">
-        /// class (name) which is used in this classification<br/>
+        /// The name of the collection (class) which is used in this classification.<br/>
         /// Example: City
         /// </param>
         /// <param name="classifyProperties">
-        /// which ref-property to set as part of the classification<br/>
+        /// Which ref-property to set as part of the classification.<br/>
         /// Example: [inCountry]
         /// </param>
         /// <param name="basedOnProperties">
-        /// base the text-based classification on these fields (of type text)<br/>
+        /// Base the text-based classification on these fields (of type text).<br/>
         /// Example: [description]
         /// </param>
         /// <param name="status">
-        /// status of this classification<br/>
+        /// Status of this classification.<br/>
         /// Example: running
         /// </param>
         /// <param name="meta">
-        /// Additional information to a specific classification
+        /// Additional information to a specific classification.
         /// </param>
         /// <param name="type">
-        /// which algorithm to use for classifications
+        /// Which algorithm to use for classifications.
         /// </param>
         /// <param name="settings">
-        /// classification-type specific settings
+        /// Classification-type specific settings.
         /// </param>
         /// <param name="error">
-        /// error message if status == failed<br/>
+        /// Error message if status == failed.<br/>
         /// Example: classify xzy: something went wrong
         /// </param>
         /// <param name="filters"></param>

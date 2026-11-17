@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IBatchClient
     {
         /// <summary>
-        /// Creates new Cross-References between arbitrary classes in bulk.<br/>
-        /// Batch create cross-references between collections items (objects or objects) in bulk.
+        /// Create cross-references in bulk<br/>
+        /// Batch create cross-references between collection items in bulk.
         /// </summary>
         /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
@@ -20,8 +20,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Creates new Cross-References between arbitrary classes in bulk.<br/>
-        /// Batch create cross-references between collections items (objects or objects) in bulk.
+        /// Create cross-references in bulk<br/>
+        /// Batch create cross-references between collection items in bulk.
         /// </summary>
         /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>

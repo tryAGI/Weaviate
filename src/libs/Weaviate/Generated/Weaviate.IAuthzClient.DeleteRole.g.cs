@@ -5,7 +5,8 @@ namespace Weaviate
     public partial interface IAuthzClient
     {
         /// <summary>
-        /// Delete role
+        /// Delete a role<br/>
+        /// Deleting a role will remove it from the system, and revoke the associated permissions from all users who had this role.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -16,7 +17,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete role
+        /// Delete a role<br/>
+        /// Deleting a role will remove it from the system, and revoke the associated permissions from all users who had this role.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

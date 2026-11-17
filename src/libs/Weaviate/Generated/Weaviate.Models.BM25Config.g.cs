@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// tuning parameters for the BM25 algorithm
+    /// Tuning parameters for the BM25 algorithm.
     /// </summary>
     public sealed partial class BM25Config
     {

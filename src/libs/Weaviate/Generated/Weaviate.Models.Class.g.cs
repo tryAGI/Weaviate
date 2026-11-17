@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class Class
     {
         /// <summary>
-        /// Name of the class (a.k.a. 'collection') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
+        /// Name of the collection (formerly 'class') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("class")]
         public string? Class1 { get; set; }
@@ -21,7 +21,7 @@ namespace Weaviate
         public global::System.Collections.Generic.Dictionary<string, global::Weaviate.VectorConfig>? VectorConfig { get; set; }
 
         /// <summary>
-        /// Name of the vector index to use, eg. (HNSW)
+        /// Name of the vector index type to use for the collection (e.g. `hnsw` or `flat`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorIndexType")]
         public string? VectorIndexType { get; set; }
@@ -45,19 +45,25 @@ namespace Weaviate
         public global::Weaviate.ReplicationConfig? ReplicationConfig { get; set; }
 
         /// <summary>
-        /// Configure the inverted index built into Weaviate (default: 60).
+        /// Configure the inverted index built into Weaviate. See [Reference: Inverted index](https://docs.weaviate.io/weaviate/config-refs/indexing/inverted-index#inverted-index-parameters) for details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invertedIndexConfig")]
         public global::Weaviate.InvertedIndexConfig? InvertedIndexConfig { get; set; }
 
         /// <summary>
-        /// Configuration related to multi-tenancy within a class
+        /// Configuration related to multi-tenancy within a collection (class)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("multiTenancyConfig")]
         public global::Weaviate.MultiTenancyConfig? MultiTenancyConfig { get; set; }
 
         /// <summary>
-        /// Specify how the vectors for this class should be determined. The options are either 'none' - this means you have to import a vector with each object yourself - or the name of a module that provides vectorization capabilities, such as 'text2vec-contextionary'. If left empty, it will use the globally configured default which can itself either be 'none' or a specific module.
+        /// Configuration of objects' time-to-live
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("objectTtlConfig")]
+        public global::Weaviate.ObjectTtlConfig? ObjectTtlConfig { get; set; }
+
+        /// <summary>
+        /// Specify how the vectors for this collection should be determined. The options are either `none` - this means you have to import a vector with each object yourself - or the name of a module that provides vectorization capabilities, such as `text2vec-weaviate`. If left empty, it defaults to `none`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorizer")]
         public string? Vectorizer { get; set; }
@@ -90,13 +96,13 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="Class" /> class.
         /// </summary>
         /// <param name="class1">
-        /// Name of the class (a.k.a. 'collection') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
+        /// Name of the collection (formerly 'class') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
         /// </param>
         /// <param name="vectorConfig">
         /// Configure named vectors. Either use this field or `vectorizer`, `vectorIndexType`, and `vectorIndexConfig` fields. Available from `v1.24.0`.
         /// </param>
         /// <param name="vectorIndexType">
-        /// Name of the vector index to use, eg. (HNSW)
+        /// Name of the vector index type to use for the collection (e.g. `hnsw` or `flat`).
         /// </param>
         /// <param name="vectorIndexConfig">
         /// Vector-index config, that is specific to the type of index selected in vectorIndexType
@@ -108,13 +114,16 @@ namespace Weaviate
         /// Configure how replication is executed in a cluster
         /// </param>
         /// <param name="invertedIndexConfig">
-        /// Configure the inverted index built into Weaviate (default: 60).
+        /// Configure the inverted index built into Weaviate. See [Reference: Inverted index](https://docs.weaviate.io/weaviate/config-refs/indexing/inverted-index#inverted-index-parameters) for details.
         /// </param>
         /// <param name="multiTenancyConfig">
-        /// Configuration related to multi-tenancy within a class
+        /// Configuration related to multi-tenancy within a collection (class)
+        /// </param>
+        /// <param name="objectTtlConfig">
+        /// Configuration of objects' time-to-live
         /// </param>
         /// <param name="vectorizer">
-        /// Specify how the vectors for this class should be determined. The options are either 'none' - this means you have to import a vector with each object yourself - or the name of a module that provides vectorization capabilities, such as 'text2vec-contextionary'. If left empty, it will use the globally configured default which can itself either be 'none' or a specific module.
+        /// Specify how the vectors for this collection should be determined. The options are either `none` - this means you have to import a vector with each object yourself - or the name of a module that provides vectorization capabilities, such as `text2vec-weaviate`. If left empty, it defaults to `none`.
         /// </param>
         /// <param name="moduleConfig">
         /// Configuration specific to modules in a collection context.
@@ -137,6 +146,7 @@ namespace Weaviate
             global::Weaviate.ReplicationConfig? replicationConfig,
             global::Weaviate.InvertedIndexConfig? invertedIndexConfig,
             global::Weaviate.MultiTenancyConfig? multiTenancyConfig,
+            global::Weaviate.ObjectTtlConfig? objectTtlConfig,
             string? vectorizer,
             object? moduleConfig,
             string? description,
@@ -150,6 +160,7 @@ namespace Weaviate
             this.ReplicationConfig = replicationConfig;
             this.InvertedIndexConfig = invertedIndexConfig;
             this.MultiTenancyConfig = multiTenancyConfig;
+            this.ObjectTtlConfig = objectTtlConfig;
             this.Vectorizer = vectorizer;
             this.ModuleConfig = moduleConfig;
             this.Description = description;

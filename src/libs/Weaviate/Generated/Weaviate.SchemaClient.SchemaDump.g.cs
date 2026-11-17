@@ -42,8 +42,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Dump the current the database schema.<br/>
-        /// Fetch an array of all collection definitions from the schema.
+        /// Get all collection definitions<br/>
+        /// Retrieves the definitions of all collections (classes) currently in the database schema.
         /// </summary>
         /// <param name="consistency">
         /// Default Value: true
@@ -65,8 +65,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Dump the current the database schema.<br/>
-        /// Fetch an array of all collection definitions from the schema.
+        /// Get all collection definitions<br/>
+        /// Retrieves the definitions of all collections (classes) currently in the database schema.
         /// </summary>
         /// <param name="consistency">
         /// Default Value: true
@@ -405,7 +405,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred while retrieving the schema. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

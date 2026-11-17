@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// status of backup process
+    /// Status of backup process.
     /// </summary>
     public enum BackupListResponseItemStatus
     {
@@ -15,7 +15,15 @@ namespace Weaviate
         /// <summary>
         ///
         /// </summary>
+        Cancelling,
+        /// <summary>
+        ///
+        /// </summary>
         Failed,
+        /// <summary>
+        ///
+        /// </summary>
+        Finalizing,
         /// <summary>
         ///
         /// </summary>
@@ -47,7 +55,9 @@ namespace Weaviate
             return value switch
             {
                 BackupListResponseItemStatus.Canceled => "CANCELED",
+                BackupListResponseItemStatus.Cancelling => "CANCELLING",
                 BackupListResponseItemStatus.Failed => "FAILED",
+                BackupListResponseItemStatus.Finalizing => "FINALIZING",
                 BackupListResponseItemStatus.Started => "STARTED",
                 BackupListResponseItemStatus.Success => "SUCCESS",
                 BackupListResponseItemStatus.Transferred => "TRANSFERRED",
@@ -63,7 +73,9 @@ namespace Weaviate
             return value switch
             {
                 "CANCELED" => BackupListResponseItemStatus.Canceled,
+                "CANCELLING" => BackupListResponseItemStatus.Cancelling,
                 "FAILED" => BackupListResponseItemStatus.Failed,
+                "FINALIZING" => BackupListResponseItemStatus.Finalizing,
                 "STARTED" => BackupListResponseItemStatus.Started,
                 "SUCCESS" => BackupListResponseItemStatus.Success,
                 "TRANSFERRED" => BackupListResponseItemStatus.Transferred,

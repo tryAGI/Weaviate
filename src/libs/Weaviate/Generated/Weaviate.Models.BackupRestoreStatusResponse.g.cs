@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// The definition of a backup restore metadata
+    /// The definition of a backup restore metadata.
     /// </summary>
     public sealed partial class BackupRestoreStatusResponse
     {
@@ -21,19 +21,19 @@ namespace Weaviate
         public string? Backend { get; set; }
 
         /// <summary>
-        /// destination path of backup files proper to selected backup backend, contains bucket and path
+        /// Destination path of backup files valid for the selected backup backend, contains bucket and path.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         public string? Path { get; set; }
 
         /// <summary>
-        /// error message if restoration failed
+        /// Error message if backup restoration failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public string? Error { get; set; }
 
         /// <summary>
-        /// phase of backup restoration process<br/>
+        /// Phase of backup restoration process.<br/>
         /// Default Value: STARTED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -56,13 +56,13 @@ namespace Weaviate
         /// Backup backend name e.g. filesystem, gcs, s3.
         /// </param>
         /// <param name="path">
-        /// destination path of backup files proper to selected backup backend, contains bucket and path
+        /// Destination path of backup files valid for the selected backup backend, contains bucket and path.
         /// </param>
         /// <param name="error">
-        /// error message if restoration failed
+        /// Error message if backup restoration failed.
         /// </param>
         /// <param name="status">
-        /// phase of backup restoration process<br/>
+        /// Phase of backup restoration process.<br/>
         /// Default Value: STARTED
         /// </param>
 #if NET7_0_OR_GREATER

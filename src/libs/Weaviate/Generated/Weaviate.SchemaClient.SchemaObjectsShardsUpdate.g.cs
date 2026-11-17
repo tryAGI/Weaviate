@@ -46,8 +46,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Update a shard status.<br/>
-        /// Update a shard status for a collection. For example, a shard may have been marked as `READONLY` because its disk was full. After providing more disk space, use this endpoint to set the shard status to `READY` again. There is also a convenience function in each client to set the status of all shards of a collection.
+        /// Update a shard status<br/>
+        /// Updates the status of a specific shard within a collection (e.g., sets it to `READY` or `READONLY`). This is typically used after resolving an underlying issue (like disk space) that caused a shard to become non-operational. There is also a convenience function in each client to set the status of all shards of a collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="shardName"></param>
@@ -75,8 +75,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Update a shard status.<br/>
-        /// Update a shard status for a collection. For example, a shard may have been marked as `READONLY` because its disk was full. After providing more disk space, use this endpoint to set the shard status to `READY` again. There is also a convenience function in each client to set the status of all shards of a collection.
+        /// Update a shard status<br/>
+        /// Updates the status of a specific shard within a collection (e.g., sets it to `READY` or `READONLY`). This is typically used after resolving an underlying issue (like disk space) that caused a shard to become non-operational. There is also a convenience function in each client to set the status of all shards of a collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="shardName"></param>
@@ -461,7 +461,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Shard to be updated does not exist
+                            // Collection or shard not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -498,7 +498,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred while updating the shard status. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -632,8 +632,8 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Update a shard status.<br/>
-        /// Update a shard status for a collection. For example, a shard may have been marked as `READONLY` because its disk was full. After providing more disk space, use this endpoint to set the shard status to `READY` again. There is also a convenience function in each client to set the status of all shards of a collection.
+        /// Update a shard status<br/>
+        /// Updates the status of a specific shard within a collection (e.g., sets it to `READY` or `READONLY`). This is typically used after resolving an underlying issue (like disk space) that caused a shard to become non-operational. There is also a convenience function in each client to set the status of all shards of a collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="shardName"></param>

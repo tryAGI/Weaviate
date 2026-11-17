@@ -44,7 +44,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get a single class from the schema
+        /// Get a single collection<br/>
+        /// Retrieve the definition of a specific collection (`className`), including its properties, configuration, and vectorizer settings.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="consistency">
@@ -69,7 +70,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Get a single class from the schema
+        /// Get a single collection<br/>
+        /// Retrieve the definition of a specific collection (`className`), including its properties, configuration, and vectorizer settings.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="consistency">
@@ -412,7 +414,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // This class does not exist
+                            // Collection not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -444,7 +446,44 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // Invalid collection name provided (e.g. malformed namespace prefix). Check the ErrorResponse for details.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::Weaviate.ErrorResponse? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // An error occurred while retrieving the collection definition. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

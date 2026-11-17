@@ -4,19 +4,19 @@
 namespace Weaviate
 {
     /// <summary>
-    /// resources applicable for role actions
+    /// Resources applicable for role actions.
     /// </summary>
     public sealed partial class PermissionRoles
     {
         /// <summary>
-        /// string or regex. if a specific role name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which roles this permission applies to. Can be an exact role name or a regex pattern. The default value `*` applies the permission to all roles. Must be at most 256 bytes, must not contain '/', and must be a valid regex pattern. Creating a role or adding permissions also refuses ',', '"' and control characters.<br/>
         /// Default Value: *
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         public string? Role { get; set; }
 
         /// <summary>
-        /// set the scope for the manage role permission<br/>
+        /// Set the scope for the manage role permission.<br/>
         /// Default Value: match
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
@@ -33,11 +33,11 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="PermissionRoles" /> class.
         /// </summary>
         /// <param name="role">
-        /// string or regex. if a specific role name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which roles this permission applies to. Can be an exact role name or a regex pattern. The default value `*` applies the permission to all roles. Must be at most 256 bytes, must not contain '/', and must be a valid regex pattern. Creating a role or adding permissions also refuses ',', '"' and control characters.<br/>
         /// Default Value: *
         /// </param>
         /// <param name="scope">
-        /// set the scope for the manage role permission<br/>
+        /// Set the scope for the manage role permission.<br/>
         /// Default Value: match
         /// </param>
 #if NET7_0_OR_GREATER

@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface INodesClient
     {
         /// <summary>
-        /// Node information for the database.<br/>
-        /// Returns node information for the entire database.
+        /// Get node status<br/>
+        /// Retrieves status information about all nodes in the cluster. Use the `output` query parameter to control the level of detail.
         /// </summary>
         /// <param name="output">
         /// Default Value: minimal
@@ -19,8 +19,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Node information for the database.<br/>
-        /// Returns node information for the entire database.
+        /// Get node status<br/>
+        /// Retrieves status information about all nodes in the cluster. Use the `output` query parameter to control the level of detail.
         /// </summary>
         /// <param name="output">
         /// Default Value: minimal

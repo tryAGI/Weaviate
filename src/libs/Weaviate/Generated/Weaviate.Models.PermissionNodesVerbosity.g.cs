@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// whether to allow (verbose) returning shards and stats data in the response<br/>
+    /// Whether to allow (verbose) returning shards and stats data in the response.<br/>
     /// Default Value: minimal
     /// </summary>
     public enum PermissionNodesVerbosity

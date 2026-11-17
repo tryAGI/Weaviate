@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// attributes representing a single tenant within weaviate
+    /// Attributes representing a single tenant within Weaviate.
     /// </summary>
     public sealed partial class Tenant
     {
@@ -15,7 +15,7 @@ namespace Weaviate
         public string? Name { get; set; }
 
         /// <summary>
-        /// activity status of the tenant's shard. Optional for creating tenant (implicit `ACTIVE`) and required for updating tenant. For creation, allowed values are `ACTIVE` - tenant is fully active and `INACTIVE` - tenant is inactive; no actions can be performed on tenant, tenant's files are stored locally. For updating, `ACTIVE`, `INACTIVE` and also `OFFLOADED` - as INACTIVE, but files are stored on cloud storage. The following values are read-only and are set by the server for internal use: `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
+        /// The activity status of the tenant, which determines if it is queryable and where its data is stored.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Available Statuses:&lt;/b&gt;&lt;br/&gt;- `ACTIVE`: The tenant is fully operational and ready for queries. Data is stored on local, hot storage.&lt;br/&gt;- `INACTIVE`: The tenant is not queryable. Data is stored locally.&lt;br/&gt;- `OFFLOADED`: The tenant is inactive and its data is stored in a remote cloud backend.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Usage Rules:&lt;/b&gt;&lt;br/&gt;- &lt;b&gt;On Create:&lt;/b&gt; This field is optional and defaults to `ACTIVE`. Allowed values are `ACTIVE` and `INACTIVE`.&lt;br/&gt;- &lt;b&gt;On Update:&lt;/b&gt; This field is required. Allowed values are `ACTIVE`, `INACTIVE`, and `OFFLOADED`.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Read-Only Statuses:&lt;/b&gt;&lt;br/&gt;The following statuses are set by the server and indicate a tenant is transitioning between states:&lt;br/&gt;- `OFFLOADING`&lt;br/&gt;- `ONLOADING`&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Note on Deprecated Names:&lt;/b&gt;&lt;br/&gt;For backward compatibility, deprecated names are still accepted and are mapped to their modern equivalents: `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("activityStatus")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.TenantActivityStatusJsonConverter))]
@@ -34,7 +34,7 @@ namespace Weaviate
         /// The name of the tenant (required).
         /// </param>
         /// <param name="activityStatus">
-        /// activity status of the tenant's shard. Optional for creating tenant (implicit `ACTIVE`) and required for updating tenant. For creation, allowed values are `ACTIVE` - tenant is fully active and `INACTIVE` - tenant is inactive; no actions can be performed on tenant, tenant's files are stored locally. For updating, `ACTIVE`, `INACTIVE` and also `OFFLOADED` - as INACTIVE, but files are stored on cloud storage. The following values are read-only and are set by the server for internal use: `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
+        /// The activity status of the tenant, which determines if it is queryable and where its data is stored.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Available Statuses:&lt;/b&gt;&lt;br/&gt;- `ACTIVE`: The tenant is fully operational and ready for queries. Data is stored on local, hot storage.&lt;br/&gt;- `INACTIVE`: The tenant is not queryable. Data is stored locally.&lt;br/&gt;- `OFFLOADED`: The tenant is inactive and its data is stored in a remote cloud backend.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Usage Rules:&lt;/b&gt;&lt;br/&gt;- &lt;b&gt;On Create:&lt;/b&gt; This field is optional and defaults to `ACTIVE`. Allowed values are `ACTIVE` and `INACTIVE`.&lt;br/&gt;- &lt;b&gt;On Update:&lt;/b&gt; This field is required. Allowed values are `ACTIVE`, `INACTIVE`, and `OFFLOADED`.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Read-Only Statuses:&lt;/b&gt;&lt;br/&gt;The following statuses are set by the server and indicate a tenant is transitioning between states:&lt;br/&gt;- `OFFLOADING`&lt;br/&gt;- `ONLOADING`&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Note on Deprecated Names:&lt;/b&gt;&lt;br/&gt;For backward compatibility, deprecated names are still accepted and are mapped to their modern equivalents: `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

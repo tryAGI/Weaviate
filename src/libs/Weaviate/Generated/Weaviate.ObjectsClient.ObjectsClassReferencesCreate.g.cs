@@ -47,8 +47,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Add a single reference to a class-property.<br/>
-        /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
+        /// Add an object reference<br/>
+        /// Adds a new reference to a reference property (`propertyName`) on a source data object. The source object is identified by its collection name (`className`) and UUID (`id`). The reference to add is specified in the request body.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -83,8 +83,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a single reference to a class-property.<br/>
-        /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
+        /// Add an object reference<br/>
+        /// Adds a new reference to a reference property (`propertyName`) on a source data object. The source object is identified by its collection name (`className`) and UUID (`id`). The reference to add is specified in the request body.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -485,7 +485,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Source object doesn't exist.
+                            // Source object not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -517,7 +517,44 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the property exists or that it is a class?
+                            // Endpoint not available in the current cluster configuration.
+                            if ((int)__response.StatusCode == 410)
+                            {
+                                string? __content_410 = null;
+                                global::System.Exception? __exception_410 = null;
+                                global::Weaviate.ErrorResponse? __value_410 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_410 = global::Weaviate.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_410 = global::Weaviate.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_410 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_410,
+                                    responseBody: __content_410,
+                                    responseObject: __value_410,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The request syntax is correct, but the server couldn't process it due to semantic issues. Please check the values in your request. Ensure the property exists and is a reference type.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -554,7 +591,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred while trying to fulfill the request. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -672,8 +709,8 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Add a single reference to a class-property.<br/>
-        /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
+        /// Add an object reference<br/>
+        /// Adds a new reference to a reference property (`propertyName`) on a source data object. The source object is identified by its collection name (`className`) and UUID (`id`). The reference to add is specified in the request body.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -681,13 +718,13 @@ namespace Weaviate
         /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
         /// <param name="class">
-        /// If using a concept reference (rather than a direct reference), specify the desired class name here
+        /// If using a concept reference (rather than a direct reference), specify the desired collection (class) name here.
         /// </param>
         /// <param name="schema">
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </param>
         /// <param name="beacon">
-        /// If using a direct reference, specify the URI to point to the cross-ref here. Should be in the form of weaviate://localhost/&lt;uuid&gt; for the example of a local cross-ref to an object
+        /// If using a direct reference, specify the URI to point to the cross-reference here. Should be in the form of weaviate://localhost/&lt;uuid&gt; for the example of a local cross-reference to an object
         /// </param>
         /// <param name="href">
         /// If using a direct reference, this read-only fields provides a link to the referenced resource. If 'origin' is globally configured, an absolute URI is shown - a relative URI otherwise.

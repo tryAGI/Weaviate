@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IGraphqlClient
     {
         /// <summary>
-        /// Get a response based on GraphQL<br/>
-        /// Get a response based on a GraphQL query
+        /// Perform a GraphQL query<br/>
+        /// Executes a single GraphQL query provided in the request body. Use this endpoint for all Weaviate data queries and exploration.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +18,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a response based on GraphQL<br/>
-        /// Get a response based on a GraphQL query
+        /// Perform a GraphQL query<br/>
+        /// Executes a single GraphQL query provided in the request body. Use this endpoint for all Weaviate data queries and exploration.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,8 +31,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a response based on GraphQL<br/>
-        /// Get a response based on a GraphQL query
+        /// Perform a GraphQL query<br/>
+        /// Executes a single GraphQL query provided in the request body. Use this endpoint for all Weaviate data queries and exploration.
         /// </summary>
         /// <param name="operationName">
         /// The name of the operation if multiple exist in the query.

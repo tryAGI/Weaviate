@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IClassificationsClient
     {
         /// <summary>
-        /// Starts a classification.<br/>
-        /// Trigger a classification based on the specified params. Classifications will run in the background, use GET /classifications/&lt;id&gt; to retrieve the status of your classification.
+        /// Start a classification<br/>
+        /// Initiates a background classification task based on the provided parameters. Use the GET /classifications/{id} endpoint to monitor the status and retrieve results.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +18,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Starts a classification.<br/>
-        /// Trigger a classification based on the specified params. Classifications will run in the background, use GET /classifications/&lt;id&gt; to retrieve the status of your classification.
+        /// Start a classification<br/>
+        /// Initiates a background classification task based on the provided parameters. Use the GET /classifications/{id} endpoint to monitor the status and retrieve results.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,40 +31,40 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Starts a classification.<br/>
-        /// Trigger a classification based on the specified params. Classifications will run in the background, use GET /classifications/&lt;id&gt; to retrieve the status of your classification.
+        /// Start a classification<br/>
+        /// Initiates a background classification task based on the provided parameters. Use the GET /classifications/{id} endpoint to monitor the status and retrieve results.
         /// </summary>
         /// <param name="id">
-        /// ID to uniquely identify this classification run<br/>
+        /// ID to uniquely identify this classification run.<br/>
         /// Example: ee722219-b8ec-4db1-8f8d-5150bb1a9e0c
         /// </param>
         /// <param name="class">
-        /// class (name) which is used in this classification<br/>
+        /// The name of the collection (class) which is used in this classification.<br/>
         /// Example: City
         /// </param>
         /// <param name="classifyProperties">
-        /// which ref-property to set as part of the classification<br/>
+        /// Which ref-property to set as part of the classification.<br/>
         /// Example: [inCountry]
         /// </param>
         /// <param name="basedOnProperties">
-        /// base the text-based classification on these fields (of type text)<br/>
+        /// Base the text-based classification on these fields (of type text).<br/>
         /// Example: [description]
         /// </param>
         /// <param name="status">
-        /// status of this classification<br/>
+        /// Status of this classification.<br/>
         /// Example: running
         /// </param>
         /// <param name="meta">
-        /// Additional information to a specific classification
+        /// Additional information to a specific classification.
         /// </param>
         /// <param name="type">
-        /// which algorithm to use for classifications
+        /// Which algorithm to use for classifications.
         /// </param>
         /// <param name="settings">
-        /// classification-type specific settings
+        /// Classification-type specific settings.
         /// </param>
         /// <param name="error">
-        /// error message if status == failed<br/>
+        /// Error message if status == failed.<br/>
         /// Example: classify xzy: something went wrong
         /// </param>
         /// <param name="filters"></param>

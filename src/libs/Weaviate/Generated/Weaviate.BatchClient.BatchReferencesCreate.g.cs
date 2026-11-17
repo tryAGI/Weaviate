@@ -44,8 +44,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Creates new Cross-References between arbitrary classes in bulk.<br/>
-        /// Batch create cross-references between collections items (objects or objects) in bulk.
+        /// Create cross-references in bulk<br/>
+        /// Batch create cross-references between collection items in bulk.
         /// </summary>
         /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
@@ -70,8 +70,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Creates new Cross-References between arbitrary classes in bulk.<br/>
-        /// Batch create cross-references between collections items (objects or objects) in bulk.
+        /// Create cross-references in bulk<br/>
+        /// Batch create cross-references between collection items in bulk.
         /// </summary>
         /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
@@ -455,7 +455,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?
+                            // The request syntax is correct, but the server couldn't process it due to semantic issues. Please check the values in your request. Ensure the collection exists and the object properties are valid.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;

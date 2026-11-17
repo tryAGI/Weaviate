@@ -5,7 +5,8 @@ namespace Weaviate
     public partial interface ISchemaClient
     {
         /// <summary>
-        /// delete tenants from a specific class
+        /// Delete tenants<br/>
+        /// Deletes one or more specified tenants from a collection (`className`). WARNING: This action permanently deletes all data associated with the specified tenants.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>
@@ -19,7 +20,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// delete tenants from a specific class
+        /// Delete tenants<br/>
+        /// Deletes one or more specified tenants from a collection (`className`). WARNING: This action permanently deletes all data associated with the specified tenants.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="request"></param>

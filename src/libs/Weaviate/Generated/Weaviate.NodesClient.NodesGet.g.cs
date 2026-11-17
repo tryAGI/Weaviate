@@ -42,8 +42,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Node information for the database.<br/>
-        /// Returns node information for the entire database.
+        /// Get node status<br/>
+        /// Retrieves status information about all nodes in the cluster. Use the `output` query parameter to control the level of detail.
         /// </summary>
         /// <param name="output">
         /// Default Value: minimal
@@ -65,8 +65,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Node information for the database.<br/>
-        /// Returns node information for the entire database.
+        /// Get node status<br/>
+        /// Retrieves status information about all nodes in the cluster. Use the `output` query parameter to control the level of detail.
         /// </summary>
         /// <param name="output">
         /// Default Value: minimal
@@ -402,7 +402,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Not Found - Backup does not exist
+                            // Not Found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -439,7 +439,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Invalid backup restoration status attempt.
+                            // Invalid request for node status.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -476,7 +476,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An internal server error occurred while retrieving node status. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

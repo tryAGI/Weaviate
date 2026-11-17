@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IMetaClient
     {
         /// <summary>
-        /// Returns meta information of the current Weaviate instance.<br/>
-        /// Returns meta information about the server. Can be used to provide information to another Weaviate instance that wants to interact with the current instance.
+        /// Get instance metadata<br/>
+        /// Provides meta-information about the running Weaviate instance, including its version, loaded modules, and network hostname. This information can be useful for monitoring, compatibility checks, or inter-instance communication.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -15,8 +15,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Returns meta information of the current Weaviate instance.<br/>
-        /// Returns meta information about the server. Can be used to provide information to another Weaviate instance that wants to interact with the current instance.
+        /// Get instance metadata<br/>
+        /// Provides meta-information about the running Weaviate instance, including its version, loaded modules, and network hostname. This information can be useful for monitoring, compatibility checks, or inter-instance communication.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

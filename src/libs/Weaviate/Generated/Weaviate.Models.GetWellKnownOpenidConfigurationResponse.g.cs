@@ -9,19 +9,19 @@ namespace Weaviate
     public sealed partial class GetWellKnownOpenidConfigurationResponse
     {
         /// <summary>
-        /// The Location to redirect to
+        /// The OIDC issuer URL to redirect to for authentication.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("href")]
         public string? Href { get; set; }
 
         /// <summary>
-        /// OAuth Client ID
+        /// The OAuth Client ID configured for Weaviate.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clientId")]
         public string? ClientId { get; set; }
 
         /// <summary>
-        /// OAuth Scopes
+        /// The required OAuth scopes for authentication.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scopes")]
         public global::System.Collections.Generic.IList<string>? Scopes { get; set; }
@@ -36,13 +36,13 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="GetWellKnownOpenidConfigurationResponse" /> class.
         /// </summary>
         /// <param name="href">
-        /// The Location to redirect to
+        /// The OIDC issuer URL to redirect to for authentication.
         /// </param>
         /// <param name="clientId">
-        /// OAuth Client ID
+        /// The OAuth Client ID configured for Weaviate.
         /// </param>
         /// <param name="scopes">
-        /// OAuth Scopes
+        /// The required OAuth scopes for authentication.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

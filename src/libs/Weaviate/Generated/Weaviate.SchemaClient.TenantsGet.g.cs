@@ -44,8 +44,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get the list of tenants.<br/>
-        /// get all tenants from a specific class
+        /// Get the list of tenants<br/>
+        /// Retrieves a list of all tenants currently associated with the specified collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="consistency">
@@ -70,8 +70,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Get the list of tenants.<br/>
-        /// get all tenants from a specific class
+        /// Get the list of tenants<br/>
+        /// Retrieves a list of all tenants currently associated with the specified collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="consistency">
@@ -414,7 +414,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Invalid Tenant class
+                            // Invalid request.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -451,7 +451,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred while listing tenants. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

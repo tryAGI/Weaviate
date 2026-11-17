@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class BatchDeleteResponseResultsObject
     {
         /// <summary>
-        /// ID of the Object.
+        /// The UUID of the object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Guid? Id { get; set; }
@@ -22,7 +22,7 @@ namespace Weaviate
         public global::Weaviate.BatchDeleteResponseResultsObjectStatus? Status { get; set; }
 
         /// <summary>
-        /// An error response given by Weaviate end-points.
+        /// An error response returned by Weaviate endpoints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
         public global::Weaviate.ErrorResponse? Errors { get; set; }
@@ -37,13 +37,13 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="BatchDeleteResponseResultsObject" /> class.
         /// </summary>
         /// <param name="id">
-        /// ID of the Object.
+        /// The UUID of the object.
         /// </param>
         /// <param name="status">
         /// Default Value: SUCCESS
         /// </param>
         /// <param name="errors">
-        /// An error response given by Weaviate end-points.
+        /// An error response returned by Weaviate endpoints.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

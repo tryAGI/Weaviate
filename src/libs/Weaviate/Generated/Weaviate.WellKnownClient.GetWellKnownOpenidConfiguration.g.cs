@@ -40,8 +40,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// OIDC discovery information if OIDC auth is enabled<br/>
-        /// OIDC Discovery page, redirects to the token issuer if one is configured
+        /// Get OIDC configuration<br/>
+        /// Provides OpenID Connect (OIDC) discovery information if OIDC authentication is configured for Weaviate. Returns details like the token issuer URL, client ID, and required scopes.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -58,8 +58,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// OIDC discovery information if OIDC auth is enabled<br/>
-        /// OIDC Discovery page, redirects to the token issuer if one is configured
+        /// Get OIDC configuration<br/>
+        /// Provides OpenID Connect (OIDC) discovery information if OIDC authentication is configured for Weaviate. Returns details like the token issuer URL, client ID, and required scopes.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -317,7 +317,7 @@ namespace Weaviate
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Not found, no oidc provider present
+                            // OIDC provider is not configured for this Weaviate instance.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -349,7 +349,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An internal server error occurred while retrieving OIDC configuration. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

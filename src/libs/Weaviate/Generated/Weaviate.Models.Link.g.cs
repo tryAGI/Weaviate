@@ -9,25 +9,25 @@ namespace Weaviate
     public sealed partial class Link
     {
         /// <summary>
-        /// target of the link
+        /// Target of the link.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("href")]
         public string? Href { get; set; }
 
         /// <summary>
-        /// relationship if both resources are related, e.g. 'next', 'previous', 'parent', etc.
+        /// Relationship if both resources are related, e.g. 'next', 'previous', 'parent', etc.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rel")]
         public string? Rel { get; set; }
 
         /// <summary>
-        /// human readable name of the resource group
+        /// Human readable name of the resource group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// weaviate documentation about this resource group
+        /// Weaviate documentation about this resource group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documentationHref")]
         public string? DocumentationHref { get; set; }
@@ -42,16 +42,16 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="Link" /> class.
         /// </summary>
         /// <param name="href">
-        /// target of the link
+        /// Target of the link.
         /// </param>
         /// <param name="rel">
-        /// relationship if both resources are related, e.g. 'next', 'previous', 'parent', etc.
+        /// Relationship if both resources are related, e.g. 'next', 'previous', 'parent', etc.
         /// </param>
         /// <param name="name">
-        /// human readable name of the resource group
+        /// Human readable name of the resource group.
         /// </param>
         /// <param name="documentationHref">
-        /// weaviate documentation about this resource group
+        /// Weaviate documentation about this resource group.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

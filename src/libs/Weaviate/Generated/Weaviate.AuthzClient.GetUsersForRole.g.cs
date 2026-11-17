@@ -42,13 +42,14 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// get users or a keys assigned to role
+        /// Get users assigned to a role<br/>
+        /// Fetch a list of users which have the specified role.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<string>> GetUsersForRoleAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Weaviate.GetUsersForRoleResponseItem>> GetUsersForRoleAsync(
             string id,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -62,13 +63,14 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// get users or a keys assigned to role
+        /// Get users assigned to a role<br/>
+        /// Fetch a list of users which have the specified role.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::System.Collections.Generic.IList<string>>> GetUsersForRoleAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Weaviate.GetUsersForRoleResponseItem>>> GetUsersForRoleAsResponseAsync(
             string id,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -103,7 +105,7 @@ namespace Weaviate
             {
 
                             var __pathBuilder = new global::Weaviate.PathBuilder(
-                                path: $"/authz/roles/{id}/users",
+                                path: $"/authz/roles/{id}/user-assignments",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Weaviate.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -164,7 +166,7 @@ namespace Weaviate
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUsersForRole",
                                 methodName: "GetUsersForRoleAsync",
-                                pathTemplate: "$\"/authz/roles/{id}/users\"",
+                                pathTemplate: "$\"/authz/roles/{id}/user-assignments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -198,7 +200,7 @@ namespace Weaviate
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUsersForRole",
                                 methodName: "GetUsersForRoleAsync",
-                                pathTemplate: "$\"/authz/roles/{id}/users\"",
+                                pathTemplate: "$\"/authz/roles/{id}/user-assignments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -239,7 +241,7 @@ namespace Weaviate
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUsersForRole",
                                 methodName: "GetUsersForRoleAsync",
-                                pathTemplate: "$\"/authz/roles/{id}/users\"",
+                                pathTemplate: "$\"/authz/roles/{id}/user-assignments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -287,7 +289,7 @@ namespace Weaviate
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUsersForRole",
                                 methodName: "GetUsersForRoleAsync",
-                                pathTemplate: "$\"/authz/roles/{id}/users\"",
+                                pathTemplate: "$\"/authz/roles/{id}/user-assignments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -309,7 +311,7 @@ namespace Weaviate
                             context: global::Weaviate.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUsersForRole",
                                 methodName: "GetUsersForRoleAsync",
-                                pathTemplate: "$\"/authz/roles/{id}/users\"",
+                                pathTemplate: "$\"/authz/roles/{id}/user-assignments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -324,7 +326,7 @@ namespace Weaviate
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad request
+                            // Malformed request.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -430,7 +432,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // no role found
+                            // No role found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -521,9 +523,9 @@ namespace Weaviate
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = (global::System.Collections.Generic.IList<string>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<string>), JsonSerializerContext) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::Weaviate.GetUsersForRoleResponseItem>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.GetUsersForRoleResponseItem>), JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Weaviate.AutoSDKHttpResponse<global::System.Collections.Generic.IList<string>>(
+                                    return new global::Weaviate.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Weaviate.GetUsersForRoleResponseItem>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Weaviate.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -553,9 +555,9 @@ namespace Weaviate
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = (global::System.Collections.Generic.IList<string>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<string>), JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = (global::System.Collections.Generic.IList<global::Weaviate.GetUsersForRoleResponseItem>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::Weaviate.GetUsersForRoleResponseItem>), JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Weaviate.AutoSDKHttpResponse<global::System.Collections.Generic.IList<string>>(
+                                    return new global::Weaviate.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Weaviate.GetUsersForRoleResponseItem>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Weaviate.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

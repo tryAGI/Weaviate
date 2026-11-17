@@ -37,8 +37,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Remove an Object class (and all data in the instances) from the schema.<br/>
-        /// Remove a collection from the schema. This will also delete all the objects in the collection.
+        /// Delete a collection (and all associated data)<br/>
+        /// Removes a collection definition from the schema. WARNING: This action permanently deletes all data objects stored within the collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -56,8 +56,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an Object class (and all data in the instances) from the schema.<br/>
-        /// Remove a collection from the schema. This will also delete all the objects in the collection.
+        /// Delete a collection (and all associated data)<br/>
+        /// Removes a collection definition from the schema. WARNING: This action permanently deletes all data objects stored within the collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -319,7 +319,7 @@ namespace Weaviate
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Could not delete the Object class.
+                            // Could not delete the collection. See the error response for details.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -425,7 +425,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred during collection deletion. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

@@ -4,12 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// List of Objects.
+    /// List of objects.
     /// </summary>
     public sealed partial class ObjectsListResponse
     {
         /// <summary>
-        /// The actual list of Objects.
+        /// The actual list of objects.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("objects")]
         public global::System.Collections.Generic.IList<global::Weaviate.Object>? Objects { get; set; }
@@ -21,7 +21,7 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<global::Weaviate.Deprecation>? Deprecations { get; set; }
 
         /// <summary>
-        /// The total number of Objects for the query. The number of items in a response may be smaller due to paging.
+        /// The total number of objects for the query. The number of items in a response may be smaller due to paging.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalResults")]
         public long? TotalResults { get; set; }
@@ -36,11 +36,11 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="ObjectsListResponse" /> class.
         /// </summary>
         /// <param name="objects">
-        /// The actual list of Objects.
+        /// The actual list of objects.
         /// </param>
         /// <param name="deprecations"></param>
         /// <param name="totalResults">
-        /// The total number of Objects for the query. The number of items in a response may be smaller due to paging.
+        /// The total number of objects for the query. The number of items in a response may be smaller due to paging.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

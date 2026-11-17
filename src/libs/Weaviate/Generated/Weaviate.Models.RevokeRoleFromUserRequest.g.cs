@@ -9,10 +9,17 @@ namespace Weaviate
     public sealed partial class RevokeRoleFromUserRequest
     {
         /// <summary>
-        /// the roles that revoked from the key or user
+        /// The roles to revoke from the specified user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("roles")]
         public global::System.Collections.Generic.IList<string>? Roles { get; set; }
+
+        /// <summary>
+        /// The type of the user. `db` users are managed by Weaviate, `oidc` users are managed by an external OIDC provider.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("userType")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.UserTypeInputJsonConverter))]
+        public global::Weaviate.UserTypeInput? UserType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,15 +31,20 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="RevokeRoleFromUserRequest" /> class.
         /// </summary>
         /// <param name="roles">
-        /// the roles that revoked from the key or user
+        /// The roles to revoke from the specified user.
+        /// </param>
+        /// <param name="userType">
+        /// The type of the user. `db` users are managed by Weaviate, `oidc` users are managed by an external OIDC provider.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RevokeRoleFromUserRequest(
-            global::System.Collections.Generic.IList<string>? roles)
+            global::System.Collections.Generic.IList<string>? roles,
+            global::Weaviate.UserTypeInput? userType)
         {
             this.Roles = roles;
+            this.UserType = userType;
         }
 
         /// <summary>

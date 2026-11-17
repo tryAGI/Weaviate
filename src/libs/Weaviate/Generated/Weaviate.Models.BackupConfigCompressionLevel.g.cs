@@ -21,6 +21,22 @@ namespace Weaviate
         ///
         /// </summary>
         DefaultCompression,
+        /// <summary>
+        ///
+        /// </summary>
+        NoCompression,
+        /// <summary>
+        ///
+        /// </summary>
+        ZstdBestCompression,
+        /// <summary>
+        ///
+        /// </summary>
+        ZstdBestSpeed,
+        /// <summary>
+        ///
+        /// </summary>
+        ZstdDefaultCompression,
     }
 
     /// <summary>
@@ -38,6 +54,10 @@ namespace Weaviate
                 BackupConfigCompressionLevel.BestCompression => "BestCompression",
                 BackupConfigCompressionLevel.BestSpeed => "BestSpeed",
                 BackupConfigCompressionLevel.DefaultCompression => "DefaultCompression",
+                BackupConfigCompressionLevel.NoCompression => "NoCompression",
+                BackupConfigCompressionLevel.ZstdBestCompression => "ZstdBestCompression",
+                BackupConfigCompressionLevel.ZstdBestSpeed => "ZstdBestSpeed",
+                BackupConfigCompressionLevel.ZstdDefaultCompression => "ZstdDefaultCompression",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,6 +71,10 @@ namespace Weaviate
                 "BestCompression" => BackupConfigCompressionLevel.BestCompression,
                 "BestSpeed" => BackupConfigCompressionLevel.BestSpeed,
                 "DefaultCompression" => BackupConfigCompressionLevel.DefaultCompression,
+                "NoCompression" => BackupConfigCompressionLevel.NoCompression,
+                "ZstdBestCompression" => BackupConfigCompressionLevel.ZstdBestCompression,
+                "ZstdBestSpeed" => BackupConfigCompressionLevel.ZstdBestSpeed,
+                "ZstdDefaultCompression" => BackupConfigCompressionLevel.ZstdDefaultCompression,
                 _ => null,
             };
         }

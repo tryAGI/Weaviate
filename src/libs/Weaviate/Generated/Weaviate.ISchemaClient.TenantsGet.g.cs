@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface ISchemaClient
     {
         /// <summary>
-        /// Get the list of tenants.<br/>
-        /// get all tenants from a specific class
+        /// Get the list of tenants<br/>
+        /// Retrieves a list of all tenants currently associated with the specified collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="consistency">
@@ -21,8 +21,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get the list of tenants.<br/>
-        /// get all tenants from a specific class
+        /// Get the list of tenants<br/>
+        /// Retrieves a list of all tenants currently associated with the specified collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="consistency">

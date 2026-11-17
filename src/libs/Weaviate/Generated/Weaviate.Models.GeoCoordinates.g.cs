@@ -9,13 +9,13 @@ namespace Weaviate
     public sealed partial class GeoCoordinates
     {
         /// <summary>
-        /// The latitude of the point on earth in decimal form
+        /// The latitude of the point on earth in decimal form.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latitude")]
         public float? Latitude { get; set; }
 
         /// <summary>
-        /// The longitude of the point on earth in decimal form
+        /// The longitude of the point on earth in decimal form.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("longitude")]
         public float? Longitude { get; set; }
@@ -30,10 +30,10 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="GeoCoordinates" /> class.
         /// </summary>
         /// <param name="latitude">
-        /// The latitude of the point on earth in decimal form
+        /// The latitude of the point on earth in decimal form.
         /// </param>
         /// <param name="longitude">
-        /// The longitude of the point on earth in decimal form
+        /// The longitude of the point on earth in decimal form.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

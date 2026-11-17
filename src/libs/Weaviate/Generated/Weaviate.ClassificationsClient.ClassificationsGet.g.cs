@@ -42,8 +42,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// View previously created classification<br/>
-        /// Get status, results and metadata of a previously created classification
+        /// Get classification status<br/>
+        /// Retrieves the status, metadata, and results (if completed) of a classification task identified by its unique ID.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -63,8 +63,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// View previously created classification<br/>
-        /// Get status, results and metadata of a previously created classification
+        /// Get classification status<br/>
+        /// Retrieves the status, metadata, and results (if completed) of a classification task identified by its unique ID.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -326,38 +326,6 @@ namespace Weaviate
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Not Found - Classification does not exist
-                            if ((int)__response.StatusCode == 404)
-                            {
-                                string? __content_404 = null;
-                                global::System.Exception? __exception_404 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                    else
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_404 = __ex;
-                                }
-
-
-                                throw global::Weaviate.ApiException.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_404,
-                                    responseBody: __content_404,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
                             // Unauthorized or invalid credentials.
                             if ((int)__response.StatusCode == 401)
                             {
@@ -427,7 +395,76 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // Classification with the given ID not found.
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Endpoint not available in the current cluster configuration.
+                            if ((int)__response.StatusCode == 410)
+                            {
+                                string? __content_410 = null;
+                                global::System.Exception? __exception_410 = null;
+                                global::Weaviate.ErrorResponse? __value_410 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_410 = global::Weaviate.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_410 = global::Weaviate.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_410 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_410,
+                                    responseBody: __content_410,
+                                    responseObject: __value_410,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // An internal server error occurred while retrieving the classification status. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

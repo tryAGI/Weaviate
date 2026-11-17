@@ -28,11 +28,13 @@ namespace Weaviate
         partial void PrepareNodesGetClassArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string className,
+            ref string? shardName,
             ref string? output);
         partial void PrepareNodesGetClassRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string className,
+            string? shardName,
             string? output);
         partial void ProcessNodesGetClassResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -44,10 +46,11 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Node information for a collection.<br/>
-        /// Returns node information for the nodes relevant to the collection.
+        /// Get node status by collection<br/>
+        /// Retrieves status information only for the nodes that host shards for the specified collection (`className`). Use the `output` query parameter to control the level of detail.
         /// </summary>
         /// <param name="className"></param>
+        /// <param name="shardName"></param>
         /// <param name="output">
         /// Default Value: minimal
         /// </param>
@@ -56,12 +59,14 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.NodesStatusResponse> NodesGetClassAsync(
             string className,
+            string? shardName = default,
             string? output = default,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await NodesGetClassAsResponseAsync(
                 className: className,
+                shardName: shardName,
                 output: output,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -70,10 +75,11 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Node information for a collection.<br/>
-        /// Returns node information for the nodes relevant to the collection.
+        /// Get node status by collection<br/>
+        /// Retrieves status information only for the nodes that host shards for the specified collection (`className`). Use the `output` query parameter to control the level of detail.
         /// </summary>
         /// <param name="className"></param>
+        /// <param name="shardName"></param>
         /// <param name="output">
         /// Default Value: minimal
         /// </param>
@@ -82,6 +88,7 @@ namespace Weaviate
         /// <exception cref="global::Weaviate.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::Weaviate.NodesStatusResponse>> NodesGetClassAsResponseAsync(
             string className,
+            string? shardName = default,
             string? output = default,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -91,6 +98,7 @@ namespace Weaviate
             PrepareNodesGetClassArguments(
                 httpClient: HttpClient,
                 className: ref className,
+                shardName: ref shardName,
                 output: ref output);
 
 
@@ -120,6 +128,7 @@ namespace Weaviate
                                 path: $"/nodes/{className}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("shardName", shardName)
                                 .AddOptionalParameter("output", output)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -163,6 +172,7 @@ namespace Weaviate
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     className: className,
+                    shardName: shardName,
                     output: output);
 
                 return __httpRequest;
@@ -411,7 +421,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Not Found - Backup does not exist
+                            // Not Found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -448,7 +458,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Invalid backup restoration status attempt.
+                            // Invalid request for node status.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -485,7 +495,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An internal server error occurred while retrieving node status for the collection. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

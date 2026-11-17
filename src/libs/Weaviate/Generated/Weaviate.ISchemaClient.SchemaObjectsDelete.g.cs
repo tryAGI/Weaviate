@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface ISchemaClient
     {
         /// <summary>
-        /// Remove an Object class (and all data in the instances) from the schema.<br/>
-        /// Remove a collection from the schema. This will also delete all the objects in the collection.
+        /// Delete a collection (and all associated data)<br/>
+        /// Removes a collection definition from the schema. WARNING: This action permanently deletes all data objects stored within the collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,8 +17,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Remove an Object class (and all data in the instances) from the schema.<br/>
-        /// Remove a collection from the schema. This will also delete all the objects in the collection.
+        /// Delete a collection (and all associated data)<br/>
+        /// Removes a collection definition from the schema. WARNING: This action permanently deletes all data objects stored within the collection.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

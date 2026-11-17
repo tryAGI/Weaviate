@@ -4,12 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// resources applicable for cluster actions
+    /// Resources applicable for cluster actions.
     /// </summary>
     public sealed partial class PermissionNodes
     {
         /// <summary>
-        /// whether to allow (verbose) returning shards and stats data in the response<br/>
+        /// Whether to allow (verbose) returning shards and stats data in the response.<br/>
         /// Default Value: minimal
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
@@ -17,7 +17,7 @@ namespace Weaviate
         public global::Weaviate.PermissionNodesVerbosity? Verbosity { get; set; }
 
         /// <summary>
-        /// string or regex. if a specific collection name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which collections this permission applies to. Can be an exact collection name or a regex pattern. The default value `*` applies the permission to all collections.<br/>
         /// Default Value: *
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collection")]
@@ -33,11 +33,11 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="PermissionNodes" /> class.
         /// </summary>
         /// <param name="verbosity">
-        /// whether to allow (verbose) returning shards and stats data in the response<br/>
+        /// Whether to allow (verbose) returning shards and stats data in the response.<br/>
         /// Default Value: minimal
         /// </param>
         /// <param name="collection">
-        /// string or regex. if a specific collection name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which collections this permission applies to. Can be an exact collection name or a regex pattern. The default value `*` applies the permission to all collections.<br/>
         /// Default Value: *
         /// </param>
 #if NET7_0_OR_GREATER

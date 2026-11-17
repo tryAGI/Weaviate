@@ -41,8 +41,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Check whether a tenant exists<br/>
-        /// Check if a tenant exists for a specific class
+        /// Check if a tenant exists<br/>
+        /// Checks for the existence of a specific tenant within the given collection (`className`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="tenantName"></param>
@@ -68,8 +68,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Check whether a tenant exists<br/>
-        /// Check if a tenant exists for a specific class
+        /// Check if a tenant exists<br/>
+        /// Checks for the existence of a specific tenant within the given collection (`className`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="tenantName"></param>
@@ -416,7 +416,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // The tenant not found
+                            // Tenant or collection not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -448,7 +448,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Invalid Tenant class
+                            // Invalid request.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -485,7 +485,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred during the check. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

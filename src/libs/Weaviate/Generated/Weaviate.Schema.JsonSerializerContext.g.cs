@@ -21,15 +21,45 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ErrorResponseErrorItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ErrorResponseErrorItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexStatusResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.PropertyIndexStatus>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PropertyIndexStatus))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.IndexStatus>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexStatus))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexStatusType), TypeInfoPropertyName = "IndexStatusType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexStatusStatus), TypeInfoPropertyName = "IndexStatusStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexStatusAlgorithm), TypeInfoPropertyName = "IndexStatusAlgorithm2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexStatusTargetAlgorithm), TypeInfoPropertyName = "IndexStatusTargetAlgorithm2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexUpsertRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexUpdateResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UsageLimitExceededResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UsageLimitExceededResponseErrorCode), TypeInfoPropertyName = "UsageLimitExceededResponseErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UsageLimitExceededResponseLimit), TypeInfoPropertyName = "UsageLimitExceededResponseLimit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RestrictionViolationResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.RestrictionViolationResponseErrorItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RestrictionViolationResponseErrorItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RestrictionViolationResponseErrorCode), TypeInfoPropertyName = "RestrictionViolationResponseErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RestrictionViolationResponseRestriction), TypeInfoPropertyName = "RestrictionViolationResponseRestriction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.InvertedIndexConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BM25Config))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.StopwordConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.TokenizerUserDictConfig>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.TokenizerUserDictConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationAsyncConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationConfigDeletionStrategy), TypeInfoPropertyName = "ReplicationConfigDeletionStrategy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.TokenizerUserDictConfigReplacement>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.TokenizerUserDictConfigReplacement))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.TextAnalyzerConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.TokenizeResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PropertyTokenizeRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.MultiTenancyConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ObjectTtlConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Schema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Class>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Class))]
@@ -46,24 +76,49 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ShardStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Tenant))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.TenantActivityStatus), TypeInfoPropertyName = "TenantActivityStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.TenantResponse), TypeInfoPropertyName = "TenantResponse2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.TenantResponseVariant2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Alias))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.AliasResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Alias>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Tenant>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.AliasesUpdateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SchemaObjectsIndexUpsertIndexName), TypeInfoPropertyName = "SchemaObjectsIndexUpsertIndexName2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SchemaObjectsPropertiesDeleteIndexName), TypeInfoPropertyName = "SchemaObjectsPropertiesDeleteIndexName2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SchemaObjectsIndexRebuildIndexName), TypeInfoPropertyName = "SchemaObjectsIndexRebuildIndexName2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SchemaObjectsIndexCancelIndexName), TypeInfoPropertyName = "SchemaObjectsIndexCancelIndexName2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(float?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexStatusType?), TypeInfoPropertyName = "NullableIndexStatusType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexStatusStatus?), TypeInfoPropertyName = "NullableIndexStatusStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexStatusAlgorithm?), TypeInfoPropertyName = "NullableIndexStatusAlgorithm2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.IndexStatusTargetAlgorithm?), TypeInfoPropertyName = "NullableIndexStatusTargetAlgorithm2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UsageLimitExceededResponseErrorCode?), TypeInfoPropertyName = "NullableUsageLimitExceededResponseErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UsageLimitExceededResponseLimit?), TypeInfoPropertyName = "NullableUsageLimitExceededResponseLimit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RestrictionViolationResponseErrorCode?), TypeInfoPropertyName = "NullableRestrictionViolationResponseErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RestrictionViolationResponseRestriction?), TypeInfoPropertyName = "NullableRestrictionViolationResponseRestriction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationConfigDeletionStrategy?), TypeInfoPropertyName = "NullableReplicationConfigDeletionStrategy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PropertyTokenization?), TypeInfoPropertyName = "NullablePropertyTokenization2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.NestedPropertyTokenization?), TypeInfoPropertyName = "NullableNestedPropertyTokenization2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.TenantActivityStatus?), TypeInfoPropertyName = "NullableTenantActivityStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.TenantResponse?), TypeInfoPropertyName = "NullableTenantResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SchemaObjectsIndexUpsertIndexName?), TypeInfoPropertyName = "NullableSchemaObjectsIndexUpsertIndexName2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SchemaObjectsPropertiesDeleteIndexName?), TypeInfoPropertyName = "NullableSchemaObjectsPropertiesDeleteIndexName2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SchemaObjectsIndexRebuildIndexName?), TypeInfoPropertyName = "NullableSchemaObjectsIndexRebuildIndexName2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SchemaObjectsIndexCancelIndexName?), TypeInfoPropertyName = "NullableSchemaObjectsIndexCancelIndexName2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ErrorResponseErrorItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.PropertyIndexStatus>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.IndexStatus>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.RestrictionViolationResponseErrorItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.TokenizerUserDictConfig>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.TokenizerUserDictConfigReplacement>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Class>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Property>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.NestedProperty>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ShardStatusGetResponse>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Alias>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Tenant>))]
     internal sealed partial class SchemaSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
@@ -112,7 +167,6 @@ namespace Weaviate
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            options.Converters.Add(new global::Weaviate.JsonConverters.TenantResponseJsonConverter());
             options.Converters.Add(new global::Weaviate.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
@@ -135,7 +189,39 @@ namespace Weaviate
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::Weaviate.ReplicationConfigDeletionStrategy)
+                    typeToConvert == typeof(global::Weaviate.IndexStatusType)
+
+                    || typeToConvert == typeof(global::Weaviate.IndexStatusType?)
+
+                    || typeToConvert == typeof(global::Weaviate.IndexStatusStatus)
+
+                    || typeToConvert == typeof(global::Weaviate.IndexStatusStatus?)
+
+                    || typeToConvert == typeof(global::Weaviate.IndexStatusAlgorithm)
+
+                    || typeToConvert == typeof(global::Weaviate.IndexStatusAlgorithm?)
+
+                    || typeToConvert == typeof(global::Weaviate.IndexStatusTargetAlgorithm)
+
+                    || typeToConvert == typeof(global::Weaviate.IndexStatusTargetAlgorithm?)
+
+                    || typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseErrorCode)
+
+                    || typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseErrorCode?)
+
+                    || typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseLimit)
+
+                    || typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseLimit?)
+
+                    || typeToConvert == typeof(global::Weaviate.RestrictionViolationResponseErrorCode)
+
+                    || typeToConvert == typeof(global::Weaviate.RestrictionViolationResponseErrorCode?)
+
+                    || typeToConvert == typeof(global::Weaviate.RestrictionViolationResponseRestriction)
+
+                    || typeToConvert == typeof(global::Weaviate.RestrictionViolationResponseRestriction?)
+
+                    || typeToConvert == typeof(global::Weaviate.ReplicationConfigDeletionStrategy)
 
                     || typeToConvert == typeof(global::Weaviate.ReplicationConfigDeletionStrategy?)
 
@@ -149,13 +235,109 @@ namespace Weaviate
 
                     || typeToConvert == typeof(global::Weaviate.TenantActivityStatus)
 
-                    || typeToConvert == typeof(global::Weaviate.TenantActivityStatus?);
+                    || typeToConvert == typeof(global::Weaviate.TenantActivityStatus?)
+
+                    || typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexUpsertIndexName)
+
+                    || typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexUpsertIndexName?)
+
+                    || typeToConvert == typeof(global::Weaviate.SchemaObjectsPropertiesDeleteIndexName)
+
+                    || typeToConvert == typeof(global::Weaviate.SchemaObjectsPropertiesDeleteIndexName?)
+
+                    || typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexRebuildIndexName)
+
+                    || typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexRebuildIndexName?)
+
+                    || typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexCancelIndexName)
+
+                    || typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexCancelIndexName?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
+                if (typeToConvert == typeof(global::Weaviate.IndexStatusType))
+                {
+                    return new global::Weaviate.JsonConverters.IndexStatusTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.IndexStatusType?))
+                {
+                    return new global::Weaviate.JsonConverters.IndexStatusTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.IndexStatusStatus))
+                {
+                    return new global::Weaviate.JsonConverters.IndexStatusStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.IndexStatusStatus?))
+                {
+                    return new global::Weaviate.JsonConverters.IndexStatusStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.IndexStatusAlgorithm))
+                {
+                    return new global::Weaviate.JsonConverters.IndexStatusAlgorithmJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.IndexStatusAlgorithm?))
+                {
+                    return new global::Weaviate.JsonConverters.IndexStatusAlgorithmNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.IndexStatusTargetAlgorithm))
+                {
+                    return new global::Weaviate.JsonConverters.IndexStatusTargetAlgorithmJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.IndexStatusTargetAlgorithm?))
+                {
+                    return new global::Weaviate.JsonConverters.IndexStatusTargetAlgorithmNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseErrorCode))
+                {
+                    return new global::Weaviate.JsonConverters.UsageLimitExceededResponseErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseErrorCode?))
+                {
+                    return new global::Weaviate.JsonConverters.UsageLimitExceededResponseErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseLimit))
+                {
+                    return new global::Weaviate.JsonConverters.UsageLimitExceededResponseLimitJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseLimit?))
+                {
+                    return new global::Weaviate.JsonConverters.UsageLimitExceededResponseLimitNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.RestrictionViolationResponseErrorCode))
+                {
+                    return new global::Weaviate.JsonConverters.RestrictionViolationResponseErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.RestrictionViolationResponseErrorCode?))
+                {
+                    return new global::Weaviate.JsonConverters.RestrictionViolationResponseErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.RestrictionViolationResponseRestriction))
+                {
+                    return new global::Weaviate.JsonConverters.RestrictionViolationResponseRestrictionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.RestrictionViolationResponseRestriction?))
+                {
+                    return new global::Weaviate.JsonConverters.RestrictionViolationResponseRestrictionNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::Weaviate.ReplicationConfigDeletionStrategy))
                 {
                     return new global::Weaviate.JsonConverters.ReplicationConfigDeletionStrategyJsonConverter();
@@ -194,6 +376,46 @@ namespace Weaviate
                 if (typeToConvert == typeof(global::Weaviate.TenantActivityStatus?))
                 {
                     return new global::Weaviate.JsonConverters.TenantActivityStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexUpsertIndexName))
+                {
+                    return new global::Weaviate.JsonConverters.SchemaObjectsIndexUpsertIndexNameJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexUpsertIndexName?))
+                {
+                    return new global::Weaviate.JsonConverters.SchemaObjectsIndexUpsertIndexNameNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.SchemaObjectsPropertiesDeleteIndexName))
+                {
+                    return new global::Weaviate.JsonConverters.SchemaObjectsPropertiesDeleteIndexNameJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.SchemaObjectsPropertiesDeleteIndexName?))
+                {
+                    return new global::Weaviate.JsonConverters.SchemaObjectsPropertiesDeleteIndexNameNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexRebuildIndexName))
+                {
+                    return new global::Weaviate.JsonConverters.SchemaObjectsIndexRebuildIndexNameJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexRebuildIndexName?))
+                {
+                    return new global::Weaviate.JsonConverters.SchemaObjectsIndexRebuildIndexNameNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexCancelIndexName))
+                {
+                    return new global::Weaviate.JsonConverters.SchemaObjectsIndexCancelIndexNameJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.SchemaObjectsIndexCancelIndexName?))
+                {
+                    return new global::Weaviate.JsonConverters.SchemaObjectsIndexCancelIndexNameNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

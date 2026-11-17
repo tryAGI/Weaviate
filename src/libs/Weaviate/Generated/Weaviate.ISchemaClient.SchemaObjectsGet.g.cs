@@ -5,7 +5,8 @@ namespace Weaviate
     public partial interface ISchemaClient
     {
         /// <summary>
-        /// Get a single class from the schema
+        /// Get a single collection<br/>
+        /// Retrieve the definition of a specific collection (`className`), including its properties, configuration, and vectorizer settings.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="consistency">
@@ -20,7 +21,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a single class from the schema
+        /// Get a single collection<br/>
+        /// Retrieve the definition of a specific collection (`className`), including its properties, configuration, and vectorizer settings.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="consistency">

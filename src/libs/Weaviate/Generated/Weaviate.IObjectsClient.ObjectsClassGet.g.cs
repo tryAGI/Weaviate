@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IObjectsClient
     {
         /// <summary>
-        /// Get a specific Object based on its class and UUID. Also available as Websocket bus.<br/>
-        /// Get a data object based on its collection and UUID. Also available as Websocket bus.
+        /// Get an object<br/>
+        /// Get a data object based on its collection name (`className`) and UUID (`id`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -27,8 +27,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a specific Object based on its class and UUID. Also available as Websocket bus.<br/>
-        /// Get a data object based on its collection and UUID. Also available as Websocket bus.
+        /// Get an object<br/>
+        /// Get a data object based on its collection name (`className`) and UUID (`id`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>

@@ -9,10 +9,17 @@ namespace Weaviate
     public sealed partial class RevokeRoleFromGroupRequest
     {
         /// <summary>
-        /// the roles that revoked from group
+        /// The roles to revoke from the specified group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("roles")]
         public global::System.Collections.Generic.IList<string>? Roles { get; set; }
+
+        /// <summary>
+        /// If the group contains OIDC or database users.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("groupType")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.GroupTypeJsonConverter))]
+        public global::Weaviate.GroupType? GroupType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,15 +31,20 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="RevokeRoleFromGroupRequest" /> class.
         /// </summary>
         /// <param name="roles">
-        /// the roles that revoked from group
+        /// The roles to revoke from the specified group.
+        /// </param>
+        /// <param name="groupType">
+        /// If the group contains OIDC or database users.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RevokeRoleFromGroupRequest(
-            global::System.Collections.Generic.IList<string>? roles)
+            global::System.Collections.Generic.IList<string>? roles,
+            global::Weaviate.GroupType? groupType)
         {
             this.Roles = roles;
+            this.GroupType = groupType;
         }
 
         /// <summary>

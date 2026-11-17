@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// The definition of a backup restore response body
+    /// The definition of a backup restore response body.
     /// </summary>
     public sealed partial class BackupRestoreResponse
     {
@@ -15,7 +15,7 @@ namespace Weaviate
         public string? Id { get; set; }
 
         /// <summary>
-        /// The list of classes for which the backup restoration process was started
+        /// The list of collections (classes) for which the backup restoration process was started.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classes")]
         public global::System.Collections.Generic.IList<string>? Classes { get; set; }
@@ -27,19 +27,19 @@ namespace Weaviate
         public string? Backend { get; set; }
 
         /// <summary>
-        /// destination path of backup files proper to selected backend
+        /// Destination path of backup files valid for the selected backend.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         public string? Path { get; set; }
 
         /// <summary>
-        /// error message if restoration failed
+        /// Error message if backup restoration failed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public string? Error { get; set; }
 
         /// <summary>
-        /// phase of backup restoration process<br/>
+        /// Phase of backup restoration process.<br/>
         /// Default Value: STARTED
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -59,19 +59,19 @@ namespace Weaviate
         /// The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
         /// </param>
         /// <param name="classes">
-        /// The list of classes for which the backup restoration process was started
+        /// The list of collections (classes) for which the backup restoration process was started.
         /// </param>
         /// <param name="backend">
         /// Backup backend name e.g. filesystem, gcs, s3.
         /// </param>
         /// <param name="path">
-        /// destination path of backup files proper to selected backend
+        /// Destination path of backup files valid for the selected backend.
         /// </param>
         /// <param name="error">
-        /// error message if restoration failed
+        /// Error message if backup restoration failed.
         /// </param>
         /// <param name="status">
-        /// phase of backup restoration process<br/>
+        /// Phase of backup restoration process.<br/>
         /// Default Value: STARTED
         /// </param>
 #if NET7_0_OR_GREATER

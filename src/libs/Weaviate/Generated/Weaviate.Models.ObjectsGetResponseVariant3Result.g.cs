@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Results for this specific Object.
+    /// Results for this specific object.
     /// </summary>
     public sealed partial class ObjectsGetResponseVariant3Result
     {
@@ -16,7 +16,7 @@ namespace Weaviate
         public global::Weaviate.ObjectsGetResponseVariant3ResultStatus? Status { get; set; }
 
         /// <summary>
-        /// An error response given by Weaviate end-points.
+        /// An error response returned by Weaviate endpoints.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
         public global::Weaviate.ErrorResponse? Errors { get; set; }
@@ -34,7 +34,7 @@ namespace Weaviate
         /// Default Value: SUCCESS
         /// </param>
         /// <param name="errors">
-        /// An error response given by Weaviate end-points.
+        /// An error response returned by Weaviate endpoints.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

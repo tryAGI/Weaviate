@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IObjectsClient
     {
         /// <summary>
-        /// Update an Object based on its UUID (using patch semantics).<br/>
-        /// Update an individual data object based on its class and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+        /// Patch an object<br/>
+        /// Updates specific properties of an existing data object using JSON merge patch semantics (RFC 7396). The object is identified by its collection name (`className`) and UUID (`id`). Only the fields provided in the request body are modified. Metadata and schema values are validated, and the object's `lastUpdateTimeUnix` is updated.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -24,8 +24,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update an Object based on its UUID (using patch semantics).<br/>
-        /// Update an individual data object based on its class and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+        /// Patch an object<br/>
+        /// Updates specific properties of an existing data object using JSON merge patch semantics (RFC 7396). The object is identified by its collection name (`className`) and UUID (`id`). Only the fields provided in the request body are modified. Metadata and schema values are validated, and the object's `lastUpdateTimeUnix` is updated.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -43,23 +43,23 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update an Object based on its UUID (using patch semantics).<br/>
-        /// Update an individual data object based on its class and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+        /// Patch an object<br/>
+        /// Updates specific properties of an existing data object using JSON merge patch semantics (RFC 7396). The object is identified by its collection name (`className`) and UUID (`id`). Only the fields provided in the request body are modified. Metadata and schema values are validated, and the object's `lastUpdateTimeUnix` is updated.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
         /// <param name="consistencyLevel"></param>
         /// <param name="class">
-        /// Class of the Object, defined in the schema.
+        /// Name of the collection (class) the object belongs to.
         /// </param>
         /// <param name="vectorWeights">
-        /// Allow custom overrides of vector weights as math expressions. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
+        /// Allow custom overrides of vector weights as math expressions. E.g. `pancake`: `7` will set the weight for the word pancake to 7 in the vectorization, whereas `w * 3` would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
         /// </param>
         /// <param name="properties">
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </param>
         /// <param name="requestId">
-        /// ID of the Object.
+        /// The UUID of the object.
         /// </param>
         /// <param name="creationTimeUnix">
         /// (Response only) Timestamp of creation of this object in milliseconds since epoch UTC.
@@ -74,7 +74,7 @@ namespace Weaviate
         /// A map of named vectors for multi-vector representations.
         /// </param>
         /// <param name="tenant">
-        /// Name of the Objects tenant.
+        /// The name of the tenant the object belongs to.
         /// </param>
         /// <param name="additional">
         /// (Response only) Additional meta information about a single object.

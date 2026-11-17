@@ -52,8 +52,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get a specific Object based on its class and UUID. Also available as Websocket bus.<br/>
-        /// Get a data object based on its collection and UUID. Also available as Websocket bus.
+        /// Get an object<br/>
+        /// Get a data object based on its collection name (`className`) and UUID (`id`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -88,8 +88,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Get a specific Object based on its class and UUID. Also available as Websocket bus.<br/>
-        /// Get a data object based on its collection and UUID. Also available as Websocket bus.
+        /// Get an object<br/>
+        /// Get a data object based on its collection name (`className`) and UUID (`id`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -483,7 +483,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Successful query result but no resource was found.
+                            // Object not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -515,7 +515,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Request is well-formed (i.e., syntactically correct), but erroneous.
+                            // The request syntax is correct, but the server couldn't process it due to semantic issues. Please check the values in your request.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -552,7 +552,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred while trying to fulfill the request. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

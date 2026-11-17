@@ -14,11 +14,14 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ErrorResponseErrorItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ErrorResponseErrorItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupCreateStatusResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupCreateStatusResponseStatus), TypeInfoPropertyName = "BackupCreateStatusResponseStatus2")]
@@ -27,6 +30,8 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupConfigCompressionLevel), TypeInfoPropertyName = "BackupConfigCompressionLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RestoreConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RestoreConfigRolesOptions), TypeInfoPropertyName = "RestoreConfigRolesOptions2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RestoreConfigUsersOptions), TypeInfoPropertyName = "RestoreConfigUsersOptions2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupCreateRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupCreateResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupCreateResponseStatus), TypeInfoPropertyName = "BackupCreateResponseStatus2")]
@@ -36,13 +41,20 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupRestoreRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupRestoreResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupRestoreResponseStatus), TypeInfoPropertyName = "BackupRestoreResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupsListOrder), TypeInfoPropertyName = "BackupsListOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupCreateStatusResponseStatus?), TypeInfoPropertyName = "NullableBackupCreateStatusResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupRestoreStatusResponseStatus?), TypeInfoPropertyName = "NullableBackupRestoreStatusResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupConfigCompressionLevel?), TypeInfoPropertyName = "NullableBackupConfigCompressionLevel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RestoreConfigRolesOptions?), TypeInfoPropertyName = "NullableRestoreConfigRolesOptions2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.RestoreConfigUsersOptions?), TypeInfoPropertyName = "NullableRestoreConfigUsersOptions2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupCreateResponseStatus?), TypeInfoPropertyName = "NullableBackupCreateResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupListResponseItemStatus?), TypeInfoPropertyName = "NullableBackupListResponseItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupRestoreResponseStatus?), TypeInfoPropertyName = "NullableBackupRestoreResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BackupsListOrder?), TypeInfoPropertyName = "NullableBackupsListOrder2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ErrorResponseErrorItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.BackupListResponseItem>))]
@@ -127,6 +139,14 @@ namespace Weaviate
 
                     || typeToConvert == typeof(global::Weaviate.BackupConfigCompressionLevel?)
 
+                    || typeToConvert == typeof(global::Weaviate.RestoreConfigRolesOptions)
+
+                    || typeToConvert == typeof(global::Weaviate.RestoreConfigRolesOptions?)
+
+                    || typeToConvert == typeof(global::Weaviate.RestoreConfigUsersOptions)
+
+                    || typeToConvert == typeof(global::Weaviate.RestoreConfigUsersOptions?)
+
                     || typeToConvert == typeof(global::Weaviate.BackupCreateResponseStatus)
 
                     || typeToConvert == typeof(global::Weaviate.BackupCreateResponseStatus?)
@@ -137,7 +157,11 @@ namespace Weaviate
 
                     || typeToConvert == typeof(global::Weaviate.BackupRestoreResponseStatus)
 
-                    || typeToConvert == typeof(global::Weaviate.BackupRestoreResponseStatus?);
+                    || typeToConvert == typeof(global::Weaviate.BackupRestoreResponseStatus?)
+
+                    || typeToConvert == typeof(global::Weaviate.BackupsListOrder)
+
+                    || typeToConvert == typeof(global::Weaviate.BackupsListOrder?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -174,6 +198,26 @@ namespace Weaviate
                     return new global::Weaviate.JsonConverters.BackupConfigCompressionLevelNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::Weaviate.RestoreConfigRolesOptions))
+                {
+                    return new global::Weaviate.JsonConverters.RestoreConfigRolesOptionsJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.RestoreConfigRolesOptions?))
+                {
+                    return new global::Weaviate.JsonConverters.RestoreConfigRolesOptionsNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.RestoreConfigUsersOptions))
+                {
+                    return new global::Weaviate.JsonConverters.RestoreConfigUsersOptionsJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.RestoreConfigUsersOptions?))
+                {
+                    return new global::Weaviate.JsonConverters.RestoreConfigUsersOptionsNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::Weaviate.BackupCreateResponseStatus))
                 {
                     return new global::Weaviate.JsonConverters.BackupCreateResponseStatusJsonConverter();
@@ -202,6 +246,16 @@ namespace Weaviate
                 if (typeToConvert == typeof(global::Weaviate.BackupRestoreResponseStatus?))
                 {
                     return new global::Weaviate.JsonConverters.BackupRestoreResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.BackupsListOrder))
+                {
+                    return new global::Weaviate.JsonConverters.BackupsListOrderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.BackupsListOrder?))
+                {
+                    return new global::Weaviate.JsonConverters.BackupsListOrderNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

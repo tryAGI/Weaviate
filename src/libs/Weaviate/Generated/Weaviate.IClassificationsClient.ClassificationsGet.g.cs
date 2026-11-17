@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IClassificationsClient
     {
         /// <summary>
-        /// View previously created classification<br/>
-        /// Get status, results and metadata of a previously created classification
+        /// Get classification status<br/>
+        /// Retrieves the status, metadata, and results (if completed) of a classification task identified by its unique ID.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,8 +17,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// View previously created classification<br/>
-        /// Get status, results and metadata of a previously created classification
+        /// Get classification status<br/>
+        /// Retrieves the status, metadata, and results (if completed) of a classification task identified by its unique ID.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

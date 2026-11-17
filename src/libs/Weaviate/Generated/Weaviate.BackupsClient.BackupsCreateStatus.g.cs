@@ -48,8 +48,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get backup process status<br/>
-        /// Returns status of backup creation attempt for a set of collections. &lt;br/&gt;&lt;br/&gt;All client implementations have a `wait for completion` option which will poll the backup status in the background and only return once the backup has completed (successfully or unsuccessfully). If you set the `wait for completion` option to false, you can also check the status yourself using this endpoint.
+        /// Get backup creation status<br/>
+        /// Checks the status of a specific backup creation process identified by its ID on the specified backend.&lt;br/&gt;&lt;br/&gt;Client libraries often provide a 'wait for completion' feature that polls this endpoint automatically. Use this endpoint for manual status checks or if 'wait for completion' is disabled.
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>
@@ -78,8 +78,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Get backup process status<br/>
-        /// Returns status of backup creation attempt for a set of collections. &lt;br/&gt;&lt;br/&gt;All client implementations have a `wait for completion` option which will poll the backup status in the background and only return once the backup has completed (successfully or unsuccessfully). If you set the `wait for completion` option to false, you can also check the status yourself using this endpoint.
+        /// Get backup creation status<br/>
+        /// Checks the status of a specific backup creation process identified by its ID on the specified backend.&lt;br/&gt;&lt;br/&gt;Client libraries often provide a 'wait for completion' feature that polls this endpoint automatically. Use this endpoint for manual status checks or if 'wait for completion' is disabled.
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>
@@ -389,7 +389,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Forbidden
+                            // The caller lacks read_backups on a collection in the backup. Callers without read_backups on all collections also get 403 when no backup with this ID exists at this location, so a 403 does not confirm the backup exists.
                             if ((int)__response.StatusCode == 403)
                             {
                                 string? __content_403 = null;
@@ -426,7 +426,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Not Found - Backup does not exist
+                            // No backup with this ID exists at this backend, bucket and path. Only callers with read_backups on all collections get 404; others get 403.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -463,7 +463,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Invalid backup restoration status attempt.
+                            // Invalid request to check backup creation status.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -500,7 +500,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An internal server error occurred while checking backup status. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;

@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Operate on the database schema. &lt;br/&gt;&lt;br/&gt;Note an 'Object class' in Weaviate is being renamed to a 'collection'. &lt;br/&gt;&lt;br/&gt;See &lt;a href='https://weaviate.io/developers/weaviate/manage-data/collections'&gt;this page&lt;/a&gt; for client code examples.<br/>
+    /// Operations related to managing collections. In Weaviate, 'collections' (formerly called 'classes') store your data objects. Each collection has a definition that specifies its data structure (properties and their data types), vectorizer settings (how vectors are generated or managed), and indexing configuration (how data is indexed for efficient search). These endpoints allow you to create, retrieve, update, and delete collection definitions. For detailed usage and code examples on interacting with collections, see the documentation: [https://docs.weaviate.io/weaviate/manage-collections](https://docs.weaviate.io/weaviate/manage-collections).<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

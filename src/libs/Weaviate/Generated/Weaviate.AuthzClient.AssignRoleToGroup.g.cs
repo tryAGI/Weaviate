@@ -39,7 +39,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Assign a role to a group
+        /// Assign a role to a group<br/>
+        /// Assign roles to the specified group.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -62,7 +63,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign a role to a group
+        /// Assign a role to a group<br/>
+        /// Assign roles to the specified group.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -337,7 +339,7 @@ namespace Weaviate
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad request
+                            // Malformed request.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -443,7 +445,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // role or group is not found.
+                            // Role or group not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -593,11 +595,15 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Assign a role to a group
+        /// Assign a role to a group<br/>
+        /// Assign roles to the specified group.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="roles">
-        /// the roles that assigned to group
+        /// The roles to assign to the specified group.
+        /// </param>
+        /// <param name="groupType">
+        /// If the group contains OIDC or database users.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -605,12 +611,14 @@ namespace Weaviate
         public async global::System.Threading.Tasks.Task AssignRoleToGroupAsync(
             string id,
             global::System.Collections.Generic.IList<string>? roles = default,
+            global::Weaviate.GroupType? groupType = default,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Weaviate.AssignRoleToGroupRequest
             {
                 Roles = roles,
+                GroupType = groupType,
             };
 
             await AssignRoleToGroupAsync(

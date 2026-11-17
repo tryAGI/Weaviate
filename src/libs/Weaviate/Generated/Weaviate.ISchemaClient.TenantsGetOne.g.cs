@@ -6,7 +6,7 @@ namespace Weaviate
     {
         /// <summary>
         /// Get a specific tenant<br/>
-        /// get a specific tenant for the given class
+        /// Retrieves details about a specific tenant within the given collection (`className`), such as its current activity status.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="tenantName"></param>
@@ -16,7 +16,7 @@ namespace Weaviate
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Weaviate.TenantResponse> TenantsGetOneAsync(
+        global::System.Threading.Tasks.Task<global::Weaviate.Tenant> TenantsGetOneAsync(
             string className,
             string tenantName,
             bool? consistency = default,
@@ -24,7 +24,7 @@ namespace Weaviate
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get a specific tenant<br/>
-        /// get a specific tenant for the given class
+        /// Retrieves details about a specific tenant within the given collection (`className`), such as its current activity status.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="tenantName"></param>
@@ -34,7 +34,7 @@ namespace Weaviate
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Weaviate.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::Weaviate.TenantResponse>> TenantsGetOneAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::Weaviate.AutoSDKHttpResponse<global::Weaviate.Tenant>> TenantsGetOneAsResponseAsync(
             string className,
             string tenantName,
             bool? consistency = default,

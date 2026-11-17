@@ -4,18 +4,18 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Filter search results using a where filter
+    /// Filter search results using a where filter.
     /// </summary>
     public sealed partial class WhereFilter
     {
         /// <summary>
-        /// combine multiple where filters, requires 'And' or 'Or' operator
+        /// Combine multiple where filters, requires 'And' or 'Or' operator.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operands")]
         public global::System.Collections.Generic.IList<global::Weaviate.WhereFilter>? Operands { get; set; }
 
         /// <summary>
-        /// operator to use<br/>
+        /// Operator to use.<br/>
         /// Example: GreaterThanEqual
         /// </summary>
         /// <example>GreaterThanEqual</example>
@@ -24,10 +24,10 @@ namespace Weaviate
         public global::Weaviate.WhereFilterOperator? Operator { get; set; }
 
         /// <summary>
-        /// path to the property currently being filtered<br/>
-        /// Example: [inCity, City, name]
+        /// Path to the property currently being filtered.<br/>
+        /// Example: [inCity, city, name]
         /// </summary>
-        /// <example>[inCity, City, name]</example>
+        /// <example>[inCity, city, name]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         public global::System.Collections.Generic.IList<string>? Path { get; set; }
 
@@ -128,7 +128,7 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<string>? ValueDateArray { get; set; }
 
         /// <summary>
-        /// filter within a distance of a georange
+        /// Filter within a distance of a georange.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("valueGeoRange")]
         public global::Weaviate.WhereFilterGeoRange? ValueGeoRange { get; set; }
@@ -143,15 +143,15 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="WhereFilter" /> class.
         /// </summary>
         /// <param name="operands">
-        /// combine multiple where filters, requires 'And' or 'Or' operator
+        /// Combine multiple where filters, requires 'And' or 'Or' operator.
         /// </param>
         /// <param name="operator">
-        /// operator to use<br/>
+        /// Operator to use.<br/>
         /// Example: GreaterThanEqual
         /// </param>
         /// <param name="path">
-        /// path to the property currently being filtered<br/>
-        /// Example: [inCity, City, name]
+        /// Path to the property currently being filtered.<br/>
+        /// Example: [inCity, city, name]
         /// </param>
         /// <param name="valueInt">
         /// value as integer<br/>
@@ -202,7 +202,7 @@ namespace Weaviate
         /// Example: TODO
         /// </param>
         /// <param name="valueGeoRange">
-        /// filter within a distance of a georange
+        /// Filter within a distance of a georange.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IObjectsClient
     {
         /// <summary>
-        /// Add a single reference to a class-property.<br/>
-        /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
+        /// Add an object reference<br/>
+        /// Adds a new reference to a reference property (`propertyName`) on a source data object. The source object is identified by its collection name (`className`) and UUID (`id`). The reference to add is specified in the request body.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -28,8 +28,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Add a single reference to a class-property.<br/>
-        /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
+        /// Add an object reference<br/>
+        /// Adds a new reference to a reference property (`propertyName`) on a source data object. The source object is identified by its collection name (`className`) and UUID (`id`). The reference to add is specified in the request body.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -51,8 +51,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Add a single reference to a class-property.<br/>
-        /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
+        /// Add an object reference<br/>
+        /// Adds a new reference to a reference property (`propertyName`) on a source data object. The source object is identified by its collection name (`className`) and UUID (`id`). The reference to add is specified in the request body.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -60,13 +60,13 @@ namespace Weaviate
         /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
         /// <param name="class">
-        /// If using a concept reference (rather than a direct reference), specify the desired class name here
+        /// If using a concept reference (rather than a direct reference), specify the desired collection (class) name here.
         /// </param>
         /// <param name="schema">
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </param>
         /// <param name="beacon">
-        /// If using a direct reference, specify the URI to point to the cross-ref here. Should be in the form of weaviate://localhost/&lt;uuid&gt; for the example of a local cross-ref to an object
+        /// If using a direct reference, specify the URI to point to the cross-reference here. Should be in the form of weaviate://localhost/&lt;uuid&gt; for the example of a local cross-reference to an object
         /// </param>
         /// <param name="href">
         /// If using a direct reference, this read-only fields provides a link to the referenced resource. If 'origin' is globally configured, an absolute URI is shown - a relative URI otherwise.

@@ -58,6 +58,12 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<global::Weaviate.NestedProperty>? NestedProperties { get; set; }
 
         /// <summary>
+        /// Text analysis options for a property. These settings are immutable after the property is created. Applies only to text and text[] data types that use an inverted index (searchable or filterable).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("textAnalyzer")]
+        public global::Weaviate.TextAnalyzerConfig? TextAnalyzer { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -76,6 +82,9 @@ namespace Weaviate
         /// <param name="nestedProperties">
         /// The properties of the nested object(s). Applies to object and object[] data types.
         /// </param>
+        /// <param name="textAnalyzer">
+        /// Text analysis options for a property. These settings are immutable after the property is created. Applies only to text and text[] data types that use an inverted index (searchable or filterable).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -87,7 +96,8 @@ namespace Weaviate
             bool? indexSearchable,
             bool? indexRangeFilters,
             global::Weaviate.NestedPropertyTokenization? tokenization,
-            global::System.Collections.Generic.IList<global::Weaviate.NestedProperty>? nestedProperties)
+            global::System.Collections.Generic.IList<global::Weaviate.NestedProperty>? nestedProperties,
+            global::Weaviate.TextAnalyzerConfig? textAnalyzer)
         {
             this.DataType = dataType;
             this.Description = description;
@@ -97,6 +107,7 @@ namespace Weaviate
             this.IndexRangeFilters = indexRangeFilters;
             this.Tokenization = tokenization;
             this.NestedProperties = nestedProperties;
+            this.TextAnalyzer = textAnalyzer;
         }
 
         /// <summary>

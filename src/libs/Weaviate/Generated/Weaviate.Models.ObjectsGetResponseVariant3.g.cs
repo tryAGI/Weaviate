@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class ObjectsGetResponseVariant3
     {
         /// <summary>
-        /// Results for this specific Object.
+        /// Results for this specific object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
         public global::Weaviate.ObjectsGetResponseVariant3Result? Result { get; set; }
@@ -24,7 +24,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="ObjectsGetResponseVariant3" /> class.
         /// </summary>
         /// <param name="result">
-        /// Results for this specific Object.
+        /// Results for this specific object.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Create, update and delete objects and cross-references.<br/>
+    /// Operations for managing individual data objects. Objects are the primary units of data stored within Weaviate collections. Each object conforms to the data schema definition of its parent collection, containing specific properties (data fields). Objects have one or multiple associated vector embeddings and can link to other objects via cross-references. These endpoints allow you to perform CRUD (Create, Read, Update, Delete) operations on individual data objects.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

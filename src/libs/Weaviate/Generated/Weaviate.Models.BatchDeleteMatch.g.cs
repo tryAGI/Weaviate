@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class BatchDeleteMatch
     {
         /// <summary>
-        /// Class (name) which objects will be deleted.<br/>
+        /// The name of the collection (class) from which to delete objects.<br/>
         /// Example: City
         /// </summary>
         /// <example>City</example>
@@ -17,7 +17,7 @@ namespace Weaviate
         public string? Class { get; set; }
 
         /// <summary>
-        /// Filter search results using a where filter
+        /// Filter search results using a where filter.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("where")]
         public global::Weaviate.WhereFilter? Where { get; set; }
@@ -32,11 +32,11 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="BatchDeleteMatch" /> class.
         /// </summary>
         /// <param name="class">
-        /// Class (name) which objects will be deleted.<br/>
+        /// The name of the collection (class) from which to delete objects.<br/>
         /// Example: City
         /// </param>
         /// <param name="where">
-        /// Filter search results using a where filter
+        /// Filter search results using a where filter.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

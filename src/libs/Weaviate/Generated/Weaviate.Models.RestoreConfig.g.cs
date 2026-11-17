@@ -34,6 +34,22 @@ namespace Weaviate
         public int? CPUPercentage { get; set; }
 
         /// <summary>
+        /// How roles should be restored<br/>
+        /// Default Value: noRestore
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rolesOptions")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.RestoreConfigRolesOptionsJsonConverter))]
+        public global::Weaviate.RestoreConfigRolesOptions? RolesOptions { get; set; }
+
+        /// <summary>
+        /// How users should be restored<br/>
+        /// Default Value: noRestore
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usersOptions")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Weaviate.JsonConverters.RestoreConfigUsersOptionsJsonConverter))]
+        public global::Weaviate.RestoreConfigUsersOptions? UsersOptions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,6 +71,14 @@ namespace Weaviate
         /// Desired CPU core utilization ranging from 1%-80%<br/>
         /// Default Value: 50
         /// </param>
+        /// <param name="rolesOptions">
+        /// How roles should be restored<br/>
+        /// Default Value: noRestore
+        /// </param>
+        /// <param name="usersOptions">
+        /// How users should be restored<br/>
+        /// Default Value: noRestore
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,12 +86,16 @@ namespace Weaviate
             string? endpoint,
             string? bucket,
             string? path,
-            int? cPUPercentage)
+            int? cPUPercentage,
+            global::Weaviate.RestoreConfigRolesOptions? rolesOptions,
+            global::Weaviate.RestoreConfigUsersOptions? usersOptions)
         {
             this.Endpoint = endpoint;
             this.Bucket = bucket;
             this.Path = path;
             this.CPUPercentage = cPUPercentage;
+            this.RolesOptions = rolesOptions;
+            this.UsersOptions = usersOptions;
         }
 
         /// <summary>

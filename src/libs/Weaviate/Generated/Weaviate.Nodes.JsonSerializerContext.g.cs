@@ -19,19 +19,26 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ErrorResponseErrorItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ErrorResponseErrorItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.NodeStats))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchStats))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.NodeShardStatus))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.AsyncReplicationStatus>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.AsyncReplicationStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.NodeStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.NodeStatusStatus), TypeInfoPropertyName = "NodeStatusStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.NodeShardStatus>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.NodeStatusOperationalMode), TypeInfoPropertyName = "NodeStatusOperationalMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.NodesStatusResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.NodeStatus>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.NodeStatusStatus?), TypeInfoPropertyName = "NullableNodeStatusStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.NodeStatusOperationalMode?), TypeInfoPropertyName = "NullableNodeStatusOperationalMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ErrorResponseErrorItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.AsyncReplicationStatus>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.NodeShardStatus>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.NodeStatus>))]
     internal sealed partial class NodesSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
@@ -105,7 +112,11 @@ namespace Weaviate
                 return
                     typeToConvert == typeof(global::Weaviate.NodeStatusStatus)
 
-                    || typeToConvert == typeof(global::Weaviate.NodeStatusStatus?);
+                    || typeToConvert == typeof(global::Weaviate.NodeStatusStatus?)
+
+                    || typeToConvert == typeof(global::Weaviate.NodeStatusOperationalMode)
+
+                    || typeToConvert == typeof(global::Weaviate.NodeStatusOperationalMode?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -120,6 +131,16 @@ namespace Weaviate
                 if (typeToConvert == typeof(global::Weaviate.NodeStatusStatus?))
                 {
                     return new global::Weaviate.JsonConverters.NodeStatusStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.NodeStatusOperationalMode))
+                {
+                    return new global::Weaviate.JsonConverters.NodeStatusOperationalModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.NodeStatusOperationalMode?))
+                {
+                    return new global::Weaviate.JsonConverters.NodeStatusOperationalModeNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

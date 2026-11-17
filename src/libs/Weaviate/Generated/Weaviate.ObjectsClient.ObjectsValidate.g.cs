@@ -37,8 +37,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Validate an Object based on a schema.<br/>
-        /// Validate an object's schema and meta-data without creating it. &lt;br/&gt;&lt;br/&gt;If the schema of the object is valid, the request should return nothing with a plain RESTful request. Otherwise, an error object will be returned.
+        /// Validate an object<br/>
+        /// Checks if a data object's structure conforms to the specified collection schema and metadata rules without actually storing the object.&lt;br/&gt;&lt;br/&gt;A successful validation returns a 200 OK status code with no body. If validation fails, an error response with details is returned.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -58,8 +58,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Validate an Object based on a schema.<br/>
-        /// Validate an object's schema and meta-data without creating it. &lt;br/&gt;&lt;br/&gt;If the schema of the object is valid, the request should return nothing with a plain RESTful request. Otherwise, an error object will be returned.
+        /// Validate an object<br/>
+        /// Checks if a data object's structure conforms to the specified collection schema and metadata rules without actually storing the object.&lt;br/&gt;&lt;br/&gt;A successful validation returns a 200 OK status code with no body. If validation fails, an error response with details is returned.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -399,7 +399,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?
+                            // Request body is well-formed but the object is invalid according to the schema.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -436,7 +436,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An error occurred while trying to fulfill the request. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -554,20 +554,20 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Validate an Object based on a schema.<br/>
-        /// Validate an object's schema and meta-data without creating it. &lt;br/&gt;&lt;br/&gt;If the schema of the object is valid, the request should return nothing with a plain RESTful request. Otherwise, an error object will be returned.
+        /// Validate an object<br/>
+        /// Checks if a data object's structure conforms to the specified collection schema and metadata rules without actually storing the object.&lt;br/&gt;&lt;br/&gt;A successful validation returns a 200 OK status code with no body. If validation fails, an error response with details is returned.
         /// </summary>
         /// <param name="class">
-        /// Class of the Object, defined in the schema.
+        /// Name of the collection (class) the object belongs to.
         /// </param>
         /// <param name="vectorWeights">
-        /// Allow custom overrides of vector weights as math expressions. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
+        /// Allow custom overrides of vector weights as math expressions. E.g. `pancake`: `7` will set the weight for the word pancake to 7 in the vectorization, whereas `w * 3` would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
         /// </param>
         /// <param name="properties">
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </param>
         /// <param name="id">
-        /// ID of the Object.
+        /// The UUID of the object.
         /// </param>
         /// <param name="creationTimeUnix">
         /// (Response only) Timestamp of creation of this object in milliseconds since epoch UTC.
@@ -582,7 +582,7 @@ namespace Weaviate
         /// A map of named vectors for multi-vector representations.
         /// </param>
         /// <param name="tenant">
-        /// Name of the Objects tenant.
+        /// The name of the tenant the object belongs to.
         /// </param>
         /// <param name="additional">
         /// (Response only) Additional meta information about a single object.

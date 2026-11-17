@@ -39,7 +39,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Remove permissions from a role. If this results in an empty role, the role will be deleted.
+        /// Remove permissions from a role<br/>
+        /// Permissions can be revoked from a specified role. Removing all permissions from a role will delete the role itself.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -62,7 +63,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove permissions from a role. If this results in an empty role, the role will be deleted.
+        /// Remove permissions from a role<br/>
+        /// Permissions can be revoked from a specified role. Removing all permissions from a role will delete the role itself.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -443,7 +445,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // no role found
+                            // No role found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -475,7 +477,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?
+                            // The request syntax is correct, but the server couldn't process it due to semantic issues. Please check the values in your request.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -630,11 +632,12 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Remove permissions from a role. If this results in an empty role, the role will be deleted.
+        /// Remove permissions from a role<br/>
+        /// Permissions can be revoked from a specified role. Removing all permissions from a role will delete the role itself.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="permissions">
-        /// permissions to remove from the role
+        /// Permissions to remove from the role.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

@@ -5,7 +5,8 @@ namespace Weaviate
     public partial interface IAuthzClient
     {
         /// <summary>
-        /// Get a role
+        /// Get a role<br/>
+        /// Fetch a role by its name.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -16,7 +17,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a role
+        /// Get a role<br/>
+        /// Fetch a role by its name.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

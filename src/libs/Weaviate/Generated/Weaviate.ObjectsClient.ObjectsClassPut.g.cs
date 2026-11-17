@@ -48,8 +48,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Update a class object based on its uuid<br/>
-        /// Update an object based on its uuid and collection. This (`put`) method replaces the object with the provided object.
+        /// Replace an object<br/>
+        /// Replaces properties of an existing data object. The object is identified by its collection name (`className`) and UUID (`id`). The request body must contain the complete object definition with the new property values.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -80,8 +80,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Update a class object based on its uuid<br/>
-        /// Update an object based on its uuid and collection. This (`put`) method replaces the object with the provided object.
+        /// Replace an object<br/>
+        /// Replaces properties of an existing data object. The object is identified by its collection name (`className`) and UUID (`id`). The request body must contain the complete object definition with the new property values.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
@@ -436,7 +436,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Successful query result but no resource was found.
+                            // Object not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -468,7 +468,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?
+                            // The request syntax is correct, but the server couldn't process it due to semantic issues. Please check the values in your request. Ensure the collection exists and the object properties are valid.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -505,7 +505,44 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // The configured object-count usage limit was exceeded. See `UsageLimitExceededResponse` for the limit value.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::Weaviate.UsageLimitExceededResponse? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::Weaviate.UsageLimitExceededResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::Weaviate.UsageLimitExceededResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.UsageLimitExceededResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // An error occurred while trying to fulfill the request. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -639,23 +676,23 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Update a class object based on its uuid<br/>
-        /// Update an object based on its uuid and collection. This (`put`) method replaces the object with the provided object.
+        /// Replace an object<br/>
+        /// Replaces properties of an existing data object. The object is identified by its collection name (`className`) and UUID (`id`). The request body must contain the complete object definition with the new property values.
         /// </summary>
         /// <param name="className"></param>
         /// <param name="id"></param>
         /// <param name="consistencyLevel"></param>
         /// <param name="class">
-        /// Class of the Object, defined in the schema.
+        /// Name of the collection (class) the object belongs to.
         /// </param>
         /// <param name="vectorWeights">
-        /// Allow custom overrides of vector weights as math expressions. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
+        /// Allow custom overrides of vector weights as math expressions. E.g. `pancake`: `7` will set the weight for the word pancake to 7 in the vectorization, whereas `w * 3` would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
         /// </param>
         /// <param name="properties">
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </param>
         /// <param name="requestId">
-        /// ID of the Object.
+        /// The UUID of the object.
         /// </param>
         /// <param name="creationTimeUnix">
         /// (Response only) Timestamp of creation of this object in milliseconds since epoch UTC.
@@ -670,7 +707,7 @@ namespace Weaviate
         /// A map of named vectors for multi-vector representations.
         /// </param>
         /// <param name="tenant">
-        /// Name of the Objects tenant.
+        /// The name of the tenant the object belongs to.
         /// </param>
         /// <param name="additional">
         /// (Response only) Additional meta information about a single object.

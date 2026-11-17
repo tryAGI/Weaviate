@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Create, update and delete multiple objects and references at once. &lt;br/&gt;&lt;br/&gt;Note that object-level errors may be reported even in a successful batch request. Accordingly, we recommend you check the response body for errors.<br/>
+    /// Operations for performing actions on multiple data items (objects or references) in a single API request. Batch operations significantly improve performance and efficiency, especially for bulk data imports or large-scale deletions, by reducing network overhead compared to sending individual requests. These endpoints allow for creating multiple objects or deleting objects based on filters.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

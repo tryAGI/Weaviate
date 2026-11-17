@@ -4,26 +4,26 @@
 namespace Weaviate
 {
     /// <summary>
-    /// resources applicable for data actions
+    /// Resources applicable for data actions.
     /// </summary>
     public sealed partial class PermissionData
     {
         /// <summary>
-        /// string or regex. if a specific collection name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which collections this permission applies to. Can be an exact collection name or a regex pattern. The default value `*` applies the permission to all collections.<br/>
         /// Default Value: *
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collection")]
         public string? Collection { get; set; }
 
         /// <summary>
-        /// string or regex. if a specific tenant name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which tenants this permission applies to. Can be an exact tenant name or a regex pattern. The default value `*` applies the permission to all tenants.<br/>
         /// Default Value: *
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant")]
         public string? Tenant { get; set; }
 
         /// <summary>
-        /// string or regex. if a specific object ID, if left empty it will be ALL or *<br/>
+        /// Deprecated: Object-level permissions are not supported. This field is ignored; the permission always applies to all objects. Kept for backward compatibility.<br/>
         /// Default Value: *
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
@@ -39,15 +39,15 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="PermissionData" /> class.
         /// </summary>
         /// <param name="collection">
-        /// string or regex. if a specific collection name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which collections this permission applies to. Can be an exact collection name or a regex pattern. The default value `*` applies the permission to all collections.<br/>
         /// Default Value: *
         /// </param>
         /// <param name="tenant">
-        /// string or regex. if a specific tenant name, if left empty it will be ALL or *<br/>
+        /// A string that specifies which tenants this permission applies to. Can be an exact tenant name or a regex pattern. The default value `*` applies the permission to all tenants.<br/>
         /// Default Value: *
         /// </param>
         /// <param name="object">
-        /// string or regex. if a specific object ID, if left empty it will be ALL or *<br/>
+        /// Deprecated: Object-level permissions are not supported. This field is ignored; the permission always applies to all objects. Kept for backward compatibility.<br/>
         /// Default Value: *
         /// </param>
 #if NET7_0_OR_GREATER

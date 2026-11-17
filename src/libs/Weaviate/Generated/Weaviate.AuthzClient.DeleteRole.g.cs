@@ -37,7 +37,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Delete role
+        /// Delete a role<br/>
+        /// Deleting a role will remove it from the system, and revoke the associated permissions from all users who had this role.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -55,7 +56,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete role
+        /// Delete a role<br/>
+        /// Deleting a role will remove it from the system, and revoke the associated permissions from all users who had this role.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -317,7 +319,7 @@ namespace Weaviate
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad request
+                            // Malformed request.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;

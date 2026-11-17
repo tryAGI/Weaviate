@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class Role
     {
         /// <summary>
-        /// role name
+        /// The name (ID) of the role.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="Role" /> class.
         /// </summary>
         /// <param name="name">
-        /// role name
+        /// The name (ID) of the role.
         /// </param>
         /// <param name="permissions"></param>
 #if NET7_0_OR_GREATER

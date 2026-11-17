@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface ISchemaClient
     {
         /// <summary>
-        /// Check whether a tenant exists<br/>
-        /// Check if a tenant exists for a specific class
+        /// Check if a tenant exists<br/>
+        /// Checks for the existence of a specific tenant within the given collection (`className`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="tenantName"></param>
@@ -23,8 +23,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Check whether a tenant exists<br/>
-        /// Check if a tenant exists for a specific class
+        /// Check if a tenant exists<br/>
+        /// Checks for the existence of a specific tenant within the given collection (`className`).
         /// </summary>
         /// <param name="className"></param>
         /// <param name="tenantName"></param>

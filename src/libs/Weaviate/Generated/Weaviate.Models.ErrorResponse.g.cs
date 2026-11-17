@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// An error response given by Weaviate end-points.
+    /// An error response returned by Weaviate endpoints.
     /// </summary>
     public sealed partial class ErrorResponse
     {

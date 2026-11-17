@@ -42,8 +42,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Create a new Object class in the schema.<br/>
-        /// Create a new data object collection. &lt;br/&gt;&lt;br/&gt;If AutoSchema is enabled, Weaviate will attempt to infer the schema from the data at import time. However, manual schema definition is recommended for production environments.
+        /// Create a new collection<br/>
+        /// Defines and creates a new collection (class).&lt;br/&gt;&lt;br/&gt;If [`AutoSchema`](https://docs.weaviate.io/weaviate/config-refs/collections#auto-schema) is enabled (not recommended for production), Weaviate might attempt to infer schema from data during import. Manual definition via this endpoint provides explicit control.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -65,8 +65,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Create a new Object class in the schema.<br/>
-        /// Create a new data object collection. &lt;br/&gt;&lt;br/&gt;If AutoSchema is enabled, Weaviate will attempt to infer the schema from the data at import time. However, manual schema definition is recommended for production environments.
+        /// Create a new collection<br/>
+        /// Defines and creates a new collection (class).&lt;br/&gt;&lt;br/&gt;If [`AutoSchema`](https://docs.weaviate.io/weaviate/config-refs/collections#auto-schema) is enabled (not recommended for production), Weaviate might attempt to infer schema from data during import. Manual definition via this endpoint provides explicit control.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -406,24 +406,24 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Invalid Object class
+                            // Invalid collection definition provided. Check the definition structure and properties.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::Weaviate.ErrorResponse? __value_422 = null;
+                                global::Weaviate.RestrictionViolationResponse? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::Weaviate.RestrictionViolationResponse.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::Weaviate.ErrorResponse.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::Weaviate.RestrictionViolationResponse.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -432,7 +432,7 @@ namespace Weaviate
                                 }
 
 
-                                throw global::Weaviate.ApiException<global::Weaviate.ErrorResponse>.Create(
+                                throw global::Weaviate.ApiException<global::Weaviate.RestrictionViolationResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -443,7 +443,44 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // A configured usage limit (collections/shards) was exceeded. See the `UsageLimitExceededResponse` body for which limit and the configured value.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::Weaviate.UsageLimitExceededResponse? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::Weaviate.UsageLimitExceededResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::Weaviate.UsageLimitExceededResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.UsageLimitExceededResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // An error occurred during collection creation. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -577,17 +614,17 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Create a new Object class in the schema.<br/>
-        /// Create a new data object collection. &lt;br/&gt;&lt;br/&gt;If AutoSchema is enabled, Weaviate will attempt to infer the schema from the data at import time. However, manual schema definition is recommended for production environments.
+        /// Create a new collection<br/>
+        /// Defines and creates a new collection (class).&lt;br/&gt;&lt;br/&gt;If [`AutoSchema`](https://docs.weaviate.io/weaviate/config-refs/collections#auto-schema) is enabled (not recommended for production), Weaviate might attempt to infer schema from data during import. Manual definition via this endpoint provides explicit control.
         /// </summary>
         /// <param name="class1">
-        /// Name of the class (a.k.a. 'collection') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
+        /// Name of the collection (formerly 'class') (required). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.
         /// </param>
         /// <param name="vectorConfig">
         /// Configure named vectors. Either use this field or `vectorizer`, `vectorIndexType`, and `vectorIndexConfig` fields. Available from `v1.24.0`.
         /// </param>
         /// <param name="vectorIndexType">
-        /// Name of the vector index to use, eg. (HNSW)
+        /// Name of the vector index type to use for the collection (e.g. `hnsw` or `flat`).
         /// </param>
         /// <param name="vectorIndexConfig">
         /// Vector-index config, that is specific to the type of index selected in vectorIndexType
@@ -599,13 +636,16 @@ namespace Weaviate
         /// Configure how replication is executed in a cluster
         /// </param>
         /// <param name="invertedIndexConfig">
-        /// Configure the inverted index built into Weaviate (default: 60).
+        /// Configure the inverted index built into Weaviate. See [Reference: Inverted index](https://docs.weaviate.io/weaviate/config-refs/indexing/inverted-index#inverted-index-parameters) for details.
         /// </param>
         /// <param name="multiTenancyConfig">
-        /// Configuration related to multi-tenancy within a class
+        /// Configuration related to multi-tenancy within a collection (class)
+        /// </param>
+        /// <param name="objectTtlConfig">
+        /// Configuration of objects' time-to-live
         /// </param>
         /// <param name="vectorizer">
-        /// Specify how the vectors for this class should be determined. The options are either 'none' - this means you have to import a vector with each object yourself - or the name of a module that provides vectorization capabilities, such as 'text2vec-contextionary'. If left empty, it will use the globally configured default which can itself either be 'none' or a specific module.
+        /// Specify how the vectors for this collection should be determined. The options are either `none` - this means you have to import a vector with each object yourself - or the name of a module that provides vectorization capabilities, such as `text2vec-weaviate`. If left empty, it defaults to `none`.
         /// </param>
         /// <param name="moduleConfig">
         /// Configuration specific to modules in a collection context.
@@ -628,6 +668,7 @@ namespace Weaviate
             global::Weaviate.ReplicationConfig? replicationConfig = default,
             global::Weaviate.InvertedIndexConfig? invertedIndexConfig = default,
             global::Weaviate.MultiTenancyConfig? multiTenancyConfig = default,
+            global::Weaviate.ObjectTtlConfig? objectTtlConfig = default,
             string? vectorizer = default,
             object? moduleConfig = default,
             string? description = default,
@@ -645,6 +686,7 @@ namespace Weaviate
                 ReplicationConfig = replicationConfig,
                 InvertedIndexConfig = invertedIndexConfig,
                 MultiTenancyConfig = multiTenancyConfig,
+                ObjectTtlConfig = objectTtlConfig,
                 Vectorizer = vectorizer,
                 ModuleConfig = moduleConfig,
                 Description = description,

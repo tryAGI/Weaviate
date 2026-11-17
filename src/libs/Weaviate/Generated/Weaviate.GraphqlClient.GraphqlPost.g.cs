@@ -42,8 +42,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get a response based on GraphQL<br/>
-        /// Get a response based on a GraphQL query
+        /// Perform a GraphQL query<br/>
+        /// Executes a single GraphQL query provided in the request body. Use this endpoint for all Weaviate data queries and exploration.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -65,8 +65,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Get a response based on GraphQL<br/>
-        /// Get a response based on a GraphQL query
+        /// Perform a GraphQL query<br/>
+        /// Executes a single GraphQL query provided in the request body. Use this endpoint for all Weaviate data queries and exploration.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -406,7 +406,44 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?
+                            // Endpoint not available in the current cluster configuration.
+                            if ((int)__response.StatusCode == 410)
+                            {
+                                string? __content_410 = null;
+                                global::System.Exception? __exception_410 = null;
+                                global::Weaviate.ErrorResponse? __value_410 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_410 = global::Weaviate.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_410 = global::Weaviate.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_410 = __ex;
+                                }
+
+
+                                throw global::Weaviate.ApiException<global::Weaviate.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_410,
+                                    responseBody: __content_410,
+                                    responseObject: __value_410,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The request syntax is correct, but the server couldn't process it due to semantic issues. Please check the values in your request.
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -443,7 +480,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+                            // An internal server error occurred during query execution. Check the ErrorResponse for details.
                             if ((int)__response.StatusCode == 500)
                             {
                                 string? __content_500 = null;
@@ -577,8 +614,8 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Get a response based on GraphQL<br/>
-        /// Get a response based on a GraphQL query
+        /// Perform a GraphQL query<br/>
+        /// Executes a single GraphQL query provided in the request body. Use this endpoint for all Weaviate data queries and exploration.
         /// </summary>
         /// <param name="operationName">
         /// The name of the operation if multiple exist in the query.

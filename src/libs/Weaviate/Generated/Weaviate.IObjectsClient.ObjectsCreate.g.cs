@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IObjectsClient
     {
         /// <summary>
-        /// Create a new object.<br/>
-        /// Create a new object. &lt;br/&gt;&lt;br/&gt;Meta-data and schema values are validated. &lt;br/&gt;&lt;br/&gt;**Note: Use `/batch` for importing many objects**: &lt;br/&gt;If you plan on importing a large number of objects, it's much more efficient to use the `/batch` endpoint. Otherwise, sending multiple single requests sequentially would incur a large performance penalty. &lt;br/&gt;&lt;br/&gt;**Note: idempotence of `/objects`**: &lt;br/&gt;POST /objects will fail if an id is provided which already exists in the class. To update an existing object with the objects endpoint, use the PUT or PATCH method.
+        /// Create an object<br/>
+        /// Creates a new data object. The object's metadata and schema values are validated before creation.&lt;br/&gt;&lt;br/&gt;**Note (batch import)**:&lt;br/&gt;If you plan on importing a large number of objects, using the `/batch/objects` endpoint is significantly more efficient than sending multiple single requests.&lt;br/&gt;&lt;br/&gt;**Note (idempotence)**:&lt;br/&gt;This operation (POST) fails if an object with the provided ID already exists. To update an existing object, use the PUT or PATCH methods.
         /// </summary>
         /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
@@ -20,8 +20,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a new object.<br/>
-        /// Create a new object. &lt;br/&gt;&lt;br/&gt;Meta-data and schema values are validated. &lt;br/&gt;&lt;br/&gt;**Note: Use `/batch` for importing many objects**: &lt;br/&gt;If you plan on importing a large number of objects, it's much more efficient to use the `/batch` endpoint. Otherwise, sending multiple single requests sequentially would incur a large performance penalty. &lt;br/&gt;&lt;br/&gt;**Note: idempotence of `/objects`**: &lt;br/&gt;POST /objects will fail if an id is provided which already exists in the class. To update an existing object with the objects endpoint, use the PUT or PATCH method.
+        /// Create an object<br/>
+        /// Creates a new data object. The object's metadata and schema values are validated before creation.&lt;br/&gt;&lt;br/&gt;**Note (batch import)**:&lt;br/&gt;If you plan on importing a large number of objects, using the `/batch/objects` endpoint is significantly more efficient than sending multiple single requests.&lt;br/&gt;&lt;br/&gt;**Note (idempotence)**:&lt;br/&gt;This operation (POST) fails if an object with the provided ID already exists. To update an existing object, use the PUT or PATCH methods.
         /// </summary>
         /// <param name="consistencyLevel"></param>
         /// <param name="request"></param>
@@ -35,21 +35,21 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a new object.<br/>
-        /// Create a new object. &lt;br/&gt;&lt;br/&gt;Meta-data and schema values are validated. &lt;br/&gt;&lt;br/&gt;**Note: Use `/batch` for importing many objects**: &lt;br/&gt;If you plan on importing a large number of objects, it's much more efficient to use the `/batch` endpoint. Otherwise, sending multiple single requests sequentially would incur a large performance penalty. &lt;br/&gt;&lt;br/&gt;**Note: idempotence of `/objects`**: &lt;br/&gt;POST /objects will fail if an id is provided which already exists in the class. To update an existing object with the objects endpoint, use the PUT or PATCH method.
+        /// Create an object<br/>
+        /// Creates a new data object. The object's metadata and schema values are validated before creation.&lt;br/&gt;&lt;br/&gt;**Note (batch import)**:&lt;br/&gt;If you plan on importing a large number of objects, using the `/batch/objects` endpoint is significantly more efficient than sending multiple single requests.&lt;br/&gt;&lt;br/&gt;**Note (idempotence)**:&lt;br/&gt;This operation (POST) fails if an object with the provided ID already exists. To update an existing object, use the PUT or PATCH methods.
         /// </summary>
         /// <param name="consistencyLevel"></param>
         /// <param name="class">
-        /// Class of the Object, defined in the schema.
+        /// Name of the collection (class) the object belongs to.
         /// </param>
         /// <param name="vectorWeights">
-        /// Allow custom overrides of vector weights as math expressions. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
+        /// Allow custom overrides of vector weights as math expressions. E.g. `pancake`: `7` will set the weight for the word pancake to 7 in the vectorization, whereas `w * 3` would triple the originally calculated word. This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value (string/string) object.
         /// </param>
         /// <param name="properties">
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </param>
         /// <param name="id">
-        /// ID of the Object.
+        /// The UUID of the object.
         /// </param>
         /// <param name="creationTimeUnix">
         /// (Response only) Timestamp of creation of this object in milliseconds since epoch UTC.
@@ -64,7 +64,7 @@ namespace Weaviate
         /// A map of named vectors for multi-vector representations.
         /// </param>
         /// <param name="tenant">
-        /// Name of the Objects tenant.
+        /// The name of the tenant the object belongs to.
         /// </param>
         /// <param name="additional">
         /// (Response only) Additional meta information about a single object.

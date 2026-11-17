@@ -42,7 +42,8 @@ namespace Weaviate
             ref string content);
 
         /// <summary>
-        /// Get a role
+        /// Get a role<br/>
+        /// Fetch a role by its name.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -62,7 +63,8 @@ namespace Weaviate
             return __response.Body;
         }
         /// <summary>
-        /// Get a role
+        /// Get a role<br/>
+        /// Fetch a role by its name.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -430,7 +432,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // no role found
+                            // No role found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;

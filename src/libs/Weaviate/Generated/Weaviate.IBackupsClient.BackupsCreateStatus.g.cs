@@ -5,8 +5,8 @@ namespace Weaviate
     public partial interface IBackupsClient
     {
         /// <summary>
-        /// Get backup process status<br/>
-        /// Returns status of backup creation attempt for a set of collections. &lt;br/&gt;&lt;br/&gt;All client implementations have a `wait for completion` option which will poll the backup status in the background and only return once the backup has completed (successfully or unsuccessfully). If you set the `wait for completion` option to false, you can also check the status yourself using this endpoint.
+        /// Get backup creation status<br/>
+        /// Checks the status of a specific backup creation process identified by its ID on the specified backend.&lt;br/&gt;&lt;br/&gt;Client libraries often provide a 'wait for completion' feature that polls this endpoint automatically. Use this endpoint for manual status checks or if 'wait for completion' is disabled.
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>
@@ -23,8 +23,8 @@ namespace Weaviate
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get backup process status<br/>
-        /// Returns status of backup creation attempt for a set of collections. &lt;br/&gt;&lt;br/&gt;All client implementations have a `wait for completion` option which will poll the backup status in the background and only return once the backup has completed (successfully or unsuccessfully). If you set the `wait for completion` option to false, you can also check the status yourself using this endpoint.
+        /// Get backup creation status<br/>
+        /// Checks the status of a specific backup creation process identified by its ID on the specified backend.&lt;br/&gt;&lt;br/&gt;Client libraries often provide a 'wait for completion' feature that polls this endpoint automatically. Use this endpoint for manual status checks or if 'wait for completion' is disabled.
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>

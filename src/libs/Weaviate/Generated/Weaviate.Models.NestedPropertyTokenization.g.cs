@@ -19,6 +19,10 @@ namespace Weaviate
         /// <summary>
         ///
         /// </summary>
+        GseCh,
+        /// <summary>
+        ///
+        /// </summary>
         KagomeJa,
         /// <summary>
         ///
@@ -56,6 +60,7 @@ namespace Weaviate
             {
                 NestedPropertyTokenization.Field => "field",
                 NestedPropertyTokenization.Gse => "gse",
+                NestedPropertyTokenization.GseCh => "gse_ch",
                 NestedPropertyTokenization.KagomeJa => "kagome_ja",
                 NestedPropertyTokenization.KagomeKr => "kagome_kr",
                 NestedPropertyTokenization.Lowercase => "lowercase",
@@ -74,6 +79,7 @@ namespace Weaviate
             {
                 "field" => NestedPropertyTokenization.Field,
                 "gse" => NestedPropertyTokenization.Gse,
+                "gse_ch" => NestedPropertyTokenization.GseCh,
                 "kagome_ja" => NestedPropertyTokenization.KagomeJa,
                 "kagome_kr" => NestedPropertyTokenization.KagomeKr,
                 "lowercase" => NestedPropertyTokenization.Lowercase,

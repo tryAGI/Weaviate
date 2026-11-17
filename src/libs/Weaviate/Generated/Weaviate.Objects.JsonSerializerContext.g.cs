@@ -15,40 +15,85 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<float>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(float))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Vector))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Weaviate.Vector>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Deprecation))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ErrorResponseErrorItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ErrorResponseErrorItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UsageLimitExceededResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UsageLimitExceededResponseErrorCode), TypeInfoPropertyName = "UsageLimitExceededResponseErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UsageLimitExceededResponseLimit), TypeInfoPropertyName = "UsageLimitExceededResponseLimit2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.SingleRef>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.SingleRef))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Object), TypeInfoPropertyName = "Object_Weaviate_Object")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.VectorWeights))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PropertySchema))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReferenceMetaClassification))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.GeoCoordinates))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.Object), TypeInfoPropertyName = "Object_Weaviate_Object")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ObjectsGetResponse), TypeInfoPropertyName = "ObjectsGetResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ObjectsGetResponseVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Deprecation>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ObjectsGetResponseVariant3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ObjectsGetResponseVariant3Result))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ObjectsGetResponseVariant3ResultStatus), TypeInfoPropertyName = "ObjectsGetResponseVariant3ResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDelete))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDeleteMatch))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDeleteResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDeleteResponseMatch))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDeleteResponseResults))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.BatchDeleteResponseResultsObject>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDeleteResponseResultsObject))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDeleteResponseResultsObjectStatus), TypeInfoPropertyName = "BatchDeleteResponseResultsObjectStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ObjectsListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.Object>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(float?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.WhereFilter>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilterOperator), TypeInfoPropertyName = "WhereFilterOperator2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<long>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<bool>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilterGeoRange))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilterGeoRangeDistance))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchObjectsCreateRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.BatchObjectsCreateRequestField>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchObjectsCreateRequestField), TypeInfoPropertyName = "BatchObjectsCreateRequestField2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ObjectsGetResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(float?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UsageLimitExceededResponseErrorCode?), TypeInfoPropertyName = "NullableUsageLimitExceededResponseErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.UsageLimitExceededResponseLimit?), TypeInfoPropertyName = "NullableUsageLimitExceededResponseLimit2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Guid?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ObjectsGetResponse?), TypeInfoPropertyName = "NullableObjectsGetResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ObjectsGetResponseVariant3ResultStatus?), TypeInfoPropertyName = "NullableObjectsGetResponseVariant3ResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchDeleteResponseResultsObjectStatus?), TypeInfoPropertyName = "NullableBatchDeleteResponseResultsObjectStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.WhereFilterOperator?), TypeInfoPropertyName = "NullableWhereFilterOperator2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.BatchObjectsCreateRequestField?), TypeInfoPropertyName = "NullableBatchObjectsCreateRequestField2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<float>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ErrorResponseErrorItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.SingleRef>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Deprecation>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.BatchDeleteResponseResultsObject>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.WhereFilter>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<long>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<bool>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.BatchObjectsCreateRequestField>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ObjectsGetResponse>))]
     internal sealed partial class ObjectsSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -96,7 +141,9 @@ namespace Weaviate
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
+            options.Converters.Add(new global::Weaviate.JsonConverters.ObjectsGetResponseJsonConverter());
             options.Converters.Add(new global::Weaviate.JsonConverters.UnixTimestampJsonConverter());
+            options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
 
         private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
@@ -109,6 +156,104 @@ namespace Weaviate
             AddConverters(options);
 
             return options;
+        }
+
+
+        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
+        {
+            public override bool CanConvert(global::System.Type typeToConvert)
+            {
+                return
+                    typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseErrorCode)
+
+                    || typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseErrorCode?)
+
+                    || typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseLimit)
+
+                    || typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseLimit?)
+
+                    || typeToConvert == typeof(global::Weaviate.ObjectsGetResponseVariant3ResultStatus)
+
+                    || typeToConvert == typeof(global::Weaviate.ObjectsGetResponseVariant3ResultStatus?)
+
+                    || typeToConvert == typeof(global::Weaviate.BatchDeleteResponseResultsObjectStatus)
+
+                    || typeToConvert == typeof(global::Weaviate.BatchDeleteResponseResultsObjectStatus?)
+
+                    || typeToConvert == typeof(global::Weaviate.WhereFilterOperator)
+
+                    || typeToConvert == typeof(global::Weaviate.WhereFilterOperator?)
+
+                    || typeToConvert == typeof(global::Weaviate.BatchObjectsCreateRequestField)
+
+                    || typeToConvert == typeof(global::Weaviate.BatchObjectsCreateRequestField?);
+            }
+
+            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
+                global::System.Type typeToConvert,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseErrorCode))
+                {
+                    return new global::Weaviate.JsonConverters.UsageLimitExceededResponseErrorCodeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseErrorCode?))
+                {
+                    return new global::Weaviate.JsonConverters.UsageLimitExceededResponseErrorCodeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseLimit))
+                {
+                    return new global::Weaviate.JsonConverters.UsageLimitExceededResponseLimitJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.UsageLimitExceededResponseLimit?))
+                {
+                    return new global::Weaviate.JsonConverters.UsageLimitExceededResponseLimitNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.ObjectsGetResponseVariant3ResultStatus))
+                {
+                    return new global::Weaviate.JsonConverters.ObjectsGetResponseVariant3ResultStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.ObjectsGetResponseVariant3ResultStatus?))
+                {
+                    return new global::Weaviate.JsonConverters.ObjectsGetResponseVariant3ResultStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.BatchDeleteResponseResultsObjectStatus))
+                {
+                    return new global::Weaviate.JsonConverters.BatchDeleteResponseResultsObjectStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.BatchDeleteResponseResultsObjectStatus?))
+                {
+                    return new global::Weaviate.JsonConverters.BatchDeleteResponseResultsObjectStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.WhereFilterOperator))
+                {
+                    return new global::Weaviate.JsonConverters.WhereFilterOperatorJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.WhereFilterOperator?))
+                {
+                    return new global::Weaviate.JsonConverters.WhereFilterOperatorNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.BatchObjectsCreateRequestField))
+                {
+                    return new global::Weaviate.JsonConverters.BatchObjectsCreateRequestFieldJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.BatchObjectsCreateRequestField?))
+                {
+                    return new global::Weaviate.JsonConverters.BatchObjectsCreateRequestFieldNullableJsonConverter();
+                }
+                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
+            }
         }
 
         private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver

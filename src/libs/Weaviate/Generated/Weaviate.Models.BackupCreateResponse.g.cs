@@ -15,7 +15,7 @@ namespace Weaviate
         public string? Id { get; set; }
 
         /// <summary>
-        /// The list of classes for which the backup creation process was started
+        /// The list of collections (classes) for which the backup creation process was started.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classes")]
         public global::System.Collections.Generic.IList<string>? Classes { get; set; }
@@ -65,7 +65,7 @@ namespace Weaviate
         /// The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
         /// </param>
         /// <param name="classes">
-        /// The list of classes for which the backup creation process was started
+        /// The list of collections (classes) for which the backup creation process was started.
         /// </param>
         /// <param name="backend">
         /// Backup backend name e.g. filesystem, gcs, s3.

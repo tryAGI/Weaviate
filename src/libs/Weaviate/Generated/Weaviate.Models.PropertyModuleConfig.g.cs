@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Configuration specific to modules this Weaviate instance has installed
+    /// Configuration specific to modules in a collection context.
     /// </summary>
     public sealed partial class PropertyModuleConfig
     {

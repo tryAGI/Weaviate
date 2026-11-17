@@ -39,7 +39,8 @@ namespace Weaviate
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
-        /// Revoke a role from a user
+        /// Revoke a role from a user<br/>
+        /// Remove one or more roles from a user.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -62,7 +63,8 @@ namespace Weaviate
             ).ConfigureAwait(false);
         }
         /// <summary>
-        /// Revoke a role from a user
+        /// Revoke a role from a user<br/>
+        /// Remove one or more roles from a user.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -337,7 +339,7 @@ namespace Weaviate
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Bad request
+                            // Malformed request.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -443,7 +445,7 @@ namespace Weaviate
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // role or user is not found.
+                            // Specified role or user not found.
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -598,11 +600,15 @@ namespace Weaviate
             }
         }
         /// <summary>
-        /// Revoke a role from a user
+        /// Revoke a role from a user<br/>
+        /// Remove one or more roles from a user.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="roles">
-        /// the roles that revoked from the key or user
+        /// The roles to revoke from the specified user.
+        /// </param>
+        /// <param name="userType">
+        /// The type of the user. `db` users are managed by Weaviate, `oidc` users are managed by an external OIDC provider.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -610,12 +616,14 @@ namespace Weaviate
         public async global::System.Threading.Tasks.Task RevokeRoleFromUserAsync(
             string id,
             global::System.Collections.Generic.IList<string>? roles = default,
+            global::Weaviate.UserTypeInput? userType = default,
             global::Weaviate.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Weaviate.RevokeRoleFromUserRequest
             {
                 Roles = roles,
+                UserType = userType,
             };
 
             await RevokeRoleFromUserAsync(
