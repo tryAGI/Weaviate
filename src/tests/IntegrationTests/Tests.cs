@@ -7,6 +7,8 @@ public partial class Tests
 
     public static WeaviateClient Client => _environment!.Client;
 
+    public static string ApiKey => _environment!.ApiKey;
+
     [AssemblyInitialize]
     public static async Task AssemblyInit(TestContext context)
     {

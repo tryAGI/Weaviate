@@ -20,7 +20,7 @@ namespace Weaviate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("properties")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, global::Weaviate.JsonObject> Properties { get; set; }
+        public required object Properties { get; set; }
 
         /// <summary>
         /// The selected cross-references: reference property name to the array of referenced objects. Omitted when the request selects no references, or when the hit has no entry for any of the selected references.
@@ -60,7 +60,7 @@ namespace Weaviate
 #endif
         public SearchResultObject(
             global::System.Guid id,
-            global::System.Collections.Generic.Dictionary<string, global::Weaviate.JsonObject> properties,
+            object properties,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Weaviate.SearchResultReference>>? references,
             global::Weaviate.SearchResultMetadata? metadata)
         {

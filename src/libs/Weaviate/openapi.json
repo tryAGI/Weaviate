@@ -4675,9 +4675,7 @@
         "properties": {
           "description": "The selected non-reference properties of the referenced object; nested (object / object[]) properties are pruned to the selected nested fields. Always present \u2014 `{}` when the selector selects no properties.",
           "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/JsonObject"
-          },
+          "additionalProperties": true,
           "x-omitempty": false
         },
         "references": {
@@ -4712,9 +4710,7 @@
         "properties": {
           "description": "The selected non-reference properties of the object; nested (object / object[]) properties are pruned to the selected nested fields. Always present \u2014 `{}` when the request selects no properties.",
           "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/JsonObject"
-          },
+          "additionalProperties": true,
           "x-omitempty": false
         },
         "references": {

@@ -14,6 +14,14 @@ public sealed class Environment : IAsyncDisposable
     public IContainer? Container { get; init; }
     public required WeaviateClient Client { get; init; }
 
+    /// <summary>
+    /// The key <see cref="Client"/> authenticates with, for tests that have to send a request
+    /// the generated client cannot: an endpoint whose error body is empty makes the generated
+    /// deserializer throw before the status code is readable, so learning what the server said
+    /// at all needs a raw request with the same credentials.
+    /// </summary>
+    public required string ApiKey { get; init; }
+
     public async ValueTask DisposeAsync()
     {
         Client.Dispose();
@@ -47,6 +55,7 @@ public sealed class Environment : IAsyncDisposable
                 return new Environment
                 {
                     Client = client,
+                    ApiKey = apiKey,
                 };
             }
             case EnvironmentType.Container:
@@ -57,6 +66,11 @@ public sealed class Environment : IAsyncDisposable
                     .WithEnvironment("AUTHENTICATION_APIKEY_ALLOWED_KEYS", ContainerApiKey)
                     .WithEnvironment("AUTHENTICATION_APIKEY_USERS", ContainerUser)
                     .WithEnvironment("PERSISTENCE_DATA_PATH", "/var/lib/weaviate")
+                    // 1.41 moved search to REST behind a flag; without it every
+                    // `/v1/search/{collection}/*` endpoint answers "rest search api is
+                    // experimental and not enabled", so the whole new Search client would be
+                    // untestable here.
+                    .WithEnvironment("EXPERIMENTAL_REST_SEARCH_ENABLED", "true")
                     .WithPortBinding(WeaviatePort, assignRandomHostPort: true)
                     .WithWaitStrategy(
                         Wait.ForUnixContainer()
@@ -81,6 +95,7 @@ public sealed class Environment : IAsyncDisposable
                 {
                     Container = container,
                     Client = client,
+                    ApiKey = ContainerApiKey,
                 };
             }
             default:
