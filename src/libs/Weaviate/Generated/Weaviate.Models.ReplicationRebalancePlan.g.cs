@@ -4,7 +4,7 @@
 namespace Weaviate
 {
     /// <summary>
-    /// The cluster's rebalance plan: the request it was created from, its current state, and the node measurements and baseline balance taken by its planning run.
+    /// The cluster's rebalance plan: the request it was created from, its current state, the per-node drafting status while it is planning, and the node measurements and baseline balance taken by its planning run.
     /// </summary>
     public sealed partial class ReplicationRebalancePlan
     {
@@ -72,6 +72,12 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<global::Weaviate.ReplicationRebalancePlanBaselineItem>? Baseline { get; set; }
 
         /// <summary>
+        /// The drafting status of each listed node, source nodes first, while the plan is `PLANNING`. The list is empty in every other state. It is also empty while the plan is `PLANNING` until the node serving the request holds the plan's drafting task.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("drafting")]
+        public global::System.Collections.Generic.IList<global::Weaviate.ReplicationRebalancePlanDraftingItem>? Drafting { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -110,6 +116,9 @@ namespace Weaviate
         /// <param name="baseline">
         /// The measured load of each listed node before any move.
         /// </param>
+        /// <param name="drafting">
+        /// The drafting status of each listed node, source nodes first, while the plan is `PLANNING`. The list is empty in every other state. It is also empty while the plan is `PLANNING` until the node serving the request holds the plan's drafting task.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -123,7 +132,8 @@ namespace Weaviate
             global::System.Collections.Generic.IList<string>? targetNodes,
             global::System.Collections.Generic.IList<string>? collections,
             global::System.Collections.Generic.IList<global::Weaviate.ReplicationRebalancePlanNode>? nodes,
-            global::System.Collections.Generic.IList<global::Weaviate.ReplicationRebalancePlanBaselineItem>? baseline)
+            global::System.Collections.Generic.IList<global::Weaviate.ReplicationRebalancePlanBaselineItem>? baseline,
+            global::System.Collections.Generic.IList<global::Weaviate.ReplicationRebalancePlanDraftingItem>? drafting)
         {
             this.Id = id;
             this.State = state;
@@ -135,6 +145,7 @@ namespace Weaviate
             this.Collections = collections;
             this.Nodes = nodes;
             this.Baseline = baseline;
+            this.Drafting = drafting;
         }
 
         /// <summary>
