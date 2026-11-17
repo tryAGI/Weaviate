@@ -55,6 +55,9 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationRebalancePlanNode))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ReplicationRebalancePlanBaselineItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationRebalancePlanBaselineItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ReplicationRebalancePlanDraftingItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationRebalancePlanDraftingItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationRebalancePlanDraftingItemStatus), TypeInfoPropertyName = "ReplicationRebalancePlanDraftingItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ReplicationReplicateDetailsReplicaResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
@@ -66,6 +69,7 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationReplicateDetailsReplicaStatusState?), TypeInfoPropertyName = "NullableReplicationReplicateDetailsReplicaStatusState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationReplicateDetailsReplicaResponseType?), TypeInfoPropertyName = "NullableReplicationReplicateDetailsReplicaResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationRebalancePlanState?), TypeInfoPropertyName = "NullableReplicationRebalancePlanState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationRebalancePlanDraftingItemStatus?), TypeInfoPropertyName = "NullableReplicationRebalancePlanDraftingItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ErrorResponseErrorItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Guid>))]
@@ -74,6 +78,7 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ReplicationReplicateDetailsReplicaStatus>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ReplicationRebalancePlanNode>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ReplicationRebalancePlanBaselineItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ReplicationRebalancePlanDraftingItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ReplicationReplicateDetailsReplicaResponse>))]
     internal sealed partial class ReplicationSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
@@ -158,7 +163,11 @@ namespace Weaviate
 
                     || typeToConvert == typeof(global::Weaviate.ReplicationRebalancePlanState)
 
-                    || typeToConvert == typeof(global::Weaviate.ReplicationRebalancePlanState?);
+                    || typeToConvert == typeof(global::Weaviate.ReplicationRebalancePlanState?)
+
+                    || typeToConvert == typeof(global::Weaviate.ReplicationRebalancePlanDraftingItemStatus)
+
+                    || typeToConvert == typeof(global::Weaviate.ReplicationRebalancePlanDraftingItemStatus?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -203,6 +212,16 @@ namespace Weaviate
                 if (typeToConvert == typeof(global::Weaviate.ReplicationRebalancePlanState?))
                 {
                     return new global::Weaviate.JsonConverters.ReplicationRebalancePlanStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.ReplicationRebalancePlanDraftingItemStatus))
+                {
+                    return new global::Weaviate.JsonConverters.ReplicationRebalancePlanDraftingItemStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Weaviate.ReplicationRebalancePlanDraftingItemStatus?))
+                {
+                    return new global::Weaviate.JsonConverters.ReplicationRebalancePlanDraftingItemStatusNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

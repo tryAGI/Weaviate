@@ -119,6 +119,10 @@ namespace Weaviate
 
             typeof(global::Weaviate.JsonConverters.ReplicationRebalancePlanStateNullableJsonConverter),
 
+            typeof(global::Weaviate.JsonConverters.ReplicationRebalancePlanDraftingItemStatusJsonConverter),
+
+            typeof(global::Weaviate.JsonConverters.ReplicationRebalancePlanDraftingItemStatusNullableJsonConverter),
+
             typeof(global::Weaviate.JsonConverters.PropertyTokenizationJsonConverter),
 
             typeof(global::Weaviate.JsonConverters.PropertyTokenizationNullableJsonConverter),
@@ -416,6 +420,9 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationRebalancePlanNode))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ReplicationRebalancePlanBaselineItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationRebalancePlanBaselineItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Weaviate.ReplicationRebalancePlanDraftingItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationRebalancePlanDraftingItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.ReplicationRebalancePlanDraftingItemStatus), TypeInfoPropertyName = "ReplicationRebalancePlanDraftingItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PeerUpdate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.VectorWeights))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Weaviate.PropertySchema))]
@@ -615,6 +622,7 @@ namespace Weaviate
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ReplicationReplicateDetailsReplicaStatus>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ReplicationRebalancePlanNode>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ReplicationRebalancePlanBaselineItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.ReplicationRebalancePlanDraftingItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Class>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.Property>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Weaviate.NestedProperty>))]
