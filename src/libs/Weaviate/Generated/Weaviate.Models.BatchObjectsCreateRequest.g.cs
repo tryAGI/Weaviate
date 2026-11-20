@@ -15,7 +15,7 @@ namespace Weaviate
         public global::System.Collections.Generic.IList<global::Weaviate.BatchObjectsCreateRequestField>? Fields { get; set; }
 
         /// <summary>
-        /// Array of objects to be created.
+        /// Array of objects to be created. Each object needs a `class`; an object without one fails on its own and the rest of the batch is still imported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("objects")]
         public global::System.Collections.Generic.IList<global::Weaviate.Object>? Objects { get; set; }
@@ -33,7 +33,7 @@ namespace Weaviate
         /// Controls which fields are returned in the response for each object. Default is `ALL`.
         /// </param>
         /// <param name="objects">
-        /// Array of objects to be created.
+        /// Array of objects to be created. Each object needs a `class`; an object without one fails on its own and the rest of the batch is still imported.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
