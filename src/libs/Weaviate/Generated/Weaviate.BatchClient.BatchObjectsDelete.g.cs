@@ -642,7 +642,7 @@ namespace Weaviate
         /// <param name="consistencyLevel"></param>
         /// <param name="tenant"></param>
         /// <param name="match">
-        /// Outlines how to find the objects to be deleted.
+        /// Outlines how to find the objects to be deleted. Required.
         /// </param>
         /// <param name="output">
         /// Controls the verbosity of the output, possible values are: `minimal`, `verbose`. Defaults to `minimal`.<br/>

@@ -57,7 +57,7 @@ namespace Weaviate
 
         /// <summary>
         /// List objects<br/>
-        /// Retrieves a list of data objects. By default, objects are returned in reverse order of creation. Requires a collection name (`class`) parameter to specify which collection's objects to list, otherwise, returns an empty list.
+        /// Retrieves a list of data objects from the collection named in the `class` parameter. By default, objects are returned in reverse order of creation. &lt;br/&gt;&lt;br/&gt;**Note**: Calling this endpoint without `class` is deprecated and will be removed in a future version. Without `class`, it lists objects across all collections. Some cluster configurations do not support a request without `class`.
         /// </summary>
         /// <param name="after"></param>
         /// <param name="offset">
@@ -101,7 +101,7 @@ namespace Weaviate
         }
         /// <summary>
         /// List objects<br/>
-        /// Retrieves a list of data objects. By default, objects are returned in reverse order of creation. Requires a collection name (`class`) parameter to specify which collection's objects to list, otherwise, returns an empty list.
+        /// Retrieves a list of data objects from the collection named in the `class` parameter. By default, objects are returned in reverse order of creation. &lt;br/&gt;&lt;br/&gt;**Note**: Calling this endpoint without `class` is deprecated and will be removed in a future version. Without `class`, it lists objects across all collections. Some cluster configurations do not support a request without `class`.
         /// </summary>
         /// <param name="after"></param>
         /// <param name="offset">

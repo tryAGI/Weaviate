@@ -671,7 +671,7 @@ namespace Weaviate
         /// Controls which fields are returned in the response for each object. Default is `ALL`.
         /// </param>
         /// <param name="objects">
-        /// Array of objects to be created.
+        /// Array of objects to be created. Each object needs a `class`; an object without one fails on its own and the rest of the batch is still imported.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

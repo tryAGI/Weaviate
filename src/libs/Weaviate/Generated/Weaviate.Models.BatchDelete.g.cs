@@ -9,7 +9,7 @@ namespace Weaviate
     public sealed partial class BatchDelete
     {
         /// <summary>
-        /// Outlines how to find the objects to be deleted.
+        /// Outlines how to find the objects to be deleted. Required.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("match")]
         public global::Weaviate.BatchDeleteMatch? Match { get; set; }
@@ -44,7 +44,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="BatchDelete" /> class.
         /// </summary>
         /// <param name="match">
-        /// Outlines how to find the objects to be deleted.
+        /// Outlines how to find the objects to be deleted. Required.
         /// </param>
         /// <param name="output">
         /// Controls the verbosity of the output, possible values are: `minimal`, `verbose`. Defaults to `minimal`.<br/>

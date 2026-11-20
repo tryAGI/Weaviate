@@ -4,12 +4,12 @@
 namespace Weaviate
 {
     /// <summary>
-    /// Outlines how to find the objects to be deleted.
+    /// Outlines how to find the objects to be deleted. Required.
     /// </summary>
     public sealed partial class BatchDeleteMatch
     {
         /// <summary>
-        /// The name of the collection (class) from which to delete objects.<br/>
+        /// The name of the collection (class) from which to delete objects. Required.<br/>
         /// Example: City
         /// </summary>
         /// <example>City</example>
@@ -32,7 +32,7 @@ namespace Weaviate
         /// Initializes a new instance of the <see cref="BatchDeleteMatch" /> class.
         /// </summary>
         /// <param name="class">
-        /// The name of the collection (class) from which to delete objects.<br/>
+        /// The name of the collection (class) from which to delete objects. Required.<br/>
         /// Example: City
         /// </param>
         /// <param name="where">
